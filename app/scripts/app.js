@@ -7,7 +7,7 @@
   });
   
   
-  var DEFAULT_ROUTE = 'one';
+  var DEFAULT_ROUTE = 0;
 
   var template = document.querySelector('template[is="auto-binding"]');
   //var template = document.querySelector('#t');
@@ -65,12 +65,17 @@
   };
 
   template.menuItemSelected = function(e, detail, sender) {
+    console.log ('menuItemSelected',e, detail, sender);
+    
     if (detail.isSelected) {
 
       // Need to wait one rAF so <core-ajax> has it's URL set.
       this.async(function() {
         if (!cache[ajax.url]) {
           ajax.go();
+        } else {
+          
+          this.injectBoundHTML(cache[ajax.url], pages.selectedItem.firstElementChild);
         }
 
         scaffold.closeDrawer();
@@ -84,6 +89,8 @@
   };
 
   template.onResponse = function(e, detail, sender) {
+    console.log('onResponse', e, detail, sender);
+
     var article = detail.response.querySelector('.article');//'#article-content'
     //article.querySelector('.byline').remove();
 
@@ -96,6 +103,13 @@
     var html = article.innerHTML;
 
     cache[ajax.url] = html; // Primitive caching by URL.
+    //console.log('selectedPages: ',selectedPage);
+    
+    console.log ('pages:',pages, pages.selectedItem, pages.selected);
+    if(pages.selectedItem == null){
+      pages.selected = 0;
+      pages.selectedItem = pages.childNodes[1];
+    }
 
     this.injectBoundHTML(html, pages.selectedItem.firstElementChild);
   };
