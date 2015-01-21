@@ -20,7 +20,7 @@
     {name: 'Services', hash: 'two', url: 'services.html'},
     {name: 'About Us', hash: 'three', url: 'about-us.html'},
     {name: 'Contact Us', hash: 'four', url: 'contact-us.html'},
-    {name: 'Blog', hash: 'five', url: ''}
+    {name: 'Blog', hash: 'five', url: 'http://blog.tecla5.com'}
   ];
 
   template.addEventListener('template-bound', function(e) {
@@ -106,7 +106,7 @@
     //console.log('selectedPages: ',selectedPage);
     
     console.log ('pages:',pages, pages.selectedItem, pages.selected);
-    if(pages.selectedItem == null){
+    if(pages.selectedItem === null){
       pages.selected = 0;
       pages.selectedItem = pages.childNodes[1];
     }
