@@ -33,7 +33,7 @@
     -->
 
   <template is="auto-binding">
-   
+
    
   <!-- Route controller. -->
   <flatiron-director route="{{route}}" autoHash></flatiron-director>
@@ -46,12 +46,11 @@
   <!-- Dynamic content controller -->
   <core-ajax id="ajax" url="{{selectedPage.page.url}}" handleAs="document"
              on-core-response="{{onResponse}}"></core-ajax>
-
   <core-scaffold id="scaffold">
-
     <nav>
       <core-toolbar>
-        <span>Polymer Tutorial SPA</span>
+        <img src="images/logo-tecla5.jpg" style="height:45px" >
+        <span>Tecla5</span>
       </core-toolbar>
       <core-menu id="menu" valueattr="hash"
                  selected="{{route}}"
