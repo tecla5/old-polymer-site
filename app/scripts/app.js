@@ -5,8 +5,9 @@
     // Perform some behaviour
     console.log('Polymer is ready to rock!');
   });
-  
-  
+
+  /*
+
   var DEFAULT_ROUTE = 0;
 
   var template = document.querySelector('template[is="auto-binding"]');
@@ -66,7 +67,7 @@
 
   template.menuItemSelected = function(e, detail, sender) {
     console.log ('menuItemSelected',e, detail, sender);
-    
+
     if (detail.isSelected) {
 
       // Need to wait one rAF so <core-ajax> has it's URL set.
@@ -74,7 +75,7 @@
         if (!cache[ajax.url]) {
           ajax.go();
         } else {
-          
+
           this.injectBoundHTML(cache[ajax.url], pages.selectedItem.firstElementChild);
         }
 
@@ -95,16 +96,14 @@
     //article.querySelector('.byline').remove();
 
     // Fix up image paths to not be local.
-    /*
     [].forEach.call(article.querySelectorAll('img'), function(img) {
       img.setAttribute('src', img.src);
     });
-    */
     var html = article.innerHTML;
 
     cache[ajax.url] = html; // Primitive caching by URL.
     //console.log('selectedPages: ',selectedPage);
-    
+
     console.log ('pages:',pages, pages.selectedItem, pages.selected);
     if(pages.selectedItem === null){
       pages.selected = 0;
@@ -113,6 +112,9 @@
 
     this.injectBoundHTML(html, pages.selectedItem.firstElementChild);
   };
+  
+  */
+  
   
   // wrap document so it plays nice with other libraries
   // http://www.polymer-project.org/platform/shadow-dom.html#wrappers
