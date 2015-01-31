@@ -1,0 +1,21 @@
+:host {
+  display: block;
+}
+
+:host {
+  overflow: hidden;
+}
+
+.splash {
+  background-color: #aaa;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-image: url(../../images/logo-tecla5.jpg);
+  background-size: contain;
+}
+
+.splash.wide {
+  background-size: 512px;
+}
+
+
