@@ -1,0 +1,52 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+
+<link rel="import" href="../../bower_components/core-toolbar/core-toolbar.html">
+<link rel="import" href="../../bower_components/core-header-panel/core-header-panel.html">
+<link rel="import" href="../../bower_components/core-icons/core-icons.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+  
+
+<polymer-element name="tecla5-main" attributes="" vertical layout>
+  <template>
+    <link rel="stylesheet" href="tecla5-main.css">
+
+    <!-- could be a page like home -->        
+    <core-header-panel class="main-panel" flex auto >
+      <core-toolbar class="main-toolbar" >
+        <!--
+        <paper-icon-button id="navicon" icon="arrow-back"></paper-icon-button>
+        -->
+        <span flex>Main</span>
+        <paper-icon-button id="searchbutton" icon="search"></paper-icon-button>
+        
+        <template repeat="{{link in links}}">
+          <paper-item horizontal center-justified layout class="desktop-button"><a href="{{link.url}}">{{link.name}}</a></paper-item>
+        </template>
+                
+      </core-toolbar>
+      <p>Sample content.</p>
+      <p>Sample content.</p>
+    </core-header-panel>    
+          
+  </template>
+  <script>
+    (function () {
+
+      Polymer('tecla5-main', {
+        // define element prototype here
+        links: [
+          //url:'http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom/'
+          {name: 'Home', hash: 'one', url:'home.html' },
+          {name: 'Services', hash: 'two', url: 'services.html'},
+          {name: 'About Us', hash: 'three', url: 'about-us.html'},
+          {name: 'Contact Us', hash: 'four', url: 'contact-us.html'},
+          {name: 'Blog', hash: 'five', url: 'http://blog.tecla5.com'}
+        ],
+        
+        
+      });
+
+    })();
+  </script>
+</polymer-element>

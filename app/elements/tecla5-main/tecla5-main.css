@@ -1,0 +1,37 @@
+
+
+core-header-panel {
+  /*
+  background: white;
+  */
+}
+core-toolbar {
+  background: #E7B601;
+}
+core-toolbar a {
+  color: black;
+  text-decoration: none;
+}
+core-toolbar a:hover {
+  font-weight: bold;
+}
+.logo a:hover {
+  font-weight: initial;
+}
+paper-item::shadow #ripple, paper-icon-button::shadow #ripple {
+  color: #C27100;
+}
+paper-dropdown {
+  top: 54px;
+  width: 200px;
+}
+
+p {
+  margin: 20px;
+  padding: 80px 20px;
+  border-radius: 20px;
+  background-color: #eee;
+}
+
+
+
