@@ -1,8 +1,13 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
 <link rel="import" href="../tecla5-main/tecla5-main.html">
+<link rel="import" href="../tecla5-services/tecla5-services.html">
+<link rel="import" href="../tecla5-about/tecla5-about.html">
+<link rel="import" href="../tecla5-contact/tecla5-contact.html">
 
 <link rel="import" href="../../bower_components/core-drawer-panel/core-drawer-panel.html">
+
+
 <link rel="import" href="../../bower_components/core-animated-pages/core-animated-pages.html">
 <link rel="import" href="../../bower_components/core-animated-pages/transitions/slide-up.html">
 <link rel="import" href="../../bower_components/core-animated-pages/transitions/scale-up.html">
@@ -18,7 +23,7 @@
 
          
    
-    <core-animated-pages selected="{{selected}}" transitions="cross-fade cross-fade-delayed scale-up slide-up slide-up-offscreen slide-down tile-cascade hero-transition" flex auto on-core-animated-pages-transition-end="{{transitionEndAction}}">
+    <core-animated-pages selected="{{selected}}" transitions="" flex auto on-core-animated-pages-transition-end="{{transitionEndAction}}">
     
               
       <!-- presentation -->  
@@ -28,7 +33,16 @@
       
       <!-- main -->
       <tecla5-main name="main"></tecla5-main>
-    
+
+      <!-- services -->
+      <tecla5-services name="services"></tecla5-services>
+
+      <!-- about -->
+      <tecla5-about name="about"></tecla5-about>
+
+      <!-- contact -->
+      <tecla5-contact name="contact"></tecla5-contact>
+                                                            
             
       <core-media-query query="min-width: {{responsiveWidth}}" queryMatches="{{wide}}"></core-media-query>
     </core-animated-pages>    
@@ -53,6 +67,7 @@
         },
 
         ready: function(){
+          console.log('ready');
           this.readyTime = Date.now();
           
           if(!this.splashed){
@@ -62,22 +77,44 @@
           }
         },
         
-        
+        eventDelegates: {
+          'splash': 'showSplash',
+          'main': 'showMain',
+          'services': 'showServices',
+          'about': 'showAbout',
+          'contact': 'showContact',
+        },
+
         showSplash: function() {
+          console.log('showSplash');
           this.splashed = true;
           var elapsed = Date.now() - this.readyTime;
           var t = this.minSplashTime - elapsed;
-          this.async('showMain', null, t > 0 ? t : 0);
+          this.async('showContact', null, t > 0 ? t : 0);
         },
-        
         showMain: function() {
+          console.log('showMain');
           this.selected = 'main';// home
         },
+        showServices: function() {
+          console.log('showServices');
+          this.selected = 'about';
+        },
+        showAbout: function() {
+          console.log('showAbout');
+          this.selected = 'about';
+        },
+        showContact: function() {
+          console.log('showContact');
+          this.selected = 'contact';
+        },
+
+        
         
         transitionEndAction: function() {
           this.disableLeaderboard = (this.selected !== 'leaderboard');
           //this.selected = 'main';// home
-        }        
+        }
         
       });
 
