@@ -6,11 +6,12 @@ html, body {
 body {
   margin: 0;
   background-color: #ffa;
-  background-repeat: repeat;
-  background-position: 50%;
+  background-repeat: no-repeat;
+  /* background-position: 50%; */
   font-family: "RobotoDraft", sans-serif;  
-  background-image: url(../../images/noisy.png);  
+  background-image: url(../../images/teclado.jpg);  
   background-size: cover;
+  background-repeat: no-repeat;
   
   color: #444;
   fill: #444;
@@ -19,7 +20,7 @@ body {
 
 @media screen and (min-width: 900px) {
   body {
-    background-size: 512px;
+    /* background-size: 512px; */
   }
 }
 

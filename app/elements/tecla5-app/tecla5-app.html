@@ -90,22 +90,18 @@
           this.splashed = true;
           var elapsed = Date.now() - this.readyTime;
           var t = this.minSplashTime - elapsed;
-          this.async('showContact', null, t > 0 ? t : 0);
+          this.async('showMain', null, t > 0 ? t : 0);
         },
         showMain: function() {
-          console.log('showMain');
           this.selected = 'main';// home
         },
         showServices: function() {
-          console.log('showServices');
           this.selected = 'about';
         },
         showAbout: function() {
-          console.log('showAbout');
           this.selected = 'about';
         },
         showContact: function() {
-          console.log('showContact');
           this.selected = 'contact';
         },
 

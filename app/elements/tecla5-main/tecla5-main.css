@@ -6,7 +6,7 @@
   right: 0;
   left: 0;
   height: 350px;
-  background: black;
+  /* background: black; */
 }
 
 
@@ -73,4 +73,11 @@
 
 .card-album-title {
   font-size: 2em;
+}
+
+
+
+.big {
+  height: inherit;
+  width: inherit;
 }
