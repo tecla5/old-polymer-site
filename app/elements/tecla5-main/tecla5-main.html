@@ -5,12 +5,9 @@
 <link rel="import" href="../../bower_components/core-animated-pages/core-animated-pages.html">
 <link rel="import" href="../../bower_components/core-toolbar/core-toolbar.html">
 <link rel="import" href="../../bower_components/core-header-panel/core-header-panel.html">
-<link rel="import" href="../../bower_components/core-icons/core-icons.html">
 <link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
 
-<link rel="import" href="../../bower_components/core-icon/core-icon.html">
-
-
+<link rel="import" href="../../bower_components/core-icons/core-icons.html">
 <link rel="import" href="../../bower_components/core-animated-pages/transitions/hero-transition.html">
 
 
@@ -48,9 +45,6 @@
     </style>
     
     <div class="green"></div>
-    <!-- 
-    <core-icon icon='tecla5-icons:tecla' class='overtext' ><p>hola</p></core-icon>
-     -->
 
    <!--  -->
     <core-animated-pages selected="{{page}}" transitions="hero-transition">
@@ -58,7 +52,6 @@
       <section>
 
         <div class="chip-container" hero-p on-tap="{{transition}}">
-
           <template repeat="{{items as item}}">
 
             <div class="chip" hero-id="{{item.name}}" >
