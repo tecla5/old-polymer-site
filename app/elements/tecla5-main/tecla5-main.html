@@ -1,10 +1,10 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
+<link rel="import" href="../tecla5-icons/tecla5-icons.html">
 
 <link rel="import" href="../../bower_components/core-animated-pages/core-animated-pages.html">
 <link rel="import" href="../../bower_components/core-toolbar/core-toolbar.html">
 <link rel="import" href="../../bower_components/core-header-panel/core-header-panel.html">
-<link rel="import" href="../../bower_components/core-icons/core-icons.html">
 <link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
 
 <link rel="import" href="../../bower_components/core-icons/core-icons.html">
@@ -15,9 +15,36 @@
 <polymer-element name="tecla5-main" attributes="" vertical layout>
   <template>
     <link rel="stylesheet" href="tecla5-main.css">
+    <style>
+      .overtext {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        font-family: 'Open Sans', sans-serif;
+      }
+      .overtext p {
+        font-size: 20px;
+        font-size-adjust: auto;
+        width: 50%;
+        height: 50%;
+        overflow: auto;
+        margin: auto;
+        position: absolute;
+        top: 0; left: 0; bottom: 0; right: 0;        
+        overflow:hidden;
+      }
+      
+      .green {
+        /* background-color: #aaa; */
+        background-repeat: no-repeat;
+        background-position: 50%;
+        background-image: url(../../images/logo-tecla5.jpg);
+        background-size: 128px;
+      }
+      
+    </style>
     
     <div class="green"></div>
-    <core-icon icon="android"></core-icon>
 
    <!--  -->
     <core-animated-pages selected="{{page}}" transitions="hero-transition">
@@ -28,15 +55,9 @@
           <template repeat="{{items as item}}">
 
             <div class="chip" hero-id="{{item.name}}" >
-              <div class="chip-top" style="background:{{item.color}};" hero-id="{{item.name}}-art" >
-                <core-icon class="big" src="../../images/key-C.svg"></core-icon>
-                
-              </div>
-              
-              <div class="chip-bottom">
-                <div class="chip-album-title"><a href="{{item.url}}">{{item.url}}</a></div>
-                <div class="chip-name">{{item.name}}</div>
-              </div>
+              <a href="{{item.url}}">                  
+                <core-icon class="overtext" icon='tecla5-icons:tecla' ><p>{{item.name}}</p></core-icon>
+              </a>
             </div>
 
           </template>
@@ -58,7 +79,7 @@
         // define element prototype here
         items: [
           //url:'http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom/'
-          //{name: 'Home', hash: 'one', url:'home.html', color: '#f4db33' },
+          {name: 'Home', hash: 'one', url:'#home.html', color: '#f4db33' },
           {name: 'Services', hash: 'two', url: '#services.html', color: '#972ff8' },
           {name: 'About Us', hash: 'three', url: '#about-us.html', color: '#7dd6fe' },
           {name: 'Contact Us', hash: 'four', url: '#contact-us.html', color: '#dc3c84' },
