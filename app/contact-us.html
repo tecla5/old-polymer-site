@@ -14,17 +14,13 @@
   Other regions
   </div>
 
-  <form>
-      Your name<br>
-      <input type="text" name="cf_name"><br>
-      Your e-mail<br>
-      <input type="text" name="cf_email"><br>
-      Message<br>
-      <textarea name="message">
-      </textarea>
-      <br>
-      <input type="submit" value="Send">
-      <input type="reset" value="Clear">
+
+  <form method="POST" action="/__/forms/contact">
+    <label>Your Name:</label> <input type="text" name="name">
+    <label>Your Email:</label> <input type="email" name="email">
+    Message<br><textarea name="message"></textarea>
+    <button type="submit">Contact Us</button>
+    <input type="reset" value="Clear">
   </form>
 
 

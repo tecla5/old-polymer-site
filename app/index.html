@@ -74,55 +74,55 @@
     -->
 
   <template is="auto-binding" id="t" >
-  <!-- Route controller. -->
-  <flatiron-director route="{{route}}" autoHash></flatiron-director>
+    <!-- Route controller. -->
+    <flatiron-director route="{{route}}" autoHash></flatiron-director>
 
-  <!-- Keyboard nav controller. -->
-  <core-a11y-keys id="keys" target="{{parentElement}}"
-                  keys="up down left right space space+shift"
-                  on-keys-pressed="{{keyHandler}}"></core-a11y-keys>
+    <!-- Keyboard nav controller. -->
+    <core-a11y-keys id="keys" target="{{parentElement}}"
+                    keys="up down left right space space+shift"
+                    on-keys-pressed="{{keyHandler}}"></core-a11y-keys>
 
-  <!-- Dynamic content controller -->
-  <core-ajax id="ajax" url="{{selectedPage.page.url}}" handleAs="document"
-             on-core-response="{{onResponse}}"></core-ajax>
+    <!-- Dynamic content controller -->
+    <core-ajax id="ajax" url="{{selectedPage.page.url}}" handleAs="document"
+               on-core-response="{{onResponse}}"></core-ajax>
 
-  <core-scaffold id="scaffold">
+    <core-scaffold id="scaffold">
 
-    <nav>
-      <core-toolbar>
-        <span>Polymer Tutorial SPA</span>
+      <nav>
+        <core-toolbar>
+          <span>Polymer Tutorial SPA</span>
+        </core-toolbar>
+        <core-menu id="menu" valueattr="hash"
+                   selected="{{route}}"
+                   selectedModel="{{selectedPage}}"
+                   on-core-select="{{menuItemSelected}}" on-click="{{ajaxLoad}}">
+          <template repeat="{{page, i in pages}}">
+            <paper-item hash="{{page.hash}}" noink>
+              <core-icon icon="label{{route != page.hash ? '-outline' : ''}}"></core-icon>
+              <a href="{{page.url}}">{{page.name}}</a>
+            </paper-item>
+          </template>
+        </core-menu>
+      </nav>
+
+      <core-toolbar tool flex>
+        <div flex>{{selectedPage.page.name}}</div>
+        <core-icon-button icon="refresh"></core-icon-button>
+        <core-icon-button icon="add"></core-icon-button>
       </core-toolbar>
-      <core-menu id="menu" valueattr="hash"
-                 selected="{{route}}"
-                 selectedModel="{{selectedPage}}"
-                 on-core-select="{{menuItemSelected}}" on-click="{{ajaxLoad}}">
-        <template repeat="{{page, i in pages}}">
-          <paper-item hash="{{page.hash}}" noink>
-            <core-icon icon="label{{route != page.hash ? '-outline' : ''}}"></core-icon>
-            <a href="{{page.url}}">{{page.name}}</a>
-          </paper-item>
-        </template>
-      </core-menu>
-    </nav>
 
-    <core-toolbar tool flex>
-      <div flex>{{selectedPage.page.name}}</div>
-      <core-icon-button icon="refresh"></core-icon-button>
-      <core-icon-button icon="add"></core-icon-button>
-    </core-toolbar>
+      <div layout horizontal center-center fit>
+        <core-animated-pages id="pages" selected="{{route}}" valueattr="hash"
+                             transitions="slide-from-right">
+          <template repeat="{{page, i in pages}}">
+            <section hash="{{page.hash}}" layout vertical center-center>
+              <div style="max-width:100%;">Loading...</div>
+            </section>
+          </template>
+        </core-animated-pages>
+      </div>
 
-    <div layout horizontal center-center fit>
-      <core-animated-pages id="pages" selected="{{route}}" valueattr="hash"
-                           transitions="slide-from-right">
-        <template repeat="{{page, i in pages}}">
-          <section hash="{{page.hash}}" layout vertical center-center>
-            <div style="max-width:100%;">Loading...</div>
-          </section>
-        </template>
-      </core-animated-pages>
-    </div>
-
-  </core-scaffold>
+    </core-scaffold>
 
   </template>
 
