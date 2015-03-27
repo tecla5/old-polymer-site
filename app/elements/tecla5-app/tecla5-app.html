@@ -5,6 +5,8 @@
 <link rel="import" href="../tecla5-about/tecla5-about.html">
 <link rel="import" href="../tecla5-contact/tecla5-contact.html">
 
+
+<!--
 <link rel="import" href="../../bower_components/core-drawer-panel/core-drawer-panel.html">
 
 
@@ -14,45 +16,80 @@
 <link rel="import" href="../../bower_components/core-animated-pages/transitions/tile-cascade.html">
 <link rel="import" href="../../bower_components/core-media-query/core-media-query.html">
 
+ -->
 
+
+<link rel="import" href="../../bower_components/core-animated-pages/core-animated-pages.html">
+<link rel="import" href="../../bower_components/core-animated-pages/transitions/slide-from-right.html">
+<link rel="import" href="../../bower_components/core-toolbar/core-toolbar.html">
+<link rel="import" href="../../bower_components/core-scaffold/core-scaffold.html">
+<link rel="import" href="../../bower_components/core-icon-button/core-icon-button.html">
+<link rel="import" href="../../bower_components/core-icon/core-icon.html">
+<link rel="import" href="../../bower_components/core-menu/core-menu.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../bower_components/flatiron-director/flatiron-director.html">
+<link rel="import" href="../../bower_components/font-roboto/roboto.html">
+<link rel="import" href="../../bower_components/core-a11y-keys/core-a11y-keys.html">
+<link rel="import" href="../../bower_components/core-ajax/core-ajax.html">
 
 
 <polymer-element name="tecla5-app" attributes="" vertical layout fullbleed>
   <template>
     <link rel="stylesheet" href="tecla5-app.css">
 
+          <!--
+             <core-animated-pages selected="{{selected}}" transitions="" flex auto on-core-animated-pages-transition-end="{{transitionEndAction}}">
+
+               presentation
+               <div name="splash">
+                 <span fit class="splash {{ {wide: wide} | tokenList }}" cross-fade>splash</span>
+               </div>
+
+               main
+               <tecla5-main name="main"></tecla5-main>
          
-   
-    <core-animated-pages selected="{{selected}}" transitions="" flex auto on-core-animated-pages-transition-end="{{transitionEndAction}}">
-    
-              
-      <!-- presentation -->  
-      <div name="splash">
-        <span fit class="splash {{ {wide: wide} | tokenList }}" cross-fade>splash</span>
-      </div>
-      
-      <!-- main -->
-      <tecla5-main name="main"></tecla5-main>
+               services
+               <tecla5-services name="services"></tecla5-services>
 
-      <!-- services -->
-      <tecla5-services name="services"></tecla5-services>
+               about
+               <tecla5-about name="about"></tecla5-about>
 
-      <!-- about -->
-      <tecla5-about name="about"></tecla5-about>
+               contact
+               <tecla5-contact name="contact"></tecla5-contact>
 
-      <!-- contact -->
-      <tecla5-contact name="contact"></tecla5-contact>
-                                                            
-            
-      <core-media-query query="min-width: {{responsiveWidth}}" queryMatches="{{wide}}"></core-media-query>
-    </core-animated-pages>    
-            
-    
+
+               <core-media-query query="min-width: {{responsiveWidth}}" queryMatches="{{wide}}"></core-media-query>
+             </core-animated-pages>
+
+          -->
+
+
+inicio
+fin
+total
+
+
+
+
+2
+
+
+
+
+2
+18:35
+
+
+2
+
+
+
   </template>
   <script>
     (function () {
       
       
+
 
       Polymer('tecla5-app', {
 
@@ -90,22 +127,18 @@
           this.splashed = true;
           var elapsed = Date.now() - this.readyTime;
           var t = this.minSplashTime - elapsed;
-          this.async('showContact', null, t > 0 ? t : 0);
+          this.async('showMain', null, t > 0 ? t : 0);
         },
         showMain: function() {
-          console.log('showMain');
           this.selected = 'main';// home
         },
         showServices: function() {
-          console.log('showServices');
           this.selected = 'about';
         },
         showAbout: function() {
-          console.log('showAbout');
           this.selected = 'about';
         },
         showContact: function() {
-          console.log('showContact');
           this.selected = 'contact';
         },
 

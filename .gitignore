@@ -1,3 +1,4 @@
+docs
 node_modules
 dist
 test/temp
@@ -7,3 +8,5 @@ app/bower_components
 test/bower_components/
 .divshot-cache/
 .yo-rc.json
+/app/elements/my-test/my-test.html
+/app/elements/my-test/my-test.css

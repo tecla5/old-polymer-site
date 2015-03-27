@@ -6,7 +6,7 @@
   right: 0;
   left: 0;
   height: 350px;
-  background: black;
+  /* background: black; */
 }
 
 
@@ -25,8 +25,8 @@
   margin: 4px;
   overflow: hidden;
   text-align: start;
-  background-color: #fff;
-  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+  /* background-color: #fff; */
+  /* box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16); */
 }
 
 .chip-top {
@@ -74,3 +74,13 @@
 .card-album-title {
   font-size: 2em;
 }
+
+
+
+.big {
+  height: inherit;
+  width: inherit;
+}
+
+
+
