@@ -83,7 +83,7 @@
                     on-keys-pressed="{{keyHandler}}"></core-a11y-keys>
 
     <!-- Dynamic content controller -->
-    <core-ajax id="ajax" url="{{selectedPage.page.url}}" handleAs="document"
+    <core-ajax auto id="ajax" url="{{selectedPage.page.url}}" handleAs="document"
                on-core-response="{{onResponse}}"></core-ajax>
 
     <core-scaffold id="scaffold">
