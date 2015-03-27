@@ -17,12 +17,12 @@ core-animated-pages > * {
 }
 
 body /deep/ core-toolbar {
-  background-color: #03a9f4;
+  background-color: #EF8814;
   color: #fff;
 }
 
 core-menu {
-  color: #01579b;
+  color: #EF8814;
   margin: 10px 0 0 0;
 }
 
@@ -34,10 +34,11 @@ paper-item a {
   text-decoration: none;
   color: currentcolor;
   margin-left: 5px;
+  color: #212121;
 }
 
 core-menu > paper-item.core-selected {
-  background: #e1f5fe;
+  background: #ffe0b2;
 }
 
 @media all and (max-width: 480px) {
@@ -48,10 +49,34 @@ core-menu > paper-item.core-selected {
 }
 
 
+/* ESTILOS DEL MAIN */
+/*.logo{
+    display:block;
+    overflow: visible;
+}*/
 
-.logo{
-width:50px;
-height:50px;
-display:block;
-overflow: visible;
+/*#log::shadow img {
+  width:300px;
+  height:300px;
+    right: 50px;
+    margin-left: 50%;
+}*/
+
+core-image.logo{
+    display:block;
+    overflow: visible;
+    position: relative;
+    align-content: center;
+
 }
+core-image::shadow img{
+    height:150px;
+}
+
+.center{
+    text-align: center;
+}
+
+
+
+
