@@ -1,6 +1,40 @@
-<div class="article">
-  <h2>Contact us</h2>
+<div class="article" fullbleed vertical layout unresolved>
+  <h2>By email</h2>
 
+
+
+
+  <core-header-panel flex>
+    <core-toolbar id="mainheader">
+      <core-icon icon="communication:email"></core-icon>
+      <span flex>Contact</span>
+    </core-toolbar>
+
+    <section>
+      <paper-input label="email" layout vertical></paper-input>
+      <paper-input-decorator floatingLabel label="content">
+          <paper-autogrow-textarea>
+              <textarea></textarea>
+          </paper-autogrow-textarea>
+      </paper-input-decorator>
+      <paper-icon-button icon="send" role="button" >
+
+
+
+      </paper-icon-button>
+    </section>
+  </core-header-panel>
+
+
+</div>
+
+
+
+
+
+
+
+<!--
   <div>
   OUR OFFICES
   Head Quarters:
@@ -13,16 +47,14 @@
   Basque Country (English/Spanish)
   Other regions
   </div>
+-->
 
 
-  <form method="POST" action="/__/forms/contact">
+ <!-- <form method="POST" action="/__/forms/contact">
     <label>Your Name:</label> <input type="text" name="name">
     <label>Your Email:</label> <input type="email" name="email">
     Message<br><textarea name="message"></textarea>
     <button type="submit">Contact Us</button>
     <input type="reset" value="Clear">
   </form>
-
-
-
-</div>
+ -->

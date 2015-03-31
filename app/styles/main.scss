@@ -79,4 +79,37 @@ core-image::shadow img{
 
 
 
+/* ESTILOS DEL CONTACT US */
+
+
+core-header-panel {
+  background: white;
+    position: inherit;
+}
+
+p {
+  margin: 20px;
+  padding: 80px 20px;
+  border-radius: 20px;
+  background-color: #eee;
+}
+
+paper-input-decorator, paper-input {
+  margin: 20px;
+  background-color: #eee;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+paper-icon-button {
+  background: #4285f4;
+  color: #fff;
+  margin: 20px;
+}
+
+
+
+
+
+
 
