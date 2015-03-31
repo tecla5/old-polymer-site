@@ -28,8 +28,8 @@ template.pages = [
     {name: 'Home', hash: 'home', url:'home.html' },
 /*    {name: 'Services', hash: 'services', url: 'services.html'},
     {name: 'About Us', hash: 'about', url: 'about-us.html'},
-    {name: 'Contact Us', hash: 'contact', url: 'contact-us.html'},
-*/    {name: 'Blog', hash: 'blog', url: '//blog.tecla5.com'}
+*/  {name: 'Contact Us', hash: 'contact', url: 'contact-us.html'},
+    {name: 'Blog', hash: 'blog', url: '//blog.tecla5.com'}
 
   ];
 
