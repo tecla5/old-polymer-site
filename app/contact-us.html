@@ -6,22 +6,28 @@
       <span flex>By e-mail</span>
     </core-toolbar>
 
+    <section>
 
-      <section>
-       <form method="POST" action="/__/forms/contact">
-          <paper-input label="name" layout vertical></paper-input>
-          <paper-input label="email" layout vertical></paper-input>
-          <paper-input-decorator floatingLabel label="content">
-              <paper-autogrow-textarea>
-                  <textarea name="message"></textarea>
-              </paper-autogrow-textarea>
-          </paper-input-decorator>
-          <paper-icon-button icon="send" role="button" >
-           <paper-button type="submit" label="Custom Submit"></paper-button>
-          </paper-icon-button>
+      <form is="component-form" method="get" action="/__/forms/contact">
+        <paper-input label="Your name" name="name"></paper-input>
+        <br/>
+        <paper-input type="email" label="Your name" name="email"></paper-input>
+        <br/>
+        <paper-input floatinglabel multiline label="Message" name="message"></paper-input>
+        <br/>
+        <!--
+    <input type="hidden" name="nativeHidden" value="12345" />
+    <input type="submit" value="Native Submit" />
+    <button type="submit" is="paper-submit">Create</button>
+    <paper-button type="submit" label="Custom Submit">hola</paper-button>
+    <paper-icon-button icon="send" role="button">submit2</paper-icon-button>
+    -->
+        <paper-button type="submit" label="Custom Submit">submit</paper-button>
+      </form>
 
-         </form>
-      </section>
+    </section>
+
+
 
 
 
@@ -32,14 +38,6 @@
 
 
 
- <!-- <form method="POST" action="/__/forms/contact">
-    <label>Your Name:</label> <input type="text" name="name">
-    <label>Your Email:</label> <input type="email" name="email">
-    Message<br><textarea name="message"></textarea>
-    <button type="submit">Contact Us</button>
-    <input type="reset" value="Clear">
-  </form>
- -->
 
 
 
