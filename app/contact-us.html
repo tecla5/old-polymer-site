@@ -1,34 +1,45 @@
 <div class="article" fullbleed vertical layout unresolved>
-  <h2>By email</h2>
-
-
-
 
   <core-header-panel flex>
     <core-toolbar id="mainheader">
       <core-icon icon="communication:email"></core-icon>
-      <span flex>Contact</span>
+      <span flex>By e-mail</span>
     </core-toolbar>
 
-    <section>
-      <paper-input label="email" layout vertical></paper-input>
-      <paper-input-decorator floatingLabel label="content">
-          <paper-autogrow-textarea>
-              <textarea></textarea>
-          </paper-autogrow-textarea>
-      </paper-input-decorator>
-      <paper-icon-button icon="send" role="button" >
+
+      <section>
+       <form method="POST" action="/__/forms/contact">
+          <paper-input label="name" layout vertical></paper-input>
+          <paper-input label="email" layout vertical></paper-input>
+          <paper-input-decorator floatingLabel label="content">
+              <paper-autogrow-textarea>
+                  <textarea name="message"></textarea>
+              </paper-autogrow-textarea>
+          </paper-input-decorator>
+          <paper-icon-button icon="send" role="button" >
+           <paper-button type="submit" label="Custom Submit"></paper-button>
+          </paper-icon-button>
+
+         </form>
+      </section>
 
 
 
-      </paper-icon-button>
-    </section>
   </core-header-panel>
 
 
 </div>
 
 
+
+ <!-- <form method="POST" action="/__/forms/contact">
+    <label>Your Name:</label> <input type="text" name="name">
+    <label>Your Email:</label> <input type="email" name="email">
+    Message<br><textarea name="message"></textarea>
+    <button type="submit">Contact Us</button>
+    <input type="reset" value="Clear">
+  </form>
+ -->
 
 
 
@@ -49,12 +60,3 @@
   </div>
 -->
 
-
- <!-- <form method="POST" action="/__/forms/contact">
-    <label>Your Name:</label> <input type="text" name="name">
-    <label>Your Email:</label> <input type="email" name="email">
-    Message<br><textarea name="message"></textarea>
-    <button type="submit">Contact Us</button>
-    <input type="reset" value="Clear">
-  </form>
- -->
