@@ -55,6 +55,10 @@ template.addEventListener('template-bound', function(e) {
 
 template.keyHandler = function(e, detail, sender) {
   // Select page by num key.
+  /*
+  does not work as expected in prod
+  does not change menu, and dont charge the page
+  
   var num = parseInt(detail.key);
   if (!isNaN(num) && num <= this.pages.length) {
     pages.selectIndex(num - 1);
@@ -70,12 +74,11 @@ template.keyHandler = function(e, detail, sender) {
     case 'down':
       pages.selectNext();
       break;
-      /*
     case 'space':
       detail.shift ? pages.selectPrevious() : pages.selectNext();
       break;
-      */
   }
+  */
 };
 
 template.menuItemSelected = function(e, detail, sender) {
