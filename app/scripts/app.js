@@ -70,9 +70,11 @@ template.keyHandler = function(e, detail, sender) {
     case 'down':
       pages.selectNext();
       break;
+      /*
     case 'space':
       detail.shift ? pages.selectPrevious() : pages.selectNext();
       break;
+      */
   }
 };
 
