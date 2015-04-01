@@ -8,10 +8,13 @@
 
     <section>
 
-      <form is="component-form" method="get" action="/__/forms/contact">
+      <form is="component-form" method="POST" action="/__/forms/contact">
         <paper-input label="Your name" name="name"></paper-input>
         <br/>
-        <paper-input type="email" label="Your name" name="email"></paper-input>
+        <paper-input-decorator labelVisible floatinglabel error="no email" label="your email">
+          <input is="core-input" type="email" name="email" required>
+        </paper-input-decorator>        
+        
         <br/>
         <paper-input floatinglabel multiline label="Message" name="message"></paper-input>
         <br/>
