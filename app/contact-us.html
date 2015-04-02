@@ -8,15 +8,32 @@
 
     <section>
 
-      <form is="component-form" method="POST" action="/__/forms/contact">
-        <paper-input label="Your name" name="name"></paper-input>
-        <br/>
+      <form is="component-form" method="GET" action="/__/forms/contact">
+        <!-- <paper-input label="Your name" name="name"></paper-input>
+             <paper-input floatinglabel multiline label="Message" name="message"></paper-input>
+         <input is="core-input" type="text" name="message" required>
+         -->
+
+        <paper-input-decorator labelVisible floatinglabel error="no name" label="your name">
+          <input is="core-input" label="Your Name"  type="text" name="name" required>
+        </paper-input-decorator>
+
         <paper-input-decorator labelVisible floatinglabel error="no email" label="your email">
           <input is="core-input" type="email" name="email" required>
         </paper-input-decorator>        
         
-        <br/>
-        <paper-input floatinglabel multiline label="Message" name="message"></paper-input>
+
+
+         <paper-input-decorator labelVisible floatinglabel error="no message" label="message">
+              <paper-autogrow-textarea id="a1">
+                    <textarea id="t1" name="message"></textarea>
+              </paper-autogrow-textarea>
+         </paper-input-decorator>
+
+
+
+
+
         <br/>
         <!--
     <input type="hidden" name="nativeHidden" value="12345" />
