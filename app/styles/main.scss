@@ -3,17 +3,44 @@ body {
   font-weight: 300;
 }
 
-core-animated-pages {
-  width: 85%;
-  height: 85%;
-  -webkit-user-select: none;
-  overflow: hidden;
+p {
+  margin: 20px;
+  padding: 80px 20px;
+  border-radius: 20px;
+  background-color: #eee;
 }
 
-core-animated-pages > * {
-  border-radius: 5px;
-  font-size: 50px;
-  background-color: white;
+
+header{
+  background-color: antiquewhite;
+  font-family: inherit;
+  font-stretch: extra-expanded;
+}
+
+header h1 {
+  font-size: 68px;
+  vertical-align: baseline;
+}
+header h1 {
+  font-size: 68px;
+  display: inline;
+}
+
+
+/*.logo{
+    display:block;
+    overflow: visible;
+}*/
+
+.center {
+  text-align: center;
+}
+
+/* polymer */
+
+:host {
+  display: block;
+  overflow: hidden;
 }
 
 body /deep/ core-toolbar {
@@ -21,15 +48,53 @@ body /deep/ core-toolbar {
   color: #fff;
 }
 
+
+/* core elements */
+core-header-panel {
+  background: white;
+  position: inherit;
+}
+
+core-animated-pages {
+  width: 85%;
+  height: 85%;
+  -webkit-user-select: none;
+  overflow: hidden;
+/*   overflow-y: auto; */
+}
+core-animated-pages > * {
+  font-size: inherit;
+  padding: 30px;
+  border-radius: 5px;
+  background-color: white;
+}
+
 core-menu {
   color: #EF8814;
   margin: 10px 0 0 0;
 }
 
+core-image.logo {
+  display: block;
+  overflow: visible;
+  position: relative;
+  align-content: center;
+}
+core-image::shadow img {
+  height: 150px;
+}
+
+
+
+
+/* paper elements */
+
 core-menu > paper-item {
   transition: all 300ms ease-in-out;
 }
-
+core-menu > paper-item.core-selected {
+  background: #ffe0b2;
+}
 paper-item a {
   text-decoration: none;
   color: currentcolor;
@@ -37,23 +102,11 @@ paper-item a {
   color: #212121;
 }
 
-core-menu > paper-item.core-selected {
-  background: #ffe0b2;
-}
-
-@media all and (max-width: 480px) {
-  core-animated-pages {
-    width: 100%;
-    height: 100%;
-  }
-}
 
 
 /* ESTILOS DEL MAIN */
-/*.logo{
-    display:block;
-    overflow: visible;
-}*/
+
+
 
 /*#log::shadow img {
   width:300px;
@@ -62,54 +115,84 @@ core-menu > paper-item.core-selected {
     margin-left: 50%;
 }*/
 
-core-image.logo{
-    display:block;
-    overflow: visible;
-    position: relative;
-    align-content: center;
-
-}
-core-image::shadow img{
-    height:150px;
-}
-
-.center{
-    text-align: center;
-}
-
-
 
 /* ESTILOS DEL CONTACT US */
 
 
-core-header-panel {
-  background: white;
-    position: inherit;
-}
-
-p {
-  margin: 20px;
-  padding: 80px 20px;
-  border-radius: 20px;
-  background-color: #eee;
-}
-
-paper-input-decorator, paper-input {
+paper-input-decorator,
+paper-input {
   margin: 20px;
   background-color: #eee;
   padding: 5px;
   border-radius: 5px;
 }
 
-paper-icon-button {
+paper-button {
   background: #4285f4;
   color: #fff;
   margin: 20px;
 }
+/* icons */
 
 
 
+paper-icon-button{
+  background-color: grey;// transparent
+  padding: 10px;
+  border-radius: 15px;  
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);  
+}
+paper-icon-button::shadow #icon {
+  width: 120px;
+  height: 120px;
+}
 
 
 
+paper-icon-button:active{
+  background-color: navajowhite;
+}
+paper-icon-button:active::shadow text {
+  fill: rgb(255, 255, 0);
+  stroke: rgb(255, 255, 0);
+}
+paper-icon-button:active::shadow rect:first-child {
+  fill: darkgrey;
+}
+
+//svg
+/*
+paper-icon-button::shadow rect {
+  fill: lightgrey;
+  stroke-width: 3px;
+  stroke: white;
+}
+*/
+paper-icon-button:active::shadow rect:first-child {
+  fill: darkgrey;
+}
+/*
+paper-icon-button::shadow text {
+  fill: rgb(255, 152, 0);
+}
+paper-icon-button:hover::shadow rect:first-child {
+  fill: yellow;
+}
+paper-icon-button:active::shadow rect:first-child {
+  fill: red;
+}
+*/
+
+
+
+/* media query */
+
+@media all and (max-width: 480px) {
+  core-animated-pages {
+    width: 100%;
+    height: 100%;
+  }
+}
 
