@@ -16,7 +16,7 @@
 var DEFAULT_ROUTE = 'home';
 
 var template = document.querySelector('#t');
-var ajax, pages, scaffold, menu;
+var ajax, pages, scaffold, menu, router;
 var cache = {};
 
 
@@ -34,6 +34,7 @@ template.pages = [
   ];
 
 template.addEventListener('template-bound', function(e) {
+  router = document.querySelector('#router');
   scaffold = document.querySelector('#scaffold');
   ajax = document.querySelector('#ajax');
   pages = document.querySelector('#pages');
@@ -50,13 +51,19 @@ template.addEventListener('template-bound', function(e) {
   });
   keys.keys += ' ' + keysToAdd;
   */
+  
 
+  // info from router
   this.route = this.route || DEFAULT_ROUTE; // Select initial route.
-  menu.selected = DEFAULT_ROUTE;
+  menu.selected = this.route;
+  pages.selected = this.route;
+  
 });
 
 template.keyHandler = function(e, detail, sender) {
   console.log(e, detail, sender);
+
+  
   // Select page by num key.
   /*
   does not work as expected in prod
@@ -73,19 +80,32 @@ template.keyHandler = function(e, detail, sender) {
     case 'left':
     case 'up':
       pages.selectPrevious();
+
       break;
     case 'right':
     case 'down':
       pages.selectNext();
       break;
+    /*
     case 'space':
       detail.shift ? pages.selectPrevious() : pages.selectNext();
       break;
+    */
   }
+  
+  // info from pages
+  menu.selected = pages.selected;// the color and ajax
+  this.route = pages.selected;// the icon and routing url
+  
+  
+  
 };
 
 template.menuItemSelected = function(e, detail, sender) {
   if (detail.isSelected) {
+    this.route = menu.selected;
+    pages.selected = menu.selected;
+    //menu.selectedItem == detail.item;
 
     // Need to wait one rAF so <core-ajax> has it's URL set.
     this.async(function() {
@@ -123,10 +143,12 @@ template.onResponse = function(e, detail, sender) {
   cache[ajax.url] = html.innerHTML; // Primitive caching by URL.
 
   // production problem fix
+  /*
+  selected by router
   if(pages.selectedItem === null){
     pages.selected = 0;
     pages.selectedItem = pages.childNodes[1];
-  }
+  }*/
   this.injectBoundHTML(cache[ajax.url], pages.selectedItem.firstElementChild);
   
 };
