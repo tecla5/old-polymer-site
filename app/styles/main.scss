@@ -49,25 +49,13 @@ core-menu > paper-item.core-selected {
 }
 
 
-/* ESTILOS DEL MAIN */
-/*.logo{
-    display:block;
-    overflow: visible;
-}*/
 
-/*#log::shadow img {
-  width:300px;
-  height:300px;
-    right: 50px;
-    margin-left: 50%;
-}*/
-
+// ESTILOS DEL MAIN
 core-image.logo{
     display:block;
     overflow: visible;
     position: relative;
     align-content: center;
-
 }
 core-image::shadow img{
     height:150px;
@@ -79,37 +67,50 @@ core-image::shadow img{
 
 
 
-/* ESTILOS DEL CONTACT US */
-
-
-core-header-panel {
-  background: white;
-    position: inherit;
+//ESTILOS CONTACT US
+.article core-header-panel {
+   background: white;
+   position: inherit;
 }
-
 p {
   margin: 20px;
   padding: 80px 20px;
-  border-radius: 20px;
+  border-radius: 5px;
   background-color: #eee;
 }
-
 paper-input-decorator, paper-input {
-  margin: 20px;
+  margin: 16px;
   background-color: #eee;
   padding: 5px;
   border-radius: 5px;
 }
+core-menu > paper-item {
+  transition: all 300ms ease-in-out;
+}
+paper-item a {
+  text-decoration: none;
+  color: currentcolor;
+  margin-left: 5px;
+  color: #212121;
+}
 
+
+/*
 paper-icon-button {
   background: #4285f4;
   color: #fff;
   margin: 20px;
 }
+*/
+//main
+/*.logo{
+    display:block;
+    overflow: visible;
+}*/
 
-
-
-
-
-
-
+/*#log::shadow img {
+  width:300px;
+  height:300px;
+    right: 50px;
+    margin-left: 50%;
+}*/
