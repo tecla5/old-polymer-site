@@ -42,22 +42,26 @@ template.addEventListener('template-bound', function(e) {
 
   // Allow selecting pages by num keypad. Dynamically add
   // [1, template.pages.length] to key mappings.
+  /*
   var keysToAdd = Array.apply(null, template.pages).map(function(x, i) {
     return i + 1;
   }).reduce(function(x, y) {
     return x + ' ' + y;
   });
   keys.keys += ' ' + keysToAdd;
+  */
 
   this.route = this.route || DEFAULT_ROUTE; // Select initial route.
   menu.selected = DEFAULT_ROUTE;
 });
 
 template.keyHandler = function(e, detail, sender) {
+  console.log(e, detail, sender);
   // Select page by num key.
   /*
   does not work as expected in prod
   does not change menu, and dont charge the page
+  */
   
   var num = parseInt(detail.key);
   if (!isNaN(num) && num <= this.pages.length) {
@@ -78,7 +82,6 @@ template.keyHandler = function(e, detail, sender) {
       detail.shift ? pages.selectPrevious() : pages.selectNext();
       break;
   }
-  */
 };
 
 template.menuItemSelected = function(e, detail, sender) {

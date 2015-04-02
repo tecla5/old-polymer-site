@@ -77,9 +77,9 @@
     <!-- Route controller. -->
     <flatiron-director route="{{route}}" autoHash></flatiron-director>
 
-    <!-- Keyboard nav controller. -->
-    <core-a11y-keys id="keys" target="{{parentElement}}"
-                    keys="up down left right space space+shift"
+    <!-- Keyboard nav controller. ctrl -->
+    <core-a11y-keys id="keys" target="{{menu}}"
+                    keys="up+shift down+shift left+shift right+shift"
                     on-keys-pressed="{{keyHandler}}"></core-a11y-keys>
 
     <!-- Dynamic content controller -->
