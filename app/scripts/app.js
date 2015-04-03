@@ -33,9 +33,6 @@ template.pages = [
 
   ];
 
-template.addEventListener('director-route', function(event){
-  console.log('router ', event);
-});  
   
   
 template.addEventListener('template-bound', function(e) {
@@ -45,6 +42,16 @@ template.addEventListener('template-bound', function(e) {
   pages = document.querySelector('#pages');
   menu = document.querySelector('#menu');
   var keys = document.querySelector('#keys');
+  
+  
+  router.addEventListener('director-route', function(event){
+    console.log('router ', event, this.route);
+    
+    this.route = this.route || DEFAULT_ROUTE; // Select initial route.
+    menu.selected = this.route;
+    pages.selected = this.route;
+  });
+
 
   // Allow selecting pages by num keypad. Dynamically add
   // [1, template.pages.length] to key mappings.
