@@ -33,6 +33,11 @@ template.pages = [
 
   ];
 
+template.addEventListener('director-route', function(event){
+  console.log('router ', event);
+});  
+  
+  
 template.addEventListener('template-bound', function(e) {
   router = document.querySelector('#router');
   scaffold = document.querySelector('#scaffold');
@@ -54,6 +59,7 @@ template.addEventListener('template-bound', function(e) {
   
 
   // info from router
+  console.log('init ', this.route, menu, pages);
   this.route = this.route || DEFAULT_ROUTE; // Select initial route.
   menu.selected = this.route;
   pages.selected = this.route;
@@ -94,19 +100,34 @@ template.keyHandler = function(e, detail, sender) {
   }
   
   // info from pages
+  console.log('key ', this.route, menu, pages);
+  if (!pages){
+    pages = document.querySelector('#pages');      
+  }
+  
+  pages.selected = pages.selected || DEFAULT_ROUTE; // Select initial route.  
+  this.route = pages.selected;
+  menu.selected = pages.selected;
+  /*
   menu.selected = pages.selected;// the color and ajax
   this.route = pages.selected;// the icon and routing url
-  
+  */
   
   
 };
 
 template.menuItemSelected = function(e, detail, sender) {
   if (detail.isSelected) {
+    console.log('menu ',this.route, menu, pages);
+    if (!menu){
+      menu = document.querySelector('#menu');      
+    }
+    if (!pages){
+      pages = document.querySelector('#pages');      
+    }
+    menu.selected = menu.selected || DEFAULT_ROUTE; // Select initial route.
     this.route = menu.selected;
     pages.selected = menu.selected;
-    //menu.selectedItem == detail.item;
-
     // Need to wait one rAF so <core-ajax> has it's URL set.
     this.async(function() {
       if (!cache[ajax.url]) {
@@ -142,13 +163,6 @@ template.onResponse = function(e, detail, sender) {
   }
   cache[ajax.url] = html.innerHTML; // Primitive caching by URL.
 
-  // production problem fix
-  /*
-  selected by router
-  if(pages.selectedItem === null){
-    pages.selected = 0;
-    pages.selectedItem = pages.childNodes[1];
-  }*/
   this.injectBoundHTML(cache[ajax.url], pages.selectedItem.firstElementChild);
   
 };
