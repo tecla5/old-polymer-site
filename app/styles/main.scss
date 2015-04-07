@@ -5,9 +5,9 @@ body {
 
 p {
   margin: 20px;
-  padding: 80px 20px;
-  border-radius: 20px;
-  background-color: #eee;
+  padding: 60px 20px;
+  //border-radius: 20px;
+  //background-color: #eee;
 }
 
 
@@ -18,14 +18,16 @@ header{
 }
 
 header h1 {
-  font-size: 68px;
+  font-size: 80px;
   vertical-align: baseline;
-}
-header h1 {
-  font-size: 68px;
+  font-family: "RobotoDraft";
   display: inline;
+  color: #212121;
 }
 
+h3 {
+  color: #212121;
+}
 
 section{
   padding: 8px;
@@ -122,6 +124,9 @@ paper-item a {
   color: #212121;
 }
 
+paper-button {
+    margin-left: 20px;
+}
 
 
 
@@ -150,12 +155,6 @@ core-image::shadow img{
 .article core-header-panel {
    background: white;
    position: inherit;
-}
-p {
-  margin: 20px;
-  padding: 80px 20px;
-  border-radius: 5px;
-  background-color: #eee;
 }
 
 paper-input-decorator,
