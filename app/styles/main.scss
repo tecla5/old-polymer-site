@@ -49,14 +49,21 @@ section{
   overflow: hidden;
 }
 
+
+/* due by firefox */
 body /deep/ core-toolbar {
   background-color: #EF8814;
   color: #fff;
 }
 
 
-/* core elements */
+core-toolbar#mainheader {
+  background-color: #FF9800;
+  color: #fff;
+}
 
+
+/* core elements */
 core-scaffold,
 core-drawer-panel{
   width: 100%;
@@ -106,7 +113,24 @@ core-image::shadow img {
   height: 150px;
 }
 
+.core-header {
+  height: 60px;
+  line-height: 60px;
+  font-size: 18px;
+  padding: 0 10px;
+  background-color: #FF9800;
+  color: #FFF;
+  transition: height 0.2s;
+}
 
+.core-header.tall {
+  height: 180px;
+}
+
+.content {
+  height: 2000px;
+  //background: linear-gradient(rgb(214, 227, 231), lightblue);
+}
 
 
 /* paper elements */
@@ -123,12 +147,6 @@ paper-item a {
   margin-left: 5px;
   color: #212121;
 }
-
-paper-button {
-    margin-left: 20px;
-}
-
-
 
 /* ESTILOS DEL CONTACT US */
 
@@ -170,7 +188,9 @@ core-menu > paper-item {
 
 paper-button{
   color: black;
-  background-color: antiquewhite;
+  background-color: #03A9F4;
+  margin-right: 20px;
+  float: right;
   
 }
 
