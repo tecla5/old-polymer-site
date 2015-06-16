@@ -10,3 +10,4 @@ test/bower_components/
 .yo-rc.json
 /app/elements/my-test/my-test.html
 /app/elements/my-test/my-test.css
+/app/services (copy).html
