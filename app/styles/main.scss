@@ -33,6 +33,46 @@ section{
   padding: 8px;
 }
 
+
+$color-bg-section: #FFE0B2;
+
+section.core-selected{
+  background-image: url("../images/green.jpg");
+  background-size: cover;
+  background-color: $color-bg-section;
+  background-repeat: no-repeat;
+}
+section[hash="home"]{
+  background-image: url("../images/red.png") ;
+}
+section[hash="services"]{
+  background-image: url("../images/teach.png");
+}
+section[hash="contact"]{
+  background-image: url("../images/barcelona.png");
+}
+section[hash="blog"]{
+  background-image: url("../images/people.png");
+}
+
+
+
+core-scaffold#scaffold{
+  div[layout] {
+    background-color: $color-bg-section;
+  }
+
+}
+
+/*
+ccs4 or jquery
+core-scaffold#scaffold{
+  div[layout]:has(> section[hash="home"]) {
+    background-color: grey;
+  }
+}
+*/
+
 /*.logo{
     display:block;
     overflow: visible;
@@ -40,6 +80,7 @@ section{
 
 .center {
   text-align: center;
+  background-color: blue;
 }
 
 /* polymer */
@@ -70,12 +111,6 @@ core-drawer-panel{
   height: 100%;
 }
 
-
-core-drawer-panel{
-  width: 100%;
-  height: 100%;
-}
-
 core-header-panel {
   width: 100%;
   height: 100%;
@@ -84,8 +119,8 @@ core-header-panel {
 }
 
 core-animated-pages {
-  width: 90%;
-  height: 90%;
+  width: 99%;
+  height: 99%;
   overflow: hidden;
   -webkit-user-select: none;
 /*   overflow-y: auto; */
@@ -191,7 +226,7 @@ paper-button{
   background-color: #03A9F4;
   margin-right: 20px;
   float: right;
-  
+
 }
 
 paper-item a {
@@ -216,10 +251,10 @@ paper-icon-button {
 paper-icon-button{
   background-color: grey;// transparent
   padding: 10px;
-  border-radius: 15px;  
+  border-radius: 15px;
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);  
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 paper-icon-button::shadow #icon {
   width: 120px;
@@ -272,4 +307,3 @@ paper-icon-button:active::shadow rect:first-child {
     height: 100%;
   }
 }
-

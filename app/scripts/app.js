@@ -33,8 +33,8 @@ template.pages = [
 
   ];
 
-  
-  
+
+
 template.addEventListener('template-bound', function(e) {
   router = document.querySelector('#router');
   scaffold = document.querySelector('#scaffold');
@@ -42,11 +42,11 @@ template.addEventListener('template-bound', function(e) {
   pages = document.querySelector('#pages');
   menu = document.querySelector('#menu');
   var keys = document.querySelector('#keys');
-  
-  
+
+
   router.addEventListener('director-route', function(event){
     console.log('router ', event, this.route);
-    
+
     this.route = this.route || DEFAULT_ROUTE; // Select initial route.
     menu.selected = this.route;
     pages.selected = this.route;
@@ -63,26 +63,26 @@ template.addEventListener('template-bound', function(e) {
   });
   keys.keys += ' ' + keysToAdd;
   */
-  
+
 
   // info from router
   console.log('init ', this.route, menu, pages);
   this.route = this.route || DEFAULT_ROUTE; // Select initial route.
   menu.selected = this.route;
   pages.selected = this.route;
-  
+
 });
 
 template.keyHandler = function(e, detail, sender) {
   console.log(e, detail, sender);
 
-  
+
   // Select page by num key.
   /*
   does not work as expected in prod
   does not change menu, and dont charge the page
   */
-  
+
   var num = parseInt(detail.key);
   if (!isNaN(num) && num <= this.pages.length) {
     pages.selectIndex(num - 1);
@@ -105,32 +105,32 @@ template.keyHandler = function(e, detail, sender) {
       break;
     */
   }
-  
+
   // info from pages
   console.log('key ', this.route, menu, pages);
   if (!pages){
-    pages = document.querySelector('#pages');      
+    pages = document.querySelector('#pages');
   }
-  
-  pages.selected = pages.selected || DEFAULT_ROUTE; // Select initial route.  
+
+  pages.selected = pages.selected || DEFAULT_ROUTE; // Select initial route.
   this.route = pages.selected;
   menu.selected = pages.selected;
   /*
   menu.selected = pages.selected;// the color and ajax
   this.route = pages.selected;// the icon and routing url
   */
-  
-  
+
+
 };
 
 template.menuItemSelected = function(e, detail, sender) {
   if (detail.isSelected) {
     console.log('menu ',this.route, menu, pages);
     if (!menu){
-      menu = document.querySelector('#menu');      
+      menu = document.querySelector('#menu');
     }
     if (!pages){
-      pages = document.querySelector('#pages');      
+      pages = document.querySelector('#pages');
     }
     menu.selected = menu.selected || DEFAULT_ROUTE; // Select initial route.
     this.route = menu.selected;
@@ -170,9 +170,9 @@ template.onResponse = function(e, detail, sender) {
   }
   cache[ajax.url] = html.innerHTML; // Primitive caching by URL.
 
-  this.injectBoundHTML(cache[ajax.url], pages.selectedItem.firstElementChild);
-  
+  this.injectBoundHTML(cache[ajax.url], pages.selectedItem);
+
 };
 
-  
+
 })(wrap(document));
