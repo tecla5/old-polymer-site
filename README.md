@@ -17,11 +17,17 @@ source
 > bower install
 
 
-
 ## generate distribution
 > grunt (default: grunt build)
 
 > grunt build
+
+##configuration nvm version
+>important to use nvm version = 0.10.33
+
+>nvm ls
+>nvm use v0.10.33
+>Now using node v0.10.33
 
 ## running the app mode dev or dist
 > grunt serve
