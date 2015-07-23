@@ -10,6 +10,14 @@ p {
   //background-color: #eee;
 }
 
+#logo{
+  float: left;
+  margin: 20px;
+}
+#bg {
+    min-width: 120%;
+}
+
 
 header{
   background-color: antiquewhite;
@@ -34,7 +42,7 @@ section{
 }
 
 
-$color-bg-section: #FFE0B2;
+$color-bg-section: #FF9800;
 
 section.core-selected{
   background-image: url("../images/green.jpg");
@@ -95,12 +103,14 @@ core-scaffold#scaffold{
 body /deep/ core-toolbar {
   background-color: #EF8814;
   color: #fff;
+
+
 }
 
 
-core-toolbar#mainheader {
-  background-color: #FF9800;
-  color: #fff;
+core-toolbar#mainheader { //??
+  background-color: #E3D2FF;
+  color: #212121;
 }
 
 
@@ -153,7 +163,7 @@ core-image::shadow img {
   line-height: 60px;
   font-size: 18px;
   padding: 0 10px;
-  background-color: #FF9800;
+  background-color: #FFE0B2;
   color: #FFF;
   transition: height 0.2s;
 }
@@ -189,7 +199,7 @@ paper-item a {
 
 // ESTILOS DEL MAIN
 core-image.logo{
-    display:block;
+    display:  block;
     overflow: visible;
     position: relative;
     align-content: center;
@@ -285,6 +295,7 @@ paper-icon-button::shadow rect {
 paper-icon-button:active::shadow rect:first-child {
   fill: darkgrey;
 }
+
 /*
 paper-icon-button::shadow text {
   fill: rgb(255, 152, 0);
