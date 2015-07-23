@@ -12,21 +12,24 @@ p {
 
 
 header{
-  background-color: antiquewhite;
+  background-color: antiquehite;
   font-family: inherit;
   font-stretch: extra-expanded;
 }
 
 header h1 {
-  font-size: 80px;
+  font-size: 120px;
   vertical-align: baseline;
   font-family: "RobotoDraft";
   display: inline;
-  color: #212121;
+  color: #000; /*#212121*/
 }
-
+.center h2
+{
+  font-size: 42px;
+}
 h3 {
-  color: #212121;
+  color: #000;/*#212121;*/
 }
 
 section{
@@ -34,7 +37,7 @@ section{
 }
 
 
-$color-bg-section: #FFE0B2;
+$color-bg-section: #FE9700; /*#FFE0B2*/
 
 section.core-selected{
   background-image: url("../images/green.jpg");
@@ -43,7 +46,7 @@ section.core-selected{
   background-repeat: no-repeat;
 }
 section[hash="home"]{
-  background-image: url("../images/red.png") ;
+  /*background-image: url("../images/red.png") ;*/
 }
 section[hash="services"]{
   background-image: url("../images/teach.png");
@@ -59,7 +62,7 @@ section[hash="blog"]{
 
 core-scaffold#scaffold{
   div[layout] {
-    background-color: $color-bg-section;
+    /*background-color: $color-bg-section;*/
   }
 
 }
@@ -80,7 +83,7 @@ core-scaffold#scaffold{
 
 .center {
   text-align: center;
-  background-color: blue;
+  background-color: $color-bg-section; /*blue*/
 }
 
 /* polymer */
@@ -93,17 +96,27 @@ core-scaffold#scaffold{
 
 /* due by firefox */
 body /deep/ core-toolbar {
-  background-color: #EF8814;
+  background-color: #000; /*#EF8814*/
   color: #fff;
 }
 
 
 core-toolbar#mainheader {
-  background-color: #FF9800;
+  background-color: #000;/*#FF9800*/
   color: #fff;
 }
-
-
+core-toolbar span
+{
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+core-toolbar #topBar paper-icon-button #icon
+{
+  width: 40px;
+  height: 40px;
+}
 /* core elements */
 core-scaffold,
 core-drawer-panel{
@@ -134,8 +147,9 @@ core-animated-pages > * {
 }
 
 core-menu {
-  color: #EF8814;
-  margin: 10px 0 0 0;
+  color: #FFF; /*#EF8814*/
+  margin: 100px 0 0 0;
+  background: $color-bg-section;
 }
 
 core-image.logo {
@@ -169,18 +183,45 @@ core-image::shadow img {
 
 
 /* paper elements */
-
+paper-item .button-content
+{
+  padding: 0 10%;
+  width: 80%;
+}
+paper-item .button-content > a
+{
+  flex: none;
+}
+paper-item.core-selected
+{
+    background-color: rgb(254, 151, 0);
+}
+paper-item.core-selected > .button-content > a
+{
+    background-color: #DE3F00;
+}
 core-menu > paper-item {
   transition: all 300ms ease-in-out;
+  margin-bottom: 10px;
+  text-align: center;
+  /*background-color: #000;*/
 }
-core-menu > paper-item.core-selected {
-  background: #ffe0b2;
+core-menu > paper-item a.core-selected {
+  background: #DE3F00;
 }
 paper-item a {
+  padding: 5px 30px;
+  width: auto;
+  height: auto;
   text-decoration: none;
-  color: currentcolor;
+  /*color: currentcolor;*/
   margin-left: 5px;
-  color: #212121;
+  color: #fff !important;/*#212121;*/
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #000;
 }
 
 /* ESTILOS DEL CONTACT US */
@@ -252,9 +293,9 @@ paper-icon-button{
   background-color: grey;// transparent
   padding: 10px;
   border-radius: 15px;
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  /*-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);*/
 }
 paper-icon-button::shadow #icon {
   width: 120px;
@@ -306,4 +347,13 @@ paper-icon-button:active::shadow rect:first-child {
     width: 100%;
     height: 100%;
   }
+}
+/*Personalizado*/
+core-scaffold [drawer]
+{
+  background: $color-bg-section;
+}
+html [layout][center-justified], html [layout][center-center]
+{
+  background: $color-bg-section;
 }

@@ -26,10 +26,11 @@ var cache = {};
 template.pages = [
     //url:'http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom/'
     {name: 'Home', hash: 'home', url:'home.html' },
-   {name: 'Services', hash: 'services', url: 'services.html'},
-/*     {name: 'About Us', hash: 'about', url: 'about-us.html'},
-*/  {name: 'Contact Us', hash: 'contact', url: 'contact-us.html'},
-    {name: 'Blog', hash: 'blog', url: '//blog.tecla5.com'}
+    {name: 'About Us', hash: 'about', url: 'about-us.html'},
+    {name: 'Services', hash: 'services', url: 'services.html'},
+    {name: 'Projects', hash: 'projects', url: 'projects.html'},
+    {name: 'Blog', hash: 'blog', url: '//blog.tecla5.com'},
+    {name: 'Contact Us', hash: 'contact', url: 'contact-us.html'},
 
   ];
 
