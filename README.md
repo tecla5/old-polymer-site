@@ -11,11 +11,25 @@ source
 
 # prerequisites
 
+## isntall ruby and ruby sass
+[install Ruby - (ruby, gem, ..)](https://www.youtube.com/watch?v=INH_OW4lFSs)
+
+* install ruby
+> sudo apt-get install ruby-full
+
+> ruby -v
+
+* install Sass
+> sudo gem install sass
+
+> sass -v
+
+[grunt-contrib-sass -> ruby and sass](https://github.com/gruntjs/grunt-contrib-sass)
+
+
 ## configuration nvm version
 important to use nvm version = 0.10.33 (for windows?, work for me in iojs v2.3.1)
 
-
-## install nvm and use
 github [nvm](https://github.com/creationix/nvm)
 
 > nvm ls-remote
