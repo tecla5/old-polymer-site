@@ -1,15 +1,59 @@
-# site
-
-site for tecla5 group
+* # sitesite for tecla5 group
 
 online
-[tecla5](http://www.tecla5.com)
+[tecla> nvm use iojs
+5](http://www.tecla5.com)
 
 source
 [github](https://github.com/tecla5/site)
 
 
-# install
+
+# prerequisites
+
+## isntall ruby and ruby sass
+[install Ruby - (ruby, gem, ..)](https://www.youtube.com/watch?v=INH_OW4lFSs)
+
+* install ruby
+> sudo apt-get install ruby-full
+
+> ruby -v
+
+* install Sass
+> sudo gem install sass
+
+> sass -v
+
+[grunt-contrib-sass -> ruby and sass](https://github.com/gruntjs/grunt-contrib-sass)
+
+
+## configuration nvm version
+important to use nvm version = 0.10.33 (for windows?, work for me in iojs v2.3.1)
+
+github [nvm](https://github.com/creationix/nvm)
+
+> nvm ls-remote
+
+
+> nvm install iojs
+
+* alternatively install other version
+> nvm install v0.10.33
+
+> nvm use iojs
+
+> nvm ls
+
+## intall bower
+> npm install -g bower
+
+## install grunt
+> `npm install -g grunt`
+
+> `npm install -g grunt-cli`
+
+
+# install the app
 > git clone https://github.com/tecla5/site.git
 
 > npm install
@@ -22,12 +66,6 @@ source
 
 > grunt build
 
-##configuration nvm version
->important to use nvm version = 0.10.33
-
->nvm ls
->nvm use v0.10.33
->Now using node v0.10.33
 
 ## running the app mode dev or dist
 > grunt serve
