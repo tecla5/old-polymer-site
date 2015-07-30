@@ -185,7 +185,27 @@ paper-icon-button:active::shadow rect:first-child {
 }
 */
 
+ /* Estilos de Services*/
+ div.paddingText {
+  padding-left:40px;
+  padding-right:40px;
+ }
 
+ div.sizeLayHor {
+   height:200px;     
+
+ }
+
+core-label.title {
+  font-size:24px;
+  font-weight: bold;      
+  align:center;
+ }
+
+ core-image.sizeImage {
+   width:300px;
+   height:300px;
+  }
 
 /* media query */
 
