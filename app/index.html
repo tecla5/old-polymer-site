@@ -15,12 +15,12 @@
   <meta name="format-detection" content="telephone=no">
 
   <meta name="application-name" content="Tecla5 App">
-  
+
   <!-- TODO: SEO fXpgLewdXufX-F42PJACilIWdOhI4KBWB2BbY2YpIY0 -->
   <meta name="google-site-verification" content="" />
 
   <!-- TODO: Tecla5 {{page.name}}. {{selectedPage.page.name}}. Loading... -->
-  
+
   <!-- TODO: icons -->
   <!--
   <link rel="shortcut icon" href="favicon.ico">
@@ -35,11 +35,11 @@
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="styles/main.css" shim-shadowdom>
   <!-- endbuild-->
-  
+
   <style>
 
   </style>
-  
+
   <!--
   Chrome 35 has old :host behavior before :host-context addition.
   Since Chrome 35 does not have HTMLImports, we can use this as a decent signal
@@ -50,7 +50,7 @@
       var Platform = {flags: {shadow: true}};
     }
   </script>
-    
+
 
   <!-- build:js bower_components/webcomponentsjs/webcomponents.min.js -->
   <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
@@ -62,8 +62,8 @@
 </head>
 
 <body unresolved>
-
-    <!--   
+<google-map latitude="37.77493" longitude="-122.41942"></google-map>
+    <!--
     fullbleed
    user="{{user}}"
     <tecla5-app fit touch-action="auto"></tecla5-app>
@@ -111,7 +111,7 @@
         <core-animated-pages id="pages" selected="{{route}}" valueattr="hash"
                              transitions="slide-from-right">
           <template repeat="{{page, i in pages}}">
-            <section hash="{{page.hash}}" layout vertical center-center>
+            <section hash="{{page.hash}}" layout vertical>
               <div style="max-width:100%;">Loading...</div>
             </section>
           </template>
@@ -127,7 +127,7 @@
   <!-- build:js scripts/app.js -->
   <script src="scripts/app.js"></script>
   <!-- endbuild-->
-  
+
   <script>
     // TODO: add google analitics
     // Analytics for pp.org
@@ -142,7 +142,7 @@
     */
   </script>
 
-  
+
 </body>
 
 

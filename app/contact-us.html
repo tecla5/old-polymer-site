@@ -1,33 +1,43 @@
-<div class="article" fullbleed vertical layout unresolved>
+<body fullbleed layout>
 
+  <google-map latitude="41.38" longitude="-357.81"></google-map>
+  <br><br>
   <core-header-panel mode="seamed" flex>
-    <core-toolbar id="mainheader">
-      <core-icon icon="communication:email"></core-icon>
-      <span flex>By e-mail</span>
-    </core-toolbar>
 
-    <section>
-      <form is="component-form" method="GET" action="/__/forms/contact">
-       
-        <paper-input-decorator labelVisible floatinglabel error="no name" label="your name">
-          <input is="core-input" label="Your Name"  type="text" name="name" required>
-        </paper-input-decorator>
+    <div class="article" fullbleed vertical layout unresolved>
 
-        <paper-input-decorator labelVisible floatinglabel error="no email" label="your email">
-          <input is="core-input" type="email" name="email" required>
-        </paper-input-decorator>        
 
-         <paper-input-decorator labelVisible floatinglabel error="no message" label="message">
-              <paper-autogrow-textarea id="a1">
-                    <textarea id="t1" name="message"></textarea>
-              </paper-autogrow-textarea>
-         </paper-input-decorator>
-        <br/>
-        <paper-button type="submit" label="Custom Submit">submit</paper-button>
-      </form>      
-    </section>
+
+      <core-toolbar id="mainheader">
+        <core-icon icon="communication:email"></core-icon>
+        <span flex>We are happy to help you!</span>
+      </core-toolbar>
+
+      <section>
+        <form is="component-form" method="GET" action="/__/forms/contact">
+
+          <paper-input-decorator labelVisible floatinglabel error="no name" label="your name">
+            <input is="core-input" label="Your Name"  type="text" name="name" required>
+          </paper-input-decorator>
+
+          <paper-input-decorator labelVisible floatinglabel error="no email" label="your email">
+            <input is="core-input" type="email" name="email" required>
+          </paper-input-decorator>
+
+          <paper-input-decorator labelVisible floatinglabel error="no message" label="message">
+            <paper-autogrow-textarea id="a1">
+              <textarea id="t1" name="message"></textarea>
+            </paper-autogrow-textarea>
+          </paper-input-decorator>
+          <br/>
+          <div horizontal start-justified layout>
+            <paper-button type="submit" label="Custom Submit">submit</paper-button>
+          </div>
+        </form>
+      </section>
+    </div>
   </core-header-panel>
-</div>
+
 
 <!--
     <paper-input label="Your name" name="name"></paper-input>
@@ -57,4 +67,3 @@
   Other regions
   </div>
 -->
-
