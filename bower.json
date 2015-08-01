@@ -1,6 +1,6 @@
 {
   "name": "tecla5",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "homepage": "https://github.com/tecla5/site",
   "authors": [
     "jcc2303 <cabrera.javier@gmail.com>"
@@ -27,13 +27,18 @@
     "tests"
   ],
   "dependencies": {
-    "core-elements": "Polymer/core-elements#^0.5.1",
-    "paper-elements": "Polymer/paper-elements#^0.5.1",
-    "polymer": "Polymer/polymer#0.5",
-    "flatiron-director": "PolymerLabs/flatiron-director#~0.5.0",
-    "bootstrap-sass-official": "~3.3.5"
+    "core-elements": "Polymer/core-elements##^1.0",
+    "paper-elements": "Polymer/paper-elements##^1.0",
+    "polymer": "Polymer/polymer#^1.0",
+    "flatiron-director": "PolymerLabs/flatiron-director##^1.0",
+    "bootstrap-sass-official": "~3.3.5",
+    "mark-down": "robdodson/mark-down#~1.0.0"
   },
   "devDependencies": {
-    "web-component-tester": "Polymer/web-component-tester#^2.0.0"
+    "web-component-tester": "Polymer/web-component-tester#^3.3.0"
+  },
+  "resolutions": {
+    "webcomponentsjs": "0.7.7",
+    "polymer": "^1.0"
   }
 }
