@@ -5,9 +5,17 @@ body {
 
 p {
   margin: 20px;
-  padding: 80px 20px;
-  border-radius: 20px;
-  background-color: #eee;
+  padding: 60px 20px;
+  //border-radius: 20px;
+  //background-color: #eee;
+}
+
+#logo{
+  float: left;
+  margin: 20px;
+}
+#bg {
+    min-width: 120%;
 }
 
 
@@ -18,14 +26,60 @@ header{
 }
 
 header h1 {
-  font-size: 68px;
+  font-size: 80px;
   vertical-align: baseline;
-}
-header h1 {
-  font-size: 68px;
+  font-family: "RobotoDraft";
   display: inline;
+  color: #212121;
 }
 
+h3 {
+  color: #212121;
+}
+
+section{
+  padding: 8px;
+}
+
+
+$color-bg-section: #FF9800;
+
+section.core-selected{
+  background-image: url("../images/green.jpg");
+  background-size: cover;
+  background-color: $color-bg-section;
+  background-repeat: no-repeat;
+}
+section[hash="home"]{
+  background-image: url("../images/red.png") ;
+}
+section[hash="services"]{
+  background-image: url("../images/teach.png");
+}
+section[hash="contact"]{
+  background-image: url("../images/barcelona.png");
+}
+section[hash="blog"]{
+  background-image: url("../images/people.png");
+}
+
+
+
+core-scaffold#scaffold{
+  div[layout] {
+    background-color: $color-bg-section;
+  }
+
+}
+
+/*
+ccs4 or jquery
+core-scaffold#scaffold{
+  div[layout]:has(> section[hash="home"]) {
+    background-color: grey;
+  }
+}
+*/
 
 /*.logo{
     display:block;
@@ -34,6 +88,7 @@ header h1 {
 
 .center {
   text-align: center;
+  background-color: blue;
 }
 
 /* polymer */
@@ -43,25 +98,44 @@ header h1 {
   overflow: hidden;
 }
 
+
+/* due by firefox */
 body /deep/ core-toolbar {
   background-color: #EF8814;
   color: #fff;
+
+
+}
+
+
+core-toolbar#mainheader { //??
+  background-color: #E3D2FF;
+  color: #212121;
 }
 
 
 /* core elements */
+core-scaffold,
+core-drawer-panel{
+  width: 100%;
+  height: 100%;
+}
+
 core-header-panel {
+  width: 100%;
+  height: 100%;
   background: white;
   position: inherit;
 }
 
 core-animated-pages {
-  width: 85%;
-  height: 85%;
-  -webkit-user-select: none;
+  width: 99%;
+  height: 99%;
   overflow: hidden;
+  -webkit-user-select: none;
 /*   overflow-y: auto; */
 }
+
 core-animated-pages > * {
   font-size: inherit;
   padding: 30px;
@@ -84,7 +158,24 @@ core-image::shadow img {
   height: 150px;
 }
 
+.core-header {
+  height: 60px;
+  line-height: 60px;
+  font-size: 18px;
+  padding: 0 10px;
+  background-color: #FFE0B2;
+  color: #FFF;
+  transition: height 0.2s;
+}
 
+.core-header.tall {
+  height: 180px;
+}
+
+.content {
+  height: 2000px;
+  //background: linear-gradient(rgb(214, 227, 231), lightblue);
+}
 
 
 /* paper elements */
@@ -102,22 +193,32 @@ paper-item a {
   color: #212121;
 }
 
-
-
-/* ESTILOS DEL MAIN */
-
-
-
-/*#log::shadow img {
-  width:300px;
-  height:300px;
-    right: 50px;
-    margin-left: 50%;
-}*/
-
-
 /* ESTILOS DEL CONTACT US */
 
+
+
+// ESTILOS DEL MAIN
+core-image.logo{
+    display:  block;
+    overflow: visible;
+    position: relative;
+    align-content: center;
+}
+core-image::shadow img{
+    height:150px;
+}
+
+.center{
+    text-align: center;
+}
+
+
+
+//ESTILOS CONTACT US
+.article core-header-panel {
+   background: white;
+   position: inherit;
+}
 
 paper-input-decorator,
 paper-input {
@@ -126,12 +227,33 @@ paper-input {
   padding: 5px;
   border-radius: 5px;
 }
+core-menu > paper-item {
+  transition: all 300ms ease-in-out;
+}
 
-paper-button {
+paper-button{
+  color: black;
+  background-color: #03A9F4;
+  margin-right: 20px;
+  float: right;
+
+}
+
+paper-item a {
+  text-decoration: none;
+  color: currentColor;
+  margin-left: 5px;
+  color: #212121;
+}
+
+
+/*
+paper-icon-button {
   background: #4285f4;
   color: #fff;
   margin: 20px;
 }
+*/
 /* icons */
 
 
@@ -139,10 +261,10 @@ paper-button {
 paper-icon-button{
   background-color: grey;// transparent
   padding: 10px;
-  border-radius: 15px;  
+  border-radius: 15px;
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);  
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 paper-icon-button::shadow #icon {
   width: 120px;
@@ -173,6 +295,7 @@ paper-icon-button::shadow rect {
 paper-icon-button:active::shadow rect:first-child {
   fill: darkgrey;
 }
+
 /*
 paper-icon-button::shadow text {
   fill: rgb(255, 152, 0);
@@ -215,4 +338,3 @@ core-label.title {
     height: 100%;
   }
 }
-
