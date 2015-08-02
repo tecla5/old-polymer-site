@@ -1,96 +1,129 @@
-* # sitesite for tecla5 group
+![](./app/favicon.ico)
+## Tecla5 site
 
-online
-[tecla> nvm use iojs
-5](http://www.tecla5.com)
+> Site for tecla5 group
 
-source
-[github](https://github.com/tecla5/site)
+online [tecla5](http://www.tecla5.com)
 
 
+### Included out of the box:
 
-# prerequisites
+* [Polymer](http://polymer-project.org), [Paper](https://elements.polymer-project.org/browse?package=paper-elements), [Iron](https://elements.polymer-project.org/browse?package=iron-elements) and [Neon](https://elements.polymer-project.org/browse?package=neon-elements) elements
+* [Material Design](http://www.google.com/design/spec/material-design/introduction.html) layout
+* Routing with [Page.js](https://visionmedia.github.io/page.js/)
+* Unit testing with [Web Component Tester](https://github.com/Polymer/web-component-tester)
+* Optional offline setup through [Platinum](https://elements.polymer-project.org/browse?package=platinum-elements) Service Worker elements
+* End-to-end Build Tooling (including [Vulcanize](https://github.com/Polymer/vulcanize))
 
-## isntall ruby and ruby sass
-[install Ruby - (ruby, gem, ..)](https://www.youtube.com/watch?v=INH_OW4lFSs)
+## Getting Started
 
-* install ruby
-> sudo apt-get install ruby-full
+to edit as developer:
 
-> ruby -v
+1. Get a copy of the code.
+2. Install the dependencies if you don't already have them.
+3. Modify the application to your liking.
+4. Deploy your production code.
 
-* install Sass
-> sudo gem install sass
+### Get the code
 
-> sass -v
-
-[grunt-contrib-sass -> ruby and sass](https://github.com/gruntjs/grunt-contrib-sass)
+[Download](https://github.com/tecla5/site) and use branch you want to work. /releases/latest
 
 
-## configuration nvm version
-important to use nvm version = 0.10.33 (for windows?, work for me in iojs v2.3.1)
+### Install dependencies
 
+#### NVM
 github [nvm](https://github.com/creationix/nvm)
 
-> nvm ls-remote
+
+```sh
+nvm ls-remote
+nvm install iojs
+nvm use iojs
+nvm ls
+```
+* alternatively install other version > nvm install v0.12
 
 
-> nvm install iojs
+#### Quick-start (for experienced users)
 
-* alternatively install other version
-> nvm install v0.10.33
+With Node.js installed, run the following one liner from the root of your Polymer Starter Kit download:
+```sh
 
-> nvm use iojs
+npm install -g gulp bower && npm install && bower install
+```
 
-> nvm ls
+#### Prerequisites (for everyone)
 
-## intall bower
-> npm install -g bower
+The full starter kit requires the following major dependencies:
 
-## install grunt
-> `npm install -g grunt`
+- Node.js, used to run JavaScript tools from the command line.
+- npm, the node package manager, installed with Node.js and used to install Node.js packages.
+- gulp, a Node.js-based build tool.
+- bower, a Node.js-based package manager used to install front-end packages (like Polymer).
 
-> `npm install -g grunt-cli`
+**To install dependencies:**
 
+1)  Check your Node.js version.
 
-# install the app
-> git clone https://github.com/tecla5/site.git
+```sh
+node --version
+```
 
-> npm install
+The version should be at or above 0.12.x.
 
-> bower install
+2)  If you don't have Node.js installed, or you have a lower version, go to [nodejs.org](https://nodejs.org) and click on the big green Install button.
 
+3)  Install `gulp` and `bower` globally.
 
-## generate distribution
-> grunt (default: grunt build)
+```sh
+npm install -g gulp bower
+```
 
-> grunt build
+This lets you run `gulp` and `bower` from the command line.
 
+4)  Install the starter kit's local `npm` and `bower` dependencies.
 
-## running the app mode dev or dist
-> grunt serve
+```sh
+cd polymer-starter-kit && npm install && bower install
+```
 
-> grunt serve:dist
+This installs the element sets (Paper, Iron, Platinum) and tools the starter kit requires to build and serve apps.
 
-http://localhost:9000/
+### Development workflow
 
+#### Serve / watch
 
+```sh
+gulp serve
+```
 
+This outputs an IP address you can use to locally test and another that can be used on devices connected to your network.
 
-## develop
-we recomend use
-- git-flow
-- atom
+#### Run tests
 
-### test
+```sh
+gulp test:local
+```
 
-> grunt test:browser
+This runs the unit tests defined in the `app/test` directory through [web-component-tester](https://github.com/Polymer/web-component-tester).
 
-> grunt test:remote
+#### Build & Vulcanize
+
+```sh
+gulp
+```
+
+Build and optimize the current project, ready for deployment. This includes linting as well as vulcanization, image, script, stylesheet and HTML optimization and minification.
+
+- Application Theming
+- Unit Testing
+- Dependency Management
+- Service Worker
 
 
 
 # collaborations
+
 [jeagle](http://mu.jeagle.es/groupjs/)
 
 [pugle](http://pugle.net/)
@@ -98,8 +131,8 @@ we recomend use
 [ibearts](http://ibearts.com/)
 
 
+
 ## TODO:
 
-- change to polymer v1.0
 - add images
 - add services page

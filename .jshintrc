@@ -13,12 +13,12 @@
   "quotmark": "single",
   "undef": true,
   "unused": true,
-  "strict": true,
-  "jquery": true,
   "globals": {
     "wrap": true,
     "unwrap": true,
     "Polymer": true,
-    "Platform": true
+    "Platform": true,
+    "page": true,
+    "app": true
   }
 }
