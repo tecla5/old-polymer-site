@@ -1,0 +1,73 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="t5-contact">
+  <style>
+    :host {
+      display: block;
+    }
+  </style>
+  <template>
+
+
+    <google-map latitude="41.38" longitude="-357.81"></google-map>
+    <br>
+    <br>
+
+
+
+    <core-header-panel mode="seamed" flex>
+      <core-toolbar id="mainheader">
+        <core-icon icon="communication:email"></core-icon>
+        <span flex>By e-mail</span>
+      </core-toolbar>
+
+      <section>
+        <form is="component-form" method="GET" action="/__/forms/contact">
+
+          <paper-input-decorator labelVisible floatinglabel error="no name" label="your name">
+            <input is="core-input" label="Your Name" type="text" name="name" required>
+          </paper-input-decorator>
+
+          <paper-input-decorator labelVisible floatinglabel error="no email" label="your email">
+            <input is="core-input" type="email" name="email" required>
+          </paper-input-decorator>
+
+          <paper-input-decorator labelVisible floatinglabel error="no message" label="message">
+            <paper-autogrow-textarea id="a1">
+              <textarea id="t1" name="message"></textarea>
+            </paper-autogrow-textarea>
+          </paper-input-decorator>
+          <br/>
+          <paper-button type="submit" label="Custom Submit">submit</paper-button>
+        </form>
+      </section>
+    </core-header-panel>
+
+
+  </template>
+  <script>
+    (function() {
+      Polymer({
+        is: 't5-contact',
+
+        properties: {
+          foo: {
+            type: String,
+            value: 'bar',
+            notify: true
+          }
+        }
+      });
+    })();
+  </script>
+</dom-module>

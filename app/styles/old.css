@@ -1,0 +1,387 @@
+
+p {
+  margin: 20px;
+  padding: 60px 20px;
+  /*border-radius: 20px;*/
+  /*background-color: #eee;*/
+}
+
+#logo {
+  float: left;
+  margin: 20px;
+}
+#bg {
+    min-width: 120%;
+}
+
+
+header{
+  background-color: antiquehite;
+  font-family: inherit;
+  font-stretch: extra-expanded;
+}
+
+header h1 {
+  font-size: 120px;
+  vertical-align: baseline;
+  font-family: "RobotoDraft";
+  display: inline;
+  color: #000; /*#212121*/
+}
+.center h2
+{
+  font-size: 42px;
+}
+h3 {
+  color: #000;/*#212121;*/
+}
+
+section{
+  padding: 8px;
+}
+
+
+$color-bg-section: #FE9700;
+/*#FFE0B2 #FF9800;*/
+
+section.core-selected{
+  background-image: url("../images/green.jpg");
+  background-size: cover;
+  background-color: $color-bg-section;
+  background-repeat: no-repeat;
+}
+section[hash="home"]{
+  /*background-image: url("../images/red.png") ;*/
+}
+section[hash="services"]{
+  background-image: url("../images/teach.png");
+}
+section[hash="contact"]{
+  background-image: url("../images/barcelona.png");
+}
+section[hash="blog"]{
+  background-image: url("../images/people.png");
+}
+
+
+
+core-scaffold#scaffold{
+  div[layout] {
+    /*background-color: $color-bg-section;*/
+  }
+
+}
+
+/*
+ccs4 or jquery
+core-scaffold#scaffold{
+  div[layout]:has(> section[hash="home"]) {
+    background-color: grey;
+  }
+}
+*/
+
+/*.logo{
+    display:block;
+    overflow: visible;
+}*/
+
+.center {
+  text-align: center;
+  background-color: $color-bg-section; /*blue*/
+}
+
+/* polymer */
+
+:host {
+  display: block;
+  overflow: hidden;
+}
+
+
+/* due by firefox */
+body /deep/ core-toolbar {
+  background-color: #000; /*#EF8814*/
+  color: #fff;
+
+
+}
+
+
+core-toolbar#mainheader {
+  background-color: #000;/*#FF9800*/
+  color: #fff;
+}
+core-toolbar span
+{
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+core-toolbar #topBar paper-icon-button #icon
+{
+  width: 40px;
+  height: 40px;
+}
+/* core elements */
+core-scaffold,
+core-drawer-panel{
+  width: 100%;
+  height: 100%;
+}
+
+core-header-panel {
+  width: 100%;
+  height: 100%;
+  background: white;
+  position: inherit;
+}
+
+core-animated-pages {
+  width: 99%;
+  height: 99%;
+  overflow: hidden;
+  -webkit-user-select: none;
+/*   overflow-y: auto; */
+}
+
+core-animated-pages > * {
+  font-size: inherit;
+  padding: 30px;
+  /*border-radius: 5px;*/
+  background-color: white;
+}
+
+core-menu {
+  color: #FFF; /*#EF8814*/
+  margin: 100px 0 0 0;
+  background: $color-bg-section;
+}
+
+core-image.logo {
+  display: block;
+  overflow: visible;
+  position: relative;
+  align-content: center;
+}
+core-image::shadow img {
+  height: 150px;
+}
+
+.core-header {
+  height: 60px;
+  line-height: 60px;
+  font-size: 18px;
+  padding: 0 10px;
+  background-color: #FFE0B2;
+  color: #FFF;
+  transition: height 0.2s;
+}
+
+.core-header.tall {
+  height: 180px;
+}
+
+.content {
+  height: 2000px;
+  /*background: linear-gradient(rgb(214, 227, 231), lightblue);*/
+}
+
+
+/* paper elements */
+paper-item .button-content
+{
+  padding: 0 10%;
+  width: 80%;
+}
+paper-item .button-content > a
+{
+  flex: none;
+}
+paper-item.core-selected
+{
+    background-color: rgb(254, 151, 0);
+}
+paper-item.core-selected > .button-content > a
+{
+    background-color: #DE3F00;
+}
+core-menu > paper-item {
+  transition: all 300ms ease-in-out;
+  margin-bottom: 10px;
+  text-align: center;
+  /*background-color: #000;*/
+}
+core-menu > paper-item a.core-selected {
+  background: #DE3F00;
+}
+paper-item a {
+  padding: 5px 30px;
+  width: auto;
+  height: auto;
+  text-decoration: none;
+  /*color: currentcolor;*/
+  margin-left: 5px;
+  color: #fff !important;/*#212121;*/
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #000;
+}
+
+/* ESTILOS DEL CONTACT US */
+
+
+
+/* ESTILOS DEL MAIN*/
+core-image.logo{
+    display:  block;
+    overflow: visible;
+    position: relative;
+    align-content: center;
+}
+core-image::shadow img{
+    height:150px;
+}
+
+.center{
+    text-align: center;
+}
+
+
+
+/*ESTILOS CONTACT US*/
+.article core-header-panel {
+   background: white;
+   position: inherit;
+}
+
+paper-input-decorator,
+paper-input {
+  margin: 20px;
+  background-color: #eee;
+  padding: 5px;
+  border-radius: 5px;
+}
+core-menu > paper-item {
+  transition: all 300ms ease-in-out;
+}
+
+paper-button{
+  color: black;
+  background-color: #03A9F4;
+  margin-right: 20px;
+  float: right;
+
+}
+
+paper-item a {
+  text-decoration: none;
+  color: currentColor;
+  margin-left: 5px;
+  color: #212121;
+}
+
+
+/*
+paper-icon-button {
+  background: #4285f4;
+  color: #fff;
+  margin: 20px;
+}
+*/
+/* icons */
+
+
+
+paper-icon-button{
+  background-color: grey;/* transparent*/
+  padding: 10px;
+  border-radius: 15px;
+  /*-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);*/
+}
+paper-icon-button::shadow #icon {
+  width: 120px;
+  height: 120px;
+}
+
+
+
+paper-icon-button:active{
+  background-color: navajowhite;
+}
+paper-icon-button:active::shadow text {
+  fill: rgb(255, 255, 0);
+  stroke: rgb(255, 255, 0);
+}
+paper-icon-button:active::shadow rect:first-child {
+  fill: darkgrey;
+}
+
+/*svg*/
+/*
+paper-icon-button::shadow rect {
+  fill: lightgrey;
+  stroke-width: 3px;
+  stroke: white;
+}
+*/
+paper-icon-button:active::shadow rect:first-child {
+  fill: darkgrey;
+}
+
+/*
+paper-icon-button::shadow text {
+  fill: rgb(255, 152, 0);
+}
+paper-icon-button:hover::shadow rect:first-child {
+  fill: yellow;
+}
+paper-icon-button:active::shadow rect:first-child {
+  fill: red;
+}
+*/
+
+ /* Estilos de Services*/
+ div.paddingText {
+  padding-left:40px;
+  padding-right:40px;
+ }
+
+ div.sizeLayHor {
+   height:200px;
+
+ }
+
+core-label.title {
+  font-size:24px;
+  font-weight: bold;
+  align:center;
+ }
+
+ core-image.sizeImage {
+   width:300px;
+   height:300px;
+  }
+
+/* media query */
+
+@media all and (max-width: 480px) {
+  core-animated-pages {
+    width: 100%;
+    height: 100%;
+  }
+}
+/*Personalizado*/
+core-scaffold [drawer]
+{
+  background: $color-bg-section;
+}
+html [layout][center-justified], html [layout][center-center]
+{
+  background: $color-bg-section;
+}
