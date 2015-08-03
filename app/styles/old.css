@@ -1,13 +1,17 @@
-body {
-  font-family: "RobotoDraft";
-  font-weight: 300;
-}
 
 p {
   margin: 20px;
   padding: 60px 20px;
-  //border-radius: 20px;
-  //background-color: #eee;
+  /*border-radius: 20px;*/
+  /*background-color: #eee;*/
+}
+
+#logo{
+  float: left;
+  margin: 20px;
+}
+#bg {
+    min-width: 120%;
 }
 
 
@@ -37,7 +41,8 @@ section{
 }
 
 
-$color-bg-section: #FE9700; /*#FFE0B2*/
+$color-bg-section: #FE9700;
+/*#FFE0B2 #FF9800;*/
 
 section.core-selected{
   background-image: url("../images/green.jpg");
@@ -98,6 +103,8 @@ core-scaffold#scaffold{
 body /deep/ core-toolbar {
   background-color: #000; /*#EF8814*/
   color: #fff;
+
+
 }
 
 
@@ -167,7 +174,7 @@ core-image::shadow img {
   line-height: 60px;
   font-size: 18px;
   padding: 0 10px;
-  background-color: #FF9800;
+  background-color: #FFE0B2;
   color: #FFF;
   transition: height 0.2s;
 }
@@ -178,7 +185,7 @@ core-image::shadow img {
 
 .content {
   height: 2000px;
-  //background: linear-gradient(rgb(214, 227, 231), lightblue);
+  /*background: linear-gradient(rgb(214, 227, 231), lightblue);*/
 }
 
 
@@ -228,9 +235,9 @@ paper-item a {
 
 
 
-// ESTILOS DEL MAIN
+/* ESTILOS DEL MAIN*/
 core-image.logo{
-    display:block;
+    display:  block;
     overflow: visible;
     position: relative;
     align-content: center;
@@ -245,7 +252,7 @@ core-image::shadow img{
 
 
 
-//ESTILOS CONTACT US
+/*ESTILOS CONTACT US*/
 .article core-header-panel {
    background: white;
    position: inherit;
@@ -290,7 +297,7 @@ paper-icon-button {
 
 
 paper-icon-button{
-  background-color: grey;// transparent
+  background-color: grey;/* transparent*/
   padding: 10px;
   border-radius: 15px;
   /*-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -315,7 +322,7 @@ paper-icon-button:active::shadow rect:first-child {
   fill: darkgrey;
 }
 
-//svg
+/*svg*/
 /*
 paper-icon-button::shadow rect {
   fill: lightgrey;
@@ -326,6 +333,7 @@ paper-icon-button::shadow rect {
 paper-icon-button:active::shadow rect:first-child {
   fill: darkgrey;
 }
+
 /*
 paper-icon-button::shadow text {
   fill: rgb(255, 152, 0);
@@ -338,7 +346,27 @@ paper-icon-button:active::shadow rect:first-child {
 }
 */
 
+ /* Estilos de Services*/
+ div.paddingText {
+  padding-left:40px;
+  padding-right:40px;
+ }
 
+ div.sizeLayHor {
+   height:200px;
+
+ }
+
+core-label.title {
+  font-size:24px;
+  font-weight: bold;
+  align:center;
+ }
+
+ core-image.sizeImage {
+   width:300px;
+   height:300px;
+  }
 
 /* media query */
 

@@ -1,179 +1,70 @@
+/*
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+*/
+
 (function(document) {
   'use strict';
 
-  document.addEventListener('polymer-ready', function() {
-    // Perform some behaviour
-    console.log('Polymer is ready to rock!');
+  // Grab a reference to our auto-binding template
+  // and give it some initial binding values
+  // Learn more about auto-binding templates at http://goo.gl/Dx1u2g
+  var app = document.querySelector('#app');
 
+  app.displayInstalledToast = function() {
+    document.querySelector('#caching-complete').show();
+  };
 
+  // Listen for template bound event to know when bindings
+  // have resolved and content has been stamped to the page
+  app.addEventListener('dom-change', function() {
+    console.log('Our app is ready to rock!');
+  });
+
+  // See https://github.com/Polymer/polymer/issues/1381
+  window.addEventListener('WebComponentsReady', function() {
+    // imports are loaded and elements have been registered
+
+    //contact-received
+    //contact-failure
 
   });
 
+  // Main area's paper-scroll-header-panel custom condensing transformation of
+  // the appName in the middle-container and the bottom title in the bottom-container.
+  // The appName is moved to top and shrunk on condensing. The bottom sub title
+  // is shrunk to nothing on condensing.
+  addEventListener('paper-header-transform', function(e) {
+    var appName = document.querySelector('.app-name');
+    var middleContainer = document.querySelector('.middle-container');
+    var bottomContainer = document.querySelector('.bottom-container');
+    var detail = e.detail;
+    var heightDiff = detail.height - detail.condensedHeight;
+    var yRatio = Math.min(1, detail.y / heightDiff);
+    var maxMiddleScale = 0.50;  // appName max size when condensed. The smaller the number the smaller the condensed size.
+    var scaleMiddle = Math.max(maxMiddleScale, (heightDiff - detail.y) / (heightDiff / (1-maxMiddleScale))  + maxMiddleScale);
+    var scaleBottom = 1 - yRatio;
 
+    // Move/translate middleContainer
+    Polymer.Base.transform('translate3d(0,' + yRatio * 100 + '%,0)', middleContainer);
 
+    // Scale bottomContainer and bottom sub title to nothing and back
+    Polymer.Base.transform('scale(' + scaleBottom + ') translateZ(0)', bottomContainer);
 
-
-var DEFAULT_ROUTE = 'home';
-
-var template = document.querySelector('#t');
-var ajax, pages, scaffold, menu, router;
-var cache = {};
-
-
-
-//contact-received
-//contact-failure
-template.pages = [
-    //url:'http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom/'
-    {name: 'Home', hash: 'home', url:'home.html' },
-    {name: 'About Us', hash: 'about', url: 'about-us.html'},
-    {name: 'Services', hash: 'services', url: 'services.html'},
-    {name: 'Projects', hash: 'projects', url: 'projects.html'},
-    {name: 'Blog', hash: 'blog', url: '//blog.tecla5.com'},
-    {name: 'Contact Us', hash: 'contact', url: 'contact-us.html'},
-
-  ];
-
-
-
-template.addEventListener('template-bound', function(e) {
-  router = document.querySelector('#router');
-  scaffold = document.querySelector('#scaffold');
-  ajax = document.querySelector('#ajax');
-  pages = document.querySelector('#pages');
-  menu = document.querySelector('#menu');
-  var keys = document.querySelector('#keys');
-
-
-  router.addEventListener('director-route', function(event){
-    console.log('router ', event, this.route);
-
-    this.route = this.route || DEFAULT_ROUTE; // Select initial route.
-    menu.selected = this.route;
-    pages.selected = this.route;
+    // Scale middleContainer appName
+    Polymer.Base.transform('scale(' + scaleMiddle + ') translateZ(0)', appName);
   });
 
-
-  // Allow selecting pages by num keypad. Dynamically add
-  // [1, template.pages.length] to key mappings.
-  /*
-  var keysToAdd = Array.apply(null, template.pages).map(function(x, i) {
-    return i + 1;
-  }).reduce(function(x, y) {
-    return x + ' ' + y;
-  });
-  keys.keys += ' ' + keysToAdd;
-  */
-
-
-  // info from router
-  console.log('init ', this.route, menu, pages);
-  this.route = this.route || DEFAULT_ROUTE; // Select initial route.
-  menu.selected = this.route;
-  pages.selected = this.route;
-
-});
-
-template.keyHandler = function(e, detail, sender) {
-  console.log(e, detail, sender);
-
-
-  // Select page by num key.
-  /*
-  does not work as expected in prod
-  does not change menu, and dont charge the page
-  */
-
-  var num = parseInt(detail.key);
-  if (!isNaN(num) && num <= this.pages.length) {
-    pages.selectIndex(num - 1);
-    return;
-  }
-
-  switch (detail.key) {
-    case 'left':
-    case 'up':
-      pages.selectPrevious();
-
-      break;
-    case 'right':
-    case 'down':
-      pages.selectNext();
-      break;
-    /*
-    case 'space':
-      detail.shift ? pages.selectPrevious() : pages.selectNext();
-      break;
-    */
-  }
-
-  // info from pages
-  console.log('key ', this.route, menu, pages);
-  if (!pages){
-    pages = document.querySelector('#pages');
-  }
-
-  pages.selected = pages.selected || DEFAULT_ROUTE; // Select initial route.
-  this.route = pages.selected;
-  menu.selected = pages.selected;
-  /*
-  menu.selected = pages.selected;// the color and ajax
-  this.route = pages.selected;// the icon and routing url
-  */
-
-
-};
-
-template.menuItemSelected = function(e, detail, sender) {
-  if (detail.isSelected) {
-    console.log('menu ',this.route, menu, pages);
-    if (!menu){
-      menu = document.querySelector('#menu');
+  // Close drawer after menu item is selected if drawerPanel is narrow
+  app.onMenuSelect = function() {
+    var drawerPanel = document.querySelector('#paperDrawerPanel');
+    if (drawerPanel.narrow) {
+      drawerPanel.closeDrawer();
     }
-    if (!pages){
-      pages = document.querySelector('#pages');
-    }
-    menu.selected = menu.selected || DEFAULT_ROUTE; // Select initial route.
-    this.route = menu.selected;
-    pages.selected = menu.selected;
-    // Need to wait one rAF so <core-ajax> has it's URL set.
-    this.async(function() {
-      if (!cache[ajax.url]) {
-        ajax.go();
-      }
-      /*
-      else {
-        this.injectBoundHTML(cache[ajax.url], pages.selectedItem.firstElementChild);
-      }*/
+  };
 
-      scaffold.closeDrawer();
-    });
-
-  }
-};
-
-template.ajaxLoad = function(e, detail, sender) {
-  e.preventDefault(); // prevent link navigation.
-};
-
-template.onResponse = function(e, detail, sender) {
-
-  if("http://blog.tecla5.com/"  === detail.response.URL){
-    var html = detail.response.querySelector('.post-list');
-
-    // Fix up link paths to not be local.
-    [].forEach.call(html.querySelectorAll('a'), function(img) {
-      img.setAttribute('href', img.href);
-    });
-
-  } else {
-    var html = detail.response.body;
-  }
-  cache[ajax.url] = html.innerHTML; // Primitive caching by URL.
-
-  this.injectBoundHTML(cache[ajax.url], pages.selectedItem);
-
-};
-
-
-})(wrap(document));
+})(document);
