@@ -1,39 +1,16 @@
 {
-  "name": "tecla5",
-  "version": "0.0.0",
-  "homepage": "https://github.com/tecla5/site",
-  "authors": [
-    "jcc2303 <cabrera.javier@gmail.com>"
-  ],
-  "description": "consultant web static application site  mobile polymer angularjs",
-  "main": "index.html",
-  "keywords": [
-    "consultant",
-    "web",
-    "mobile",
-    "development",
-    "application",
-    "site",
-    "polymer",
-    "angularjs"
-  ],
-  "license": "MIT",
+  "name": "polymer-starter-kit",
   "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
   "dependencies": {
-    "core-elements": "Polymer/core-elements#^0.5.1",
-    "paper-elements": "Polymer/paper-elements#^0.5.1",
-    "polymer": "Polymer/polymer#^0.5.1",
-    "flatiron-director": "PolymerLabs/flatiron-director#~0.5.0",
-    "google-map": "GoogleWebComponents/google-map#~0.4.0"
+    "iron-elements": "PolymerElements/iron-elements#1.0.0",
+    "paper-elements": "PolymerElements/paper-elements#1.0.1",
+    "platinum-elements": "PolymerElements/platinum-elements#1.0.1",
+    "neon-elements": "PolymerElements/neon-elements#1.0.0",
+    "page": "visionmedia/page.js#~1.6.3",
+    "google-map": "GoogleWebComponents/google-map#~1.0.3"
   },
   "devDependencies": {
-    "web-component-tester": "Polymer/web-component-tester#^2.0.0"
+    "web-component-tester": "*",
+    "test-fixture": "PolymerElements/test-fixture#^1.0.0"
   }
 }

@@ -1,32 +1,39 @@
-body {
-  font-family: "RobotoDraft";
-  font-weight: 300;
-}
 
 p {
   margin: 20px;
   padding: 60px 20px;
-  text-align: justify;
-  //border-radius: 20px;
-  //background-color: #eee;
+  /*border-radius: 20px;*/
+  /*background-color: #eee;*/
 }
 
+#logo {
+  float: left;
+  margin: 20px;
+}
+#bg {
+    min-width: 120%;
+}
+
+
 header{
-  background-color: antiquewhite;
+  background-color: antiquehite;
   font-family: inherit;
   font-stretch: extra-expanded;
 }
 
 header h1 {
-  font-size: 80px;
+  font-size: 120px;
   vertical-align: baseline;
   font-family: "RobotoDraft";
   display: inline;
-  color: #212121;
+  color: #000; /*#212121*/
 }
-
+.center h2
+{
+  font-size: 42px;
+}
 h3 {
-  color: #212121;
+  color: #000;/*#212121;*/
 }
 
 section{
@@ -34,7 +41,8 @@ section{
 }
 
 
-$color-bg-section: #FFFFFF;
+$color-bg-section: #FE9700;
+/*#FFE0B2 #FF9800;*/
 
 section.core-selected{
   background-image: url("../images/green.jpg");
@@ -43,13 +51,13 @@ section.core-selected{
   background-repeat: no-repeat;
 }
 section[hash="home"]{
-  background-image: url("../images/red.png") ;
+  /*background-image: url("../images/red.png") ;*/
 }
 section[hash="services"]{
   background-image: url("../images/teach.png");
 }
 section[hash="contact"]{
-  //background-image: url("../images/barcelona.png");
+  background-image: url("../images/barcelona.png");
 }
 section[hash="blog"]{
   background-image: url("../images/people.png");
@@ -59,7 +67,7 @@ section[hash="blog"]{
 
 core-scaffold#scaffold{
   div[layout] {
-    background-color: $color-bg-section;
+    /*background-color: $color-bg-section;*/
   }
 
 }
@@ -80,7 +88,7 @@ core-scaffold#scaffold{
 
 .center {
   text-align: center;
-  //background-color: blue;
+  background-color: $color-bg-section; /*blue*/
 }
 
 /* polymer */
@@ -93,30 +101,34 @@ core-scaffold#scaffold{
 
 /* due by firefox */
 body /deep/ core-toolbar {
-  background-color: #000000;
+  background-color: #000; /*#EF8814*/
   color: #fff;
 
 
 }
 
 
-core-toolbar#mainheader { // Contact Us Toolbar
-  background-color: #F57C00;
-  color: #FFF;
+core-toolbar#mainheader {
+  background-color: #000;/*#FF9800*/
+  color: #fff;
 }
-
-
+core-toolbar span
+{
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+core-toolbar #topBar paper-icon-button #icon
+{
+  width: 40px;
+  height: 40px;
+}
 /* core elements */
-
-core-scaffold::shadow [drawer]{
-  background: #FF9800;
-}
-
 core-scaffold,
-core-drawer-panel{//???????????????
+core-drawer-panel{
   width: 100%;
   height: 100%;
-
 }
 
 core-header-panel {
@@ -136,20 +148,16 @@ core-animated-pages {
 
 core-animated-pages > * {
   font-size: inherit;
-
-  border-radius: 5px;
+  padding: 30px;
+  /*border-radius: 5px;*/
   background-color: white;
 }
 
-core-menu { //Menu Bullets
-  color: #EF8814;
-  margin: 10px 0 0 0;
+core-menu {
+  color: #FFF; /*#EF8814*/
+  margin: 100px 0 0 0;
+  background: $color-bg-section;
 }
-
-core-menu#menu {
-  margin: 0;
-}
-
 
 core-image.logo {
   display: block;
@@ -177,27 +185,57 @@ core-image::shadow img {
 
 .content {
   height: 2000px;
-  //background: linear-gradient(rgb(214, 227, 231), lightblue);
+  /*background: linear-gradient(rgb(214, 227, 231), lightblue);*/
 }
 
 
 /* paper elements */
-
+paper-item .button-content
+{
+  padding: 0 10%;
+  width: 80%;
+}
+paper-item .button-content > a
+{
+  flex: none;
+}
+paper-item.core-selected
+{
+    background-color: rgb(254, 151, 0);
+}
+paper-item.core-selected > .button-content > a
+{
+    background-color: #DE3F00;
+}
 core-menu > paper-item {
   transition: all 300ms ease-in-out;
+  margin-bottom: 10px;
+  text-align: center;
+  /*background-color: #000;*/
 }
-core-menu > paper-item.core-selected { //Menu Highlight Selection
-  background: #ffe0b2;
+core-menu > paper-item a.core-selected {
+  background: #DE3F00;
 }
-paper-item a { //??
+paper-item a {
+  padding: 5px 30px;
+  width: auto;
+  height: auto;
   text-decoration: none;
-  color: currentcolor;
+  /*color: currentcolor;*/
   margin-left: 5px;
-  color: #212121;
+  color: #fff !important;/*#212121;*/
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #000;
 }
 
+/* ESTILOS DEL CONTACT US */
 
-//**************************************** ESTILOS DEL MAIN
+
+
+/* ESTILOS DEL MAIN*/
 core-image.logo{
     display:  block;
     overflow: visible;
@@ -208,14 +246,13 @@ core-image::shadow img{
     height:150px;
 }
 
-
 .center{
     text-align: center;
 }
 
 
 
-//******************************************ESTILOS CONTACT US
+/*ESTILOS CONTACT US*/
 .article core-header-panel {
    background: white;
    position: inherit;
@@ -232,9 +269,9 @@ core-menu > paper-item {
   transition: all 300ms ease-in-out;
 }
 
-paper-button{ //Submit Button
+paper-button{
   color: black;
-  background-color: #FF9800;
+  background-color: #03A9F4;
   margin-right: 20px;
   float: right;
 
@@ -260,12 +297,12 @@ paper-icon-button {
 
 
 paper-icon-button{
-  background-color: grey;// transparent
+  background-color: grey;/* transparent*/
   padding: 10px;
   border-radius: 15px;
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  /*-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);*/
 }
 paper-icon-button::shadow #icon {
   width: 120px;
@@ -285,7 +322,7 @@ paper-icon-button:active::shadow rect:first-child {
   fill: darkgrey;
 }
 
-//svg
+/*svg*/
 /*
 paper-icon-button::shadow rect {
   fill: lightgrey;
@@ -308,13 +345,28 @@ paper-icon-button:active::shadow rect:first-child {
   fill: red;
 }
 */
-polyfill-next-selector { content: ':host > .core-selected'; }
-     ::content > .core-selected {
-     visibility: visible;
-     z-index: auto;
-     position: relative;
-}
 
+ /* Estilos de Services*/
+ div.paddingText {
+  padding-left:40px;
+  padding-right:40px;
+ }
+
+ div.sizeLayHor {
+   height:200px;
+
+ }
+
+core-label.title {
+  font-size:24px;
+  font-weight: bold;
+  align:center;
+ }
+
+ core-image.sizeImage {
+   width:300px;
+   height:300px;
+  }
 
 /* media query */
 
@@ -324,8 +376,12 @@ polyfill-next-selector { content: ':host > .core-selected'; }
     height: 100%;
   }
 }
-
-google-map { //Google Map API Style
-width: 100%;
-height: 40%;
+/*Personalizado*/
+core-scaffold [drawer]
+{
+  background: $color-bg-section;
+}
+html [layout][center-justified], html [layout][center-center]
+{
+  background: $color-bg-section;
 }
