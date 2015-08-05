@@ -11,20 +11,56 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
 <dom-module id="t5-about">
-  <style>
+  <style >
+
     :host {
       display: block;
+      background: #FFF;
     }
+
+    .logo{
+      width: 100%;
+      height: 100%;
+      padding-bottom: 40px;
+    }
+
+    .icon{
+      width: 20%;
+      height: 20%;
+    }
+
+    .justify{
+      text-align: justify;
+    }
+
+    .article{
+        font-size: 2.0vh;
+    }
+    .left{
+
+      float: left;
+      padding:20px;
+    }
+
+
   </style>
   <template>
 
+  <img src="/images/AboutUS.png" class="logo" />
+
+    <img src="/images/Teclas.jpg" class="left icon" />
+      <div class="article">
+        <br>Why tecla5?<br><br>
+        Tecla5 is a team of developers and designers that was born in Barcelona - Spain, a small group of engineers with extensive experience in the technology sector, wanting to create ideas and experiences.
+        <br><br> We are constantly renewing with the latest technology on market to always provide the best solution.
+        <br><br><br><br>
+    </div>
 
 
-    <core-image position="top" style="width:100%; height:60%;" sizing="contain" src="images/AboutUS.png"></core-image>
 
-
+<!-
     <div class="article">
-      <mark-down>This is **awesome**</mark-down>
+      <!--<mark-down>This is **awesome**</mark-down>-->
 
       <h2>Who we are</h2>
       <p>We are a consultancy company that delivers solutions for the modern web/app space.
@@ -36,24 +72,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <h3>Javascript technologies</h3>
       <p>Migration to Javascript technologies will speed up the performance of your applications.</p>
 
-      <h3>mobile Applications</h3>
+      <h3>Mobile Applications</h3>
       <p>We can create Iphone, Android, as hybrid apps</p>
 
       <h3>Training</h3>
       <p>We offer in-house training on Angular and Javascript technologies.</p>
-
+      <br><br><br><br>
     </div>
 
 
-    <div>
-      <h2>About us</h2>
-      <section>
-        <img src="/images/tecla5.svg" id="logo" /> Why tecla5?
-        <br/>
-        <br/> Tecla5 is a team of developers and designers that was born in Barcelona - Spain, a small group of engineers with extensive experience in the technology sector, wanting to create ideas and experiences.</br>
-        <br/> We are constantly renewing with the latest technology on market to always provide the best solution.</br>
-      </section>
-    </div>
+
 
 
 
