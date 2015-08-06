@@ -8,40 +8,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 */
 
 body {
-  background: #FFF;
+  background: #fafafa;
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #000;
-}
-h1 {
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
-h2 {
-
-}
-
-span.paper-font-title{
-  font-size: 30px;
-}
-
-paper-toolbar.paper-toolbar-0{ /*MAIN TOOLBAR*/
-  background: #000;
-}
-
-div.content{ /* MAIN CONTENT BACKGROUND */
-  background: #FF9800;
-
-
-}
-
-paper-menu.paper-menu-0{ /*MENU BACKGROUND */
-  background: #FF9800;
-}
-
-div.content.style-scope.paper-menu{ /*BUTTONS BACKGROUND */
-  background: #FF9800;
-}
-
-#mainContainer.paper-scroll-header-panel{ /* BOTTOM MENU BACKGROUND */
-  background: #FF9800;
+  color: #333;
 }

@@ -60,9 +60,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- endreplace-->
 </head>
 
-
-
-
 <body unresolved class="fullbleed layout vertical">
   <span id="browser-sync-binding"></span>
   <template is="dom-bind" id="app">
@@ -72,11 +69,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <paper-scroll-header-panel drawer fixed>
 
         <!-- Drawer Toolbar -->
-        <paper-toolbar class="drawerToolbar">
-
-            <span class="paper-font-title">tecla</span>
-        <paper-icon-button class="logo" icon="t5-icons:tecla5"></paper-icon-button>
-
+        <paper-toolbar id="drawerToolbar">
+          <span class="paper-font-title">Menu</span>
         </paper-toolbar>
 
         <!-- Drawer Content -->
@@ -130,7 +124,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <!-- Main Content -->
         <div class="content">
-          <iron-pages style="padding-top: 0px;padding-left: 0px;padding-right: 0px;padding-bottom: 0px;" attr-for-selected="data-route" selected="{{route}}">
+          <iron-pages attr-for-selected="data-route" selected="{{route}}">
 
             <section data-route="home">
               <t5-home></t5-home>
@@ -160,6 +154,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                  duration="6000"
                  text="Caching complete! This app will work offline.">
     </paper-toast>
+
     <platinum-sw-register auto-register
                           clients-claim
                           skip-waiting
