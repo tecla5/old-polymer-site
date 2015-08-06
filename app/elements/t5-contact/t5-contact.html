@@ -9,17 +9,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/google-map/google-map.html">
+
 
 <dom-module id="t5-contact">
   <style>
     :host {
-      display: block;
+      display:block;
+      background: #FFF;
+
     }
+    google-map {
+    height: 400px;
+
+  }
   </style>
   <template>
+    <div><google-map latitude="41.38" longitude="-357.81"></google-map></div>
 
-
-    <google-map latitude="41.38" longitude="-357.81"></google-map>
     <br>
     <br>
 
@@ -32,23 +39,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </core-toolbar>
 
       <section>
-        <form is="component-form" method="GET" action="/__/forms/contact">
+        <form is="component-form" id="form" method="GET" action="/__/forms/contact">
 
-          <paper-input-decorator labelVisible floatinglabel error="no name" label="your name">
+          <paper-input labelVisible floatinglabel error="no name" label="your name">
             <input is="core-input" label="Your Name" type="text" name="name" required>
-          </paper-input-decorator>
+          </paper-input>
 
-          <paper-input-decorator labelVisible floatinglabel error="no email" label="your email">
+          <paper-input labelVisible floatinglabel error="no email" label="your email">
             <input is="core-input" type="email" name="email" required>
-          </paper-input-decorator>
+          </paper-input>
 
-          <paper-input-decorator labelVisible floatinglabel error="no message" label="message">
+          <paper-input labelVisible floatinglabel error="no message" label="message">
             <paper-autogrow-textarea id="a1">
               <textarea id="t1" name="message"></textarea>
             </paper-autogrow-textarea>
-          </paper-input-decorator>
+          </paper-input>
           <br/>
-          <paper-button type="submit" label="Custom Submit">submit</paper-button>
+          <paper-button type="submit" label="Custom Submit" raised>Submit</paper-button>
         </form>
       </section>
     </core-header-panel>
