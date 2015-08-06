@@ -13,30 +13,43 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <dom-module id="t5-home">
   <style>
     :host {
-      display: block;
+    display:block;
+    }
+    .big{
+      --iron-icon-height: 250px;
+      --iron-icon-width: 250px;
+    }
+    .center{
+      text-align: center;
+    }
+    .justify{
+      text-align: justify;
     }
   </style>
   <template>
-    <div class="center">
+<body>
       <!-- class="t5" -->
-      <header>
-        <h1>tecla</h1>
-        <paper-icon-button class="logo" icon="t5-icons:tecla5"></paper-icon-button>
-      </header>
+
+        <header  class="center">
+          <h1 style="font-size: 20.0vh;"> tecla
+            <paper-icon-button icon="t5-icons:tecla5" class="big"></paper-icon-button>
+          </h1>
+        </header>
+
+
 
       <!-- <core-image id="log" class="logo"  src="./images/tecla5.svg"  ></core-image> -->
-      <h2 class="text">We type your idea ...</h2>
-      <p class="text"> Built competitive ideas for your business with us, create responsive webpages and mobile applications.
-        We will         help you to make better decisions because we are a team of professionals engineers with experience in clients, leading groups,
-         analysis SEO and Marketing.</p>
+      <h2 class="text center" style="margin-bottom: 250px; font-size: 5.0vh;">We type your idea ...</h2>
+      <p  class="text justify" style="padding: 20px; font-size: 3.0vh;"> Built competitive ideas for your business with us, create responsive webpages and mobile applications.
+        We will help you to make better decisions because we are a team of professionals engineers with experience in clients, leading groups, analysis SEO and Marketing.</p>
 
-    </div>
+
+</body>
   </template>
   <script>
   (function() {
     Polymer({
       is: 't5-home',
-
       properties: {
         foo: {
           type: String,
