@@ -21,7 +21,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     .logo{
       width: 100%;
       height: 100%;
-      padding-bottom: 40px;
+      padding-bottom: 5%;
     }
 
     .icon{
@@ -29,93 +29,59 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       height: 20%;
     }
 
-    .justify{
-      text-align: justify;
-    }
-
     .article{
         font-size: 2.0vh;
+        margin:5%;
+        text-align: justify;
     }
     .left{
-
       float: left;
-      padding:20px;
+      padding:10%;
     }
-
+    .div-container{
+      display:block;
+      overflow:hidden;
+    }
 
   </style>
   <template>
-
-  <img src="/images/AboutUS.png" class="logo" />
-
-    <img src="/images/Teclas.jpg" class="left icon" />
-      <div class="article">
-        <br>Why tecla5?<br><br>
-        Tecla5 is a team of developers and designers that was born in Barcelona - Spain, a small group of engineers with extensive experience in the technology sector, wanting to create ideas and experiences.
-        <br><br> We are constantly renewing with the latest technology on market to always provide the best solution.
-        <br><br><br><br>
-    </div>
-
-
-
-<!-
-    <div class="article">
-      <!--<mark-down>This is **awesome**</mark-down>-->
-
-      <h2>Who we are</h2>
-      <p>We are a consultancy company that delivers solutions for the modern web/app space.
-        <br> We will help you create and renovate your web and mobile applications and be competitive in today’s markets.</p>
-      <p>We specialize in creating cross platforms / hybrid apps for iOs, Android and modern browsers, taking into consideration your requirements in regards to technologies and platforms, partners and users.</p>
-      <p>We strive to provide simple solutions that are easy to use and customise.</p>
+    <body class="fullbleed layout vertical">
+      <paper-header-panel mode="cover">
+        <img src="/images/AboutUS.png" class="logo" />
+          <div class=div-container>
+            <img src="/images/Teclas.jpg" class="left icon"/>
+            <div class="article">
+              <h3>Why tecla5?</h3><br>
+              <p>Tecla5 is a team of developers and designers that was born in Barcelona - Spain, a small group of engineers with extensive experience in the technology sector, wanting to create ideas and experiences.</p>
+              <p> We are constantly renewing with the latest technology on market to always provide the best solution.</p>
+            </div>
+          </div>
 
 
-      <h3>Javascript technologies</h3>
-      <p>Migration to Javascript technologies will speed up the performance of your applications.</p>
+        <div style="padding-bottom:15%" class="article">
 
-      <h3>Mobile Applications</h3>
-      <p>We can create Iphone, Android, as hybrid apps</p>
+            <h2>Who we are</h2>
 
-      <h3>Training</h3>
-      <p>We offer in-house training on Angular and Javascript technologies.</p>
-      <br><br><br><br>
-    </div>
+            <p>We are a consultancy company that delivers solutions for the modern web/app space. We will help you create and renovate your web and mobile applications and be competitive in today’s markets.</p>
+            <p>We specialize in creating cross platforms / hybrid apps for iOs, Android and modern browsers, taking into consideration your requirements in regards to technologies and platforms, partners and users.</p>
+            <p>We strive to provide simple solutions that are easy to use and customise.</p>
 
 
+            <h3>Javascript technologies</h3>
 
+            <p>Migration to Javascript technologies will speed up the performance of your applications.</p>
 
+            <h3>Mobile Applications</h3>
 
+            <p>We can create Iphone, Android, as hybrid apps</p>
 
+            <h3>Training</h3>
 
+            <p>We offer in-house training on Angular and Javascript technologies.</p>
+          </div>
 
-    <!--JAVASCRIPT NINJA
-      Javier Cabrera
-      Skills in JavaScript application programming for Hybrid Mobile Applications.
-      Javascript, Java, Angularjs
-    </div>
-
-      <div>
-        <img src="images/jcabrera.jpeg" />
-        Dayana Cabrera
-        Skills in JavaScript application programming for Hybrid Mobile Applications.
-        Javascript, Java, Angularjs
-      </div>
-
-      <div>
-        <img src="images/adominguez.jpg" />
-        GROWTH HACKER = CODER AND MARKETER
-        ANDRÉS DOMÍNGUEZ BONINI
-        I have a hybrid profile between a web developer and online marketer nowadays called GrowthHacker, with more 6 years of experience working on internet start ups on Latin America and Europe.
-        Web development, Marketing Online, Web Design
-      </div>
-      <div>
-        <img src="images/jzambrano.jpg" />
-
-        SENIOR SYSADMIN
-        JeAn Zambrano
-        JeAn, a senior system administrator with a little bit more than 17 years knowledge and experience in several areas like relational DB, OS, networking and programming. Since last 10 years until now Iâ€™m focused on administration of virtualization environments with passion for simplification of tasks to achieve efficiency in production environments.
-        Virtualization technology, Networking, OS Administration
-      </div>-->
-
+      </paper-header-panel>
+    </body>
   </template>
   <script>
     (function() {
@@ -133,3 +99,40 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     })();
   </script>
 </dom-module>
+
+
+
+
+
+
+
+
+
+        <!--JAVASCRIPT NINJA
+          Javier Cabrera
+          Skills in JavaScript application programming for Hybrid Mobile Applications.
+          Javascript, Java, Angularjs
+        </div>
+
+          <div>
+            <img src="images/jcabrera.jpeg" />
+            Dayana Cabrera
+            Skills in JavaScript application programming for Hybrid Mobile Applications.
+            Javascript, Java, Angularjs
+          </div>
+
+          <div>
+            <img src="images/adominguez.jpg" />
+            GROWTH HACKER = CODER AND MARKETER
+            ANDRÉS DOMÍNGUEZ BONINI
+            I have a hybrid profile between a web developer and online marketer nowadays called GrowthHacker, with more 6 years of experience working on internet start ups on Latin America and Europe.
+            Web development, Marketing Online, Web Design
+          </div>
+          <div>
+            <img src="images/jzambrano.jpg" />
+
+            SENIOR SYSADMIN
+            JeAn Zambrano
+            JeAn, a senior system administrator with a little bit more than 17 years knowledge and experience in several areas like relational DB, OS, networking and programming. Since last 10 years until now Iâ€™m focused on administration of virtualization environments with passion for simplification of tasks to achieve efficiency in production environments.
+            Virtualization technology, Networking, OS Administration
+          </div>-->
