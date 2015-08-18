@@ -1,0 +1,138 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="t5-about">
+  <style >
+
+    :host {
+      display: block;
+      background: #FFF;
+    }
+
+    .logo{
+      width: 100%;
+      height: 100%;
+      padding-bottom: 5%;
+    }
+
+    .icon{
+      width: 20%;
+      height: 20%;
+    }
+
+    .article{
+        font-size: 2.0vh;
+        margin:5%;
+        text-align: justify;
+    }
+    .left{
+      float: left;
+      padding:10%;
+    }
+    .div-container{
+      display:block;
+      overflow:hidden;
+    }
+
+  </style>
+  <template>
+    <body class="fullbleed layout vertical">
+      <paper-header-panel mode="cover">
+        <img src="/images/AboutUS.png" class="logo" />
+          <div class=div-container>
+            <img src="/images/Teclas.jpg" class="left icon"/>
+            <div class="article">
+              <h3>Why tecla5?</h3><br>
+              <p>Tecla5 is a team of developers and designers that was born in Barcelona - Spain, a small group of engineers with extensive experience in the technology sector, wanting to create ideas and experiences.</p>
+              <p> We are constantly renewing with the latest technology on market to always provide the best solution.</p>
+            </div>
+          </div>
+
+
+        <div style="padding-bottom:15%" class="article">
+
+            <h2>Who we are</h2>
+
+            <p>We are a consultancy company that delivers solutions for the modern web/app space. We will help you create and renovate your web and mobile applications and be competitive in today’s markets.</p>
+            <p>We specialize in creating cross platforms / hybrid apps for iOs, Android and modern browsers, taking into consideration your requirements in regards to technologies and platforms, partners and users.</p>
+            <p>We strive to provide simple solutions that are easy to use and customise.</p>
+
+
+            <h3>Javascript technologies</h3>
+
+            <p>Migration to Javascript technologies will speed up the performance of your applications.</p>
+
+            <h3>Mobile Applications</h3>
+
+            <p>We can create Iphone, Android, as hybrid apps</p>
+
+            <h3>Training</h3>
+
+            <p>We offer in-house training on Angular and Javascript technologies.</p>
+          </div>
+
+      </paper-header-panel>
+    </body>
+  </template>
+  <script>
+    (function() {
+      Polymer({
+        is: 't5-about',
+
+        properties: {
+          foo: {
+            type: String,
+            value: 'bar',
+            notify: true
+          }
+        }
+      });
+    })();
+  </script>
+</dom-module>
+
+
+
+
+
+
+
+
+
+        <!--JAVASCRIPT NINJA
+          Javier Cabrera
+          Skills in JavaScript application programming for Hybrid Mobile Applications.
+          Javascript, Java, Angularjs
+        </div>
+
+          <div>
+            <img src="images/jcabrera.jpeg" />
+            Dayana Cabrera
+            Skills in JavaScript application programming for Hybrid Mobile Applications.
+            Javascript, Java, Angularjs
+          </div>
+
+          <div>
+            <img src="images/adominguez.jpg" />
+            GROWTH HACKER = CODER AND MARKETER
+            ANDRÉS DOMÍNGUEZ BONINI
+            I have a hybrid profile between a web developer and online marketer nowadays called GrowthHacker, with more 6 years of experience working on internet start ups on Latin America and Europe.
+            Web development, Marketing Online, Web Design
+          </div>
+          <div>
+            <img src="images/jzambrano.jpg" />
+
+            SENIOR SYSADMIN
+            JeAn Zambrano
+            JeAn, a senior system administrator with a little bit more than 17 years knowledge and experience in several areas like relational DB, OS, networking and programming. Since last 10 years until now Iâ€™m focused on administration of virtualization environments with passion for simplification of tasks to achieve efficiency in production environments.
+            Virtualization technology, Networking, OS Administration
+          </div>-->
