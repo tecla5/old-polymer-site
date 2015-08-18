@@ -116,7 +116,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     span{
       font-size:2.0vh;
     }
-
+    paper-ripple {
+      color: white;
+    }
+    /*Style MENU*/
+    .paper-menu > .iron-selected:not([style-scope]):not(.style-scope)
+    {
+      color: white;
+      text-transform: uppercase;
+      background-color: #DE3F00;
+    }
+    paper-menu a:not([style-scope]):not(.style-scope)
+    {
+      color: white;
+      text-transform: uppercase;
+      background-color: black;
+    }
   </style>
 
 
@@ -145,9 +160,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
                     <img class="icon" src="/images/icons/googleplus.svg"/>
 
-                </div>
-
-
+              </div>
 
               <div class="foot bottom fit">
                 <span> Contact Us </span></br></br>
@@ -166,24 +179,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <!-- Drawer Content -->
           <paper-menu class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect">
+            <paper-ripple id="ripple" style="pointer-events: none;"></paper-ripple>
+
             <a data-route="home" href="/">
-              <iron-icon icon="home"></iron-icon>
+              <!--<iron-icon icon="home"></iron-icon>-->
               <span>Home</span>
             </a>
             <a data-route="services" href="/services">
-              <iron-icon icon="t5-icons:tecla5"></iron-icon>
+              <!--<iron-icon icon="t5-icons:tecla5"></iron-icon>-->
               <span>Services</span>
             </a>
             <a data-route="about" href="/about">
-              <iron-icon icon="about"></iron-icon>
+              <!--<iron-icon icon="about"></iron-icon>-->
               <span>About</span>
             </a>
             <a data-route="contact" href="/contact">
-              <iron-icon icon="mail"></iron-icon>
+              <!--<iron-icon icon="mail"></iron-icon>-->
               <span>Contact</span>
             </a>
             <a data-route="blog" href="/blog">
-              <iron-icon icon="blog"></iron-icon>
+              <!--<iron-icon icon="blog"></iron-icon>-->
               <span>Blog</span>
             </a>
           </paper-menu>
@@ -245,7 +260,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </paper-drawer-panel>
 
   </template>
-
+  <script>
+    downAction: function(e) {
+      this.$.ripple.downAction({x: e.x, y: e.y});
+    },
+    upAction: function(e) {
+      this.$.ripple.upAction();
+    }
+  </script>
   <!-- build:js scripts/app.js -->
   <script src="scripts/app.js"></script>
   <!-- endbuild-->
