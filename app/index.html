@@ -68,7 +68,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     :host {
       display: block;
-      background: #FFF;
+      background: #FF9800;
     }
 
     span.paper-font-title{
@@ -121,117 +121,93 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       font-size:2.0vh;
     }
 
-    /*Style MENU*/
-    /*.paper-menu > .iron-selected:not([style-scope]):not(.style-scope)
-    {
-      color: white;
-      text-transform: uppercase;
-      background-color: #DE3F00;
-    }
-    paper-menu a:not([style-scope]):not(.style-scope)
-    {
-      color: white;
-      text-transform: uppercase;
-      background-color: black;
-    }*/
-
 /*Efecto Menu*/
-        core-menu {
-          display: block;
-          margin: 12px 0px;
-        }
-        x-app .panel-menu h2, x-app .panel-menu paper-item {
-            padding: 0 1rem;
-        }
-        paper-item {
-            -moz-user-select: none;
-            box-sizing: border-box;
-            cursor: pointer;
-            display: block;
-            font-size: 16px;
-            min-width: 7em;
-            outline: medium none;
-            position: relative;
-            z-index: 0;
-            cursor: pointer;
-            text-transform: uppercase;
-            background-color: black;
-            color:white;
-      }
-      paper-item.core-selected {
-          background-color: #DE3F00;
-      }
-      x-app paper-item #ripple {
-          color: rgb(139, 195, 74);
-      }
-      paper-item #ripple {
-          pointer-events: none;
-          z-index: -1;
-      }
-      paper-item a
-      {
-        font-size: 16px;
-        text-decoration: none;
-        color: white;
-      }
-      html [fit] {
-          bottom: 0;
-          left: 0;
-          position: absolute;
-          right: 0;
-          top: 0;
-      }
-      paper-ripple {
-          border-radius: inherit;
-          display: block;
-          overflow: hidden;
-          position: relative;
-          color: white;
-      }
-      paper-ripple #bg, paper-ripple #waves, paper-ripple .wave-container, paper-ripple .wave {
-          height: 100%;
-          left: 0;
-          pointer-events: none;
-          position: absolute;
-          top: 0;
-          width: 100%;
-      }
+iron-selector {
+  display: block;
+  margin: 12px 0px;
+}
 
-      paper-ripple #waves, paper-ripple .wave {
-          overflow: hidden;
-      }
-      paper-ripple #bg, paper-ripple #waves, paper-ripple .wave-container, paper-ripple .wave {
-          height: 100%;
-          left: 0;
-          pointer-events: none;
-          position: absolute;
-          top: 0;
-          width: 100%;
-      }
+iron-selector a{
+    margin-bottom: 2px;
+    padding: 10px 0px;
+    -moz-user-select: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    min-width: 7em;
+    outline: medium none;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: black;
+    color:white;
+    text-align: center;
+}
+paper-item.core-selected {
+    background-color: #DE3F00;
+}
+x-app iron-selector a #ripple {
+    color: rgb(139, 195, 74);
+}
+iron-selector a #ripple {
+    pointer-events: none;
+    z-index: -1;
+}
+iron-selector a
+{
+  font-size: 16px;
+  text-decoration: none;
+  color: white;
+}
+html [fit] {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+paper-ripple {
+    border-radius: inherit;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    color: white;
+}
+paper-ripple #bg, paper-ripple #waves, paper-ripple .wave-container, paper-ripple .wave {
+    height: 100%;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
 
-      html [layout][center], html [layout][center-center] {
-          align-items: center;
-      }
-      html [layout][horizontal] {
-          flex-direction: row;
-      }
-      html [layout][horizontal], html [layout][vertical] {
-          display: flex;
-      }
-      html [relative] {
-          position: relative;
-      }
-      paper-item .button-content {
-          padding: 0.9em 1em;
-      }
-    </style>
+paper-ripple #waves, paper-ripple .wave {
+    overflow: hidden;
+}
+paper-ripple #bg, paper-ripple #waves, paper-ripple .wave-container, paper-ripple .wave {
+    height: 100%;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+iron-selector a.iron-selected {
+  background: #DE3F00;
+}
+section.iron-selected
+{
+  background: #FF9800;
+}
+</style>
 
 <body unresolved class="fullbleed layout vertical">
   <span id="browser-sync-binding"></span>
   <template is="dom-bind" id="app">
       <paper-drawer-panel id="paperDrawerPanel">
-
-
         <!-- Drawer Scroll Header Panel -->
         <paper-scroll-header-panel drawer fixed>
 
@@ -267,62 +243,51 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <paper-icon-button class="logo" icon="t5-icons:tecla5"></paper-icon-button>
           </paper-toolbar>
 
-          <core-menu class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect">
-            <paper-item name="Home" on-tap="{{select}}" tabindex="0" class="core-selected">
+          <iron-selector class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect">
+            <a data-route="Home" href="/">
               <paper-ripple id="ripple" fit="">
                 <div id="bg" style="opacity: 0;"></div>
                 <div id="waves"></div>
               </paper-ripple>
-              <a data-route="home" href="/">
                 <span>Home</span>
-              </a>
-            </paper-item>
-            <paper-item name="About" on-tap="{{select}}" tabindex="0" class="">
+            </a>
+            <a data-route="About" href="/about">
               <paper-ripple id="ripple" fit="">
                 <div id="bg" style="opacity: 0;"></div>
                 <div id="waves"></div>
               </paper-ripple>
-              <a data-route="about" href="/about">
                 <span>About</span>
-              </a>
-            </paper-item>
-            <paper-item name="Services" on-tap="{{select}}" tabindex="0" class="">
+            </a>
+            <a data-route="Services" href="/services">
               <paper-ripple id="ripple" fit="">
                 <div id="bg" style="opacity: 0;"></div>
                 <div id="waves"></div>
               </paper-ripple>
-              <a data-route="services" href="/services">
                 <span>Services</span>
-              </a>
-            </paper-item>
-            <paper-item name="Project" on-tap="{{select}}" tabindex="0" class="">
+            </a>
+            <a data-route="Project" href="/project">
               <paper-ripple id="ripple" fit="">
                 <div id="bg" style="opacity: 0;"></div>
                 <div id="waves"></div>
               </paper-ripple>
-              <a data-route="Project" href="/project">
                 <span>Project</span>
-              </a>
-            </paper-item>
-            <paper-item name="Blog" on-tap="{{select}}" tabindex="0" class="">
+            </a>
+            <a data-route="Blog" href="/blog">
               <paper-ripple id="ripple" fit="">
                 <div id="bg" style="opacity: 0;"></div>
                 <div id="waves"></div>
               </paper-ripple>
-              <a data-route="blog" href="/blog">
                 <span>Blog</span>
-              </a>
-            </paper-item>
-            <paper-item name="Contact" on-tap="{{select}}" tabindex="0" class="">
+            </a>
+            <a data-route="Contact" href="/contact">
               <paper-ripple id="ripple" fit="">
                 <div id="bg" style="opacity: 0;"></div>
                 <div id="waves"></div>
               </paper-ripple>
-              <a data-route="contact" href="/contact">
                 <span>Contact</span>
-              </a>
-            </paper-item>
-          </core-menu>
+            </a>
+          </iron-selector>
+
         </paper-scroll-header-panel>
 
         <!-- Main Area -->
