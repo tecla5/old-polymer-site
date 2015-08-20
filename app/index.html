@@ -195,7 +195,7 @@ paper-ripple #bg, paper-ripple #waves, paper-ripple .wave-container, paper-rippl
     top: 0;
     width: 100%;
 }
-iron-selector a.iron-selected {
+.iron-selected {
   background: #DE3F00;
 }
 section.iron-selected
@@ -243,7 +243,7 @@ section.iron-selected
             <paper-icon-button class="logo" icon="t5-icons:tecla5"></paper-icon-button>
           </paper-toolbar>
 
-          <iron-selector class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect">
+          <iron-selector class="list" attr-for-selected="data-route" selected="Home" on-iron-select="onMenuSelect">
             <a data-route="Home" href="/">
               <paper-ripple id="ripple" fit="">
                 <div id="bg" style="opacity: 0;"></div>
