@@ -111,7 +111,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     display: block;
     margin: 12px 0px;
   }
-  .list a {
+  iron-selector a {
     margin-bottom: 2px;
     padding: 10px 0px;
     -moz-user-select: none;
@@ -183,7 +183,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   .topBack {
     background: #000;
   }
-</style>
+  .foot-style{
+    display:inline;
+    background-color: #404040;
+  }
+  .social-style{
+    display:inline;
+    background-color: #000;
+  }
+  </style>
 
 
 
@@ -202,16 +210,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <paper-toolbar class="medium-tall" id="footToolbar">
 
               <div class="foot middleJustify fit">
-                  <a target="_blank" href="http://www.twitter.com">
+                  <a target="_blank" class="foot-style" href="http://www.twitter.com">
                     <img class="icon" src="/images/icons/twitter.svg"/>
                   </a>
-                  <a target="_blank" href="http://www.facebook.com">
+                  <a target="_blank" class="foot-style" href="http://www.facebook.com">
                     <img class="icon" src="/images/icons/facebook.svg"/>
                   </a>
-                  <a target="_blank" href="http://www.linkedin.com">
+                  <a target="_blank" class="foot-style" href="http://www.linkedin.com">
                     <img class="icon" src="/images/icons/linkedin.svg"/>
                   </a>
-                  <a target="_blank" href="http://www.plus.google.com">
+                  <a target="_blank" class="foot-style" href="http://www.plus.google.com">
                     <img class="icon" src="/images/icons/googleplus.svg"/>
                   </a>
                 </div>
@@ -235,41 +243,48 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <!-- Drawer Content -->
           <iron-selector id="menuContainer" class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect" onclick="resetScroll()">
-            <a data-route="home" href="/" >
-              <span>HOME</span>
-              <paper-ripple id="ripple" style="pointer-events: none;">
-                <div id="bg" style="opacity: 0;"></div>
-                <div id="waves"></div>
-              </paper-ripple>
-            </a>
-            <a data-route="services" href="/services">
-              <span>SERVICES</span>
-              <paper-ripple id="ripple" style="pointer-events: none;">
-                <div id="bg" style="opacity: 0;"></div>
-                <div id="waves"></div>
-            </paper-ripple>
-            </a>
-            <a data-route="about" href="/about">
-              <span>ABOUT US</span>
-              <paper-ripple id="ripple" style="pointer-events: none;">
-                <div id="bg" style="opacity: 0;"></div>
-                <div id="waves"></div>
-            </paper-ripple>
-            </a>
-            <a data-route="contact" href="/contact">
-              <span>CONTACT</span>
-              <paper-ripple id="ripple" style="pointer-events: none;">
-                <div id="bg" style="opacity: 0;"></div>
-                <div id="waves"></div>
-            </paper-ripple>
-            </a>
-            <a data-route="blog" href="/blog">
-              <span>BLOG</span>
-              <paper-ripple id="ripple" style="pointer-events: none;">
-                <div id="bg" style="opacity: 0;"></div>
-                <div id="waves"></div>
-            </paper-ripple>
-            </a>
+            <a data-route="home" href="/">
+               <paper-ripple id="ripple" fit="">
+                 <div id="bg" style="opacity: 0;"></div>
+                 <div id="waves"></div>
+               </paper-ripple>
+                 <span>Home</span>
+             </a>
+             <a data-route="about" href="/about">
+               <paper-ripple id="ripple" fit="">
+                 <div id="bg" style="opacity: 0;"></div>
+                 <div id="waves"></div>
+               </paper-ripple>
+                 <span>About</span>
+             </a>
+             <a data-route="services" href="/services">
+               <paper-ripple id="ripple" fit="">
+                 <div id="bg" style="opacity: 0;"></div>
+                 <div id="waves"></div>
+               </paper-ripple>
+                 <span>Services</span>
+             </a>
+             <!--<a data-route="Project" href="/project">
+               <paper-ripple id="ripple" fit="">
+                 <div id="bg" style="opacity: 0;"></div>
+                 <div id="waves"></div>
+               </paper-ripple>
+                 <span>Project</span>
+             </a>-->
+             <a data-route="blog" href="/blog">
+               <paper-ripple id="ripple" fit="">
+                 <div id="bg" style="opacity: 0;"></div>
+                 <div id="waves"></div>
+               </paper-ripple>
+                 <span>Blog</span>
+             </a>
+             <a data-route="contact" href="/contact">
+               <paper-ripple id="ripple" fit="">
+                 <div id="bg" style="opacity: 0;"></div>
+                 <div id="waves"></div>
+               </paper-ripple>
+                 <span>Contact</span>
+             </a>
           </iron-selector>
         </paper-scroll-header-panel>
 
@@ -302,19 +317,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <!-- Toolbar icons -->
               <paper-icon-button id="shareShow" icon="social:share" onclick="showDiv()">  </paper-icon-button>
                 <div id="socialContainer"  style="display:none;">
-                  <a target="popup" onclick="window.open('https://twitter.com/share?url=http://www.tecla5.com&text=PLACEHOLDER%20TEXT','Tecla 5 Site','width=600,height=400')" data-url="http://www.tecla5.com">
+                  <a target="popup" class="social-style" onclick="window.open('https://twitter.com/share?url=http://www.tecla5.com&text=PLACEHOLDER%20TEXT','Tecla 5 Site','width=600,height=400')" data-url="http://www.tecla5.com">
                     <paper-icon-button src="/images/icons/twitter-icon.png"></paper-icon-button>
                   </a>
 
-                  <a target="popup" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=http://www.tecla5.com&title=PLACEHOLDER%20TEXT','Tecla 5 Site','width=600,height=400')" data-url="http://www.tecla5.com">
+                  <a target="popup" class="social-style" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=http://www.tecla5.com&title=PLACEHOLDER%20TEXT','Tecla 5 Site','width=600,height=400')" data-url="http://www.tecla5.com">
                     <paper-icon-button src="/images/icons/linkedin-icon.png"></paper-icon-button>
                   </a>
 
-                  <a target="popup" onclick="window.open('http://www.facebook.com/share.php?u=http://www.tecla5.com&title=PLACEHOLDERTEXT','Tecla 5 Site','width=600,height=400')" data-url="http://www.tecla5.com">
+                  <a target="popup" class="social-style" onclick="window.open('http://www.facebook.com/share.php?u=http://www.tecla5.com&title=PLACEHOLDERTEXT','Tecla 5 Site','width=600,height=400')" data-url="http://www.tecla5.com">
                     <paper-icon-button src="/images/icons/facebook-icon.png"></paper-icon-button>
                   </a>
 
-                  <a target="popup" onclick="window.open('https://plus.google.com/share?url=http://www.tecla5.com&title=PLACEHOLDERTEXT','Tecla 5 Site','width=600,height=400')" data-url="http://www.tecla5.com">
+                  <a target="popup" class="social-style" onclick="window.open('https://plus.google.com/share?url=http://www.tecla5.com&title=PLACEHOLDERTEXT','Tecla 5 Site','width=600,height=400')" data-url="http://www.tecla5.com">
                     <paper-icon-button src="/images/icons/googleplus-icon.png"></paper-icon-button>
                   </a>
                 </div>
