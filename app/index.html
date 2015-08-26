@@ -1,5 +1,5 @@
-<!doctype html>
-<!--
+<!-- <!doctype html>
+
 @license
 Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
 This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
@@ -60,73 +60,136 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- endreplace-->
 </head>
 
-  <style>
+<style>
+  :host {
+    display: block;
+    background: #FF9800;
+  }
+  span.paper-font-title{
+    font-size: 30px;
+  }
+  #mainToolbar{ /*MAIN TOOLBAR*/
+    background: #000;
+  }
+  #topToolbar{ /*TOP TOOLBAR*/
+    background: #000;
+  }
+  #footToolbar{
+    background: #404040;
+  }
+  div.content{ /* MAIN CONTENT BACKGROUND */
+    background: #FF9800;
+  }
+  paper-menu.paper-menu-0{ /*MENU BACKGROUND */
+    background: #FF9800;
+  }
+  div.content.style-scope.paper-menu{ /*BUTTONS BACKGROUND */
+    background: #FF9800;
+  }
+  #mainContainer.paper-scroll-header-panel{ /* BOTTOM MENU BACKGROUND */
+    background: #FF9800;
+  }
+  #footer {
+    position: fixed;
+    height: 13%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+  .foot{
+    text-align:center;
+  }
+  .icon{
+    width: 3%;
 
-    :host {
-      display: block;
-      background: #FFF;
-    }
-
-    span.paper-font-title{
-      font-size: 3.0vh;
-    }
-
-    #mainToolbar{ /*MAIN TOOLBAR*/
-      background: #000;
-    }
-
-    #topToolbar{ /*TOP TOOLBAR*/
-      background: #000;
-    }
-
-    #footToolbar{ /*FOOTER TOOLBAR*/
-      background: #404040;
-    }
-
-    paper-menu.paper-menu-0{
-      background: #FF9800;
-    }
-
-    .iron-selected{
-      background-color: #F57C00;
-    }
-
-    #mainContainer.paper-scroll-header-panel{ /* BOTTOM MENU BACKGROUND */
-      background: #FF9800;
-    }
-
-    #footer {
-      position: fixed;
-      height: 13.5%;
-      min-width: 100%;
-      bottom: 0%;
-      left: 0%;
-    }
-
-    .foot{
-      text-align:center;
-    }
-
-    .icon{
-      width: 3%;
-      height: 3%;
-    }
-
-    span{
-      font-size:2.0vh;
-    }
-
-    .topBack{
-      background: #000;
-    }
-
-  </style>
+  }
+  span{
+    font-size:2.0vh;
+  }
+  /*Efecto Menu*/
+  iron-selector {
+    display: block;
+    margin: 12px 0px;
+  }
+  .list a {
+    margin-bottom: 2px;
+    padding: 10px 0px;
+    -moz-user-select: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    min-width: 7em;
+    outline: medium none;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: black;
+    color:white;
+    text-align: center;
+  }
+  x-app iron-selector a #ripple {
+    color: rgb(139, 195, 74);
+  }
+  iron-selector a #ripple {
+    pointer-events: none;
+    z-index: -1;
+  }
+  iron-selector a { /*Duplicated?*/
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+  }
+  html [fit] {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  paper-ripple {
+    border-radius: inherit;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    color: #DE3F00;
+  }
+  paper-ripple #bg, paper-ripple #waves, paper-ripple .wave-container, paper-ripple .wave {
+    height: 100%;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  paper-ripple #waves, paper-ripple .wave {
+    overflow: hidden;
+  }
+  paper-ripple #bg, paper-ripple #waves, paper-ripple .wave-container, paper-ripple .wave {
+    height: 100%;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  .iron-selected {
+    background: #DE3F00;
+  }
+  section.iron-selected {
+    background: #FF9800;
+  }
+  .topBack {
+    background: #000;
+  }
+</style>
 
 
 
 <body unresolved class="fullbleed layout vertical">
   <span id="browser-sync-binding"></span>
-  <template is="dom-bind">
+  <template is="dom-bind" id="app">
       <paper-drawer-panel id="paperDrawerPanel">
 
 
@@ -136,19 +199,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <!-- Footer Content -->
           <paper-scroll-header-panel id="footer" >
 
-            <paper-toolbar class="tall" id="footToolbar">
+            <paper-toolbar class="medium-tall" id="footToolbar">
 
               <div class="foot middleJustify fit">
-                  <a href="http://www.twitter.com">
+                  <a target="_blank" href="http://www.twitter.com">
                     <img class="icon" src="/images/icons/twitter.svg"/>
                   </a>
-                  <a href="http://www.facebook.com">
+                  <a target="_blank" href="http://www.facebook.com">
                     <img class="icon" src="/images/icons/facebook.svg"/>
                   </a>
-                  <a href="http://www.linkedin.com">
+                  <a target="_blank" href="http://www.linkedin.com">
                     <img class="icon" src="/images/icons/linkedin.svg"/>
                   </a>
-                  <a href="http://www.plus.google.com">
+                  <a target="_blank" href="http://www.plus.google.com">
                     <img class="icon" src="/images/icons/googleplus.svg"/>
                   </a>
                 </div>
@@ -171,33 +234,43 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </paper-toolbar>
 
           <!-- Drawer Content -->
-          <paper-menu id="menuContainer" class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect" onclick="resetScroll()">
+          <iron-selector id="menuContainer" class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect" onclick="resetScroll()">
             <a data-route="home" href="/" >
-              <iron-icon icon="home"></iron-icon>
-              <span>Home</span>
-              <paper-ripple id="ripple" style="pointer-events: none;"></paper-ripple>
+              <span>HOME</span>
+              <paper-ripple id="ripple" style="pointer-events: none;">
+                <div id="bg" style="opacity: 0;"></div>
+                <div id="waves"></div>
+              </paper-ripple>
             </a>
             <a data-route="services" href="/services">
-              <iron-icon icon="t5-icons:tecla5"></iron-icon>
-              <span>Services</span>
-              <paper-ripple id="ripple" style="pointer-events: none;"></paper-ripple>
+              <span>SERVICES</span>
+              <paper-ripple id="ripple" style="pointer-events: none;">
+                <div id="bg" style="opacity: 0;"></div>
+                <div id="waves"></div>
+            </paper-ripple>
             </a>
             <a data-route="about" href="/about">
-              <iron-icon icon="about"></iron-icon>
-              <span>About Us</span>
-              <paper-ripple id="ripple" style="pointer-events: none;"></paper-ripple>
+              <span>ABOUT US</span>
+              <paper-ripple id="ripple" style="pointer-events: none;">
+                <div id="bg" style="opacity: 0;"></div>
+                <div id="waves"></div>
+            </paper-ripple>
             </a>
             <a data-route="contact" href="/contact">
-              <iron-icon icon="mail"></iron-icon>
-              <span>Contact</span>
-              <paper-ripple id="ripple" style="pointer-events: none;"></paper-ripple>
+              <span>CONTACT</span>
+              <paper-ripple id="ripple" style="pointer-events: none;">
+                <div id="bg" style="opacity: 0;"></div>
+                <div id="waves"></div>
+            </paper-ripple>
             </a>
             <a data-route="blog" href="/blog">
-              <iron-icon icon="blog"></iron-icon>
-              <span>Blog</span>
-              <paper-ripple id="ripple" style="pointer-events: none;"></paper-ripple>
+              <span>BLOG</span>
+              <paper-ripple id="ripple" style="pointer-events: none;">
+                <div id="bg" style="opacity: 0;"></div>
+                <div id="waves"></div>
+            </paper-ripple>
             </a>
-          </paper-menu>
+          </iron-selector>
         </paper-scroll-header-panel>
 
         <!-- Main Area -->
@@ -305,10 +378,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         }
 
       }
+
+      var template = document.querySelector('#app');
+
+		    template.addEventListener('dom-change', function() {
+		        this.route = this.route || 'home'; // default route to "one".
+		    });
     </script>
 
 
   <!-- endbuild-->
 
 
-</html>
+</html> -->
