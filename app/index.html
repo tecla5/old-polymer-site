@@ -63,31 +63,32 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <style>
   :host {
     display: block;
-    background: #FF9800;
+    background: #eee;
   }
   span.paper-font-title{
     font-size: 30px;
+    font-weight: 300;
   }
   #mainToolbar{ /*MAIN TOOLBAR*/
-    background: #000;
+    background: #494B79;
   }
   #topToolbar{ /*TOP TOOLBAR*/
-    background: #000;
+    background: #494B79;
   }
   #footToolbar{
     background: #404040;
   }
   div.content{ /* MAIN CONTENT BACKGROUND */
-    background: #FF9800;
+    background: #eee;
   }
   paper-menu.paper-menu-0{ /*MENU BACKGROUND */
-    background: #FF9800;
+    background: #eee;
   }
   div.content.style-scope.paper-menu{ /*BUTTONS BACKGROUND */
-    background: #FF9800;
+    background: #eee;
   }
   #mainContainer.paper-scroll-header-panel{ /* BOTTOM MENU BACKGROUND */
-    background: #FF9800;
+    background: #eee;
   }
   #footer {
     position: fixed;
@@ -125,8 +126,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     z-index: 0;
     cursor: pointer;
     text-transform: uppercase;
-    background-color: black;
-    color:white;
+    background-color: #eee;
+    color:black;
     text-align: center;
   }
   x-app iron-selector a #ripple {
@@ -139,7 +140,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   iron-selector a { /*Duplicated?*/
     font-size: 16px;
     text-decoration: none;
-    color: white;
+    color: black;
   }
   html [fit] {
     bottom: 0;
@@ -153,7 +154,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     display: block;
     overflow: hidden;
     position: relative;
-    color: #DE3F00;
+    color: black;
   }
   paper-ripple #bg, paper-ripple #waves, paper-ripple .wave-container, paper-ripple .wave {
     height: 100%;
@@ -175,13 +176,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     width: 100%;
   }
   .iron-selected {
-    background: #DE3F00;
+    background: #eee;
   }
   section.iron-selected {
-    background: #FF9800;
+    background: #eee;
   }
   .topBack {
-    background: #000;
+    background: #494B79;
   }
   .foot-style{
     display:inline;
@@ -189,7 +190,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   }
   .social-style{
     display:inline;
-    background-color: #000;
+    background-color: #494B79;
   }
   </style>
 
@@ -271,13 +272,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                </paper-ripple>
                  <span>Project</span>
              </a>-->
-             <a data-route="blog" href="/blog">
+            <!-- <a data-route="blog" href="/blog">
                <paper-ripple id="ripple" fit="">
                  <div id="bg" style="opacity: 0;"></div>
                  <div id="waves"></div>
                </paper-ripple>
                  <span>Blog</span>
-             </a>
+             </a> -->
              <a data-route="contact" href="/contact">
                <paper-ripple id="ripple" fit="">
                  <div id="bg" style="opacity: 0;"></div>
