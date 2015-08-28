@@ -41,44 +41,40 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   </style>
   <template is="auto-binding">
-    <body class="fullbleed layout vertical">
+    <div><google-map latitude="41.38" longitude="-357.81"></google-map></div>
 
-      <div><google-map latitude="41.38" longitude="-357.81"></google-map></div>
+    <paper-header-panel mode="seamed" flex>
+      <section class="section-tab">
+        <paper-toolbar class="email" id="mainheader">
+          <iron-icon style="margin:10px" icon="communication:email"></iron-icon>
+          <span flex>  We are happy to help you!</span>
+        </paper-toolbar>
 
-      <paper-header-panel mode="seamed" flex>
+        <form is="component-form" class="section-tab" id="form" method="GET" action="/__/forms/contact">
+          <paper-input labelVisible floatinglabel error="no name" label="your name">
+            <input is="iron-input" label="Your Name" type="text" name="name" required>
+          </paper-input>
 
-        <section class="section-tab">
+          <paper-input labelVisible floatinglabel error="no email" label="your email">
+            <input is="iron-input" type="email" name="email" required>
+          </paper-input>
 
-          <paper-toolbar class="email" id="mainheader">
-            <iron-icon style="margin:10px" icon="communication:email"></iron-icon>
-            <span flex>  We are happy to help you!</span>
-          </paper-toolbar>
+          <paper-input labelVisible floatinglabel error="no message" label="message">
+            <paper-autogrow-textarea id="a1">
+              <textarea id="t1" name="message"></textarea>
+            </paper-autogrow-textarea>
+          </paper-input>
 
-          <form is="component-form" class="section-tab" id="form" method="GET" action="/__/forms/contact">
-            <paper-input labelVisible floatinglabel error="no name" label="your name">
-              <input is="iron-input" label="Your Name" type="text" name="name" required>
-            </paper-input>
+          <div id="clicker" on-tap="{{clickAction}}">
+            <paper-button raised class="colored">Submit</paper-button>
+          </div>
 
-            <paper-input labelVisible floatinglabel error="no email" label="your email">
-              <input is="iron-input" type="email" name="email" required>
-            </paper-input>
+        </form>
 
-            <paper-input labelVisible floatinglabel error="no message" label="message">
-              <paper-autogrow-textarea id="a1">
-                <textarea id="t1" name="message"></textarea>
-              </paper-autogrow-textarea>
-            </paper-input>
+      </section>
 
-            <div id="clicker" on-tap="{{clickAction}}">
-              <paper-button raised class="colored">Submit</paper-button>
-            </div>
+    </paper-header-panel>
 
-          </form>
-
-        </section>
-
-      </paper-header-panel>
-    </body>
 
   </template>
   <script>
