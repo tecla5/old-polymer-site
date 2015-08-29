@@ -1,5 +1,5 @@
-<!doctype html>
-<!--
+<!-- <!doctype html>
+
 @license
 Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
 This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
@@ -60,116 +60,350 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- endreplace-->
 </head>
 
+<style>
+  :host {
+    display: block;
+    background: #eee;
+  }
+  span.paper-font-title{
+    font-size: 30px;
+    font-weight: 300;
+  }
+  #mainToolbar{ /*MAIN TOOLBAR*/
+    background: #494B79;
+  }
+  #topToolbar{ /*TOP TOOLBAR*/
+    background: #494B79;
+  }
+  #footToolbar{
+    background: #404040;
+  }
+  div.content{ /* MAIN CONTENT BACKGROUND */
+    background: #eee;
+  }
+  paper-menu.paper-menu-0{ /*MENU BACKGROUND */
+    background: #eee;
+  }
+  div.content.style-scope.paper-menu{ /*BUTTONS BACKGROUND */
+    background: #eee;
+  }
+  #mainContainer.paper-scroll-header-panel{ /* BOTTOM MENU BACKGROUND */
+    background: #eee;
+  }
+  #footer {
+    position: fixed;
+    height: 13%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+  .foot{
+    text-align:center;
+  }
+  .icon{
+    width: 3%;
+
+  }
+  span{
+    font-size:2.0vh;
+  }
+  /*Efecto Menu*/
+  iron-selector {
+    display: block;
+    margin: 12px 0px;
+  }
+  iron-selector a {
+    margin-bottom: 2px;
+    padding: 10px 0px;
+    -moz-user-select: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    min-width: 7em;
+    outline: medium none;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: #eee;
+    color:black;
+    text-align: center;
+  }
+  x-app iron-selector a #ripple {
+    color: rgb(139, 195, 74);
+  }
+  iron-selector a #ripple {
+    pointer-events: none;
+    z-index: -1;
+  }
+  iron-selector a { /*Duplicated?*/
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+  }
+  html [fit] {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  paper-ripple {
+    border-radius: inherit;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    color: black;
+  }
+  paper-ripple #bg, paper-ripple #waves, paper-ripple .wave-container, paper-ripple .wave {
+    height: 100%;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  paper-ripple #waves, paper-ripple .wave {
+    overflow: hidden;
+  }
+  paper-ripple #bg, paper-ripple #waves, paper-ripple .wave-container, paper-ripple .wave {
+    height: 100%;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  .iron-selected {
+    background: #eee;
+  }
+  section.iron-selected {
+    background: #eee;
+  }
+  .topBack {
+    background: #494B79;
+  }
+  .foot-style{
+    display:inline;
+    background-color: #404040;
+  }
+  .social-style{
+    display:inline;
+    background-color: #494B79;
+  }
+  </style>
+
+
+
 <body unresolved class="fullbleed layout vertical">
   <span id="browser-sync-binding"></span>
   <template is="dom-bind" id="app">
+      <paper-drawer-panel id="paperDrawerPanel">
 
-    <paper-drawer-panel id="paperDrawerPanel">
-      <!-- Drawer Scroll Header Panel -->
-      <paper-scroll-header-panel drawer fixed>
 
-        <!-- Drawer Toolbar -->
-        <paper-toolbar id="drawerToolbar">
-          <span class="paper-font-title">Menu</span>
-        </paper-toolbar>
+        <!-- Drawer Scroll Header Panel -->
+        <paper-scroll-header-panel drawer fixed>
 
-        <!-- Drawer Content -->
-        <paper-menu class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect">
-          <a data-route="home" href="/">
-            <iron-icon icon="home"></iron-icon>
-            <span>Home</span>
-          </a>
-          <a data-route="services" href="/services">
-            <iron-icon icon="t5-icons:tecla5"></iron-icon>
-            <span>Services</span>
-          </a>
-          <a data-route="about" href="/about">
-            <iron-icon icon="about"></iron-icon>
-            <span>About</span>
-          </a>
-          <a data-route="contact" href="/contact">
-            <iron-icon icon="mail"></iron-icon>
-            <span>Contact</span>
-          </a>
-          <a data-route="blog" href="/blog">
-            <iron-icon icon="blog"></iron-icon>
-            <span>Blog</span>
-          </a>
-        </paper-menu>
-      </paper-scroll-header-panel>
+          <!-- Footer Content -->
+          <paper-scroll-header-panel id="footer" >
 
-      <!-- Main Area -->
-      <paper-scroll-header-panel main condenses keep-condensed-header>
+            <paper-toolbar class="medium-tall" id="footToolbar">
 
-        <!-- Main Toolbar -->
-        <paper-toolbar id="mainToolbar" class="tall">
-          <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
-          <span class="flex"></span>
+              <div class="foot middleJustify fit">
+                  <a target="_blank" class="foot-style" href="http://www.twitter.com">
+                    <img class="icon" src="/images/icons/twitter.svg"/>
+                  </a>
+                  <a target="_blank" class="foot-style" href="http://www.facebook.com">
+                    <img class="icon" src="/images/icons/facebook.svg"/>
+                  </a>
+                  <a target="_blank" class="foot-style" href="http://www.linkedin.com">
+                    <img class="icon" src="/images/icons/linkedin.svg"/>
+                  </a>
+                  <a target="_blank" class="foot-style" href="http://www.plus.google.com">
+                    <img class="icon" src="/images/icons/googleplus.svg"/>
+                  </a>
+                </div>
 
-          <!-- Toolbar icons -->
-          <paper-icon-button icon="refresh"></paper-icon-button>
-          <paper-icon-button icon="search"></paper-icon-button>
 
-          <!-- Application name -->
-          <div class="middle middle-container center horizontal layout">
-            <div class="app-name">tecla5 Site</div>
+
+              <div class="foot middle fit">
+                <span> Contact Us </span></br></br>
+                <span> tecla5.com All Rights Reserved 2015</span>
+              </div>
+
+            </paper-toolbar>
+
+          </paper-scroll-header-panel>
+
+          <!-- Drawer Toolbar -->
+          <paper-toolbar id="topToolbar" class="drawerToolbar">
+            <span class="paper-font-title">tecla</span>
+            <paper-icon-button class="logo" icon="t5-icons:tecla5"></paper-icon-button>
+          </paper-toolbar>
+
+          <!-- Drawer Content -->
+          <iron-selector id="menuContainer" class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect" onclick="resetScroll()">
+            <a data-route="home" href="/">
+               <paper-ripple id="ripple" fit="">
+                 <div id="bg" style="opacity: 0;"></div>
+                 <div id="waves"></div>
+               </paper-ripple>
+                 <span>Home</span>
+             </a>
+             <a data-route="about" href="/about">
+               <paper-ripple id="ripple" fit="">
+                 <div id="bg" style="opacity: 0;"></div>
+                 <div id="waves"></div>
+               </paper-ripple>
+                 <span>About</span>
+             </a>
+             <a data-route="services" href="/services">
+               <paper-ripple id="ripple" fit="">
+                 <div id="bg" style="opacity: 0;"></div>
+                 <div id="waves"></div>
+               </paper-ripple>
+                 <span>Services</span>
+             </a>
+             <!--<a data-route="Project" href="/project">
+               <paper-ripple id="ripple" fit="">
+                 <div id="bg" style="opacity: 0;"></div>
+                 <div id="waves"></div>
+               </paper-ripple>
+                 <span>Project</span>
+             </a>-->
+            <!-- <a data-route="blog" href="/blog">
+               <paper-ripple id="ripple" fit="">
+                 <div id="bg" style="opacity: 0;"></div>
+                 <div id="waves"></div>
+               </paper-ripple>
+                 <span>Blog</span>
+             </a> -->
+             <a data-route="contact" href="/contact">
+               <paper-ripple id="ripple" fit="">
+                 <div id="bg" style="opacity: 0;"></div>
+                 <div id="waves"></div>
+               </paper-ripple>
+                 <span>Contact</span>
+             </a>
+          </iron-selector>
+        </paper-scroll-header-panel>
+
+        <!-- Main Area -->
+        <paper-scroll-header-panel id="mainContainer" main condenses keep-condensed-header>
+
+          <!-- Main Toolbar -->
+          <paper-toolbar id="mainToolbar" class="tall" >
+            <iron-pages attr-for-selected="data-route" selected="{{route}}">
+              <div data-route="home" >
+                <span class="topBack paper-font-title">Home</span>
+              </div>
+              <div data-route="services">
+                <span class="topBack paper-font-title">Services</span>
+              </div>
+              <div data-route="about">
+                <span class="topBack paper-font-title">About Us</span>
+              </div>
+              <div data-route="contact">
+                <span class="topBack paper-font-title">Contact Us</span>
+              </div>
+              <div data-route="blog">
+                <span class="topBack paper-font-title"> Blog</span>
+              </div>
+            </iron-pages>
+
+            <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+            <span class="flex"></span>
+
+              <!-- Toolbar icons -->
+              <paper-icon-button id="shareShow" icon="social:share" onclick="showDiv()">  </paper-icon-button>
+                <div id="socialContainer"  style="display:none;">
+                  <a target="popup" class="social-style" onclick="window.open('https://twitter.com/share?url=http://www.tecla5.com&text=PLACEHOLDER%20TEXT','Tecla 5 Site','width=600,height=400')" data-url="http://www.tecla5.com">
+                    <paper-icon-button src="/images/icons/twitter-icon.png"></paper-icon-button>
+                  </a>
+
+                  <a target="popup" class="social-style" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=http://www.tecla5.com&title=PLACEHOLDER%20TEXT','Tecla 5 Site','width=600,height=400')" data-url="http://www.tecla5.com">
+                    <paper-icon-button src="/images/icons/linkedin-icon.png"></paper-icon-button>
+                  </a>
+
+                  <a target="popup" class="social-style" onclick="window.open('http://www.facebook.com/share.php?u=http://www.tecla5.com&title=PLACEHOLDERTEXT','Tecla 5 Site','width=600,height=400')" data-url="http://www.tecla5.com">
+                    <paper-icon-button src="/images/icons/facebook-icon.png"></paper-icon-button>
+                  </a>
+
+                  <a target="popup" class="social-style" onclick="window.open('https://plus.google.com/share?url=http://www.tecla5.com&title=PLACEHOLDERTEXT','Tecla 5 Site','width=600,height=400')" data-url="http://www.tecla5.com">
+                    <paper-icon-button src="/images/icons/googleplus-icon.png"></paper-icon-button>
+                  </a>
+                </div>
+
+
+            <paper-icon-button icon="search"></paper-icon-button>
+
+            <!-- Application name -->
+
+
+          </paper-toolbar>
+
+          <!-- Main Area -->
+          <div class="content">
+            <iron-pages style="padding:0px; padding-bottom:13.5%;" attr-for-selected="data-route" selected="{{route}}" >
+
+              <section data-route="home">
+                <t5-home></t5-home>
+              </section>
+              <section data-route="services">
+                <t5-services></t5-services>
+              </section>
+              <section data-route="about">
+                <t5-about></t5-about>
+              </section>
+              <section data-route="contact">
+                <t5-contact></t5-contact>
+              </section>
+              <section data-route="blog">
+                <t5-blog></t5-blog>
+              </section>
+
+            </iron-pages>
           </div>
 
-          <!-- Application sub title -->
-          <div class="bottom bottom-container center horizontal layout">
-            <div class="bottom-title paper-font-subhead">The future of the web today</div>
-          </div>
-
-        </paper-toolbar>
-
-        <!-- Main Content -->
-        <div class="content">
-          <iron-pages attr-for-selected="data-route" selected="{{route}}">
-
-            <section data-route="home">
-              <t5-home></t5-home>
-            </section>
-            <section data-route="services">
-              <t5-services></t5-services>
-            </section>
-            <section data-route="about">
-              <t5-about></t5-about>
-            </section>
-            <section data-route="contact">
-              <t5-contact></t5-contact>
-            </section>
-            <section data-route="blog">
-              <t5-blog></t5-blog>
-            </section>
 
 
-          </iron-pages>
-        </div>
-      </paper-scroll-header-panel>
-    </paper-drawer-panel>
+        </paper-scroll-header-panel>
 
-    <!-- Uncomment next block to enable Service Worker support (1/2) -->
-    <!--
-    <paper-toast id="caching-complete"
-                 duration="6000"
-                 text="Caching complete! This app will work offline.">
-    </paper-toast>
 
-    <platinum-sw-register auto-register
-                          clients-claim
-                          skip-waiting
-                          on-service-worker-installed="displayInstalledToast">
-      <platinum-sw-cache default-cache-strategy="networkFirst"
-                         precache-file="precache.json">
-      </platinum-sw-cache>
-    </platinum-sw-register>
-    -->
+
+      </paper-drawer-panel>
 
   </template>
+</body>
 
   <!-- build:js scripts/app.js -->
   <script src="scripts/app.js"></script>
-  <!-- endbuild-->
-</body>
+    <script>
+      function resetScroll(){
+        document.querySelector('#mainContainer').scroller.scrollTop = 0;
+      }
+      function showDiv() {
+        var div = document.getElementById('socialContainer');
+        if(div.style.display!='none') {
+            document.getElementById("socialContainer").style.display = 'none';
+        }
+        else
+        {
+            document.getElementById("socialContainer").style.display = 'block';
+        }
 
-</html>
+      }
+
+      var template = document.querySelector('#app');
+
+		    template.addEventListener('dom-change', function() {
+		        this.route = this.route || 'home'; // default route to "one".
+		    });
+    </script>
+
+
+  <!-- endbuild-->
+
+
+</html> -->
