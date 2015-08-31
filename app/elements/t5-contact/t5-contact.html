@@ -105,23 +105,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       Polymer({
         is: 't5-contact',
 
-        properties: {
-          foo: {
-            type: String,
-            value: 'bar',
-            notify: true
+        properties: { },
 
-
-          }
+        msgSent: function() {
+          document.getElementById('form').style.display = 'none';
+          document.getElementById('successMsg').style.display = 'block';
         }
 
       });
     })();
 
-  function msgSent() {
-    document.getElementById("form").style.display = 'none';
-    document.getElementById("successMsg").style.display = 'block';
-  }
 
   </script>
 </dom-module>
