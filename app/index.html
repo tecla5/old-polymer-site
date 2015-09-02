@@ -96,6 +96,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     width: 100%;
     bottom: 0;
     left: 0;
+    visibility: hidden;
+
+  }
+  #footerDiv{
+    position: fixed;
+    height: 13%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
   }
   .foot{
     text-align:center;
@@ -206,35 +215,32 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <paper-scroll-header-panel drawer fixed>
 
           <!-- Footer Content -->
-          <paper-scroll-header-panel id="footer" >
+          <div id="footerDiv" onMouseOver="showFooter('footer')" onMouseOut="hideFooter('footer')">
+            <paper-scroll-header-panel id="footer">
+              <paper-toolbar class="medium-tall" id="footToolbar">
 
-            <paper-toolbar class="medium-tall" id="footToolbar">
+                <div class="foot middleJustify fit">
+                    <a target="_blank" class="foot-style" href="http://www.twitter.com">
+                      <img class="icon" src="/images/icons/twitter.svg"/>
+                    </a>
+                    <a target="_blank" class="foot-style" href="http://www.facebook.com">
+                      <img class="icon" src="/images/icons/facebook.svg"/>
+                    </a>
+                    <a target="_blank" class="foot-style" href="http://www.linkedin.com">
+                      <img class="icon" src="/images/icons/linkedin.svg"/>
+                    </a>
+                    <a target="_blank" class="foot-style" href="http://www.plus.google.com">
+                      <img class="icon" src="/images/icons/googleplus.svg"/>
+                    </a>
+                  </div>
 
-              <div class="foot middleJustify fit">
-                  <a target="_blank" class="foot-style" href="http://www.twitter.com">
-                    <img class="icon" src="/images/icons/twitter.svg"/>
-                  </a>
-                  <a target="_blank" class="foot-style" href="http://www.facebook.com">
-                    <img class="icon" src="/images/icons/facebook.svg"/>
-                  </a>
-                  <a target="_blank" class="foot-style" href="http://www.linkedin.com">
-                    <img class="icon" src="/images/icons/linkedin.svg"/>
-                  </a>
-                  <a target="_blank" class="foot-style" href="http://www.plus.google.com">
-                    <img class="icon" src="/images/icons/googleplus.svg"/>
-                  </a>
+                <div class="foot middle fit">
+                  <span> Contact Us </span></br></br>
+                  <span> tecla5.com All Rights Reserved 2015</span>
                 </div>
-
-
-
-              <div class="foot middle fit">
-                <span> Contact Us </span></br></br>
-                <span> tecla5.com All Rights Reserved 2015</span>
-              </div>
-
-            </paper-toolbar>
-
-          </paper-scroll-header-panel>
+              </paper-toolbar>
+            </paper-scroll-header-panel>
+          </div>
 
           <!-- Drawer Toolbar -->
           <paper-toolbar id="topToolbar" class="drawerToolbar">
@@ -393,9 +399,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- build:js scripts/app.js -->
   <script src="scripts/app.js"></script>
     <script>
+      function showFooter(id) {
+        document.getElementById(id).style.visibility = "visible";
+      }
+      function hideFooter(id) {
+        document.getElementById(id).style.visibility = "hidden";
+      }
+
       function resetScroll(){
         document.querySelector('#mainContainer').scroller.scrollTop = 0;
       }
+
       function showDiv() {
         var div = document.getElementById('socialContainer');
         if(div.style.display!='none') {
@@ -405,14 +419,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         {
             document.getElementById("socialContainer").style.display = 'block';
         }
-
       }
 
       var template = document.querySelector('#app');
-
-		    template.addEventListener('dom-change', function() {
-		        this.route = this.route || 'home'; // default route to "one".
-		    });
+	    template.addEventListener('dom-change', function() {
+        this.route = this.route || 'home'; // default route to "one".
+	    });
     </script>
 
 
