@@ -10,8 +10,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/google-map/google-map.html">
-<link rel="import" href="../../bower_components/paper-button/paper-button.html" >
-<link rel="import" href="../../bower_components/paper-input/paper-input.html" >
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
 <link rel="import" href="../../bower_components/iron-icons/communication-icons.html">
 
 
@@ -56,13 +56,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <template is="auto-binding">
 
-    <div><google-map latitude="41.38" longitude="-357.81" zoom='13'></google-map></div>
+    <div><google-map latitude="41.38" longitude="-357.81" zoom='13'></google-map>
+    </div>
 
     <paper-header-panel mode="seamed" flex>
       <section class="section-tab">
         <paper-toolbar class="email" id="mainheader">
           <iron-icon style="margin:10px" icon="communication:email"></iron-icon>
-          <span flex>  Please feel free to contact us with this form and we will get back to you and answer any questions. Don’t be shy ;)</span>
+          <span flex>  Please feel free to contact us with this form and we will
+             get back to you and answer any questions. Don’t be shy ;)</span>
         </paper-toolbar>
 
         <div id="successMsg" class="successMsgDiv">
@@ -73,7 +75,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <form is="component-form" target="_blank" class="section-tab" id="form"
         method="POST" action="/__/forms/contact">
-          <paper-input labelVisible floatinglabel required auto-validate error-message="Name is required" label="your name">
+          <paper-input labelVisible floatinglabel required auto-validate
+          error-message="Name is required" label="your name">
             <input is="iron-input" label="Your Name" type="text" name="name">
           </paper-input>
 
@@ -82,14 +85,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <input is="iron-input" type="email" name="email" required>
           </paper-input>
 
-          <paper-input labelVisible floatinglabel required auto-validate error-message="Message is required" label="message">
+          <paper-input labelVisible floatinglabel required auto-validate
+          error-message="Message is required" label="message">
             <paper-autogrow-textarea id="a1">
               <textarea id="t1" name="message"></textarea>
             </paper-autogrow-textarea>
           </paper-input>
 
           <paper-button raised class="colored">
-            <button type="submit" class="sub" onclick=" msgSent();"> Submit </button>
+            <button type="submit" class="sub" onclick=" msgSent();"> Submit
+            </button>
           </paper-button>
 
         </form>

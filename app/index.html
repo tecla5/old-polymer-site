@@ -165,7 +165,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     position: relative;
     color: black;
   }
-  paper-ripple #bg, paper-ripple #waves, paper-ripple .wave-container, paper-ripple .wave {
+  paper-ripple #bg, paper-ripple #waves, paper-ripple .wave-container,
+   paper-ripple .wave {
     height: 100%;
     left: 0;
     pointer-events: none;
@@ -176,7 +177,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   paper-ripple #waves, paper-ripple .wave {
     overflow: hidden;
   }
-  paper-ripple #bg, paper-ripple #waves, paper-ripple .wave-container, paper-ripple .wave {
+  paper-ripple #bg, paper-ripple #waves, paper-ripple .wave-container,
+  paper-ripple .wave {
     height: 100%;
     left: 0;
     pointer-events: none;
@@ -215,21 +217,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <paper-scroll-header-panel drawer fixed>
 
           <!-- Footer Content -->
-          <div id="footerDiv" onMouseOver="showFooter('footer')" onMouseOut="hideFooter('footer')">
+          <div id="footerDiv" onMouseOver="showFooter('footer')"
+          onMouseOut="hideFooter('footer')">
             <paper-scroll-header-panel id="footer">
               <paper-toolbar class="medium-tall" id="footToolbar">
 
                 <div class="foot middleJustify fit">
-                    <a target="_blank" class="foot-style" href="http://www.twitter.com">
+                    <a target="_blank" class="foot-style"
+                    href="http://www.twitter.com">
                       <img class="icon" src="/images/icons/twitter.svg"/>
                     </a>
-                    <a target="_blank" class="foot-style" href="http://www.facebook.com">
+                    <a target="_blank" class="foot-style"
+                    href="http://www.facebook.com">
                       <img class="icon" src="/images/icons/facebook.svg"/>
                     </a>
-                    <a target="_blank" class="foot-style" href="http://www.linkedin.com">
+                    <a target="_blank" class="foot-style"
+                    href="http://www.linkedin.com">
                       <img class="icon" src="/images/icons/linkedin.svg"/>
                     </a>
-                    <a target="_blank" class="foot-style" href="http://www.plus.google.com">
+                    <a target="_blank" class="foot-style"
+                    href="http://www.plus.google.com">
                       <img class="icon" src="/images/icons/googleplus.svg"/>
                     </a>
                   </div>
@@ -245,11 +252,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <!-- Drawer Toolbar -->
           <paper-toolbar id="topToolbar" class="drawerToolbar">
             <span class="paper-font-title">tecla</span>
-            <paper-icon-button class="logo" icon="t5-icons:tecla5"></paper-icon-button>
+            <paper-icon-button class="logo" icon="t5-icons:tecla5">
+            </paper-icon-button>
           </paper-toolbar>
 
           <!-- Drawer Content -->
-          <iron-selector id="menuContainer" class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect" onclick="resetScroll()">
+          <iron-selector id="menuContainer" class="list"
+          attr-for-selected="data-route" selected="{{route}}"
+          on-iron-select="onMenuSelect" onclick="resetScroll()">
             <a data-route="home" href="/">
                <paper-ripple id="ripple" fit="">
                  <div id="bg" style="opacity: 0;"></div>
@@ -303,7 +313,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </paper-scroll-header-panel>
 
         <!-- Main Area -->
-        <paper-scroll-header-panel id="mainContainer" main condenses keep-condensed-header>
+        <paper-scroll-header-panel id="mainContainer" main condenses
+        keep-condensed-header>
 
           <!-- Main Toolbar -->
           <paper-toolbar id="mainToolbar" class="tall" >
@@ -328,26 +339,44 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </div>
             </iron-pages>
 
-            <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+            <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle>
+            </paper-icon-button>
             <span class="flex"></span>
 
               <!-- Toolbar icons -->
-              <paper-icon-button id="shareShow" icon="social:share" onclick="showDiv()">  </paper-icon-button>
+              <paper-icon-button id="shareShow" icon="social:share"
+              onclick="showDiv()">  </paper-icon-button>
                 <div id="socialContainer"  style="display:none;">
-                  <a target="popup" class="social-style" onclick="window.open('https://twitter.com/share?url=http://www.tecla5.com&text=PLACEHOLDER%20TEXT','Tecla 5 Site','width=600,height=400')" data-url="http://www.tecla5.com">
-                    <paper-icon-button src="/images/icons/twitter-icon.png"></paper-icon-button>
+                  <a target="popup" class="social-style" onclick="window.open
+                  ('https://twitter.com/share?url=http://www.tecla5.com',
+                  'Tecla 5 Site','width=600,height=400')"
+                  data-url="http://www.tecla5.com">
+                    <paper-icon-button src="/images/icons/twitter-icon.png">
+                    </paper-icon-button>
                   </a>
 
-                  <a target="popup" class="social-style" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=http://www.tecla5.com&title=PLACEHOLDER%20TEXT','Tecla 5 Site','width=600,height=400')" data-url="http://www.tecla5.com">
-                    <paper-icon-button src="/images/icons/linkedin-icon.png"></paper-icon-button>
+                  <a target="popup" class="social-style" onclick="window.open
+                  ('https://www.linkedin.com/shareArticle?u=http://www.tecla5.com',
+                  'Tecla 5 Site','width=600,height=400')"
+                  data-url="http://www.tecla5.com">
+                    <paper-icon-button src="/images/icons/linkedin-icon.png">
+                    </paper-icon-button>
                   </a>
 
-                  <a target="popup" class="social-style" onclick="window.open('http://www.facebook.com/share.php?u=http://www.tecla5.com&title=PLACEHOLDERTEXT','Tecla 5 Site','width=600,height=400')" data-url="http://www.tecla5.com">
-                    <paper-icon-button src="/images/icons/facebook-icon.png"></paper-icon-button>
+                  <a target="popup" class="social-style" onclick="window.open
+                  ('http://www.facebook.com/share.php?u=http://www.tecla5.com',
+                  'Tecla 5 Site','width=600,height=400')"
+                  data-url="http://www.tecla5.com">
+                    <paper-icon-button src="/images/icons/facebook-icon.png">
+                    </paper-icon-button>
                   </a>
 
-                  <a target="popup" class="social-style" onclick="window.open('https://plus.google.com/share?url=http://www.tecla5.com&title=PLACEHOLDERTEXT','Tecla 5 Site','width=600,height=400')" data-url="http://www.tecla5.com">
-                    <paper-icon-button src="/images/icons/googleplus-icon.png"></paper-icon-button>
+                  <a target="popup" class="social-style" onclick="window.open
+                  ('https://plus.google.com/share?url=http://www.tecla5.com',
+                  'Tecla 5 Site','width=600,height=400')"
+                  data-url="http://www.tecla5.com">
+                    <paper-icon-button src="/images/icons/googleplus-icon.png">
+                    </paper-icon-button>
                   </a>
                 </div>
 
@@ -361,7 +390,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <!-- Main Area -->
           <div class="content">
-            <iron-pages style="padding:0px; padding-bottom:13.5%;" attr-for-selected="data-route" selected="{{route}}" >
+            <iron-pages style="padding:0px; padding-bottom:13.5%;"
+            attr-for-selected="data-route" selected="{{route}}" >
 
               <section data-route="home">
                 <t5-home></t5-home>
