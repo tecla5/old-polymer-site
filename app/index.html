@@ -97,7 +97,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     bottom: 0;
     left: 0;
     visibility: hidden;
-
   }
   #footerDiv{
     position: fixed;
@@ -111,7 +110,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   }
   .icon{
     width: 3%;
-
   }
   span{
     font-size:2.0vh;
@@ -137,7 +135,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     text-transform: uppercase;
     background-color: #eee;
     color:black;
-    text-align: center;
+    padding-left: 20%;
   }
   x-app iron-selector a #ripple {
     color: rgb(139, 195, 74);
@@ -196,12 +194,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     background: #494B79;
   }
   .foot-style{
+    padding: 0;
     display:inline;
     background-color: #404040;
   }
   .social-style{
     display:inline;
     background-color: #494B79;
+  }
+  .menuIcon{
+    padding-bottom: 3%;
   }
   </style>
 
@@ -252,7 +254,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <!-- Drawer Toolbar -->
           <paper-toolbar id="topToolbar" class="drawerToolbar">
             <span class="paper-font-title">tecla</span>
-            <paper-icon-button class="logo" icon="t5-icons:tecla5">
+            <paper-icon-button icon="t5-icons:tecla5">
             </paper-icon-button>
           </paper-toolbar>
 
@@ -261,31 +263,36 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           attr-for-selected="data-route" selected="{{route}}"
           on-iron-select="onMenuSelect" onclick="resetScroll()">
             <a data-route="home" href="/">
-               <paper-ripple id="ripple" fit="">
+              <iron-icon icon="home" class="menuIcon"></iron-icon>
+              <paper-ripple id="ripple" fit="">
                  <div id="bg" style="opacity: 0;"></div>
                  <div id="waves"></div>
-               </paper-ripple>
+              </paper-ripple>
                  <span>Home</span>
              </a>
              <a data-route="about" href="/about">
-               <paper-ripple id="ripple" fit="">
+              <iron-icon icon="info" class="menuIcon"></iron-icon>
+              <paper-ripple id="ripple" fit="">
                  <div id="bg" style="opacity: 0;"></div>
                  <div id="waves"></div>
-               </paper-ripple>
+              </paper-ripple>
                  <span>About</span>
              </a>
              <a data-route="team" href="/team">
-               <paper-ripple id="ripple" fit="">
+              <iron-icon icon="face" class="menuIcon"></iron-icon>
+              <paper-ripple id="ripple" fit="">
                  <div id="bg" style="opacity: 0;"></div>
                  <div id="waves"></div>
-               </paper-ripple>
+              </paper-ripple>
                  <span>Team</span>
              </a>
              <a data-route="services" href="/services">
-               <paper-ripple id="ripple" fit="">
+              <iron-icon icon="settings-input-hdmi" class="menuIcon">
+              </iron-icon>
+              <paper-ripple id="ripple" fit="">
                  <div id="bg" style="opacity: 0;"></div>
                  <div id="waves"></div>
-               </paper-ripple>
+              </paper-ripple>
                  <span>Services</span>
              </a>
              <!--<a data-route="Project" href="/project">
@@ -296,6 +303,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                  <span>Project</span>
              </a>-->
             <!-- <a data-route="blog" href="/blog">
+               <iron-icon icon="book"></iron-icon>
                <paper-ripple id="ripple" fit="">
                  <div id="bg" style="opacity: 0;"></div>
                  <div id="waves"></div>
@@ -303,6 +311,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                  <span>Blog</span>
              </a> -->
              <a data-route="contact" href="/contact">
+               <iron-icon icon="mail" class="menuIcon"></iron-icon>
                <paper-ripple id="ripple" fit="">
                  <div id="bg" style="opacity: 0;"></div>
                  <div id="waves"></div>
