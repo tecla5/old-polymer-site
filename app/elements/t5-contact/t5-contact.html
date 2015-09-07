@@ -73,27 +73,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             back to you shortly! </p>
         </div>
 
-        <form is="component-form" target="_blank" class="section-tab" id="form"
-        method="POST" action="/__/forms/contact">
+        <form is="component-form" method="POST" action="/__/forms/contact"
+        class="section-tab" id="form" onsubmit="return validate()" target="_blank">
+
           <paper-input labelVisible floatinglabel required auto-validate
-          error-message="Name is required" label="your name">
+          error-message="Name is required" label="your name" id="inputName">
             <input is="iron-input" label="Your Name" type="text" name="name">
           </paper-input>
 
           <paper-input labelVisible floatinglabel required auto-validate
-          error-message="Email is required" label="contact@your-company.com">
+          error-message="Email is required" label="contact@your-company.com"
+          id="inputEmail">
             <input is="iron-input" type="email" name="email" required>
           </paper-input>
 
           <paper-input labelVisible floatinglabel required auto-validate
-          error-message="Message is required" label="message">
+          error-message="Message is required" label="message"
+          id="inputMessage">
             <paper-autogrow-textarea id="a1">
               <textarea id="t1" name="message"></textarea>
             </paper-autogrow-textarea>
           </paper-input>
 
           <paper-button raised class="colored">
-            <button type="submit" class="sub" onclick=" msgSent();"> Submit
+            <button type="submit" class="sub" onClick=> Submit
             </button>
           </paper-button>
 
@@ -106,20 +109,38 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   </template>
   <script>
-    (function() {
-      Polymer({
-        is: 't5-contact',
+  Polymer({
 
-        properties: { },
+  });
+     /*jshint unused:false*/
+     function validate() {
+       var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+       var email=document.getElementById('inputEmail').value;
+       res=re.test(email);
+       if(res){
+         msgSent();
+         return true;
+       }
+       else {
+         alert('EMAIL CONTACT ADDRESS IS INVALID.');
+         return false;
+       }
+     }
 
-        msgSent: function() {
-          document.getElementById('form').style.display = 'none';
-          document.getElementById('successMsg').style.display = 'block';
-        }
-
-      });
-    })();
-
+    function msgSent() {
+      document.getElementById('form').style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+        setTimeout(function () {
+          document.getElementById('successMsg').style.display = 'none';
+          document.getElementById('form').style.display = 'block';
+        }, 5000);
+        clearInput();
+      }
+    function clearInput() {
+       document.getElementById('inputName').value = '';
+       document.getElementById('inputEmail').value = '';
+       document.getElementById('inputMessage').value = '';
+   }
 
   </script>
 </dom-module>
