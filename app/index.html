@@ -96,13 +96,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     width: 100%;
     bottom: 0;
     left: 0;
+    visibility: hidden;
+  }
+  #footerDiv{
+    position: fixed;
+    height: 13%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
   }
   .foot{
     text-align:center;
   }
   .icon{
     width: 3%;
-
   }
   span{
     font-size:2.0vh;
@@ -128,7 +135,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     text-transform: uppercase;
     background-color: #eee;
     color:black;
-    text-align: center;
+    padding-left: 20%;
   }
   x-app iron-selector a #ripple {
     color: rgb(139, 195, 74);
@@ -156,7 +163,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     position: relative;
     color: black;
   }
-  paper-ripple #bg, paper-ripple #waves, paper-ripple .wave-container, paper-ripple .wave {
+  paper-ripple #bg, paper-ripple #waves, paper-ripple .wave-container,
+   paper-ripple .wave {
     height: 100%;
     left: 0;
     pointer-events: none;
@@ -167,7 +175,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   paper-ripple #waves, paper-ripple .wave {
     overflow: hidden;
   }
-  paper-ripple #bg, paper-ripple #waves, paper-ripple .wave-container, paper-ripple .wave {
+  paper-ripple #bg, paper-ripple #waves, paper-ripple .wave-container,
+  paper-ripple .wave {
     height: 100%;
     left: 0;
     pointer-events: none;
@@ -185,12 +194,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     background: #494B79;
   }
   .foot-style{
+    padding: 0;
     display:inline;
     background-color: #404040;
   }
   .social-style{
     display:inline;
     background-color: #494B79;
+  }
+  .menuIcon{
+    padding-bottom: 3%;
   }
 
   </style>
@@ -207,70 +220,80 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <paper-scroll-header-panel drawer fixed>
 
           <!-- Footer Content -->
-          <paper-scroll-header-panel id="footer" >
+          <div id="footerDiv" onMouseOver="showFooter('footer')"
+          onMouseOut="hideFooter('footer')">
+            <paper-scroll-header-panel id="footer">
+              <paper-toolbar class="medium-tall" id="footToolbar">
 
-            <paper-toolbar class="medium-tall" id="footToolbar">
+                <div class="foot middleJustify fit">
+                    <a target="_blank" class="foot-style"
+                    href="http://www.twitter.com">
+                      <img class="icon" src="/images/icons/twitter.svg"/>
+                    </a>
+                    <a target="_blank" class="foot-style"
+                    href="http://www.facebook.com">
+                      <img class="icon" src="/images/icons/facebook.svg"/>
+                    </a>
+                    <a target="_blank" class="foot-style"
+                    href="http://www.linkedin.com">
+                      <img class="icon" src="/images/icons/linkedin.svg"/>
+                    </a>
+                    <a target="_blank" class="foot-style"
+                    href="http://www.plus.google.com">
+                      <img class="icon" src="/images/icons/googleplus.svg"/>
+                    </a>
+                  </div>
 
-              <div class="foot middleJustify fit">
-                  <a target="_blank" class="foot-style" href="http://www.twitter.com">
-                    <img class="icon" src="/images/icons/twitter.svg"/>
-                  </a>
-                  <a target="_blank" class="foot-style" href="http://www.facebook.com">
-                    <img class="icon" src="/images/icons/facebook.svg"/>
-                  </a>
-                  <a target="_blank" class="foot-style" href="http://www.linkedin.com">
-                    <img class="icon" src="/images/icons/linkedin.svg"/>
-                  </a>
-                  <a target="_blank" class="foot-style" href="http://www.plus.google.com">
-                    <img class="icon" src="/images/icons/googleplus.svg"/>
-                  </a>
+                <div class="foot middle fit">
+                  <span> Contact Us </span></br></br>
+                  <span> tecla5.com All Rights Reserved 2015</span>
                 </div>
-
-
-
-              <div class="foot middle fit">
-                <span> Contact Us </span></br></br>
-                <span> tecla5.com All Rights Reserved 2015</span>
-              </div>
-
-            </paper-toolbar>
-
-          </paper-scroll-header-panel>
+              </paper-toolbar>
+            </paper-scroll-header-panel>
+          </div>
 
           <!-- Drawer Toolbar -->
           <paper-toolbar id="topToolbar" class="drawerToolbar">
             <span class="paper-font-title">tecla</span>
-            <paper-icon-button class="logo" icon="t5-icons:tecla5"></paper-icon-button>
+            <paper-icon-button icon="t5-icons:tecla5">
+            </paper-icon-button>
           </paper-toolbar>
 
           <!-- Drawer Content -->
-          <iron-selector id="menuContainer" class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect" onclick="resetScroll()">
+          <iron-selector id="menuContainer" class="list"
+          attr-for-selected="data-route" selected="{{route}}"
+          on-iron-select="onMenuSelect" onclick="resetScroll()">
             <a data-route="home" href="/">
-               <paper-ripple id="ripple" fit="">
+              <iron-icon icon="home" class="menuIcon"></iron-icon>
+              <paper-ripple id="ripple" fit="">
                  <div id="bg" style="opacity: 0;"></div>
                  <div id="waves"></div>
-               </paper-ripple>
+              </paper-ripple>
                  <span>Home</span>
              </a>
              <a data-route="about" href="/about">
-               <paper-ripple id="ripple" fit="">
+              <iron-icon icon="info" class="menuIcon"></iron-icon>
+              <paper-ripple id="ripple" fit="">
                  <div id="bg" style="opacity: 0;"></div>
                  <div id="waves"></div>
-               </paper-ripple>
+              </paper-ripple>
                  <span>About</span>
              </a>
              <a data-route="team" href="/team">
-               <paper-ripple id="ripple" fit="">
+              <iron-icon icon="face" class="menuIcon"></iron-icon>
+              <paper-ripple id="ripple" fit="">
                  <div id="bg" style="opacity: 0;"></div>
                  <div id="waves"></div>
-               </paper-ripple>
+              </paper-ripple>
                  <span>Team</span>
              </a>
              <a data-route="services" href="/services">
-               <paper-ripple id="ripple" fit="">
+              <iron-icon icon="settings-input-hdmi" class="menuIcon">
+              </iron-icon>
+              <paper-ripple id="ripple" fit="">
                  <div id="bg" style="opacity: 0;"></div>
                  <div id="waves"></div>
-               </paper-ripple>
+              </paper-ripple>
                  <span>Services</span>
              </a>
              <!--<a data-route="Project" href="/project">
@@ -281,6 +304,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                  <span>Project</span>
              </a>-->
             <!-- <a data-route="blog" href="/blog">
+               <iron-icon icon="book"></iron-icon>
                <paper-ripple id="ripple" fit="">
                  <div id="bg" style="opacity: 0;"></div>
                  <div id="waves"></div>
@@ -288,6 +312,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                  <span>Blog</span>
              </a> -->
              <a data-route="contact" href="/contact">
+               <iron-icon icon="mail" class="menuIcon"></iron-icon>
                <paper-ripple id="ripple" fit="">
                  <div id="bg" style="opacity: 0;"></div>
                  <div id="waves"></div>
@@ -298,7 +323,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </paper-scroll-header-panel>
 
         <!-- Main Area -->
-        <paper-scroll-header-panel id="mainContainer" main condenses keep-condensed-header>
+        <paper-scroll-header-panel id="mainContainer" main condenses
+        keep-condensed-header>
 
           <!-- Main Toolbar -->
           <paper-toolbar id="mainToolbar" class="tall" >
@@ -323,26 +349,44 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </div>
             </iron-pages>
 
-            <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+            <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle>
+            </paper-icon-button>
             <span class="flex"></span>
 
               <!-- Toolbar icons -->
-              <paper-icon-button id="shareShow" icon="social:share" onclick="showDiv()">  </paper-icon-button>
+              <paper-icon-button id="shareShow" icon="social:share"
+              onclick="showDiv()">  </paper-icon-button>
                 <div id="socialContainer"  style="display:none;">
-                  <a target="popup" class="social-style" onclick="window.open('https://twitter.com/share?url=http://www.tecla5.com&text=PLACEHOLDER%20TEXT','Tecla 5 Site','width=600,height=400')" data-url="http://www.tecla5.com">
-                    <paper-icon-button src="/images/icons/twitter-icon.png"></paper-icon-button>
+                  <a target="popup" class="social-style" onclick="window.open
+                  ('https://twitter.com/share?url=http://www.tecla5.com',
+                  'Tecla 5 Site','width=600,height=400')"
+                  data-url="http://www.tecla5.com">
+                    <paper-icon-button src="/images/icons/twitter-icon.png">
+                    </paper-icon-button>
                   </a>
 
-                  <a target="popup" class="social-style" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=http://www.tecla5.com&title=PLACEHOLDER%20TEXT','Tecla 5 Site','width=600,height=400')" data-url="http://www.tecla5.com">
-                    <paper-icon-button src="/images/icons/linkedin-icon.png"></paper-icon-button>
+                  <a target="popup" class="social-style" onclick="window.open
+                  ('https://www.linkedin.com/shareArticle?u=http://www.tecla5.com',
+                  'Tecla 5 Site','width=600,height=400')"
+                  data-url="http://www.tecla5.com">
+                    <paper-icon-button src="/images/icons/linkedin-icon.png">
+                    </paper-icon-button>
                   </a>
 
-                  <a target="popup" class="social-style" onclick="window.open('http://www.facebook.com/share.php?u=http://www.tecla5.com&title=PLACEHOLDERTEXT','Tecla 5 Site','width=600,height=400')" data-url="http://www.tecla5.com">
-                    <paper-icon-button src="/images/icons/facebook-icon.png"></paper-icon-button>
+                  <a target="popup" class="social-style" onclick="window.open
+                  ('http://www.facebook.com/share.php?u=http://www.tecla5.com',
+                  'Tecla 5 Site','width=600,height=400')"
+                  data-url="http://www.tecla5.com">
+                    <paper-icon-button src="/images/icons/facebook-icon.png">
+                    </paper-icon-button>
                   </a>
 
-                  <a target="popup" class="social-style" onclick="window.open('https://plus.google.com/share?url=http://www.tecla5.com&title=PLACEHOLDERTEXT','Tecla 5 Site','width=600,height=400')" data-url="http://www.tecla5.com">
-                    <paper-icon-button src="/images/icons/googleplus-icon.png"></paper-icon-button>
+                  <a target="popup" class="social-style" onclick="window.open
+                  ('https://plus.google.com/share?url=http://www.tecla5.com',
+                  'Tecla 5 Site','width=600,height=400')"
+                  data-url="http://www.tecla5.com">
+                    <paper-icon-button src="/images/icons/googleplus-icon.png">
+                    </paper-icon-button>
                   </a>
                 </div>
 
@@ -356,7 +400,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <!-- Main Area -->
           <div class="content">
-            <iron-pages style="padding:0px; padding-bottom:13.5%;" attr-for-selected="data-route" selected="{{route}}" >
+            <iron-pages style="padding:0px; padding-bottom:13.5%;"
+            attr-for-selected="data-route" selected="{{route}}" >
 
               <section data-route="home">
                 <t5-home></t5-home>
@@ -394,9 +439,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- build:js scripts/app.js -->
   <script src="scripts/app.js"></script>
     <script>
+      function showFooter(id) {
+        document.getElementById(id).style.visibility = "visible";
+      }
+      function hideFooter(id) {
+        document.getElementById(id).style.visibility = "hidden";
+      }
+
       function resetScroll(){
         document.querySelector('#mainContainer').scroller.scrollTop = 0;
       }
+
       function showDiv() {
         var div = document.getElementById('socialContainer');
         if(div.style.display!='none') {
@@ -406,14 +459,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         {
             document.getElementById("socialContainer").style.display = 'block';
         }
-
       }
 
       var template = document.querySelector('#app');
-
-		    template.addEventListener('dom-change', function() {
-		        this.route = this.route || 'home'; // default route to "one".
-		    });
+	    template.addEventListener('dom-change', function() {
+        this.route = this.route || 'home'; // default route to "one".
+	    });
     </script>
 
 
