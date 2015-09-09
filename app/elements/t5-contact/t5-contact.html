@@ -13,6 +13,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../../bower_components/paper-input/paper-input.html">
 <link rel="import" href="../../bower_components/iron-icons/communication-icons.html">
+<link rel="import" href="../../bower_components/iron-form/iron-form.html">
+
 
 
 <dom-module id="t5-contact">
@@ -54,10 +56,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
   </style>
 
-  <template is="auto-binding">
+  <template>
 
-    <div><google-map latitude="41.38" longitude="-357.81" zoom='13'></google-map>
+    <div>
+      <google-map latitude="41.38" longitude="-357.81" zoom='13'></google-map>
     </div>
+
+    <iron-ajax
+     id="ajax"
+     url=""
+     handle-as="json"
+     on-response="hresponse"
+     debounce-duration="300">
+ </iron-ajax>
 
     <paper-header-panel mode="seamed" flex>
       <section class="section-tab">
@@ -73,74 +84,74 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             back to you shortly! </p>
         </div>
 
-        <form is="component-form" method="POST" action="/__/forms/contact"
-        class="section-tab" id="form" onsubmit="return validate()" target="_blank">
+        <form is="iron-form" method="POST" action="/_/forms/contact"
+        class="section-tab" id="form">
 
           <paper-input labelVisible floatinglabel required auto-validate
-          error-message="Name is required" label="your name" id="inputName">
+          label="your name" id="inputName">
             <input is="iron-input" label="Your Name" type="text" name="name">
           </paper-input>
 
           <paper-input labelVisible floatinglabel required auto-validate
-          error-message="Email is required" label="contact@your-company.com"
-          id="inputEmail">
+          label="contact@your-company.com" id="inputEmail">
             <input is="iron-input" type="email" name="email" required>
           </paper-input>
 
           <paper-input labelVisible floatinglabel required auto-validate
-          error-message="Message is required" label="message"
-          id="inputMessage">
+          label="message" id="inputMessage">
             <paper-autogrow-textarea id="a1">
               <textarea id="t1" name="message"></textarea>
             </paper-autogrow-textarea>
           </paper-input>
 
-          <paper-button raised class="colored">
-            <button type="submit" class="sub" onClick=> Submit
-            </button>
-          </paper-button>
-
+          <paper-button raised class="colored" onclick="clickHandler(event)">
+            Submit</paper-button>
         </form>
 
       </section>
-
     </paper-header-panel>
-
-
   </template>
   <script>
   Polymer({
 
   });
-     /*jshint unused:false*/
-     function validate() {
-       var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-       var email=document.getElementById('inputEmail').value;
-       res=re.test(email);
-       if(res){
-         msgSent();
-         return true;
-       }
-       else {
-         alert('EMAIL CONTACT ADDRESS IS INVALID.');
-         return false;
-       }
-     }
-
-    function msgSent() {
-      document.getElementById('form').style.display = 'none';
-      document.getElementById('successMsg').style.display = 'block';
-        setTimeout(function () {
-          document.getElementById('successMsg').style.display = 'none';
-          document.getElementById('form').style.display = 'block';
-        }, 5000);
-        clearInput();
+  /*jshint unused:false*/
+  /*jshint latedef:false*/
+  function clickHandler(event) {
+      var val=validate();
+      if(val){
+        Polymer.dom(event).localTarget.parentElement.submit();
       }
-    function clearInput() {
-       document.getElementById('inputName').value = '';
-       document.getElementById('inputEmail').value = '';
-       document.getElementById('inputMessage').value = '';
+    }
+
+  function validate() {
+     var res;
+     var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+     var email=document.getElementById('inputEmail').value;
+     res=re.test(email);
+     if(res){
+       msgSent();
+       return true;
+     }
+     else {
+       window.alert('EMAIL CONTACT ADDRESS IS INVALID.');
+       return false;
+     }
    }
 
+  function msgSent() {
+    document.getElementById('form').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+      setTimeout(function () {
+        document.getElementById('successMsg').style.display = 'none';
+        document.getElementById('form').style.display = 'block';
+      }, 5000);
+      clearInput();
+    }
+  function clearInput() {
+     document.getElementById('inputName').value = '';
+     document.getElementById('inputEmail').value = '';
+     document.getElementById('inputMessage').value = '';
+ }
   </script>
 </dom-module>
