@@ -1,0 +1,406 @@
+[1mdiff --cc app/elements/t5-about/t5-about.html[m
+[1mindex b102c22,5b32f4c..0000000[m
+[1m--- a/app/elements/t5-about/t5-about.html[m
+[1m+++ b/app/elements/t5-about/t5-about.html[m
+[36m@@@ -12,64 -12,47 +12,106 @@@[m [msubject to an additional IP rights gran[m
+  [m
+  <dom-module id="t5-about">[m
+    <style>[m
+[32m++<<<<<<< HEAD[m
+[32m +    :host{[m
+[32m +      display: block;[m
+[32m +      background: #FFF;[m
+[32m +    }[m
+[32m +    .logo{[m
+[32m +      width: 100%;[m
+[32m +      padding-bottom: 5%;[m
+[32m +    }[m
+[32m +    .icon{[m
+[32m +      width: 20%;[m
+[32m +      height: 20%;[m
+[32m +    }[m
+[32m +    .article{[m
+[32m +        font-size: 2.0vh;[m
+[32m +        margin:5%;[m
+[32m +        text-align: justify;[m
+[32m +        margin-top: 0%;[m
+[32m +        padding-bottom:15%;[m
+[32m +    }[m
+[32m +    .left{[m
+[32m +      float: left;[m
+[32m +      padding: 10%;[m
+[32m +    }[m
+[32m +    .div-container{[m
+[32m +      display:block;[m
+[32m +      overflow:hidden;[m
+[32m++=======[m
+[32m+     :host {[m
+[32m+       display: block;[m
+[32m+       background: #FFF;[m
+[32m+     }[m
+[32m+ [m
+[32m+     .logo {[m
+[32m+       width: 100%;[m
+[32m+       padding-bottom: 5%;[m
+[32m+     }[m
+[32m+     .content {[m
+[32m+       background: #FFF;[m
+[32m+       font-size: 2.0vh;[m
+[32m+       margin:5%;[m
+[32m+       text-align: justify;[m
+[32m+       margin-top: 0%;[m
+[32m++>>>>>>> 6e9f5de83bb5f0f37e3466ecfa349bce452c416b[m
+      }[m
+[31m -[m
+[31m -[m
+    </style>[m
+    <template>[m
+[32m++<<<<<<< HEAD[m
+[32m +    <paper-header-panel mode="cover">[m
+[32m +      <img src="/images/AboutUS.png" class="logo" />[m
+[32m +[m
+[32m +      <div class="article">[m
+[32m +          <h2>Why tecla5?</h2>[m
+[32m +          <p>Tecla = Keyboard in Spanish ;)</p>[m
+[32m +          <p>We have a highly experienced team of professionals and have[m
+[32m +            connections to freelancers around the world. We all work with the[m
+[32m +            latest technologies in the web and app space. We develop a host of[m
+[32m +            SAAS services for the cloud to help you better scale your business.[m
+[32m +          </p>[m
+[32m +[m
+[32m +          <h2>Who are we?</h2>[m
+[32m +          <p>Tecla5 is a software development company with our headquarters in[m
+[32m +            Barcelona, Spain. We started as a small team in Barcelona and have[m
+[32m +            now grown to team spanning the globe. Our engineers are constantly[m
+[32m +            researching and working with the latest technologies in order to[m
+[32m +            always provide the best solutions.</p>[m
+[32m +[m
+[32m +           <h2>Micro services</h2>[m
+[32m +           <p>Power your apps with data APIs and business logic using micro[m
+[32m +             services,for better scalability, flexibility and management.</p>[m
+[32m +[m
+[32m +           <h2>Apps</h2>[m
+[32m +           <p>We develop both multi- and single page web apps (MPAs & SPAs).[m
+[32m +              We build hybrid native apps for iOS and Android.[m
+[32m +              We deliver complete front to back solutions using our powerful[m
+[32m +              custom tech stack.</p>[m
+[32m +        </div>[m
+[32m++=======[m
+[32m+     <paper-header-panel mode="waterfall-tall">[m
+[32m+       <div class="paper-header">[m
+[32m+         <img src="/images/AboutUS.png" class="logo" />[m
+[32m+       </div>[m
+[32m+       <div class="content">[m
+[32m+ [m
+[32m+         <h2>Why tecla5?</h2>[m
+[32m+         <p>Tecla = Keyboard in Spanish ;)</p>[m
+[32m+         <p>We have a highly experienced team of professionals and have connections to freelancers around the world. We all work with the latest technologies in the web and app space. We develop a host of SAAS services for the cloud to help you better scale[m
+[32m+           your business.</p>[m
+[32m+ [m
+[32m+         <h2>Who are we?</h2>[m
+[32m+         <p>Tecla5 is a software development company with our headquarters in Barcelona, Spain. We started as a small team in Barcelona and have now grown to team spanning the globe. Our engineers are constantly researching and working with the latest technologies[m
+[32m+           in order to always provide the best solutions.</p>[m
+[32m+ [m
+[32m+         <h2>Micro services</h2>[m
+[32m+         <p>Power your apps with data APIs and business logic using micro services,for better scalability, flexibility and management.</p>[m
+[32m+ [m
+[32m+         <h2>Apps</h2>[m
+[32m+         <p>We develop both multi- and single page web apps (MPAs & SPAs). We build hybrid native apps for iOS and Android. We deliver complete front to back solutions using our powerful custom tech stack.</p>[m
+[32m+       </div>[m
+[32m++>>>>>>> 6e9f5de83bb5f0f37e3466ecfa349bce452c416b[m
+  [m
+      </paper-header-panel>[m
+  [m
+[1mdiff --cc app/elements/t5-contact/t5-contact.html[m
+[1mindex 44b2522,312821d..0000000[m
+[1m--- a/app/elements/t5-contact/t5-contact.html[m
+[1m+++ b/app/elements/t5-contact/t5-contact.html[m
+[36m@@@ -9,12 -9,6 +9,15 @@@[m [msubject to an additional IP rights gran[m
+  -->[m
+  [m
+  <link rel="import" href="../../bower_components/polymer/polymer.html">[m
+[32m++<<<<<<< HEAD[m
+[32m +<link rel="import" href="../../bower_components/google-map/google-map.html">[m
+[32m +<link rel="import" href="../../bower_components/paper-button/paper-button.html">[m
+[32m +<link rel="import" href="../../bower_components/paper-input/paper-input.html">[m
+[32m +<link rel="import" href="../../bower_components/iron-icons/communication-icons.html">[m
+[32m +<link rel="import" href="../../bower_components/iron-form/iron-form.html">[m
+[32m +[m
+[32m++=======[m
+[32m++>>>>>>> 6e9f5de83bb5f0f37e3466ecfa349bce452c416b[m
+  [m
+  [m
+  <dom-module id="t5-contact">[m
+[1mdiff --cc app/elements/t5-team/t5-team.html[m
+[1mindex bee9f07,09766cc..0000000[m
+[1m--- a/app/elements/t5-team/t5-team.html[m
+[1m+++ b/app/elements/t5-team/t5-team.html[m
+[36m@@@ -57,140 -50,100 +57,217 @@@[m [msubject to an additional IP rights gran[m
+    </style>[m
+    <template>[m
+      <paper-header-panel mode="cover">[m
+[31m -      <div>[m
+[31m -        <img class="logo" src="/images/Services.png"/>[m
+[31m -      </div></br></br>[m
+[31m -      <div class="head-title">The Team![m
+[31m -        <p>We have a dedicated team of: developers, designers, dev ops and project managers from around the globe.</p>[m
+[31m -      </div>[m
+  [m
+[32m++<<<<<<< HEAD[m
+[32m +      <img class="logo" src="/images/Team.png"/>[m
+[32m +[m
+[32m +      <div class="article">[m
+[32m +        <h2 class="pad-left">The Team!</h2>[m
+[32m +          <p class="pad-left">We have a dedicated team of: developers, designers, dev ops and[m
+[32m +            project managers from around the globe.</p>[m
+[32m +[m
+[32m +        <div class="div-content">[m
+[32m +          <div>[m
+[32m +            <img src="/images/dcabrera.png" class="left icon"/>[m
+[32m +          </div>[m
+[32m +          <div><h2 class="subtitle">Javier Cabrera - Barcelona, Spain</h2>[m
+[32m +            <p>Javier has more than 10 years of experience architecting Web &[m
+[32m +              Mobile solutions. During the past ~3 years, Javier has focused[m
+[32m +              on the latest bleeding edge technologies.</p>[m
+[32m +            <p>Profile: Sr. Web Architect, Sr. Web/Mobile Developer </p>[m
+[32m +            <p>Techs: Marko, React, Aurelia, Angular, Node.js,[m
+[32m +              Javascript, Java </p>[m
+[32m +            <p>Delivers: Web apps, Hybrid apps (mobile), Project management</p>[m
+[32m +            <p>Contact: cabrera.javier@gmail.com</p>[m
+[32m +          </div>[m
+[32m++=======[m
+[32m+       <div class="div-content">[m
+[32m+         <div>[m
+[32m+           <img src="/images/team/jcabrera.jpeg" class="left icon"/>[m
+          </div>[m
+[32m+         <div><h2 class="subtitle">Javier Cabrera - Barcelona, Spain</h2>[m
+[32m+           <p>Javier has more than 10 years of experience architecting Web & Mobile solutions. During the past ~3 years, Javier has focused on the latest bleeding edge technologies.</p>[m
+[32m+           <p>Profile: Sr. Web Architect, Sr. Web/Mobile Developer </p>[m
+[32m+           <p>Techs: Marko, React, Aurelia, Angular, Node.js, Javascript, Java </p>[m
+[32m+           <p>Delivers: Web apps, Hybrid apps (mobile), Project management</p>[m
+[32m+           <p>Contact: cabrera.javier@gmail.com</p>[m
+[32m+         </div>[m
+[32m+       </div>[m
+  [m
+[32m+       <div class="div-content">[m
+[32m+         <div>[m
+[32m+           <img src="/images/team/kmandrup.jpg" class="left icon"/>[m
+[32m+         </div>[m
+[32m+         <div><h2 class="subtitle">Kristian Mandrup - London, United Kingdom</h2>[m
+[32m+           <p>Kristian has more than ~15 years of experience in architecting and developing software solutions and frameworks, working in various roles for a multitude of clients.[m
+[32m+              Kristian has always worked with bleeding edge technologies and loves to learn and play with the latest toys. Kristian also has a lot of project management experience.</p>[m
+[32m+           <p>Profile: Entrepreneur, Web Architect & Developer, Framework architect, Project manager </p>[m
+[32m+           <p>Techs: Node.js, React, Ruby & Rails, Aurelia, Javascript </p>[m
+[32m+           <p>Delivers: Web apps, Project management </p>[m
+[32m+           <p>Contact: kmandrup@gmail.com </p>[m
+[32m+         </div>[m
+[32m+       </div>[m
+[32m+ [m
+[32m+       <div class="div-content">[m
+[32m+         <div>[m
+[32m+           <img src="/images/team/dcabrera.png" class="left icon"/>[m
+[32m+         </div>[m
+[32m+         <div><h2 class="subtitle">Dayana Cabrera - Barcelona, Spain</h2>[m
+[32m+           <p>Dayana is an experienced Project Manager and Designer who specializes in project delivery, customer satisfaction, HR and UX. Dayana has more than ~5 years of experience in developing software and QA Testing.</p>[m
+[32m+           <p>Profile: Project Manager, Web Designer, Web Developer.</p>[m
+[32m+           <p>Techs: Twitter Bootstrap, Polymer, Semantic UI, Marko, Sketch, Javascript, Web Components, Stylus.</p>[m
+[32m+           <p>Delivers: Web apps, Project management </p>[m
+[32m+           <p>Contact: dayanamcc@gmail.com</p>[m
+[32m++>>>>>>> 6e9f5de83bb5f0f37e3466ecfa349bce452c416b[m
+[32m+         </div>[m
+[31m -      </div>[m
+[32m+ [m
+[32m++<<<<<<< HEAD[m
+[32m +        <div class="div-content">[m
+[32m +          <div>[m
+[32m +            <img src="/images/dcabrera.png" class="left icon"/>[m
+[32m +          </div>[m
+[32m +          <div><h2 class="subtitle">Kristian Mandrup - London, United Kingdom</h2>[m
+[32m +            <p>Kristian has more than ~15 years of experience in architecting and[m
+[32m +              developing software solutions and frameworks, working in various[m
+[32m +              roles for a multitude of clients.[m
+[32m +               Kristian has always worked with bleeding edge technologies and[m
+[32m +               loves to learn and play with the latest toys. Kristian also has a[m
+[32m +               lot of project management experience.</p>[m
+[32m +            <p>Profile: Entrepreneur, Web Architect & Developer, Framework[m
+[32m +              architect, Project manager </p>[m
+[32m +            <p>Techs: Node.js, React, Ruby & Rails, Aurelia, Javascript </p>[m
+[32m +            <p>Delivers: Web apps, Project management </p>[m
+[32m +            <p>Contact: kmandrup@gmail.com </p>[m
+[32m +          </div>[m
+[32m++=======[m
+[32m+       <!--[m
+[32m+       <div class="div-content">[m
+[32m+         <div>[m
+[32m+           <img src="/images/team/dcabrera.png" class="left icon"/>[m
+[32m+         </div>[m
+[32m+         <div><h2 class="subtitle">Freddy Rodriguez - Venezuela</h2>[m
+[32m+           <p>Freddy is an experienced web developer with more than ~10 years of experience in various environments. He is passionate about backend development and likes to play with new tech that pushes the boundaries. Freddy is currently developing GraphQL APIs.</p>[m
+[32m+           <p>Profile:Sr. Web Developer</p>[m
+[32m+           <p>Techs:Node.js, Express & Koa server, APIs, Databases, GraphQL, REST API, Marko, Java </p>[m
+[32m++>>>>>>> 6e9f5de83bb5f0f37e3466ecfa349bce452c416b[m
+          </div>[m
+[31m -      </div>[m
+  [m
+[32m++<<<<<<< HEAD[m
+[32m +        <div class="div-content">[m
+[32m +          <div>[m
+[32m +            <img src="/images/dcabrera.png" class="left icon"/>[m
+[32m +          </div>[m
+[32m +          <div><h2 class="subtitle">Dayana Cabrera - Barcelona, Spain</h2>[m
+[32m +            <p>Dayana is an experienced Project Manager and Designer who[m
+[32m +              specializes in project delivery, customer satisfaction, HR and UX.[m
+[32m +              Dayana has more than ~5 years of experience in developing software[m
+[32m +              and QA Testing.</p>[m
+[32m +            <p>Profile: Project Manager, Web Designer, Web Developer.</p>[m
+[32m +            <p>Techs: Twitter Bootstrap, Polymer, Semantic UI, Marko, Sketch,[m
+[32m +              Javascript, Web Components, Stylus.</p>[m
+[32m +            <p>Delivers: Web apps, Project management </p>[m
+[32m +            <p>Contact: dayanamcc@gmail.com</p>[m
+[32m +          </div>[m
+[32m++=======[m
+[32m+       <div class="div-content">[m
+[32m+         <div>[m
+[32m+           <img src="/images/team/dcabrera.png" class="left icon"/>[m
+[32m++>>>>>>> 6e9f5de83bb5f0f37e3466ecfa349bce452c416b[m
+          </div>[m
+[31m -        <div><h2 class="subtitle">Isaura Salazar - Venezuela</h2>[m
+[31m -          <p>Isaura is a web developer with 3 years experience in development of web pages. Passionate fron -end development.He loves to be at the forefront of new technologies to the efficiency and quality of the final products and continuous improvement.</p>[m
+[31m -          <p>Profile:Sr. Web Developer</p>[m
+[31m -          <p>Techs:Web development, Frond -end, Bootstrap, PHP, HTML5, Javascript, Node.js, Polymer, Marko</p>[m
+[32m +[m
+[32m +        <div class="div-content">[m
+[32m +          <div>[m
+[32m +            <img src="/images/dcabrera.png" class="left icon"/>[m
+[32m +          </div>[m
+[32m +          <div><h2 class="subtitle">Freddy Rodriguez - Venezuela</h2>[m
+[32m +            <p>Freddy is an experienced web developer with more than ~10 years of[m
+[32m +              experience in various environments. He is passionate about back-end[m
+[32m +              development and likes to play with new tech that pushes the[m
+[32m +              boundaries. Freddy is currently developing GraphQL APIs.</p>[m
+[32m +            <p>Profile:Sr. Web Developer</p>[m
+[32m +            <p>Techs:Node.js, Express & Koa server, APIs, Databases, GraphQL,[m
+[32m +              REST API, Marko, Java </p>[m
+[32m +          </div>[m
+          </div>[m
+[32m++<<<<<<< HEAD[m
+[32m +[m
+[32m +        <div class="div-content">[m
+[32m +          <div>[m
+[32m +            <img src="/images/dcabrera.png" class="left icon"/>[m
+[32m +          </div>[m
+[32m +          <div><h2 class="subtitle">Isaura Salazar - Venezuela</h2>[m
+[32m +            <p>Isaura is a web developer with 3 years experience in development of[m
+[32m +               web pages. Passionate front-end development. She loves to be at the[m
+[32m +                forefront of new technologies to the efficiency and quality of the[m
+[32m +                 final products and continuous improvement.</p>[m
+[32m +            <p>Profile:Sr. Web Developer</p>[m
+[32m +            <p>Techs:Web development, Front-end, Bootstrap, PHP, HTML5,[m
+[32m +              Javascript, Node.js, Polymer, Marko</p>[m
+[32m +          </div>[m
+[32m++=======[m
+[32m+       </div>[m
+[32m+       -->[m
+[32m+       <div class="div-content">[m
+[32m+         <div>[m
+[32m+           <img src="/images/team/jzambrano.jpg" class="left icon"/>[m
+[32m++>>>>>>> 6e9f5de83bb5f0f37e3466ecfa349bce452c416b[m
+          </div>[m
+[31m -        <div><h2 class="subtitle">Jean Zambrano - Madrid, Spain</h2>[m
+[31m -          <p>JeAn is a senior system administrator with a little bit more than 17 years experience in Databases, OS, networking and programming. The past ~10 years he has focused on virtualization with a passion for task simplification to achieve higher efficiency in production environments.</p>[m
+[31m -          <p>Profile: Sr. System Administrator.</p>[m
+[31m -          <p>Tech: Docker, Docker Machine, Memphos, VMs, Cloud computing, Unix</p>[m
+[31m -          <p>Delivers: Virtualization technology, Networking, OS Administration</p>[m
+[32m +[m
+[32m +        <div class="div-content">[m
+[32m +          <div>[m
+[32m +            <img src="/images/dcabrera.png" class="left icon"/>[m
+[32m +          </div>[m
+[32m +          <div><h2 class="subtitle">Jean Zambrano - Madrid, Spain</h2>[m
+[32m +            <p>JeAn is a senior system administrator with a little bit more than[m
+[32m +              17 years experience in Databases, OS, networking and programming.[m
+[32m +              The past ~10 years he has focused on virtualization with a passion[m
+[32m +              for task simplification to achieve higher efficiency in[m
+[32m +              production environments.</p>[m
+[32m +            <p>Profile: Sr. System Administrator.</p>[m
+[32m +            <p>Tech: Docker, Docker Machine, Memphos, VMs,[m
+[32m +              Cloud computing, Unix</p>[m
+[32m +            <p>Delivers: Virtualization technology, Networking,[m
+[32m +              OS Administration</p>[m
+[32m +          </div>[m
+          </div>[m
+[31m -      </div>[m
+  [m
+[32m++<<<<<<< HEAD[m
+[32m +        <div class="div-content">[m
+[32m +          <div>[m
+[32m +            <img src="/images/dcabrera.png" class="left icon"/>[m
+[32m +          </div>[m
+[32m +          <div><h2 class="subtitle">Andres Dominguez - Madrid, Spain</h2>[m
+[32m +            <p>Andres has +6 years of experience with Web Startups in[m
+[32m +              South America and Europe.</p>[m
+[32m +            <p>Profile: Growth Hacker </p>[m
+[32m +            <p>Tech: Growth Hacker, Web development, Web Design,[m
+[32m +              Online Marketing</p>[m
+[32m +            </div>[m
+[32m++=======[m
+[32m+       <div class="div-content">[m
+[32m+         <div>[m
+[32m+           <img src="/images/team/adominguez.jpg" class="left icon"/>[m
+[32m++>>>>>>> 6e9f5de83bb5f0f37e3466ecfa349bce452c416b[m
+          </div>[m
+[31m -        <div><h2 class="subtitle">Andres Dominguez- Madrid, Spain</h2>[m
+[31m -          <p>Andres has +6 years of experience with Web Startups in South America and Europe.</p>[m
+[31m -          <p>Profile: Growth Hacker </p>[m
+[31m -          <p>Tech: Growth Hacker, Web development, Web Design, Online Marketing </p>[m
+[32m +[m
+[32m +        <div class="div-content">[m
+[32m +          <div>[m
+[32m +            <img src="/images/dcabrera.png" class="left icon"/>[m
+            </div>[m
+[32m +          <div><h2 class="subtitle">Reynaldo Reyes - Caracas, Venezuela </h2>[m
+[32m +            <p>Reynaldo is a web developer, he has 2 years of experience with[m
+[32m +            different front-end technologies.  </p>[m
+[32m +            <p>Profile: Sr. Web Developer </p>[m
+[32m +            <p>Tech: Web development, Front-end, PHP, HTML5, CSS3, Javascript,[m
+[32m +              Node.js, Polymer</p>[m
+[32m +            </div>[m
+[32m +        </div>[m
+        </div>[m
+[32m++<<<<<<< HEAD[m
+[32m++=======[m
+[32m+ [m
+[32m+ [m
+[32m++>>>>>>> 6e9f5de83bb5f0f37e3466ecfa349bce452c416b[m
+      </paper-header-panel>[m
+  [m
+    </template>[m
+[1mdiff --cc app/index.html[m
+[1mindex fbb6114,2c27bf0..0000000[m
+[1m--- a/app/index.html[m
+[1m+++ b/app/index.html[m
+[36m@@@ -203,9 -192,7 +203,13 @@@[m [msubject to an additional IP rights gran[m
+      display:inline;[m
+      background-color: #494B79;[m
+    }[m
+[32m++<<<<<<< HEAD[m
+[32m +  .menuIcon{[m
+[32m +    padding-bottom: 3%;[m
+[32m +  }[m
+[32m++=======[m
+[32m+ [m
+[32m++>>>>>>> 6e9f5de83bb5f0f37e3466ecfa349bce452c416b[m
+    </style>[m
+  [m
+  [m
+[36m@@@ -334,9 -308,8 +338,9 @@@[m
+                </div>[m
+                <div data-route="services">[m
+                  <span class="topBack paper-font-title">Services</span>[m
+[32m +[m
+                </div>[m
+[31m-               <div data-route="about">[m
+[32m+               <div data-route="about" class="about">[m
+                  <span class="topBack paper-font-title">About Us</span>[m
+                </div>[m
+                <div data-route="team">[m
