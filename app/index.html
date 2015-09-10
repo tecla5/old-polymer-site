@@ -1,5 +1,4 @@
 <!-- <!doctype html>
-
 @license
 Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
 This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
@@ -58,6 +57,34 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- will be replaced with elements/elements.vulcanized.html -->
   <link rel="import" href="elements/elements.html">
   <!-- endreplace-->
+
+  <script>
+
+    function showFooter(id) {
+      'use strict';
+      document.getElementById(id).style.visibility = "visible";
+    }
+    function hideFooter(id) {
+      'use strict';
+      document.getElementById(id).style.visibility = "hidden";
+    }
+    function resetScroll(){
+      'use strict';
+      document.querySelector('#mainContainer').scroller.scrollTop = 0;
+    }
+    function showDiv() {
+      var div = document.getElementById('socialContainer');
+      if(div.style.display!='none') {
+          document.getElementById("socialContainer").style.display = 'none';
+      }
+      else
+      {
+          document.getElementById("socialContainer").style.display = 'block';
+      }
+    }
+
+  </script>
+
 </head>
 
 <style is="custom style">
@@ -439,34 +466,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <!-- build:js scripts/app.js -->
   <script src="scripts/app.js"></script>
-    <script>
-      function showFooter(id) {
-        document.getElementById(id).style.visibility = "visible";
-      }
-      function hideFooter(id) {
-        document.getElementById(id).style.visibility = "hidden";
-      }
-
-      function resetScroll(){
-        document.querySelector('#mainContainer').scroller.scrollTop = 0;
-      }
-
-      function showDiv() {
-        var div = document.getElementById('socialContainer');
-        if(div.style.display!='none') {
-            document.getElementById("socialContainer").style.display = 'none';
-        }
-        else
-        {
-            document.getElementById("socialContainer").style.display = 'block';
-        }
-      }
-
-      var template = document.querySelector('#app');
-	    template.addEventListener('dom-change', function() {
-        this.route = this.route || 'home'; // default route to "one".
-	    });
-    </script>
+  <script>
+    var template = document.querySelector('#app');
+    template.addEventListener('dom-change', function() {
+      console.log('Si entro y te jode!');
+      this.route = this.route || 'home'; // default route to "home".
+    });
+  </script>
 
 
   <!-- endbuild-->
