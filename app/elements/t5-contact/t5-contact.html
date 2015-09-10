@@ -83,19 +83,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         class="section-tab" id="form">
 
           <paper-input labelVisible floatinglabel required auto-validate
-          label="your name" id="inputName">
+          label="your name" id="inputName" error-message="Your name is required!">
 
             <input is="iron-input" label="Your Name" type="text" name="name">
           </paper-input>
 
           <paper-input labelVisible floatinglabel required auto-validate
-         label="contact@your-company.com" id="inputEmail">
+         label="contact@your-company.com" id="inputEmail"
+         error-message="Your email is required!">
 
             <input is="iron-input" type="email" name="email" required>
           </paper-input>
 
           <paper-input labelVisible floatinglabel required auto-validate
-          label="message" id="inputMessage">
+          label="message" id="inputMessage" error-message="A message is required!">
 
             <paper-autogrow-textarea id="a1">
               <textarea id="t1" name="message"></textarea>
