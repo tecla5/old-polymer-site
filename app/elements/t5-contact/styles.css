@@ -1,0 +1,43 @@
+:host {
+  display: block;
+  background: #FFF;
+}
+
+
+paper-button {
+  background-color: transparent;
+  border-width: medium;
+  border-color: #494B79;
+}
+
+.email {
+  background: #494B79;
+}
+
+.colored {
+  background: #494B79;
+  color: #FFF;
+  margin: 5%;
+  margin-left:-3%;
+}
+.section-tab {
+  margin:5%;
+}
+.successMsgDiv{
+  display:none;
+  padding-bottom: 30%;
+}
+.success{
+  font-size: 3vh;
+  text-align: center;
+}
+.sub{
+  color: #fff;
+  font-size: 1.8vh;
+}
+
+@media (max-width: 600px) {
+  h1.paper-font-display1 {
+    font-size: 24px;
+  }
+}

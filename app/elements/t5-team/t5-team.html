@@ -16,6 +16,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       display: block;
       background: #FFF;
     }
+    google-map {
+      height: 300px;
+    }
 
     .logo {
       width: 100%;
@@ -64,6 +67,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
   </style>
   <template>
+
     <paper-header-panel mode="cover">
       <img class="logo" src="/images/Team.png" />
 
@@ -85,6 +89,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <p>Delivers: Web apps, Hybrid apps (mobile), Project management</p>
             <p>Contact: cabrera.javier@gmail.com</p>
           </div>
+          <div>
+              <google-map latitude="41.38" longitude="-357.81" zoom='13'></google-map>
+          </div>
+
         </div>
 
         <div class="div-content">

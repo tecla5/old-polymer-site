@@ -439,34 +439,34 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <!-- build:js scripts/app.js -->
   <script src="scripts/app.js"></script>
-    <script>
-      function showFooter(id) {
-        document.getElementById(id).style.visibility = "visible";
-      }
-      function hideFooter(id) {
-        document.getElementById(id).style.visibility = "hidden";
-      }
+  <script>
+    function showFooter(id) {
+      document.getElementById(id).style.visibility = "visible";
+    }
+    function hideFooter(id) {
+      document.getElementById(id).style.visibility = "hidden";
+    }
 
-      function resetScroll(){
-        document.querySelector('#mainContainer').scroller.scrollTop = 0;
-      }
+    function resetScroll(){
+      document.querySelector('#mainContainer').scroller.scrollTop = 0;
+    }
 
-      function showDiv() {
-        var div = document.getElementById('socialContainer');
-        if(div.style.display!='none') {
-            document.getElementById("socialContainer").style.display = 'none';
-        }
-        else
-        {
-            document.getElementById("socialContainer").style.display = 'block';
-        }
+    function showDiv() {
+      var div = document.getElementById('socialContainer');
+      if(div.style.display!='none') {
+          document.getElementById("socialContainer").style.display = 'none';
       }
+      else
+      {
+          document.getElementById("socialContainer").style.display = 'block';
+      }
+    }
 
-      var template = document.querySelector('#app');
-	    template.addEventListener('dom-change', function() {
-        this.route = this.route || 'home'; // default route to "one".
-	    });
-    </script>
+    var template = document.querySelector('#app');
+    template.addEventListener('dom-change', function() {
+      this.route = this.route || 'home'; // default route to "one".
+    });
+  </script>
 
 
   <!-- endbuild-->

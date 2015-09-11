@@ -8,149 +8,45 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 
-<link rel="import" href="../../bower_components/polymer/polymer.html">
-
-
-
 <dom-module id="t5-contact">
-  <style>
-    :host {
-      display:block;
-      background: #FFF;
-    }
-    google-map {
-      height: 300px;
-    }
-    .email {
-      background: #35D08A;
-    }
-    .colored {
-      background: #35D08A;
-      color: #FFF;
-      margin: 5%;
-      margin-left:-3%;
-    }
-    .section-tab {
-      margin:5%;
-    }
-    paper-button button {
-    background-color: transparent;
-    border-color: transparent;
-    }
-    .successMsgDiv{
-      display:none;
-      padding-bottom: 30%;
-    }
-    .success{
-      font-size: 3vh;
-      text-align: center;
-    }
-    .sub{
-      color: #fff;
-      font-size: 1.8vh;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" >
 
   <template>
-
-    <div>
-      <google-map latitude="41.38" longitude="-357.81" zoom='13'></google-map>
-    </div>
-
-    <iron-ajax
-     id="ajax"
-     url=""
-     handle-as="json"
-     on-response="hresponse"
-     debounce-duration="300">
- </iron-ajax>
-
     <paper-header-panel mode="seamed" flex>
       <section class="section-tab">
         <paper-toolbar class="email" id="mainheader">
           <iron-icon style="margin:10px" icon="communication:email"></iron-icon>
-          <span flex>  Please feel free to contact us with this form and we will
-             get back to you and answer any questions. Don’t be shy ;)</span>
+          <span flex> Please feel free to contact us with this form and we will get back to you and answer any questions. Don’t be shy ;)</span>
         </paper-toolbar>
 
         <div id="successMsg" class="successMsgDiv">
           <p class="success"> Your ticket has been sent to Tecla5 support! </p>
-          <p class="success"> One of our awesome support engineers will get
-            back to you shortly! </p>
+          <p class="success"> One of our awesome support engineers will get back to you shortly! </p>
         </div>
 
-        <form is="iron-form" method="POST" action="/__/forms/contact"
-        class="section-tab" id="form">
 
-          <paper-input labelVisible floatinglabel required auto-validate
-          label="your name" id="inputName">
+        <form is="iron-form" method="POST" action="{{action}}" class="section-tab" id="form">
 
-            <input is="iron-input" label="Your Name" type="text" name="name">
-          </paper-input>
+          <paper-input label="your name" name="name" labelVisible floatinglabel required auto-validate pattern="[a-zA-Z]*" ></paper-input>
 
-          <paper-input labelVisible floatinglabel required auto-validate
-         label="contact@your-company.com" id="inputEmail">
+          <paper-input label="contact@your-company.com" name="email"
+          labelVisible floatinglabel required auto-validate
+          pattern="^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$" ></paper-input>
 
-            <input is="iron-input" type="email" name="email" required>
-          </paper-input>
-
-          <paper-input labelVisible floatinglabel required auto-validate
-          label="message" id="inputMessage">
-
-            <paper-autogrow-textarea id="a1">
-              <textarea id="t1" name="message"></textarea>
+          <paper-input label="message" name="message" labelVisible floatinglabel required auto-validate >
+            <paper-autogrow-textarea>
+              <textarea name="message"></textarea>
             </paper-autogrow-textarea>
           </paper-input>
 
-          <paper-button raised class="colored" onclick="clickHandler(event)">
-            Submit</paper-button>
+          <paper-button raised onclick="clickHandler(event)">Submit</paper-button>
+
         </form>
 
       </section>
     </paper-header-panel>
   </template>
-  <script>
-  Polymer({
 
-  });
+  <script src="script.js"></script>
 
-  /*jshint unused:false*/
-  /*jshint latedef:false*/
-  function clickHandler(event) {
-      var val=validate();
-      if(val){
-        Polymer.dom(event).localTarget.parentElement.submit();
-      }
-    }
-
-  function validate() {
-     var res;
-     var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-     var email=document.getElementById('inputEmail').value;
-     res=re.test(email);
-     if(res){
-       msgSent();
-       return true;
-     }
-     else {
-       window.alert('EMAIL CONTACT ADDRESS IS INVALID.');
-       return false;
-     }
-   }
-
-  function msgSent() {
-    document.getElementById('form').style.display = 'none';
-    document.getElementById('successMsg').style.display = 'block';
-      setTimeout(function () {
-        document.getElementById('successMsg').style.display = 'none';
-        document.getElementById('form').style.display = 'block';
-      }, 5000);
-      clearInput();
-    }
-  function clearInput() {
-     document.getElementById('inputName').value = '';
-     document.getElementById('inputEmail').value = '';
-     document.getElementById('inputMessage').value = '';
- }
-  </script>
 </dom-module>
