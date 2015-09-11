@@ -3,6 +3,10 @@
   background: #FFF;
 }
 
+[hidden] {
+  display: none;
+}
+
 
 paper-button {
   background-color: transparent;
