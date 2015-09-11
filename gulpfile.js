@@ -20,6 +20,7 @@ var merge = require('merge-stream');
 var path = require('path');
 var fs = require('fs');
 var glob = require('glob');
+//var print = require('gulp-print');
 var historyApiFallback = require('connect-history-api-fallback');
 
 var AUTOPREFIXER_BROWSERS = [
@@ -76,6 +77,7 @@ gulp.task('images', function () {
       progressive: true,
       interlaced: true
     })))
+    //.pipe(print())
     .pipe(gulp.dest('dist/images'))
     .pipe($.size({title: 'images'}));
 });

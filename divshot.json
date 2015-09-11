@@ -1,9 +1,13 @@
 {
   "name": "tecla5",
   "root": "./dist",
-  "clean_urls": false,
+  "clean_urls": true,
   "error_page": "error.html",
-
+  "routes": {
+      "/*": "index.html",
+      "/*.html": "index.html",
+      "/app/**/*.html": "app.html"
+  },
   "forms": {
     "contact": {
       "to": "cabrerajavier@gmail.com",
