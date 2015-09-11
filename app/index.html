@@ -60,17 +60,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- endreplace-->
 </head>
 
-<style>
+<style is="custom style">
   :host {
     display: block;
     background: #eee;
-  }
+    }
   span.paper-font-title{
     font-size: 30px;
     font-weight: 300;
   }
-  #mainToolbar{ /*MAIN TOOLBAR*/
-    background: #494B79;
+  paper-toolbar.tall {
+      background-color: #494B79;
   }
   #topToolbar{ /*TOP TOOLBAR*/
     background: #494B79;
@@ -199,6 +199,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     background-color: #404040;
   }
   .social-style{
+    padding-left: 0;
     display:inline;
     background-color: #494B79;
   }
@@ -334,6 +335,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </div>
               <div data-route="services">
                 <span class="topBack paper-font-title">Services</span>
+
               </div>
               <div data-route="about" class="about">
                 <span class="topBack paper-font-title">About Us</span>
@@ -400,7 +402,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <!-- Main Area -->
           <div class="content">
-            <iron-pages style="padding:0px; padding-bottom:13.5%;"
+            <iron-pages style="padding:0px;"
             attr-for-selected="data-route" selected="{{route}}" >
 
               <section data-route="home">
@@ -471,4 +473,4 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- endbuild-->
 
 
-</html> -->
+</html>
