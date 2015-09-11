@@ -206,6 +206,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   .menuIcon{
     padding-bottom: 3%;
   }
+
+  .about{
+  }
+
+  paper-toolbar.paper-toolbar-0 {
+    /*
+    `--paper-toolbar-background` | Toolbar background color     | `--default-primary-color`
+    background-image: url('/images/Team.png');
+    */
+  }
+
   </style>
 
 
@@ -218,39 +229,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <!-- Drawer Scroll Header Panel -->
         <paper-scroll-header-panel drawer fixed>
-
-          <!-- Footer Content -->
-          <div id="footerDiv" onMouseOver="showFooter('footer')"
-          onMouseOut="hideFooter('footer')">
-            <paper-scroll-header-panel id="footer">
-              <paper-toolbar class="medium-tall" id="footToolbar">
-
-                <div class="foot middleJustify fit">
-                    <a target="_blank" class="foot-style"
-                    href="http://www.twitter.com">
-                      <iron-icon class="icon" src="/images/icons/twitter.svg"></iron-icon>
-                    </a>
-                    <a target="_blank" class="foot-style"
-                    href="http://www.facebook.com">
-                      <iron-icon class="icon" src="/images/icons/facebook.svg" ></iron-icon>
-                    </a>
-                    <a target="_blank" class="foot-style"
-                    href="http://www.linkedin.com">
-                      <iron-icon class="icon" src="/images/icons/linkedin.svg" ></iron-icon>
-                    </a>
-                    <a target="_blank" class="foot-style"
-                    href="http://www.plus.google.com">
-                      <iron-icon class="icon" src="/images/icons/googleplus.svg" ></iron-icon>
-                    </a>
-                  </div>
-
-                <div class="foot middle fit">
-                  <span> Contact Us </span></br></br>
-                  <span> tecla5.com All Rights Reserved 2015</span>
-                </div>
-              </paper-toolbar>
-            </paper-scroll-header-panel>
-          </div>
 
           <!-- Drawer Toolbar -->
           <paper-toolbar id="topToolbar" class="drawerToolbar">
@@ -322,6 +300,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </iron-selector>
         </paper-scroll-header-panel>
 
+
+
         <!-- Main Area -->
         <paper-scroll-header-panel id="mainContainer" main condenses
         keep-condensed-header>
@@ -352,52 +332,54 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle>
             </paper-icon-button>
+
             <span class="flex"></span>
 
-              <!-- Toolbar icons -->
-              <paper-icon-button id="shareShow" icon="social:share"
-              onclick="showDiv()">  </paper-icon-button>
-                <div id="socialContainer"  style="display:none;">
-                  <a target="popup" class="social-style" onclick="window.open
-                  ('https://twitter.com/share?url=http://www.tecla5.com',
-                  'Tecla 5 Site','width=600,height=400')"
-                  data-url="http://www.tecla5.com">
-                    <paper-icon-button src="/images/icons/twitter-icon.png">
-                    </paper-icon-button>
-                  </a>
 
-                  <a target="popup" class="social-style" onclick="window.open
-                  ('https://www.linkedin.com/shareArticle?u=http://www.tecla5.com',
-                  'Tecla 5 Site','width=600,height=400')"
-                  data-url="http://www.tecla5.com">
-                    <paper-icon-button src="/images/icons/linkedin-icon.png">
-                    </paper-icon-button>
-                  </a>
+            <!-- Toolbar icons -->
+            <paper-icon-button id="shareShow" icon="social:share"
+            onclick="showDiv()">  </paper-icon-button>
+            <div id="socialContainer"  style="display:none;">
+              <a target="popup" class="social-style" onclick="window.open
+              ('https://twitter.com/share?url=http://www.tecla5.com',
+              'Tecla 5 Site','width=600,height=400')"
+              data-url="http://www.tecla5.com">
+                <paper-icon-button src="/images/icons/twitter-icon.png">
+                </paper-icon-button>
+              </a>
 
-                  <a target="popup" class="social-style" onclick="window.open
-                  ('http://www.facebook.com/share.php?u=http://www.tecla5.com',
-                  'Tecla 5 Site','width=600,height=400')"
-                  data-url="http://www.tecla5.com">
-                    <paper-icon-button src="/images/icons/facebook-icon.png">
-                    </paper-icon-button>
-                  </a>
+              <a target="popup" class="social-style" onclick="window.open
+              ('https://www.linkedin.com/shareArticle?u=http://www.tecla5.com',
+              'Tecla 5 Site','width=600,height=400')"
+              data-url="http://www.tecla5.com">
+                <paper-icon-button src="/images/icons/linkedin-icon.png">
+                </paper-icon-button>
+              </a>
 
-                  <a target="popup" class="social-style" onclick="window.open
-                  ('https://plus.google.com/share?url=http://www.tecla5.com',
-                  'Tecla 5 Site','width=600,height=400')"
-                  data-url="http://www.tecla5.com">
-                    <paper-icon-button src="/images/icons/googleplus-icon.png">
-                    </paper-icon-button>
-                  </a>
-                </div>
+              <a target="popup" class="social-style" onclick="window.open
+              ('http://www.facebook.com/share.php?u=http://www.tecla5.com',
+              'Tecla 5 Site','width=600,height=400')"
+              data-url="http://www.tecla5.com">
+                <paper-icon-button src="/images/icons/facebook-icon.png">
+                </paper-icon-button>
+              </a>
 
+              <a target="popup" class="social-style" onclick="window.open
+              ('https://plus.google.com/share?url=http://www.tecla5.com',
+              'Tecla 5 Site','width=600,height=400')"
+              data-url="http://www.tecla5.com">
+                <paper-icon-button src="/images/icons/googleplus-icon.png">
+                </paper-icon-button>
+              </a>
+            </div>
 
             <paper-icon-button icon="search"></paper-icon-button>
 
             <!-- Application name -->
 
-
           </paper-toolbar>
+
+
 
           <!-- Main Area -->
           <div class="content">

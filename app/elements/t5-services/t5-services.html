@@ -18,18 +18,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       background: #FFF;
     }
 
-
-    .logo{
-      width: 100%;
-    }
-    .icon{
-      width: 20%;
-      height: 30%;
-    }
     .head-title{
       padding-left: 10%;
       font-size: 4vh;
     }
+
     .second-title{
       font-size: 2.5vh;
       padding-top:3%;
@@ -43,6 +36,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       font-size: 2.5vh;
       padding-top:9%;
     }
+
     .left{
       float: left;
       padding:5%;
@@ -50,25 +44,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       padding-right:10%;
       vertical-align:top;
     }
-    .div-content{
-      font-size: 2vh;
-      display:block;
-      overflow:hidden;
-      text-align: justify;
-      margin-right:5%;
-    }
 
 
 
   </style>
   <template>
     <paper-header-panel mode="cover">
-      <div>
+      <div class="paper-header">
         <iron-image src="/images/Services.png" class="sized" sizing="contain" ></iron-image>
       </div>
+      <div class="fit">
+        <!-- over the image -->
+      </div>
+
+
       <h2 class="head-title">What we do!</h2>
 
-      <div class="div-content">
+      <div class="content">
         <div>
           <iron-image src="/images/rapid_prototype.png" class="left icon" sizing="contain" ></iron-image>
         </div>
