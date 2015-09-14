@@ -11,41 +11,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
 <dom-module id="t5-home">
-  <style>
-    :host {
-    display:block;
-    background: #eee;
-    }
+  <link rel="stylesheet" href="styles.css" >
 
-    .big{
-      --iron-icon-height: 25.0vh;
-      --iron-icon-width: 25.0vh;
-      --paper-icon-button-ink-color: #FFF;
-      font-size: 20.0vh;
-    }
-
-    .center{
-      text-align: center;
-    }
-
-    .firstPara{
-      text-align: justify;
-      padding: 3%;
-      font-size: 3.0vh;
-    }
-
-    .teclaTitle{
-      font-size: 6.0vh;
-      text-align: center;
-    }
-
-    h1{
-      font-size: 20.0vh;
-      margin-top: 8%;
-
-    }
-
-  </style>
 
   <template>
     <!-- class="t5" -->
@@ -57,20 +24,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <p class="firstPara" >Build competitive ideas for your business with us! We help you create responsive web and mobile apps that work across all devices in all environments.  </p>
 
   </template>
+  <script src="script.js"></script>
 
-  <script>
-  (function() {
-    Polymer({
-      is: 't5-home',
-
-      properties: {
-        foo: {
-          type: String,
-          value: 'bar',
-          notify: true
-        }
-      }
-    });
-  })();
-  </script>
 </dom-module>

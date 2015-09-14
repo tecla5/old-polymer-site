@@ -11,81 +11,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
 <dom-module id="t5-team">
-  <style>
-    :host {
-      display: block;
-      background: #FFF;
-    }
-    google-map {
-      height: 300px;
-    }
 
-    .logo {
-      width: 100%;
-      padding-bottom: 5%;
-    }
+  <link rel="stylesheet" href="styles.css" charset="utf-8">
 
-    .icon {
-      width: 20%;
-      height: 30%;
-    }
-
-    .head-title {
-      padding-left: 10%;
-      font-size: 3.5vh;
-    }
-
-    .subtitle {
-      font-size: 2.5vh;
-      padding-top: 3%;
-    }
-
-    .left {
-      float: left;
-      padding: 5%;
-      padding-right: 10%;
-      vertical-align: top;
-    }
-
-    .div-content {
-      font-size: 2vh;
-      display: block;
-      overflow: hidden;
-      text-align: justify;
-    }
-
-    .article {
-      font-size: 2.0vh;
-      margin: 5%;
-      text-align: justify;
-      margin-top: 0%;
-    }
-
-    .pad-left {
-      padding-left: 5%;
-    }
-
-   .profile-picture {
-     width: 300px;
-     height: 300px;
-   }
-
-
-  </style>
   <template>
 
     <paper-header-panel mode="cover">
-      <iron-image src="/images/Team.png" class="sized" sizing="contain" ></iron-image>
 
+      <div class="paper-header">
+        <iron-image src="/images/Team.png" class="sized" sizing="contain"></iron-image>
+      </div>
 
-      <div class="article">
+      <div class="content">
         <h2 class="pad-left">The Team!</h2>
         <p class="pad-left">We have a dedicated team of: developers, designers, dev ops and project managers from around the globe.</p>
-      </div>
 
         <div class="div-content">
           <div>
-            <iron-image src="/images/team/jcabrera.jpeg" class="profile-picture" sizing="contain"  ></iron-image>
+            <iron-image src="/images/team/jcabrera.jpeg" class="profile-picture" sizing="contain"></iron-image>
           </div>
           <div>
             <h2 class="subtitle">Javier Cabrera - Barcelona, Spain</h2>
@@ -96,13 +39,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <p>Contact: cabrera.javier@gmail.com</p>
           </div>
           <div>
-              <google-map latitude="41.38" longitude="-357.81" zoom='13'></google-map>
+            <google-map latitude="41.38" longitude="-357.81" zoom='13'></google-map>
           </div>
-      </div>
+        </div>
 
         <div class="div-content">
           <div>
-            <iron-image src="/images/team/kmandrup.jpg" class="profile-picture" sizing="contain"  ></iron-image>
+            <iron-image src="/images/team/kmandrup.jpg" class="profile-picture" sizing="contain"></iron-image>
           </div>
           <div>
             <h2 class="subtitle">Kristian Mandrup - London, United Kingdom</h2>
@@ -117,7 +60,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <div class="div-content">
           <div>
-            <iron-image src="/images/team/dcabrera.png" class="profile-picture" sizing="contain"  ></iron-image>
+            <iron-image src="/images/team/dcabrera.png" class="profile-picture" sizing="contain"></iron-image>
           </div>
           <div>
             <h2 class="subtitle">Dayana Cabrera - Barcelona, Spain</h2>
@@ -128,37 +71,29 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <p>Contact: dayanamcc@gmail.com</p>
           </div>
         </div>
-      </div>
 
-       <div class="div-content">
-         <div>
-           <img src="/images/team/isalazar.png" class="left icon" />
-         </div>
-         <div>
-           <h2 class="subtitle">Isaura Salazar - Barcelona, Spain</h2>
-           <p>Isaura is a web developer with 3 years experience in development of
-              web pages. Passionate front-end development. She loves to be at the
-               forefront of new technologies to the efficiency and quality of the
-                final products and continuous improvement.</p>
-            <p>Profile: Sr. Web Developer.</p>
-         </div>
-       </div>
-     </div>
-
-
-<!--
-      <div class="div-content">
+        <div class="div-content">
           <div>
-            <iron-image src="/images/dcabrera.png" class="profile-picture" sizing="contain" ></iron-image>
+            <img src="/images/team/isalazar.png" class="left icon" />
           </div>
-          <div><h2 class="subtitle">Freddy Rodriguez - Venezuela</h2>
-            <p>Freddy is an experienced web developer with more than ~10 years of
-              experience in various environments. He is passionate about back-end
-              development and likes to play with new tech that pushes the
-              boundaries. Freddy is currently developing GraphQL APIs.</p>
+          <div>
+            <h2 class="subtitle">Isaura Salazar - Barcelona, Spain</h2>
+            <p>Isaura is a web developer with 3 years experience in development of web pages. Passionate front-end development. She loves to be at the forefront of new technologies to the efficiency and quality of the final products and continuous improvement.</p>
+            <p>Profile: Sr. Web Developer.</p>
+          </div>
+        </div>
+
+
+        <div class="div-content">
+          <div>
+            <iron-image src="/images/" class="profile-picture" sizing="contain"></iron-image>
+          </div>
+          <div>
+            <h2 class="subtitle">Freddy Rodriguez - Venezuela</h2>
+            <p>Freddy is an experienced web developer with more than ~10 years of experience in various environments. He is passionate about back-end development and likes to play with new tech that pushes the boundaries. Freddy is currently developing GraphQL
+              APIs.</p>
             <p>Profile:Sr. Web Developer</p>
-            <p>Techs:Node.js, Express & Koa server, APIs, Databases, GraphQL,
-              REST API, Marko, Java </p>
+            <p>Techs:Node.js, Express & Koa server, APIs, Databases, GraphQL, REST API, Marko, Java </p>
           </div>
         </div>
 
@@ -166,24 +101,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <div class="div-content">
           <div>
-            <iron-image src="/images/dcabrera.png" class="profile-picture" sizing="contain" ></iron-image>
+            <iron-image src="/images/Teclas.jpg" class="profile-picture" sizing="contain"></iron-image>
           </div>
-          <div><h2 class="subtitle">Isaura Salazar - Venezuela</h2>
-            <p>Isaura is a web developer with 3 years experience in development of
-               web pages. Passionate front-end development. She loves to be at the
-                forefront of new technologies to the efficiency and quality of the
-                 final products and continuous improvement.</p>
+          <div>
+            <h2 class="subtitle">Isaura Salazar - Venezuela</h2>
+            <p>Isaura is a web developer with 3 years experience in development of web pages. Passionate front-end development. She loves to be at the forefront of new technologies to the efficiency and quality of the final products and continuous improvement.</p>
             <p>Profile:Sr. Web Developer</p>
-            <p>Techs:Web development, Front-end, Bootstrap, PHP, HTML5,
-              Javascript, Node.js, Polymer, Marko</p>
+            <p>Techs:Web development, Front-end, Bootstrap, PHP, HTML5, Javascript, Node.js, Polymer, Marko</p>
           </div>
-      </div>
+        </div>
 
-      -->
-      
+
         <div class="div-content">
           <div>
-            <iron-image src="/images/team/jzambrano.jpg" class="profile-picture" sizing="contain"  ></iron-image>
+            <iron-image src="/images/team/jzambrano.jpg" class="profile-picture" sizing="contain"></iron-image>
           </div>
           <div>
             <h2 class="subtitle">Jean Zambrano - Madrid, Spain</h2>
@@ -198,7 +129,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <div class="div-content">
           <div>
-            <iron-image src="/images/team/adominguez.jpg" class="profile-picture" sizing="contain"  ></iron-image>
+            <iron-image src="/images/team/adominguez.jpg" class="profile-picture" sizing="contain"></iron-image>
           </div>
           <div>
             <h2 class="subtitle">Andres Dominguez - Madrid, Spain</h2>
@@ -207,10 +138,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <p>Tech: Growth Hacker, Web development, Web Design, Online Marketing</p>
           </div>
         </div>
-<!--
+
+
         <div class="div-content">
           <div>
-            <iron-image src="/images/" class="profile-picture" sizing="contain"  ></iron-image>
+            <iron-image src="/images/Tecla.jpg" class="profile-picture" sizing="contain"></iron-image>
           </div>
           <div>
             <h2 class="subtitle">Reynaldo Reyes - Caracas, Venezuela </h2>
@@ -219,24 +151,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <p>Tech: Web development, Front-end, PHP, HTML5, CSS3, Javascript, Node.js, Polymer</p>
           </div>
         </div>
+
+
       </div>
--->
+
+
     </paper-header-panel>
 
   </template>
-  <script>
-    (function() {
-      Polymer({
-        is: 't5-team',
+  <script src="script.js" charset="utf-8"></script>
 
-        properties: {
-          foo: {
-            type: String,
-            value: 'bar',
-            notify: true
-          }
-        }
-      });
-    })();
-  </script>
 </dom-module>

@@ -12,42 +12,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
 <dom-module id="t5-services">
-  <style>
-    :host {
-     display: block;
-      background: #FFF;
-    }
+  <link rel="stylesheet" href="styles.css" >
 
-    .head-title{
-      padding-left: 10%;
-      font-size: 4vh;
-    }
-
-    .second-title{
-      font-size: 2.5vh;
-      padding-top:3%;
-      padding-left: 10%;
-    }
-    .subtitle{
-      font-size: 2.5vh;
-      padding-top:7%;
-    }
-    .subtitle2{
-      font-size: 2.5vh;
-      padding-top:9%;
-    }
-
-    .left{
-      float: left;
-      padding:5%;
-      padding-left:10%;
-      padding-right:10%;
-      vertical-align:top;
-    }
-
-
-
-  </style>
   <template>
     <paper-header-panel mode="cover">
       <div class="paper-header">
@@ -133,19 +99,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </paper-header-panel>
 
   </template>
-  <script>
-    (function() {
-      Polymer({
-        is: 't5-services',
+  <script src="script.js" charset="utf-8"></script>
 
-        properties: {
-          foo: {
-            type: String,
-            value: 'bar',
-            notify: true
-          }
-        }
-      });
-    })();
-  </script>
 </dom-module>

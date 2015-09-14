@@ -11,19 +11,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
 <dom-module id="t5-about">
-  <style>
-    :host {
-      display: block;
-      background: #FFF;
-    }
+  <link rel="stylesheet" href="styles.css" >
 
-    .content {
-      background: #FFF;
-    }
-
-
-
-  </style>
   <template>
 
     <paper-header-panel mode="cover">
@@ -31,7 +20,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <iron-image src="/images/AboutUS.png" class="sized" sizing="cover"  ></iron-image>
       </div>
 
-      <div style="padding-bottom:15%" class="article">
+      <div class="content">
 
           <h2>Why tecla5?</h2>
           <p>Tecla = Keyboard in Spanish ;)</p>
@@ -63,19 +52,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   </template>
 
-  <script>
-    (function() {
-      Polymer({
-        is: 't5-about',
+  <script src="script.js"></script>
 
-        properties: {
-          foo: {
-            type: String,
-            value: 'bar',
-            notify: true
-          }
-        }
-      });
-    })();
-  </script>
 </dom-module>
