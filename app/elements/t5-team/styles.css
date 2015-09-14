@@ -1,14 +1,14 @@
 :host {
   display: block;
-  background: #FFF;
 }
 
 
-paper-material.paper-card {
-  min-width: 90%;
-  max-height: 400px;
-  --paper-card-header-color: var(--paper-pink-500);
+paper-card {
+  width: 100%;
+  max-height: 450px;
+  margin-bottom: 16px;
 }
+
 
 
 google-map {
@@ -31,11 +31,6 @@ google-map {
 
 
 #cards {
-}
-
-paper-card {
-  width: 100%;
-  margin-bottom: 16px;
 }
 
 
