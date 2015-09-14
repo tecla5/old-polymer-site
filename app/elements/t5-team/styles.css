@@ -31,11 +31,6 @@ google-map {
 
 
 #cards {
-  @apply(--layout-vertical);
-  @apply(--center-justified);
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 paper-card {
