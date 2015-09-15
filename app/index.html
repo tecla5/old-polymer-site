@@ -60,165 +60,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- endreplace-->
 </head>
 
-<style is="custom style">
-  :host {
-    display: block;
-    background: #eee;
-    }
-  span.paper-font-title{
-    font-size: 30px;
-    font-weight: 300;
-  }
-  paper-toolbar.tall {
-      background-color: #494B79;
-  }
-  #topToolbar{ /*TOP TOOLBAR*/
-    background: #494B79;
-  }
-  #footToolbar{
-    background: #404040;
-  }
-  div.content{ /* MAIN CONTENT BACKGROUND */
-    background: #eee;
-  }
-  paper-menu.paper-menu-0{ /*MENU BACKGROUND */
-    background: #eee;
-  }
-  div.content.style-scope.paper-menu{ /*BUTTONS BACKGROUND */
-    background: #eee;
-  }
-  #mainContainer.paper-scroll-header-panel{ /* BOTTOM MENU BACKGROUND */
-    background: #eee;
-  }
-  #footer {
-    position: fixed;
-    height: 13%;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    visibility: hidden;
-  }
-  #footerDiv{
-    position: fixed;
-    height: 13%;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-  }
-  .foot{
-    text-align:center;
-  }
-  .icon{
-    width: 3%;
-  }
-  span{
-    font-size:2.0vh;
-  }
-  /*Efecto Menu*/
-  iron-selector {
-    display: block;
-    margin: 12px 0px;
-  }
-  iron-selector a {
-    margin-bottom: 2px;
-    padding: 10px 0px;
-    -moz-user-select: none;
-    box-sizing: border-box;
-    cursor: pointer;
-    display: block;
-    font-size: 16px;
-    min-width: 7em;
-    outline: medium none;
-    position: relative;
-    z-index: 0;
-    cursor: pointer;
-    text-transform: uppercase;
-    background-color: #eee;
-    color:black;
-    padding-left: 20%;
-  }
-  x-app iron-selector a #ripple {
-    color: rgb(139, 195, 74);
-  }
-  iron-selector a #ripple {
-    pointer-events: none;
-    z-index: -1;
-  }
-  iron-selector a { /*Duplicated?*/
-    font-size: 16px;
-    text-decoration: none;
-    color: black;
-  }
-  html [fit] {
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  paper-ripple {
-    border-radius: inherit;
-    display: block;
-    overflow: hidden;
-    position: relative;
-    color: black;
-  }
-  paper-ripple #bg, paper-ripple #waves, paper-ripple .wave-container,
-   paper-ripple .wave {
-    height: 100%;
-    left: 0;
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
-  paper-ripple #waves, paper-ripple .wave {
-    overflow: hidden;
-  }
-  paper-ripple #bg, paper-ripple #waves, paper-ripple .wave-container,
-  paper-ripple .wave {
-    height: 100%;
-    left: 0;
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
-  .iron-selected {
-    background: #eee;
-  }
-  section.iron-selected {
-    background: #eee;
-  }
-  .topBack {
-    background: #494B79;
-  }
-  .foot-style{
-    padding: 0;
-    display:inline;
-    background-color: #404040;
-  }
-  .social-style{
-    padding-left: 0;
-    display:inline;
-    background-color: #494B79;
-  }
-  .menuIcon{
-    padding-bottom: 3%;
-  }
-
-  .about{
-  }
-
-  paper-toolbar.paper-toolbar-0 {
-    /*
-    `--paper-toolbar-background` | Toolbar background color     | `--default-primary-color`
-    background-image: url('/images/Team.png');
-    */
-  }
-
-  </style>
-
+<!--
+<style is="custom style"></style>
+-->
+<link rel="stylesheet" href="styles/custom.css">
 
 
 <body unresolved class="fullbleed layout vertical">
@@ -228,7 +73,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
         <!-- Drawer Scroll Header Panel -->
-        <paper-scroll-header-panel drawer fixed>
+        <paper-scroll-header-panel drawer >
 
           <!-- Drawer Toolbar -->
           <paper-toolbar id="topToolbar" class="drawerToolbar">
@@ -236,6 +81,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <paper-icon-button icon="t5-icons:tecla5">
             </paper-icon-button>
           </paper-toolbar>
+
 
           <!-- Drawer Content -->
           <iron-selector id="menuContainer" class="list"
@@ -274,21 +120,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </paper-ripple>
                  <span>Services</span>
              </a>
-             <!--<a data-route="Project" href="/project">
-               <paper-ripple id="ripple" fit="">
-                 <div id="bg" style="opacity: 0;"></div>
-                 <div id="waves"></div>
-               </paper-ripple>
-                 <span>Project</span>
-             </a>-->
-            <!-- <a data-route="blog" href="/blog">
-               <iron-icon icon="book"></iron-icon>
-               <paper-ripple id="ripple" fit="">
-                 <div id="bg" style="opacity: 0;"></div>
-                 <div id="waves"></div>
-               </paper-ripple>
-                 <span>Blog</span>
-             </a> -->
              <a data-route="contact" href="/contact">
                <iron-icon icon="mail" class="menuIcon"></iron-icon>
                <paper-ripple id="ripple" fit="">

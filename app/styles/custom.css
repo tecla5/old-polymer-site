@@ -1,0 +1,150 @@
+:host {
+  display: block;
+  background: #eee;
+  }
+span.paper-font-title{
+  font-size: 30px;
+  font-weight: 300;
+}
+paper-toolbar.tall {
+    background-color: #494B79;
+}
+
+/*TOP TOOLBAR*/
+#topToolbar{
+  background: #494B79;
+}
+#footToolbar{
+  background: #404040;
+}
+div.content{ /* MAIN CONTENT BACKGROUND */
+  background: #eee;
+}
+paper-menu.paper-menu-0{ /*MENU BACKGROUND */
+  background: #eee;
+}
+div.content.style-scope.paper-menu{ /*BUTTONS BACKGROUND */
+  background: #eee;
+}
+#mainContainer.paper-scroll-header-panel{ /* BOTTOM MENU BACKGROUND */
+  background: #eee;
+}
+#footer {
+  position: fixed;
+  height: 13%;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+#footerDiv{
+  position: fixed;
+  height: 13%;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+.foot{
+  text-align:center;
+}
+.icon{
+  width: 3%;
+}
+span{
+  font-size:2.0vh;
+}
+/*Efecto Menu*/
+iron-selector {
+  display: block;
+  margin: 12px 0px;
+}
+iron-selector a {
+  margin-bottom: 2px;
+  padding: 10px 0px;
+  -moz-user-select: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  min-width: 7em;
+  outline: medium none;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: #eee;
+  color:black;
+  padding-left: 20%;
+}
+x-app iron-selector a #ripple {
+  color: rgb(139, 195, 74);
+}
+iron-selector a #ripple {
+  pointer-events: none;
+  z-index: -1;
+}
+iron-selector a { /*Duplicated?*/
+  font-size: 16px;
+  text-decoration: none;
+  color: black;
+}
+html [fit] {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+paper-ripple {
+  border-radius: inherit;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  color: black;
+}
+paper-ripple #bg, paper-ripple #waves, paper-ripple .wave-container,
+ paper-ripple .wave {
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+paper-ripple #waves, paper-ripple .wave {
+  overflow: hidden;
+}
+paper-ripple #bg, paper-ripple #waves, paper-ripple .wave-container,
+paper-ripple .wave {
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.iron-selected {
+  background: #eee;
+}
+section.iron-selected {
+  background: #eee;
+}
+.topBack {
+  background: #494B79;
+}
+.foot-style{
+  padding: 0;
+  display:inline;
+  background-color: #404040;
+}
+.social-style{
+  padding-left: 0;
+  display:inline;
+  background-color: #494B79;
+}
+.menuIcon{
+  padding-bottom: 3%;
+}
+
+.about{
+}
