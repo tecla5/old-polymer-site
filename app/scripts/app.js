@@ -24,7 +24,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   app.addEventListener('dom-change', function() {
     console.log('Our app is ready to rock!');
+
+    console.log('this', this, app);
+    this.route = this.route || 'home'; // default route to 'one'.
   });
+
 
   // See https://github.com/Polymer/polymer/issues/1381
   window.addEventListener('WebComponentsReady', function() {
@@ -39,7 +43,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // the appName in the middle-container and the bottom title in the bottom-container.
   // The appName is moved to top and shrunk on condensing. The bottom sub title
   // is shrunk to nothing on condensing.
-  addEventListener('paper-header-transform', function(e) {
+  window.addEventListener('paper-header-transform', function(e) {
+    console.log(e);
+    /*
     var appName = document.querySelector('.app-name');
     var middleContainer = document.querySelector('.middle-container');
     var bottomContainer = document.querySelector('.bottom-container');
@@ -49,15 +55,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     var maxMiddleScale = 0.50;  // appName max size when condensed. The smaller the number the smaller the condensed size.
     var scaleMiddle = Math.max(maxMiddleScale, (heightDiff - detail.y) / (heightDiff / (1-maxMiddleScale))  + maxMiddleScale);
     var scaleBottom = 1 - yRatio;
-
+    */
     // Move/translate middleContainer
-    Polymer.Base.transform('translate3d(0,' + yRatio * 100 + '%,0)', middleContainer);
+    //Polymer.Base.transform('translate3d(0,' + yRatio * 100 + '%,0)', middleContainer);
 
     // Scale bottomContainer and bottom sub title to nothing and back
-    Polymer.Base.transform('scale(' + scaleBottom + ') translateZ(0)', bottomContainer);
+    //Polymer.Base.transform('scale(' + scaleBottom + ') translateZ(0)', bottomContainer);
 
     // Scale middleContainer appName
-    Polymer.Base.transform('scale(' + scaleMiddle + ') translateZ(0)', appName);
+    //Polymer.Base.transform('scale(' + scaleMiddle + ') translateZ(0)', appName);
   });
 
   // Close drawer after menu item is selected if drawerPanel is narrow
@@ -67,5 +73,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       drawerPanel.closeDrawer();
     }
   };
+
+  window.showFooter = function(id) {
+    document.getElementById(id).style.visibility = 'visible';
+  };
+
+  window.hideFooter = function(id) {
+    document.getElementById(id).style.visibility = 'hidden';
+  };
+
+  window.resetScroll= function(){
+    document.querySelector('#mainContainer').scroller.scrollTop = 0;
+  };
+
+  window.showDiv = function() {
+    var div = document.getElementById('socialContainer');
+    if(div.style.display !== 'none') {
+        document.getElementById('socialContainer').style.display = 'none';
+    } else {
+        document.getElementById('socialContainer').style.display = 'block';
+    }
+  };
+
+
 
 })(document);

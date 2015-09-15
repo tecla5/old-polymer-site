@@ -142,7 +142,7 @@ section.iron-selected {
   display:inline;
   background-color: #494B79;
 }
-.menuIcon{
+iron-icon [icon]{
   padding-bottom: 3%;
 }
 

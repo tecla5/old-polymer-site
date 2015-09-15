@@ -68,64 +68,49 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <body unresolved class="fullbleed layout vertical">
   <span id="browser-sync-binding"></span>
+
   <template is="dom-bind" id="app">
+
       <paper-drawer-panel id="paperDrawerPanel">
 
 
         <!-- Drawer Scroll Header Panel -->
-        <paper-scroll-header-panel drawer >
+        <paper-scroll-header-panel drawer ><!-- fixed -->
 
           <!-- Drawer Toolbar -->
           <paper-toolbar id="topToolbar" class="drawerToolbar">
             <span class="paper-font-title">tecla</span>
-            <paper-icon-button icon="t5-icons:tecla5">
-            </paper-icon-button>
+            <iron-icon icon="t5-icons:tecla5"></iron-icon>
           </paper-toolbar>
 
 
-          <!-- Drawer Content -->
-          <iron-selector id="menuContainer" class="list"
+          <!-- Drawer Content  onclick="resetScroll()" -->
+          <iron-selector class="list"
           attr-for-selected="data-route" selected="{{route}}"
-          on-iron-select="onMenuSelect" onclick="resetScroll()">
+          on-iron-select="onMenuSelect" >
             <a data-route="home" href="/">
-              <iron-icon icon="home" class="menuIcon"></iron-icon>
-              <paper-ripple id="ripple" fit="">
-                 <div id="bg" style="opacity: 0;"></div>
-                 <div id="waves"></div>
-              </paper-ripple>
-                 <span>Home</span>
+              <iron-icon icon="home" ></iron-icon>
+              <paper-ripple class="circle" fit recenters></paper-ripple>
+              <span>Home</span>
              </a>
              <a data-route="about" href="/about">
-              <iron-icon icon="info" class="menuIcon"></iron-icon>
-              <paper-ripple id="ripple" fit="">
-                 <div id="bg" style="opacity: 0;"></div>
-                 <div id="waves"></div>
-              </paper-ripple>
-                 <span>About</span>
+              <iron-icon icon="info" ></iron-icon>
+              <paper-ripple class="circle" fit recenters></paper-ripple>
+              <span>About</span>
              </a>
              <a data-route="team" href="/team">
-              <iron-icon icon="face" class="menuIcon"></iron-icon>
-              <paper-ripple id="ripple" fit="">
-                 <div id="bg" style="opacity: 0;"></div>
-                 <div id="waves"></div>
-              </paper-ripple>
-                 <span>Team</span>
+              <iron-icon icon="face" ></iron-icon>
+              <paper-ripple class="circle" fit recenters></paper-ripple>
+              <span>Team</span>
              </a>
              <a data-route="services" href="/services">
-              <iron-icon icon="settings-input-hdmi" class="menuIcon">
-              </iron-icon>
-              <paper-ripple id="ripple" fit="">
-                 <div id="bg" style="opacity: 0;"></div>
-                 <div id="waves"></div>
-              </paper-ripple>
+              <iron-icon icon="settings-input-hdmi" ></iron-icon>
+              <paper-ripple class="circle" fit recenters></paper-ripple>
                  <span>Services</span>
              </a>
              <a data-route="contact" href="/contact">
-               <iron-icon icon="mail" class="menuIcon"></iron-icon>
-               <paper-ripple id="ripple" fit="">
-                 <div id="bg" style="opacity: 0;"></div>
-                 <div id="waves"></div>
-               </paper-ripple>
+               <iron-icon icon="mail" ></iron-icon>
+               <paper-ripple class="circle" fit recenters></paper-ripple>
                  <span>Contact</span>
              </a>
           </iron-selector>
@@ -134,18 +119,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
         <!-- Main Area -->
-        <paper-scroll-header-panel id="mainContainer" main condenses
-        keep-condensed-header>
+        <paper-scroll-header-panel id="mainContainer" main condenses keep-condensed-header>
 
           <!-- Main Toolbar -->
           <paper-toolbar id="mainToolbar" class="tall" >
+            <div >
+              <span class="topBack paper-font-title">[[app]]</span>
+            </div>
             <iron-pages attr-for-selected="data-route" selected="{{route}}">
               <div data-route="home" >
                 <span class="topBack paper-font-title">Home</span>
               </div>
               <div data-route="services">
                 <span class="topBack paper-font-title">Services</span>
-
               </div>
               <div data-route="about" class="about">
                 <span class="topBack paper-font-title">About Us</span>
@@ -252,34 +238,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <!-- build:js scripts/app.js -->
   <script src="scripts/app.js"></script>
-  <script>
-    function showFooter(id) {
-      document.getElementById(id).style.visibility = "visible";
-    }
-    function hideFooter(id) {
-      document.getElementById(id).style.visibility = "hidden";
-    }
-
-    function resetScroll(){
-      document.querySelector('#mainContainer').scroller.scrollTop = 0;
-    }
-
-    function showDiv() {
-      var div = document.getElementById('socialContainer');
-      if(div.style.display!='none') {
-          document.getElementById("socialContainer").style.display = 'none';
-      }
-      else
-      {
-          document.getElementById("socialContainer").style.display = 'block';
-      }
-    }
-
-    var template = document.querySelector('#app');
-    template.addEventListener('dom-change', function() {
-      this.route = this.route || 'home'; // default route to "one".
-    });
-  </script>
 
 
   <!-- endbuild-->
