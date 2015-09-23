@@ -1,5 +1,5 @@
-<!-- <!doctype html>
-
+<!doctype html>
+<!--
 @license
 Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
 This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
@@ -24,7 +24,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <!-- Web Application Manifest -->
   <link rel="manifest" href="manifest.json">
+
   <!-- icons information -->
+
+  <!-- Tile color for Win8 -->
+  <meta name="msapplication-TileColor" content="#3372DF">
 
   <!-- TODO: SEO fXpgLewdXufX-F42PJACilIWdOhI4KBWB2BbY2YpIY0 -->
   <meta name="google-site-verification" content="" />
@@ -51,6 +55,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild-->
 
+  <!--
+  <style is="custom style"></style>
+  -->
+  <link rel="stylesheet" href="styles/custom.css">
+
+  <!-- For shared styles, shared-styles.html import in elements.html -->
+  <style is="custom-style" include="shared-styles"></style>
+
+
   <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
   <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <!-- endbuild -->
@@ -58,13 +71,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- will be replaced with elements/elements.vulcanized.html -->
   <link rel="import" href="elements/elements.html">
   <!-- endreplace-->
+
+
 </head>
-
-<!--
-<style is="custom style"></style>
--->
-<link rel="stylesheet" href="styles/custom.css">
-
 
 <body unresolved class="fullbleed layout vertical">
   <span id="browser-sync-binding"></span>
@@ -85,47 +94,48 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
           <!-- Drawer Content  onclick="resetScroll()" -->
-          <iron-selector class="list"
-          attr-for-selected="data-route" selected="{{route}}"
-          on-iron-select="onMenuSelect" >
-            <a data-route="home" href="/">
+          <!-- paper-menu  iron-selector  on-iron-select="onMenuSelect" -->
+          <paper-menu class="list"
+          attr-for-selected="data-route" selected="[[route]]" >
+            <a data-route="home" href="/" on-click="onDataRouteClick" >
               <iron-icon icon="home" ></iron-icon>
               <paper-ripple class="circle" fit recenters></paper-ripple>
               <span>Home</span>
              </a>
-             <a data-route="about" href="/about">
+             <a data-route="about" href="/about" on-click="onDataRouteClick">
               <iron-icon icon="info" ></iron-icon>
               <paper-ripple class="circle" fit recenters></paper-ripple>
               <span>About</span>
              </a>
-             <a data-route="team" href="/team">
+             <a data-route="team" href="/team" on-click="onDataRouteClick">
               <iron-icon icon="face" ></iron-icon>
               <paper-ripple class="circle" fit recenters></paper-ripple>
               <span>Team</span>
              </a>
-             <a data-route="services" href="/services">
+             <a data-route="services" href="/services" on-click="onDataRouteClick">
               <iron-icon icon="settings-input-hdmi" ></iron-icon>
               <paper-ripple class="circle" fit recenters></paper-ripple>
                  <span>Services</span>
              </a>
-             <a data-route="contact" href="/contact">
+             <a data-route="contact" href="/contact" on-click="onDataRouteClick">
                <iron-icon icon="mail" ></iron-icon>
                <paper-ripple class="circle" fit recenters></paper-ripple>
                  <span>Contact</span>
              </a>
-          </iron-selector>
+          </paper-menu>
         </paper-scroll-header-panel>
 
 
 
-        <!-- Main Area -->
-        <paper-scroll-header-panel id="mainContainer" main condenses keep-condensed-header>
+        <!-- Main Area id="mainContainer" -->
+        <paper-scroll-header-panel main condenses keep-condensed-header>
 
           <!-- Main Toolbar -->
           <paper-toolbar id="mainToolbar" class="tall" >
             <div >
               <span class="topBack paper-font-title">[[app]]</span>
             </div>
+            <!-- show name for page -->
             <iron-pages attr-for-selected="data-route" selected="{{route}}">
               <div data-route="home" >
                 <span class="topBack paper-font-title">Home</span>
@@ -147,9 +157,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </div>
             </iron-pages>
 
-            <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle>
-            </paper-icon-button>
-
+            <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
             <span class="flex"></span>
 
 
@@ -198,10 +206,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
 
-          <!-- Main Area -->
+          <!-- Main Content -->
           <div class="content">
-            <iron-pages style="padding:0px;"
-            attr-for-selected="data-route" selected="{{route}}" >
+            <iron-pages attr-for-selected="data-route" selected="{{route}}" >
 
               <section data-route="home">
                 <t5-home></t5-home>
@@ -234,13 +241,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </paper-drawer-panel>
 
   </template>
-</body>
 
   <!-- build:js scripts/app.js -->
   <script src="scripts/app.js"></script>
-
-
   <!-- endbuild-->
+
+</body>
+
 
 
 </html>
