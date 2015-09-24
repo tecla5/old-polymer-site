@@ -21,18 +21,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         color: gray;
         font-family: verdana;
       }
+
+      .card-content {
+        min-height: 200px;
+      }
     </style>
-    <div class="div-content">
-      <div>
-        <iron-image src="{{imgSrc}}" class="left icon" sizing="contain" ></iron-image>
+    <paper-card heading="{{caption}}">
+      <div class="card-content">
+        <paper-item>
+          <iron-image src="{{imgSrc}}" class="left icon" sizing="contain" ></iron-image>
+          <paper-item-body>
+            <marked-element markdown="{{markdown}}">
+              <div class="markdown-html"></div>
+            </marked-element>
+          </paper-item-body>          
+        <paper-item>
       </div>
-      <div>
-        <h2 class="subtitle2">{{caption}}</h2>
-        <marked-element markdown="{{markdown}}">
-          <div class="markdown-html"></div>
-        </marked-element>
-      </div>
-    </div>
+    </paper-card>
   </template>
   <script>
   (function() {
