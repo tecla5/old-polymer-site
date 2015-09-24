@@ -12,89 +12,87 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
 <dom-module id="t5-services">
-  <link rel="stylesheet" href="styles.css" >
+  <link rel="import" type="css" href="styles.css">
 
   <template>
+
     <paper-header-panel mode="cover">
       <div class="paper-header">
-        <iron-image src="/images/Services.png" class="sized" sizing="contain" ></iron-image>
+        <iron-image src="/images/Services.png" class="sized" sizing="contain"></iron-image>
       </div>
       <div class="fit">
         <!-- over the image -->
       </div>
-
-
-      <h2 class="head-title">What we do!</h2>
-
       <div class="content">
-        <div>
-          <iron-image src="/images/rapid_prototype.png" class="left icon" sizing="contain" ></iron-image>
-        </div>
-          <div> <h2 class="subtitle">Rapid prototyping</h2>
-           <p>We can prototype your site in days, not weeks!
-           We are shaped by a team of professionals striving to develop quality
-           solutions.
-           We work with the latest and greatest technologies in the web space.
-           We specialize in agile development and continuous delivery.
-           We can manage 24/7 development for speedy delivery.
-           We make your dreams come true!</p>
-         </div>
-       </div>
+        <h2 class="head-title">What we do!</h2>
 
-      <div class="div-content">
-        <div>
-          <iron-image src="/images/tuercas.png" class="left icon" sizing="contain" ></iron-image>
-        </div>
-        <div> <h2 class="subtitle2">WebSite Design & Development</h2>
-          <p>We manage and design the development of your Website.
-             We are specialists at prototyping ideas using our special
-             prototyping tool stack for quick prototyping.</p>
-        </div>
-      </div>
 
-      <div class="div-content">
+        <paper-card heading="Rapid prototyping" class="pink my-card" animated-shadow>
+          <div class="card-content">
+            <iron-image src="/images/rapid_prototype.png" class="left icon" sizing="contain"></iron-image>
+            <div>
+              <p>We can prototype your site in days, not weeks! We are shaped by a team of professionals striving to develop quality solutions.
+                <br> We work with the latest and greatest technologies in the web space.
+                <br> We specialize in agile development and continuous delivery. We can manage 24/7 development for speedy delivery. We make your dreams come true!</p>
+            </div>
+          </div>
+        </paper-card>
 
-          <iron-image src="/images/pantalla.png" class="left icon" sizing="contain" ></iron-image>
 
-         <h2 class="subtitle2">Application development</h2>
-          <p>We develop apps using the latest client/server technologies
-             We can design and develop your apps to work on both Android
-             and iOS mobile.</p>
 
-      </div>
+        <paper-card heading="WebSite Design & Development" class="pink" animated-shadow>
+          <div class="card-content">
+            <iron-image src="/images/tuercas.png" class="left icon" sizing="contain"></iron-image>
+            <div>
+              <p>We manage and design the development of your Website.
+                <br> We are specialists at prototyping ideas using our special prototyping tool stack for quick prototyping.</p>
+            </div>
+          </div>
+        </paper-card>
 
-      <div class="div-content">
-        <div>
-          <iron-image src="/images/SocialMarketing.png" class="left icon" sizing="contain" ></iron-image>
-        </div>
-        <div><h2 class="subtitle2">SEO, SEM & PPC</h2>
-          <p>We Provide Affordable Online Marketing Services for Clients
-            including SEO and PPC (Pay per click). We deliver everything
-            that you need to optimize your website and ensure more sales
-            and business.</p>
-        </div>
-      </div>
+        <paper-card heading="Application development" class="pink" animated-shadow>
+          <div class="card-content">
+            <iron-image src="/images/pantalla.png" class="left icon" sizing="contain"></iron-image>
+            <div>
+              <p>We develop apps using the latest client/server technologies
+                <br>We can design and develop your apps to work on both Android and iOS mobile.</p>
+            </div>
+          </div>
+        </paper-card>
 
-      <div class="div-content">
-        <div>
-          <iron-image src="/images/cohete.png" class="left icon" sizing="contain" ></iron-image>
-        </div>
-        <div><h2 class="subtitle2">QA & Testing</h2>
-          <p>We always deliver to the highest standards. We do Continual
-            Testing during all phases of development.</p>
-        </div>
-      </div>
 
-      <div class="div-content">
-        <div>
-          <iron-image src="/images/Cloud.png" class="left icon" sizing="contain" ></iron-image>
-        </div>
-        <div><h2 class="subtitle2">Cloud services</h2>
-          <p>We will soon be offering the following SAAS services on a
-            subscription basis: Translation Manager, Feature Manager, CMS,
-            Word2HTML, Repo Project Manager.</p>
-        </div>
-      </div>
+
+
+        <paper-card heading="SEO, SEM & PPC" class="pink" animated-shadow>
+          <div class="card-content">
+            <iron-image src="/images/SocialMarketing.png" class="left icon" sizing="contain"></iron-image>
+            <div>
+              <p>We Provide Affordable Online Marketing Services for Clients including SEO and PPC (Pay per click).
+                <br> We deliver everything that you need to optimize your website and ensure more sales and business.</p>
+            </div>
+          </div>
+        </paper-card>
+
+
+
+
+        <paper-card heading="QA & Testing" class="pink" animated-shadow>
+          <div class="card-content">
+            <iron-image src="/images/cohete.png" class="left icon" sizing="contain"></iron-image>
+            <p>We always deliver to the highest standards. We do Continual Testing during all phases of development.</p>
+          </div>
+        </paper-card>
+
+
+
+
+        <paper-card heading="Cloud services" class="pink" animated-shadow>
+          <div class="card-content">
+            <iron-image src="/images/Cloud.png" class="left icon" sizing="contain"></iron-image>
+            <p>We will soon be offering the following SAAS services on a subscription basis:
+              <br>Translation Manager, Feature Manager, CMS, Word2HTML, Repo Project Manager.</p>
+          </div>
+        </paper-card>
 
     </paper-header-panel>
 

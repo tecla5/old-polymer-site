@@ -1,31 +1,28 @@
 :host {
- display: block;
-  background: #FFF;
+  display: block;
+  background-color: #FFF;
 }
-
-.head-title{
+.head-title {
   padding-left: 10%;
   font-size: 4vh;
 }
-
-.second-title{
+.second-title {
   font-size: 2.5vh;
-  padding-top:3%;
+  padding-top: 3%;
   padding-left: 10%;
 }
-.subtitle{
+.subtitle {
   font-size: 2.5vh;
-  padding-top:7%;
+  padding-top: 7%;
 }
-.subtitle2{
+.subtitle2 {
   font-size: 2.5vh;
-  padding-top:9%;
+  padding-top: 9%;
 }
-
-.left{
+.left {
   float: left;
-  padding:5%;
-  padding-left:10%;
-  padding-right:10%;
-  vertical-align:top;
+  padding: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+  vertical-align: top;
 }
