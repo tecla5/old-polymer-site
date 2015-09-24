@@ -2,31 +2,31 @@ module.exports = [
   {
     image: 'rapid_prototype',
     caption: 'Rapid prototyping',
-    content: 'rapid-prototyping'
+    name: 'rapid-prototyping'
   },
   {
     image: 'tuercas',
     caption: 'WebSite Design & Development',
-    content: 'web-design'
+    name: 'web-design'
   },
   {
     image: 'pantalla',
     caption: 'Application development',
-    content: 'app-development'
+    name: 'app-development'
   },
   {
     image: 'SocialMarketing',
     caption: 'Rapid prototyping',
-    content: 'seo'
+    name: 'seo'
   },
   {
     image: 'cohete',
     caption: 'QA & Testing',
-    content: 'testing'
+    name: 'testing'
   },
   {
     image: 'Cloud',
     caption: 'Cloud services',
-    content: 'cloud'
+    name: 'cloud'
   }
 ];

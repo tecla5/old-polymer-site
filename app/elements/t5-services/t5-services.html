@@ -15,23 +15,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <link rel="import" type="css" href="styles.css">
 
   <template>
+
     <iron-ajax
       auto
-      url="http://localhost:8080/pages"
+      url="/data/services.json"
       handle-as="json"
-      las-response="{{items}}"
+      last-response="{{items}}"
+      last-error="{{lastError}}"
     </iron-ajax>
-
     <paper-header-panel mode="cover">
       <div class="paper-header">
         <iron-image src="/images/Services.png" class="sized" sizing="contain"></iron-image>
       </div>
-      <template repeat="{{item in items}}"
+      <template is="dom-repeat" items="{{items}}">
         <ui-section image="{{item.image}}" caption="{{item.caption}}" markdown="{{item.content}}"/>
       </template>
     </paper-header-panel>
 
   </template>
-  <script src="script.js" charset="utf-8"></script>
-
+  <script src="services.js" charset="utf-8"></script>
 </dom-module>
