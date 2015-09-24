@@ -29,12 +29,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <paper-card heading="{{caption}}">
       <div class="card-content">
         <paper-item>
-          <iron-image src="{{imgSrc}}" class="left icon" sizing="contain" ></iron-image>
+          <template if="{{imgSrc}}">
+            <iron-image src="{{imgSrc}}" class="left icon" sizing="contain" ></iron-image>
+          </template>
           <paper-item-body>
             <marked-element markdown="{{markdown}}">
               <div class="markdown-html"></div>
             </marked-element>
-          </paper-item-body>          
+          </paper-item-body>
         <paper-item>
       </div>
     </paper-card>

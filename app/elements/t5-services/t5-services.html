@@ -15,56 +15,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <link rel="import" type="css" href="styles.css">
 
   <template>
+    <iron-ajax
+      auto
+      url="http://localhost:8080/pages"
+      handle-as="json"
+      las-response="{{items}}"
+    </iron-ajax>
 
     <paper-header-panel mode="cover">
       <div class="paper-header">
         <iron-image src="/images/Services.png" class="sized" sizing="contain"></iron-image>
       </div>
-      <ui-section image="rapid_prototype" caption="Rapid prototyping" markdown="
-      We can prototype your site in days, not weeks!
-      We are shaped by a team of professionals striving to develop quality
-      solutions.
-      We work with the latest and greatest technologies in the web space.
-      We specialize in agile development and continuous delivery.
-      We can manage 24/7 development for speedy delivery.
-      We make your dreams come true!
-      ">
-      </ui-section>
-
-      <ui-section image="tuercas" caption="WebSite Design & Development" markdown="
-         We manage and design the development of your Website.
-         We are specialists at prototyping ideas using our special
-         prototyping tool stack for quick prototyping.
-         ">
-      </ui-section>
-
-      <ui-section image="pantalla" caption="Application development" markdown="
-         We develop apps using the latest client/server technologies
-         We can design and develop your apps to work on both Android
-         and iOS mobile.
-         ">
-      </ui-section>
-
-      <ui-section image="SocialMarketing" caption="SEO, SEM & PPC" markdown="
-        We Provide Affordable Online Marketing Services for Clients
-        including SEO and PPC (Pay per click). We deliver everything
-        that you need to optimize your website and ensure more sales
-        and business.
-        ">
-      </ui-section>
-
-      <ui-section image="cohete" caption="QA & Testing" markdown="
-        We always deliver to the highest standards. We do Continual
-        Testing during all phases of development.
-        ">
-      </ui-section>
-
-      <ui-section image="Cloud" caption="Cloud services" markdown="
-        We will soon be offering the following SAAS services on a
-        subscription basis: Translation Manager, Feature Manager, CMS,
-        Word2HTML, Repo Project Manager.
-        ">
-      </ui-section>
+      <template repeat="{{item in items}}"
+        <ui-section image="{{item.image}}" caption="{{item.caption}}" markdown="{{item.content}}"/>
+      </template>
     </paper-header-panel>
 
   </template>
