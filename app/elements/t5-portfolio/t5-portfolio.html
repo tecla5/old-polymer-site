@@ -10,20 +10,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-
-<dom-module id="t5-services">
-  <link rel="import" type="css" href="styles.css">
-  <style>
-    :host {
-      display: block;
-      position: relative;
-    }
-  </style>
+<dom-module id="t5-portfolio">
+  <link rel="import" type="css" href="portfolio.css">
 
   <template>
     <iron-ajax
       auto
-      url="/data/services.json"
+      url="/data/portfolio.json"
       handle-as="json"
       last-response="{{items}}"
       last-error="{{lastError}}">
@@ -31,7 +24,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <paper-header-panel mode="cover">
       <div class="paper-header">
-        <iron-image src="/images/Services.png" class="sized" sizing="cover"></iron-image>
+        <iron-image src="/images/Portfolio.png" class="sized" sizing="cover"></iron-image>
       </div>
 
       <div class="content" id="cards">
@@ -41,7 +34,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </div>
 
     </paper-header-panel>
-
   </template>
-  <script src="services.js" charset="utf-8"></script>
+
+  <script src="portfolio.js"></script>
+
 </dom-module>

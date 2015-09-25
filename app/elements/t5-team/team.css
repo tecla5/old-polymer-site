@@ -1,5 +1,6 @@
 :host {
   display: block;
+  background-color: #FFF;
 }
 
 
@@ -26,9 +27,6 @@ paper-material {
   background-color: #EEEEEE;
   color: var(--paper-card-header-color, #000);
   @apply(--paper-card-header-text);
-}
-google-map {
-  height: 300px;
 }
 
 .profile-picture{

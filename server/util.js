@@ -5,7 +5,9 @@ var path = require('path');
 
 var decorate = function(json, id) {
   if (Array.isArray(json)) {
-    return json.map(item => decorate(item, id));
+    return json.map( function (item){
+      decorate(item, id)
+    });
   }
   var fileName = json.name + '.md';
   var filePath = path.join('./app/pages/', id, 'txt', fileName);

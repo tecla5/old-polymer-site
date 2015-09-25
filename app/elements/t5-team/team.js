@@ -1,11 +1,14 @@
 (function() {
   Polymer({
-    is: 't5-project',
+    is: 't5-team',
 
     properties: {
-      foo: {
+      items: {
+        type: Array,
+        notify: true
+      },
+      lastError: {
         type: String,
-        value: 'bar',
         notify: true
       }
     }

@@ -1,6 +1,6 @@
 (function() {
   Polymer({
-    is: 't5-team',
+    is: 't5-porfolio',
 
     properties: {
       foo: {

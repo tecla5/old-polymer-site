@@ -10,7 +10,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <dom-module id="t5-team">
-  <link rel="import" type="css" href="styles.css">
+  <link rel="import" type="css" href="team.css">
 
   <template>
     <paper-header-panel mode="cover">
@@ -20,6 +20,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <p class="pad-left">We have a dedicated team of: developers, designers, dev ops and project managers from around the globe.</p>
       </div>
 
+      <!-- TODO: Use JSON via iron-ajax and ui-section element!!!! -->
       <div class="content" id="cards">
         <paper-card heading="Javier Cabrera">
           <div class="card-content" image="/images/team/jcabrera.png" >
@@ -151,6 +152,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </paper-header-panel>
 
   </template>
-  <script src="script.js" charset="utf-8"></script>
+  <script src="team.js" charset="utf-8"></script>
 
 </dom-module>
