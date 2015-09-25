@@ -13,23 +13,34 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <dom-module id="t5-services">
   <link rel="import" type="css" href="styles.css">
+  <style>
+    :host {
+      display: block;
+      position: relative;
+    }
+
+
+  </style>
 
   <template>
-
     <iron-ajax
       auto
       url="/data/services.json"
       handle-as="json"
       last-response="{{items}}"
-      last-error="{{lastError}}"
+      last-error="{{lastError}}">
     </iron-ajax>
+
+
     <paper-header-panel mode="cover">
       <div class="paper-header">
-        <iron-image src="/images/Services.png" class="sized" sizing="contain"></iron-image>
+        <iron-image src="/images/Services.png" class="sized" sizing="cover"></iron-image>
       </div>
+
       <template is="dom-repeat" items="{{items}}">
         <ui-section image="{{item.image}}" caption="{{item.caption}}" markdown="{{item.content}}"/>
       </template>
+
     </paper-header-panel>
 
   </template>

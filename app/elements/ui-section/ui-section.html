@@ -11,21 +11,39 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
 <dom-module id="ui-section">
+  <style>
+    :host {
+      display: block;
+      position: relative;
+    }
+    .markdown-html {
+
+    }
+
+    .markdown-html pre code {
+      color: gray;
+      font-family: verdana;
+    }
+
+    paper-card{
+      width: 100%;
+      min-height: 200px;
+    }
+    .card-content {
+      min-height: 200px;
+      width: 100%;
+    }
+
+    .left {
+      float: left;
+      padding: 5%;
+      padding-left: 10%;
+      padding-right: 10%;
+      vertical-align: top;
+    }
+
+  </style>
   <template>
-    <style>
-      :host {
-        display: block;
-      }
-
-      .markdown-html pre code {
-        color: gray;
-        font-family: verdana;
-      }
-
-      .card-content {
-        min-height: 200px;
-      }
-    </style>
     <paper-card heading="{{caption}}">
       <div class="card-content">
         <paper-item>
@@ -66,7 +84,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         }
       },
       computeSrc: function(image) {
-        return '/images/' + image + '.png';
+        return '/images/' + image ;
       }
     });
   })();

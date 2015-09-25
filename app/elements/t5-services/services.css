@@ -1,5 +1,6 @@
 :host {
   display: block;
+  position: relative;
   background-color: #FFF;
 }
 .head-title {
@@ -18,11 +19,4 @@
 .subtitle2 {
   font-size: 2.5vh;
   padding-top: 9%;
-}
-.left {
-  float: left;
-  padding: 5%;
-  padding-left: 10%;
-  padding-right: 10%;
-  vertical-align: top;
 }
