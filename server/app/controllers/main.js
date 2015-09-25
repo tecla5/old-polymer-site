@@ -7,11 +7,18 @@ var util = require('../../util');
 var routes = {
   pages: function(req, res) {
     var id = req.params.id;
+    var write = req.query.write;
+    console.log('params', req.params, req.query);
+
     res.setHeader('Content-Type', 'application/json');
     var page = pages[id];
-    console.log('page', id, page);
     var json = util.decorate(page, id);
-    res.send(JSON.stringify(json));
+    var formattedJson = JSON.stringify(json, null, 4);
+    if (write) {
+      util.writeFile(id, formattedJson);
+    }
+    res.send(formattedJson);
+
   }
 };
 
