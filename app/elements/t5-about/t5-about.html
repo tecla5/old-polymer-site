@@ -15,41 +15,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <link rel="import" type="css" href="styles.css">
 
   <template>
+    <iron-ajax
+      auto
+      url="/data/about.json"
+      handle-as="json"
+      last-response="{{items}}"
+      last-error="{{lastError}}"
+    </iron-ajax>
 
     <paper-header-panel mode="cover">
       <div class="paper-header">
         <iron-image src="/images/AboutUS.png" class="sized" sizing="cover"  ></iron-image>
       </div>
-
-      <ui-section caption="Why?" markdown="
-        We have a highly experienced team of professionals and have
-        connections to freelancers around the world. We all work with the
-        latest technologies in the web and app space. We develop a host of
-        SAAS services for the cloud to help you better scale your business.
-      "></ui-section>
-
-      <ui-section caption="Who?" markdown="
-        Tecla5 is a software development company with our headquarters in
-        Barcelona, Spain. We started as a small team in Barcelona and have
-        now grown to team spanning the globe. Our engineers are constantly
-        researching and working with the latest technologies in order to
-        always provide the best solutions.
-      "></ui-section>
-
-       <ui-section caption="Micro services" markdown="
-        Power your apps with data APIs and business logic using micro
-        services, for better: scalability, flexibility and management
-      "></ui-section>
-
-      <ui-section caption="Apps" markdown="
-        We develop both multi- and single page web apps (MPAs & SPAs).
-        We build hybrid native apps for iOS and Android.
-        We deliver complete front to back solutions using our powerful
-        custom tech stack.
-      "></ui-section>
+      <template is="dom-repeat" items="{{items}}">
+        <ui-section image="{{item.image}}" caption="{{item.caption}}" markdown="{{item.content}}"/>
+      </template>
     </paper-header-panel>
   </template>
 
-  <script src="script.js"></script>
+  <script src="about.js"></script>
 
 </dom-module>

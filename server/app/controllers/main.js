@@ -9,6 +9,7 @@ var routes = {
     var id = req.params.id;
     res.setHeader('Content-Type', 'application/json');
     var page = pages[id];
+    console.log('page', id, page);
     var json = util.decorate(page, id);
     res.send(JSON.stringify(json));
   }
