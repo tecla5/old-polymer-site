@@ -8,22 +8,9 @@
         notify: true
       },
       lastError: {
-        type: Object,
-        notify: true
-      },
-      loading: {
-        type: Boolean,
+        type: String,
         notify: true
       }
-    },
-    ready: function() {
-      // this.$.getServices.generateRequest();
-    },
-    _complete: function() {
-      console.log('complete');
-    },
-    handleResponse: function(response) {
-      console.log('RECEIVED json', response);
     }
   });
 })();
