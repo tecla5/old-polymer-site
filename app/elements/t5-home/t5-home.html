@@ -11,19 +11,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
 <dom-module id="t5-home">
-  <link rel="import" type="css" href="styles.css">
-
-
+  <link rel="import" type="css" href="home.css">
   <template>
+    <iron-ajax
+      auto
+      url="/data/home.json"
+      handle-as="json"
+      last-response="{{items}}"
+      last-error="{{lastError}}">
+    </iron-ajax>
     <!-- class="t5" -->
     <header class="center">
-      <h1> tecla<paper-icon-button id="homeButton" icon="t5-icons:tecla5" class="big"></paper-icon-button></h1>
+      <h1 class="logo">Tecla <paper-icon-button id="homeButton" icon="t5-icons:tecla5" class="big"></paper-icon-button></h1>
     </header>
-
-      <p class="teclaTitle">We type your idea ...</p></br>
-      <p class="firstPara" >Build competitive ideas for your business with us! We help you create responsive web and mobile apps that work across all devices in all environments.  </p>
-
+    <div class="content" id="cards">
+      <ui-section image="{{item.image}}" caption="{{item.caption}}" markdown="{{item.content}}"/>
+    </div>
   </template>
-  <script src="script.js"></script>
-
+  <script src="home.js"></script>
 </dom-module>

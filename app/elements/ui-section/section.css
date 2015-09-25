@@ -1,0 +1,31 @@
+:host {
+  display: block;
+  position: relative;
+}
+
+paper-card {
+  width: 100%;
+  min-height: 200px;
+  max-height: 450px;
+  margin-bottom: 16px;
+  background: none !important;
+  box-shadow: 5px 5px 10px #000;
+}
+
+.markdown-html pre code {
+  color: gray;
+  font-family: verdana;
+}
+
+.card-content {
+  min-height: 200px;
+  width: 100%;
+}
+
+.left {
+  float: left;
+  padding: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+  vertical-align: top;
+}

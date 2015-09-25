@@ -11,40 +11,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
 <dom-module id="ui-section">
-  <style>
-    :host {
-      display: block;
-      position: relative;
-    }
-    .markdown-html {
-
-    }
-
-    .markdown-html pre code {
-      color: gray;
-      font-family: verdana;
-    }
-
-    paper-card{
-      width: 100%;
-      min-height: 200px;
-    }
-    .card-content {
-      min-height: 200px;
-      width: 100%;
-    }
-
-    .left {
-      float: left;
-      padding: 5%;
-      padding-left: 10%;
-      padding-right: 10%;
-      vertical-align: top;
-    }
-
-  </style>
+  <link rel="import" type="css" href="section.css">
   <template>
-    <paper-card heading="{{caption}}">
+    <paper-card heading="{{caption}}" elevation="1">
       <div class="card-content">
         <paper-item>
           <template if="{{imgSrc}}">
@@ -59,34 +28,5 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </div>
     </paper-card>
   </template>
-  <script>
-  (function() {
-    'use strict';
-
-    Polymer({
-      is: 'ui-section',
-
-      properties: {
-        imgSrc: {
-          type: String,
-          // when `image` changes `computeSrc` is called once
-          // and the value it returns is stored as `imgSrc`
-          computed: 'computeSrc(image)'
-        },
-        image: {
-          type: String
-        },
-        caption: {
-          type: String
-        },
-        markdown: {
-          type: String
-        }
-      },
-      computeSrc: function(image) {
-        return '/images/' + image ;
-      }
-    });
-  })();
-  </script>
+  <script src="section.js" charset="utf-8"></script>
 </dom-module>

@@ -8,8 +8,6 @@ var routes = {
   pages: function(req, res) {
     var id = req.params.id;
     var write = req.query.write;
-    console.log('params', req.params, req.query);
-
     res.setHeader('Content-Type', 'application/json');
     var page = pages[id];
     var json = util.decorate(page, id);

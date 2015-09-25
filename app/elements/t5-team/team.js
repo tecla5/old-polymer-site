@@ -3,9 +3,12 @@
     is: 't5-team',
 
     properties: {
-      foo: {
+      items: {
+        type: Array,
+        notify: true
+      },
+      lastError: {
         type: String,
-        value: 'bar',
         notify: true
       }
     }
