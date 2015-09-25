@@ -15,39 +15,47 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <link rel="import" type="css" href="styles.css">
 
   <template>
-    <paper-header-panel mode="seamed" flex>
-      <section class="section-tab">
-        <paper-toolbar class="email" id="mainheader">
-          <iron-icon style="margin:10px" icon="communication:email"></iron-icon>
-          <span flex> Please feel free to contact us with this form and we will get back to you and answer any questions. Don’t be shy ;)</span>
-        </paper-toolbar>
-
-        <div id="successMsg" class="successMsgDiv" hidden>
-          <p class="success"> Your ticket has been sent to Tecla5 support! </p>
-          <p class="success"> One of our awesome support engineers will get back to you shortly! </p>
-        </div>
 
 
-        <form is="iron-form" method="POST" action="{{action}}" class="section-tab" id="form">
+        <paper-material class="colored layout center-center" elevation="2" animated>
+          <paper-toolbar class="email" id="mainheader">
+            <iron-icon style="margin:10px" icon="communication:email"></iron-icon>
+            <span flex>Contact Us by email</span>
+          </paper-toolbar>
 
-          <paper-input label="your name" name="name" labelVisible floatinglabel required auto-validate pattern="[a-zA-Z]*" ></paper-input>
+          <!-- form -->
+          <form is="iron-form" method="POST" action="{{action}}" id="form">
 
-          <paper-input label="contact@your-company.com" name="email"
-          labelVisible floatinglabel required auto-validate
-          pattern="^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$" ></paper-input>
+            <paper-input label="your name" name="name" labelVisible floatinglabel required auto-validate pattern="[a-zA-Z]*" ></paper-input>
 
-          <paper-input label="message" name="message" labelVisible floatinglabel required auto-validate >
-            <paper-autogrow-textarea>
-              <textarea name="message"></textarea>
-            </paper-autogrow-textarea>
-          </paper-input>
+            <paper-input label="contact@your-company.com" name="email"
+            labelVisible floatinglabel required auto-validate
+            pattern="^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$" ></paper-input>
 
-          <paper-button raised onclick="clickHandler(event)">Submit</paper-button>
+            <paper-input label="message" name="message" labelVisible floatinglabel required auto-validate >
+              <paper-autogrow-textarea>
+                <textarea name="message"></textarea>
+              </paper-autogrow-textarea>
+            </paper-input>
 
-        </form>
+            <paper-icon-button name="submit" raised on-click="handleClick" data-dialog="modal" icon="send" ></paper-icon-button>
+          </form>
 
-      </section>
-    </paper-header-panel>
+          <!-- dialog -->
+          <paper-dialog id="modal" modal class="colored size-position">
+            <p> Your mail has been sent to Tecla5 support!
+              <br> We will get back to you shortly! </p>
+            <div class="buttons">
+              <paper-button dialog-confirm autofocus>close</paper-button>
+            </div>
+          </paper-dialog>
+
+
+        </paper-material>
+
+
+
+
   </template>
 
   <script src="script.js"></script>

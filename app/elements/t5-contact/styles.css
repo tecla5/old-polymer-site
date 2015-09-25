@@ -8,6 +8,44 @@
 }
 
 
+
+paper-material {
+  background: white;
+  box-sizing: border-box;
+  padding: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+paper-material.colored {
+  border-color: var(--paper-blue-500);
+  /*background-color: var(--paper-light-blue-50);*/
+  color: var(--paper-blue-500);
+  border: 1px outset;
+}
+
+
+paper-dialog.colored {
+  border-color: var(--paper-blue-500);
+  background-color: var(--paper-light-blue-50);
+  color: var(--paper-blue-500);
+  border: 2px solid;
+}
+
+
+paper-dialog.size-position {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+}
+
+paper-dialog.size-position {
+  width: 300px;
+  height: 300px;
+}
+
+
 paper-button {
   background-color: transparent;
   border-width: medium;
@@ -18,15 +56,7 @@ paper-button {
   background: #494B79;
 }
 
-.colored {
-  background: #494B79;
-  color: #FFF;
-  margin: 5%;
-  margin-left:-3%;
-}
-.section-tab {
-  margin:5%;
-}
+
 .successMsgDiv{
   display:none;
   padding-bottom: 30%;
