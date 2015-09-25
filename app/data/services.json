@@ -1,0 +1,38 @@
+[
+    {
+        "image": "rapid_prototype",
+        "caption": "Rapid prototyping",
+        "name": "rapid-prototyping",
+        "content": "We can prototype your site in days, not weeks! We are shaped by a team of professionals striving to develop quality solutions. We work with the latest and greatest technologies in the web space. We specialize in agile development and continuous delivery. We can manage 24/7 development for speedy delivery. We make your dreams come true!\n"
+    },
+    {
+        "image": "tuercas",
+        "caption": "WebSite Design & Development",
+        "name": "web-design",
+        "content": "We manage and design the development of your Website. We are specialists at prototyping ideas using our special prototyping tool stack for quick prototyping.\n"
+    },
+    {
+        "image": "pantalla",
+        "caption": "Application development",
+        "name": "app-development",
+        "content": "We develop apps using the latest client/server technologies We can design and develop your apps to work on both Android and iOS mobile.\n"
+    },
+    {
+        "image": "SocialMarketing",
+        "caption": "Rapid prototyping",
+        "name": "seo",
+        "content": "We Provide Affordable Online Marketing Services for Clients including SEO and PPC (Pay per click). We deliver everything that you need to optimize your website and ensure more sales and business.\n"
+    },
+    {
+        "image": "cohete",
+        "caption": "QA & Testing",
+        "name": "testing",
+        "content": "We always deliver to the highest standards. We do Continual Testing during all phases of development.\n"
+    },
+    {
+        "image": "Cloud",
+        "caption": "Cloud services",
+        "name": "cloud",
+        "content": "We will soon be offering the following SAAS services on a subscription basis: Translation Manager, Feature Manager, CMS, Word2HTML, Repo Project Manager.\n"
+    }
+]

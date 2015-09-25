@@ -122,6 +122,12 @@ gulp.task('fonts', function () {
     .pipe($.size({title: 'fonts'}));
 });
 
+// Copy web fonts to dist
+gulp.task('data', function () {
+  return gulp.src(['app/data/**'])
+    .pipe(gulp.dest('dist/data'));
+});
+
 // Scan your HTML for assets & optimize them
 gulp.task('html', function () {
   var assets = $.useref.assets({searchPath: ['.tmp', 'app', 'dist']});
@@ -267,7 +273,7 @@ gulp.task('default', ['clean'], function (cb) {
   runSequence(
     ['copy', 'styles'],
     'elements',
-    ['jshint', 'images', 'fonts', 'html'],
+    ['jshint', 'images', 'data', 'fonts', 'html'],
     'vulcanize','rename-index', // 'cache-config',
     cb);
 });
