@@ -3,9 +3,12 @@
     is: 't5-about',
 
     properties: {
-      data: {
+      items: {
         type: Array,
-        value: [],
+        notify: true
+      },
+      lastError: {
+        type: String,
         notify: true
       }
     }

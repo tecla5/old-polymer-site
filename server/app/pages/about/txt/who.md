@@ -1,0 +1,1 @@
+Tecla5 is a software development company with our headquarters in Barcelona, Spain. We started as a small team in Barcelona and have now grown to team spanning the globe. Our engineers are constantly researching and working with the latest technologies in order to always provide the best solutions.
