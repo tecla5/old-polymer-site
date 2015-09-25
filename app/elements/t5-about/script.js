@@ -3,9 +3,9 @@
     is: 't5-about',
 
     properties: {
-      foo: {
-        type: String,
-        value: 'bar',
+      data: {
+        type: Array,
+        value: [],
         notify: true
       }
     }
