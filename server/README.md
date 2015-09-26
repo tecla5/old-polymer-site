@@ -15,8 +15,10 @@ npm start
 
 Generate JSON for static pages:
 
--	localhost:8080/pages/home
 -	localhost:8080/pages/about
+-	localhost:8080/pages/home
+-	localhost:8080/pages/partners
+-	localhost:8080/pages/portfolio
 -	localhost:8080/pages/services
 -	localhost:8080/pages/team
 
