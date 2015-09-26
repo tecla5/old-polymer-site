@@ -1,0 +1,1 @@
+Kristian Mandrup has more than 15 years of experience in architecting and developing software and frameworks. He has always enjoyed working with bleeding edge technologies and loves push the limits. Kristian also has a lot of project management experience.

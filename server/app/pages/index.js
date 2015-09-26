@@ -1,7 +1,8 @@
 module.exports = {
   home: require('./home'),
+  about: require('./about'),
   portfolio: require('./portfolio'),
   team: require('./team'),
-  about: require('./about'),
+  partners: require('./partners'),
   services: require('./services')
 };
