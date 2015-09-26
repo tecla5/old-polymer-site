@@ -17,7 +17,7 @@
         notify: true
       }
     },
-    computeImg: function(items) {
+    computeItem: function(items) {
       return items[0];
     }
   });

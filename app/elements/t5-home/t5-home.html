@@ -20,14 +20,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       last-response="{{items}}"
       last-error="{{lastError}}">
     </iron-ajax>
-    <!-- class="t5" -->
-    <header class="center">
-      <h1 class="logo">Tecla <paper-icon-button id="homeButton" icon="t5-icons:tecla5" class="big"></paper-icon-button></h1>
-    </header>
-    <p class="teclaTitle">We type your idea ...</p></br>
-    <p class="firstPara" >Build competitive ideas for your business with us! We help you create responsive web and mobile apps that work across all devices in all environments.  </p>
-
-
+    <paper-header-panel mode="cover">
+      <h1>THIS FUCKING SUCKS!!!</h1>
+      <h2>We need this page to be ENGAGING! Demonstrating our top products, services etc.</h2>
+      <h3>Make whoever sees this page want to know more... then have a paper-fab button to About page</h3>
+      <ui-section image="{{item.image}}" caption="{{item.caption}}" markdown="{{item.content}}"/>
+    </paper-header-panel>
   </template>
   <script src="home.js"></script>
 </dom-module>
