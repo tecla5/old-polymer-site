@@ -1,0 +1,12 @@
+- ../styles/app-theme.html
+- routing.html
+- t5-icons/t5-icons.html
+- t5-home/t5-home.html
+- t5-services/t5-services.html
+- t5-about/t5-about.html
+- t5-team/t5-team.html
+- t5-contact/t5-contact.html
+- t5-blog/t5-blog.html
+- t5-portfolio/t5-portfolio.html
+- ui-section/ui-section.html
+- image-card/image-card.html
