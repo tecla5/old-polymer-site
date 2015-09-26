@@ -1,8 +1,11 @@
 Express server
 ==============
 
-Running
--------
+### Install
+
+`npm install`
+
+### Running
 
 ```
 npm start
@@ -12,8 +15,10 @@ npm start
 
 Generate JSON for static pages:
 
+-	localhost:8080/pages/home
 -	localhost:8080/pages/about
 -	localhost:8080/pages/services
+-	localhost:8080/pages/team
 
 Click *Raw JSON* and copy/paste to a `.json` file in `app/data`.
 
