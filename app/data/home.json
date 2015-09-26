@@ -2,6 +2,8 @@
     {
         "caption": "We turn dreams into reality",
         "name": "home",
-        "content": "Tecla5 will be ...\n"
+        "content": "Tecla5 will be ...\n",
+        "id": "1",
+        "image": "lorempixel.com/400/200/sports",
     }
 ]

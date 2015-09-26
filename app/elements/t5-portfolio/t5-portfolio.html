@@ -22,18 +22,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       last-error="{{lastError}}">
     </iron-ajax>
 
-    <paper-header-panel mode="cover">
-      <div class="paper-header">
-        <iron-image src="/images/Portfolio.png" class="sized" sizing="cover"></iron-image>
-      </div>
+    <template is="dom-repeat" items="{{items}}" on-dom-change="_repeatRender">
+      <image-card
+        id="{{item.id}}"
+        class="paperCard"
+        on-click="_openCard"
+        img="{{item.image}}"
+        legend="{{item.caption}}"
+        icon="chevron-right"
+        width="250">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut earum, quisquam in temporibus dolor facilis provident similique officiis velit blanditiis!
+      </image-card>
+    </template>
 
-      <div class="content" id="cards">
-        <template is="dom-repeat" items="{{items}}">
-          <ui-section image="{{item.image}}" caption="{{item.caption}}" markdown="{{item.content}}"/>
-        </template>
-      </div>
-
-    </paper-header-panel>
   </template>
 
   <script src="portfolio.js"></script>

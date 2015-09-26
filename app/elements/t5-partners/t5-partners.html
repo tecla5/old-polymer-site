@@ -10,17 +10,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<dom-module id="t5-home">
-  <link rel="import" type="css" href="home.css">
+<dom-module id="t5-partners">
+  <link rel="import" type="css" href="partners.css">
+
   <template>
     <iron-ajax
       auto
-      url="/data/home.json"
+      url="/data/partners.json"
       handle-as="json"
       last-response="{{items}}"
       last-error="{{lastError}}">
     </iron-ajax>
-    USING: Portfolio Example - https://github.com/samuelcardillo/polymer-lessons/tree/master/No%202%20-%20Neon-elements
+
     <template is="dom-repeat" items="{{items}}" on-dom-change="_repeatRender">
       <image-card
         id="{{item.id}}"
@@ -33,7 +34,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut earum, quisquam in temporibus dolor facilis provident similique officiis velit blanditiis!
       </image-card>
     </template>
-    </paper-header-panel>
+
   </template>
-  <script src="home.js"></script>
+
+  <script src="partners.js"></script>
+
 </dom-module>
