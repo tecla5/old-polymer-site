@@ -3,14 +3,12 @@
 // TODO: integrate with Gulp!!!
 
 var utils = require('./utils');
-var LinksGenerator = utils.LinksGenerator;
 var fs = require('fs');
 var path = require('path');
 
 var ymlBaseDir = path.join(__dirname, 'app', 'elements', 'imports');
-var libComponentsBasePath = '../bower_components/';
-
-var importsLinksGen = new LinksGenerator(libComponentsBasePath);
+var linkMapper = new utils.LinkMapper('../bower_components/');
+var importsLinksGen = new utils.LinksGenerator(linkMapper);
 importsLinksGen.forFiles(ymlBaseDir, function(links) {
   var filePath = 'app/elements/import-elements.html';
   console.log('write', filePath);
@@ -18,9 +16,9 @@ importsLinksGen.forFiles(ymlBaseDir, function(links) {
 });
 
 var appYmlFile = path.join(__dirname, 'app', 'elements', 'app.yml');
-var appComponentsBasePath = './';
 
-var appLinksGen = new LinksGenerator(appComponentsBasePath);
+var linkMapper = new utils.LinkMapper('./');
+var appLinksGen = new utils.LinksGenerator(linkMapper);
 appLinksGen.forFile(appYmlFile, function(links) {
   var filePath = 'app/elements/app-elements.html';
   console.log('write', filePath);

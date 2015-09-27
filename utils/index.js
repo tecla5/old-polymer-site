@@ -1,3 +1,1 @@
-module.exports = {
-  LinksGenerator: require('./links-generator')
-};
+module.exports = require('./links-generator');
