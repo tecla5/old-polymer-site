@@ -38,7 +38,8 @@
   "scripts": {
     "postinstall": "bower install",
     "test": "gulp test:local",
-    "start": "gulp serve"
+    "start": "gulp serve",
+    "elements": "node link-import.js"
   },
   "engines": {
     "node": ">=0.10.0"
