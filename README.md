@@ -106,7 +106,9 @@ npm run elements
 
 This will generate `import-elements.html` and `app-elements` in `app/elements`. These files will be auto-imported by `elements/elements.html` which is imported by `index.html`.
 
-All imports are auto-configured!
+Note: All imports are auto-configured!
+
+*This has now been integrated with the default gulp tasks!!*
 
 #### Serve / watch
 

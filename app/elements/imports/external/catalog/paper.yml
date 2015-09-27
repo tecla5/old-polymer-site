@@ -1,12 +1,12 @@
-- drawer-panel
-- icon-button
+- :scroll-header-panel
+- :drawer-panel
+- :icon-button
 - fab
 - item
 - material
 - menu
 - styles
 - card
-- scroll-header-panel
 - toast
 - toolbar
 - button

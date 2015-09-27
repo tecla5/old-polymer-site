@@ -1,16 +1,23 @@
 var path = require('path');
 var dir = require('node-dir');
-
 var YAML = require('yamljs');
 
 module.exports.LinkMapper = function (componentsBasePath) {
+  if (!componentsBasePath) {
+    throw 'LinkMapper requires a base path';
+  }
+
   return {
     load: function(file) {
       return YAML.load(file);
     },
     mapComponentPath: function(item, filename) {
       if (!item.match(/.html/)) {
-        if (!item.match(/-/) && !item.match(/^./)) {
+        if (item.match(/^:/)) {
+          item = item.replace(/^:/, filename + '-');
+        }
+
+        if (!item.match(/-/) && !item.match(/^.\//)) {
           item = [filename, item].join('-');
         }
         if (!item.match(/\//)) {

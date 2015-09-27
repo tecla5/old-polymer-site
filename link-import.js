@@ -6,20 +6,23 @@ var utils = require('./utils');
 var fs = require('fs');
 var path = require('path');
 
-var ymlBaseDir = path.join(__dirname, 'app', 'elements', 'imports');
+var importsDir = path.join(__dirname, 'app', 'elements', 'imports');
+var configDir = {
+  external: path.join(importsDir, 'external'),
+  app: path.join(importsDir, 'app')
+};
+
 var linkMapper = new utils.LinkMapper('../bower_components/');
 var importsLinksGen = new utils.LinksGenerator(linkMapper);
-importsLinksGen.forFiles(ymlBaseDir, function(links) {
+importsLinksGen.forFiles(configDir.external, function(links) {
   var filePath = 'app/elements/import-elements.html';
   console.log('write', filePath);
   fs.writeFileSync(filePath, links);
 });
 
-var appYmlFile = path.join(__dirname, 'app', 'elements', 'app.yml');
-
 var linkMapper = new utils.LinkMapper('./');
 var appLinksGen = new utils.LinksGenerator(linkMapper);
-appLinksGen.forFile(appYmlFile, function(links) {
+appLinksGen.forFiles(configDir.app, function(links) {
   var filePath = 'app/elements/app-elements.html';
   console.log('write', filePath);
   fs.writeFileSync(filePath, links);
