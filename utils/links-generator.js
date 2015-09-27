@@ -10,7 +10,7 @@ module.exports.LinkMapper = function (componentsBasePath) {
     },
     mapComponentPath: function(item, filename) {
       if (!item.match(/.html/)) {
-        if (!item.match(/-/)) {
+        if (!item.match(/-/) && !item.match(/^./)) {
           item = [filename, item].join('-');
         }
         if (!item.match(/\//)) {
