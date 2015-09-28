@@ -20,7 +20,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     function scrollToTop(ctx, next) {
       app.scrollPageToTop();
       next();
-    }    
+    }
 
     page('/', scrollToTop, function () {
       app.route = 'home';
@@ -45,6 +45,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     });
     page('/project', scrollToTop, function () {
       app.route = 'project';
+    });
+
+    // portfolio
+    page('/finished', function () {
+      app.route = 'finished';
+    });
+
+    page('/inprogress', function () {
+      app.route = 'showcase';
+    });
+
+    page('/videos', function () {
+      app.route = 'videos';
+    });
+
+    page('/showcase', function () {
+      app.route = 'showcase';
+    });
+
+    page('/showcase/:productId', function (data) {
+      app.route = 'showcase/:productId';
+      app.params = data.params;
     });
 
     /*

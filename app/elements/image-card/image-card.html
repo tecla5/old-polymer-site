@@ -72,31 +72,31 @@
 
 		<paper-material animated elevation="{{elevation}}">
 			<div class="vertical layout">
-				<!-- START PAPER-CARD PICTURE !-->
+				<!-- START IMAGE-CARD PICTURE !-->
 				<template is="dom-if" if="{{img}}">
 					<div class="picture">
 						<img src="{{img}}" height="{{height}}" alt="">
-						<!-- START PAPER-CARD PICTURE LEGEND !-->
+						<!-- START IMAGE-CARD PICTURE LEGEND !-->
 						<template is="dom-if" if="{{legend}}">
 							<div class="legend horizontal layout center">
 								<span>{{legend}}</span>
-								<!-- START PAPER-CARD FAB !-->
+								<!-- START IMAGE-CARD FAB !-->
 								<template is="dom-if" if="{{icon}}">
 									<paper-fab mini icon="{{icon}}"></paper-fab>
 								</template>
-								<!-- END PAPER-CARD FAB !-->
+								<!-- END IMAGE-CARD FAB !-->
 							</div>
 						</template>
-						<!-- END PAPER-CARD PICTURE LEGEND !-->
+						<!-- END IMAGE-CARD PICTURE LEGEND !-->
 					</div>
 				</template>
-				<!-- END PAPER-CARD PICTURE !-->
+				<!-- END IMAGE-CARD PICTURE !-->
 
-				<!-- START PAPER-CARD CONTENT !-->
+				<!-- START IMAGE-CARD CONTENT !-->
 				<div class="content">
 					<content></content>
 				</div>
-				<!-- END PAPER-CARD CONTENT !-->
+				<!-- END IMAGE-CARD CONTENT !-->
 			</div>
 		</paper-material>
 
