@@ -62,7 +62,7 @@ gulp.task('elements', function () {
 // WIP: Integrating link imports
 // var streamify = require('gulp-streamify');
 
-var linkImports = require('./plugins/link-imports');
+var linkImports = require('gulp-link-imports');
 gulp.task('import:external', function () {
   gulp.src('./app/elements/imports/external/**/*.yml')
     // .pipe(printFile())
