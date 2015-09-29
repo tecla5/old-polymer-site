@@ -59,9 +59,6 @@ gulp.task('elements', function () {
   return styleTask('elements', ['**/*.css']);
 });
 
-// WIP: Integrating link imports
-// var streamify = require('gulp-streamify');
-
 var linkImports = require('gulp-link-imports');
 gulp.task('import:external', function () {
   gulp.src('./app/elements/imports/external/**/*.yml')
