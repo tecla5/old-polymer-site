@@ -6,7 +6,7 @@
         type: Object,
         // when `items` changes `computeItem` is called once
         // and the value it returns is stored as `item`
-        computed: 'computeItem(items)'
+        computed: 'computeImg(items)'
       },
       items: {
         type: Array,

@@ -9,10 +9,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+
 <dom-module id="t5-team">
   <link rel="import" type="css" href="team.css">
 
   <template>
+    <iron-ajax
+      auto
+      url="/data/team.json"
+      handle-as="json"
+      last-response="{{items}}"
+      last-error="{{lastError}}">
+    </iron-ajax>
+
+
     <paper-header-panel mode="cover">
       <div class="paper-header">
         <iron-image src="/images/group.png" class="sized" sizing="cover"></iron-image>
@@ -22,6 +32,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       <!-- TODO: Use JSON via iron-ajax and ui-section element!!!! -->
       <div class="content" id="cards">
+        <!-- {{items[0].caption}} -->
         <paper-card heading="Javier Cabrera">
           <div class="card-content" image="/images/team/jcabrera.png" >
             <div >
