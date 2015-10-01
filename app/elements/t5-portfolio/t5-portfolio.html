@@ -8,8 +8,6 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 
-<link rel="import" href="../../bower_components/polymer/polymer.html">
-
 <dom-module id="t5-portfolio">
   <link rel="import" type="css" href="portfolio.css">
 
@@ -22,19 +20,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       last-error="{{lastError}}">
     </iron-ajax>
 
-    <template is="dom-repeat" items="{{items}}" on-dom-change="_repeatRender">
-      <image-card
-        id="{{item.id}}"
-        class="paperCard"
-        on-click="_openCard"
-        img="{{item.image}}"
-        legend="{{item.caption}}"
-        icon="chevron-right"
-        width="250">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut earum, quisquam in temporibus dolor facilis provident similique officiis velit blanditiis!
-      </image-card>
-    </template>
-
+    <polymer-slideshow height="800" width="600">
+      <polymer-slide>
+        <iron-image src="/images/AboutUS.png" width="600" height="400"></iron-image>
+        <h1>Cat</h1>
+        <p>Cat ipsum dolor sit amet, quo. Quasi. Amet si irure illo or ab. Vitae. Sint numquam magni but quam cupidatat and deserunt. Sit magna yet velit. Commodi perspiciatis aliquam or ea yet magnam so laboriosam for fugiat. Voluptas ullam or odit yet aspernatur so aut. Eius in minima aliquam. Nostrud. Deserunt. Proident velitesse yet consequat. Quae officia est qui or corporis nequeporro. Aliquam tempor natus yet dolores so eiusmod. Consequat reprehenderit explicabo or officia aperiam. In. Quasi dolor but esse minim. Consectetur do. Perspiciatis occaecat and quis so magna deserunt error yet beatae. Unde culpa so proident for suscipit fugit, and exercitationem. Eius quo, reprehenderit but eos, ab. Incididunt incidunt.
+        </p>
+      </polymer-slide>
+      <polymer-slide>
+        <iron-image src="/images/AboutUS.png" width="600" height="400"></iron-image>
+        <h1>Not Cat</h1>
+        <p>Quasi. Amet si irure illo or ab. Vitae. Sint numquam magni but quam cupidatat and deserunt. Sit magna yet velit. Commodi perspiciatis aliquam or ea yet magnam so laboriosam for fugiat. Voluptas ullam or odit yet aspernatur so aut. Eius in minima aliquam. Nostrud. Deserunt. Proident velitesse yet consequat. Quae officia est qui or corporis nequeporro. Aliquam tempor natus yet dolores so eiusmod. Consequat reprehenderit explicabo or officia aperiam. In. Quasi dolor but esse minim. Consectetur do. Perspiciatis occaecat and quis so magna deserunt error yet beatae. Unde culpa so proident for suscipit fugit, and exercitationem. Eius quo, reprehenderit but eos, ab. Incididunt incidunt.
+        </p>
+      </polymer-slide>
+      <polymer-slide>
+        <iron-image src="/images/AboutUS.png" width="600" height="400"></iron-image>
+        <h1>Sports Cat</h1>
+        <p>Quasi. Amet si irure illo or ab. Vitae. Sint numquam magni but quam cupidatat and deserunt. Sit magna yet velit. Commodi perspiciatis aliquam or ea yet magnam so laboriosam for fugiat. Voluptas ullam or odit yet aspernatur so aut. Eius in minima aliquam. Nostrud. Deserunt. Proident velitesse yet consequat. Quae officia est qui or corporis nequeporro. Aliquam tempor natus yet dolores so eiusmod. Consequat reprehenderit explicabo or officia aperiam. In. Quasi dolor but esse minim. Consectetur do. Perspiciatis occaecat and quis so magna deserunt error yet beatae. Unde culpa so proident for suscipit fugit, and exercitationem. Eius quo, reprehenderit but eos, ab. Incididunt incidunt.
+        </p>
+      </polymer-slide>
+    </polymer-slideshow>
   </template>
 
   <script src="portfolio.js"></script>
