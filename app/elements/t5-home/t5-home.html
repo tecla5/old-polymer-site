@@ -8,8 +8,6 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 
-<link rel="import" href="../../bower_components/polymer/polymer.html">
-
 <dom-module id="t5-home">
   <link rel="import" type="css" href="home.css">
   <template>
@@ -20,19 +18,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       last-response="{{items}}"
       last-error="{{lastError}}">
     </iron-ajax>
-    USING: Portfolio Example - https://github.com/samuelcardillo/polymer-lessons/tree/master/No%202%20-%20Neon-elements
-    <template is="dom-repeat" items="{{items}}" on-dom-change="_repeatRender">
-      <image-card
-        id="{{item.id}}"
-        class="paperCard"
-        on-click="_openCard"
-        img="{{item.image}}"
-        legend="{{item.caption}}"
-        icon="chevron-right"
-        width="250">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut earum, quisquam in temporibus dolor facilis provident similique officiis velit blanditiis!
-      </image-card>
-    </template>
+    <image-card
+      id="{{item.id}}"
+      class="paperCard"
+      on-click="_openCard"
+      img="{{item.image}}"
+      height="200"
+      legend="{{item.caption}}"
+      icon="chevron-right"
+      width="250">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut earum, quisquam in temporibus dolor facilis provident similique officiis velit blanditiis!
+    </image-card>
   </template>
   <script src="home.js"></script>
 </dom-module>
