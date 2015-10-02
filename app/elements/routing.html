@@ -20,10 +20,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     function scrollToTop(ctx, next) {
       app.scrollPageToTop();
       next();
-    }    
-
+    }
     page('/', scrollToTop, function () {
-      app.route = 'home';
+      if(app.route){
+        app.route = 'home';
+      } else {
+        app.route = 'splash';
+      }
+    });
+    page('/splash', scrollToTop, function () {
+      app.route = 'splash';
     });
     page('/home', scrollToTop, function () {
       app.route = 'home';
