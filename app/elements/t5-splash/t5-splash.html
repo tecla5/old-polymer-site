@@ -41,18 +41,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       is: 't5-splash',
 
       attached: function(){
-        console.log(app.route);
-        if(app.route === 'splash'){
+        //console.log('t5-splash', app.route);
+        if(app.route === 'splash' || app.route === undefined){
+          app.route = 'splash';
           this.async(this.startup);
         }
+        //console.log('t5-splash', app.route);
       },
 
       startup: function() {
         this.$.dialog.open();
-        window.setTimeout(this.completeStartup, 2000);
-        //this.async(this.completeStartup, null, 60000);
+        console.log('startup');
+        window.setTimeout(this.completeStartup, 3000);
       },
       completeStartup: function() {
+        console.log('end');
         app.route = 'home';
         this.route = 'home';
         this.dialog.close();
