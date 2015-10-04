@@ -19,17 +19,17 @@ paper-material {
 }
 
 paper-material.colored {
-  border-color: var(--paper-blue-500);
+  border-color: var(--primary-background-color);
   /*background-color: var(--paper-light-blue-50);*/
-  color: var(--paper-blue-500);
+  color: var(--primary-background-color);
   border: 1px outset;
 }
 
 
 paper-dialog.colored {
-  border-color: var(--paper-blue-500);
+  border-color: var(--primary-background-color);
   background-color: var(--paper-light-blue-50);
-  color: var(--paper-blue-500);
+  color: var(--primary-background-color);
   border: 2px solid;
 }
 
@@ -49,11 +49,11 @@ paper-dialog.size-position {
 paper-button {
   background-color: transparent;
   border-width: medium;
-  border-color: #494B79;
+  border-color: var(--primary-background-color);
 }
 
 .email {
-  background: #494B79;
+  background: var(--primary-background-color);
 }
 
 

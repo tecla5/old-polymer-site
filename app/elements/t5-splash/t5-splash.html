@@ -17,20 +17,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
 
     .splash {
-      background-color: #eee;
+      background-color: var(--primary-background-color);
       background-repeat: no-repeat;
       background-position: 50%;
       background-image: url(/images/tecla5.svg);
     }
-    .splash.wide {
-      background-size: 512px;
+
+    paper-spinner.blue {
+      background-position: 50%;
+      --paper-spinner-layer-1-color: var(--dark-primary-color);
+      --paper-spinner-layer-2-color: var(--dark-primary-color);
+      --paper-spinner-layer-3-color: var(--dark-primary-color);
+      --paper-spinner-layer-4-color: var(--dark-primary-color);
     }
 
   </style>
   <template>
     <paper-dialog id="dialog" fit modal >
       <span  class="splash" fit ></span>
-      <iron-icon icon="sync" ></iron-icon>
+      <paper-spinner class="blue" active></paper-spinner>
+
     </paper-dialog>
   </template>
   <script>
