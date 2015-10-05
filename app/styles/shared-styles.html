@@ -3,8 +3,24 @@
   <template>
     <style>
       .page-title {
-        @apply(--paper-font-display2);
+        @apply(--paper-font-display);
       }
+
+      :host {
+        display:block;
+        background: var(--secondary-background-color);
+      }
+
+
+      .paper-font-title{
+        font-size: 30px;
+        font-weight: 300;
+      }
+      paper-toolbar{
+        font-size: 20vh;
+        font-weight: 300;
+      }
+
 
       @media (max-width: 600px) {
         .page-title {
