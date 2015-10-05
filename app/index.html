@@ -90,9 +90,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <paper-toolbar class="drawerToolbar">
             <!--
             <span class="paper-font-title">tecla</span>
-            <paper-icon-button icon="t5-icons:tecla5" class="big" ></paper-icon-button>
             -->
-            <iron-icon icon="t5-icons:tecla5" class="big"></iron-icon>
+            <iron-icon id="menu-logo" icon="t5-icons:tecla5" class="big"></iron-icon>
           </paper-toolbar>
 
 
@@ -120,6 +119,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <paper-ripple class="circle" fit recenters></paper-ripple>
                  <span>Services</span>
              </a>
+             <a data-route="portfolio" href="/portfolio" on-click="onDataRouteClick">
+              <iron-icon icon="settings-input-hdmi" ></iron-icon>
+              <paper-ripple class="circle" fit recenters></paper-ripple>
+                 <span>Portfolio</span>
+             </a>
              <a data-route="contact" href="/contact" on-click="onDataRouteClick">
                <iron-icon icon="mail" ></iron-icon>
                <paper-ripple class="circle" fit recenters></paper-ripple>
@@ -143,14 +147,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <div data-route="home" >
                 <span class="topBack paper-font-title">Home</span>
               </div>
-              <div data-route="services">
-                <span class="topBack paper-font-title">Services</span>
-              </div>
               <div data-route="about" class="about">
                 <span class="topBack paper-font-title">About Us</span>
               </div>
               <div data-route="team">
                 <span class="topBack paper-font-title">Team</span>
+              </div>
+              <div data-route="services">
+                <span class="topBack paper-font-title">Services</span>
+              </div>
+              <div data-route="portfolio">
+                <span class="topBack paper-font-title">Portfolio</span>
               </div>
               <div data-route="contact">
                 <span class="topBack paper-font-title">Contact Us</span>
@@ -220,14 +227,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <section data-route="home">
                 <t5-home></t5-home>
               </section>
-              <section data-route="services">
-                <t5-services></t5-services>
-              </section>
               <section data-route="about">
                 <t5-about></t5-about>
               </section>
               <section data-route="team">
                 <t5-team></t5-team>
+              </section>
+              <section data-route="services">
+                <t5-services></t5-services>
+              </section>
+              <section data-route="portfolio">
+                <t5-portfolio></t5-portfolio>
               </section>
               <section data-route="contact">
                 <t5-contact></t5-contact>

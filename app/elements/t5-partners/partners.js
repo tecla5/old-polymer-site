@@ -1,6 +1,6 @@
 (function() {
   Polymer({
-    is: 't5-portfolio',
+    is: 't5-partners',
 
     properties: {
       items: {

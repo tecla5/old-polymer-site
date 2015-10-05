@@ -1,6 +1,6 @@
 :host {
   display:block;
-  background: var(--light-primary-color);
+  background: transparent;
 }
 
 
@@ -11,6 +11,7 @@
   --paper-icon-button-ink-color: #FFF;
   font-size: 2vh;
 }
+
 
 paper-toolbar {
   padding: 16px;
