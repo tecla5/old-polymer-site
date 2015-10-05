@@ -44,7 +44,7 @@
 
 <script type="text/javascript">
   Polymer({
-    is: "portfolio-inprogress",
+    is: 'portfolio-inprogress',
 
     behaviors: [
       Polymer.NeonAnimationRunnerBehavior,
@@ -72,7 +72,7 @@
               name: 'fade-out-animation',
               node: this
             }]
-          }
+          };
         }
       }
       // END ANIMATIONS
@@ -80,33 +80,33 @@
 
     ready: function(){
       this.productsList = [{
-        "id": 0,
-        "name": "Card 1 - Cat 1",
-        "header": "http://lorempixel.com/350/200",
-        "launcher": "../../images/ic_launcher.png"
+        'id': 0,
+        'name': 'Card 1 - Cat 1',
+        'header': 'http://lorempixel.com/350/200',
+        'launcher': '../../images/ic_launcher.png'
       }];
     },
 
     _repeatRender: function(){
-      this.paperCard = Polymer.dom(this.root).querySelectorAll("paper-card");
-      this.animationConfig["entry"].push({
-        name: "cascaded-animation",
-        animation: "transform-animation",
-        transformFrom: "translateY(100vh)",
+      this.paperCard = Polymer.dom(this.root).querySelectorAll('paper-card');
+      this.animationConfig.entry.push({
+        name: 'cascaded-animation',
+        animation: 'transform-animation',
+        transformFrom: 'translateY(100vh)',
         nodes: this.paperCard
-      })
+      });
     },
 
     _openCard: function(event){
       if(event.target.classList.contains('paper-fab')) {
-        this.fire("updateShowcase",this.productsList[event.model.__data__["item.id"]]);
+        this.fire('updateShowcase',this.productsList[event.model.__data__['item.id']]);
 
         this.sharedElements = {
           'hero': event.target
-        }
+        };
 
-        this.fire("changePage","showcase");
+        this.fire('changePage','showcase');
       }
     }
-  })
+  });
 </script>

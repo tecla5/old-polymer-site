@@ -105,19 +105,19 @@
 
 <script>
 	Polymer({
-		is: "image-card",
+		is: 'image-card',
 
 		properties: {
 			width: {
 				type: Number,
-				observer: "_changeWidth",
+				observer: '_changeWidth',
 			},
 		},
 
 		_changeWidth: function(data){
-			this.style.width = data + "px";
-			this.querySelector(".content").width = data + "px";
+			this.style.width = data + 'px';
+			this.querySelector('.content').width = data + 'px';
 		},
 
-	})
+	});
 </script>

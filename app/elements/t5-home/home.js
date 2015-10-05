@@ -1,8 +1,7 @@
 Polymer({
   is: 't5-home',
   behaviors: [
-    Polymer.NeonAnimationRunnerBehavior,
-    Polymer.NeonSharedElementAnimatableBehavior
+    Polymer.NeonAnimationRunnerBehavior
   ],
   properties: {
     // START ANIMATIONS
