@@ -36,24 +36,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 .divider-color         { border-color: #B6B6B6; }
 */
 
+/*
+hsl: Hue, Saturation, Lightness – Matiz, Saturación, Luminosidad
+*/
 
   /* Application theme */
 
   :root {
-    --dark-primary-color: #303F9F;
-    --default-primary-color: #3F51B5;
-    --light-primary-color: #C5CAE9;
-    --text-primary-color: #ffffff; /*text/icons*/
-    --accent-color: #FF4081;
+    --dark-primary-color: hsl(33, 100%, 35%);
+    --default-primary-color: hsl(33, 100%, 95%);
+    --light-primary-color: hsl(33, 10%, 95%);
+    --text-primary-color: hsl(33, 100%, 95%); /*text/icons*/
+    --accent-color: #448AFF;
     --primary-text-color: #212121;
     --secondary-text-color: #727272;
     --divider-color: #B6B6B6;
 
     --disabled-text-color: #bdbdbd;
 
-    --primary-background-color: #c5cae9;
-    --secondary-background-color: #eeeeee;
-    --third-background-color: #ffffff;
+    --primary-background-color: hsl(33, 90%, 40%);
+    --secondary-background-color: hsl(30, 100%, 60%);
+    --third-background-color: hsl(30, 100%, 48%);
 
     /* Components */
 
@@ -112,14 +115,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
 
-
-  paper-toolbar {
-    color: var(--secondary-text-color);
-    background-color: var(--drawer-menu-color);
-    border-bottom: var(--drawer-toolbar-border-color);
-  }
   paper-toolbar.tall {
-      background-color: var(--primary-background-color);
+    --paper-toolbar-background: var(--primary-background-color);
   }
   paper-toolbar.tall .app-name {
     font-size: 40px;
