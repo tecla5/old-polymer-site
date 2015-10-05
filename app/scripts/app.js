@@ -27,7 +27,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   app.addEventListener('dom-change', function() {
     console.log('Our app is ready to rock!');
-    this.route = this.route || 'home'; // default route to 'one'.
+    //console.log('dom-change', app.route, this.route);
+    this.route = this.route || 'splash'; // default route to 'one'.
+    //console.log('dom-change', app.route, this.route);
   });
 
 

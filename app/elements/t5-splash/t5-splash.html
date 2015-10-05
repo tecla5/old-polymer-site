@@ -1,0 +1,81 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="t5-splash">
+  <style>
+    :host {
+      display: block;
+    }
+
+    .splash {
+      background-color: var(--primary-background-color);
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-image: url(/images/tecla5.svg);
+    }
+
+    paper-spinner.blue {
+      background-position: 50%;
+      --paper-spinner-layer-1-color: var(--dark-primary-color);
+      --paper-spinner-layer-2-color: var(--dark-primary-color);
+      --paper-spinner-layer-3-color: var(--dark-primary-color);
+      --paper-spinner-layer-4-color: var(--dark-primary-color);
+    }
+
+  </style>
+  <template>
+    <paper-dialog id="dialog" fit modal >
+      <span  class="splash" fit ></span>
+      <paper-spinner class="blue" active></paper-spinner>
+
+    </paper-dialog>
+  </template>
+  <script>
+  (function() {
+    'use strict';
+
+    Polymer({
+      is: 't5-splash',
+
+      attached: function(){
+        //console.log('t5-splash', app.route);
+        if(app.route === 'splash' || app.route === undefined){
+          app.route = 'splash';
+          this.async(this.startup);
+        }
+        //console.log('t5-splash', app.route);
+      },
+
+      startup: function() {
+        this.$.dialog.open();
+        console.log('startup');
+        window.setTimeout(this.completeStartup, 3000);
+      },
+      completeStartup: function() {
+        console.log('end');
+        app.route = 'home';
+        this.route = 'home';
+        this.dialog.close();
+        document.querySelector('#paperDrawerPanel').forceNarrow=false;
+      },
+
+      properties: {
+        foo: {
+          type: String,
+          value: 't5-splash',
+          notify: true
+        }
+      }
+    });
+  })();
+  </script>
+</dom-module>

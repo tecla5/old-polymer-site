@@ -21,9 +21,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       app.scrollPageToTop();
       next();
     }
-
     page('/', scrollToTop, function () {
-      app.route = 'home';
+      //console.log('routing', app.route, app.route === undefined,  app.route === 'splash');
+      if(app.route === undefined  || app.route === 'splash'){
+        app.route = 'splash';
+      } else {
+        app.route = 'home';
+      }
+      //console.log('routing', app.route);
+
+    });
+    page('/splash', scrollToTop, function () {
+      app.route = 'splash';
     });
     page('/home', scrollToTop, function () {
       app.route = 'home';

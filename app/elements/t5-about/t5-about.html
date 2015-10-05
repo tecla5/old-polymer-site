@@ -9,7 +9,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
-<link rel="import" href="../../bower_components/polymer/polymer.html">
 
 <dom-module id="t5-about">
   <link rel="import" type="css" href="styles.css">
@@ -20,7 +19,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       url="/data/about.json"
       handle-as="json"
       last-response="{{items}}"
-      last-error="{{lastError}}"
+      last-error="{{lastError}}">
     </iron-ajax>
 
     <paper-header-panel mode="cover">
