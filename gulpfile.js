@@ -289,8 +289,9 @@ gulp.task('serve:dist', ['default'], function () {
 gulp.task('default', ['clean'], function (cb) {
   // Uncomment 'cache-config' after 'rename-index' if you are going to use service workers.
   runSequence(
+    'imports',
     ['copy', 'styles'],
-    'imports', 'elements',
+    'elements',
     ['jshint', 'images', 'data', 'fonts', 'html'],
     'vulcanize','rename-index', // 'cache-config',
     cb);
