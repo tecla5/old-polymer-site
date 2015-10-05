@@ -114,9 +114,10 @@ hsl: Hue, Saturation, Lightness – Matiz, Saturación, Luminosidad
   }
 
 
-
   paper-toolbar.tall {
+    height: 400px;
     --paper-toolbar-background: var(--primary-background-color);
+    background-image: linear-gradient(orange, black);
   }
   paper-toolbar.tall .app-name {
     font-size: 40px;
@@ -191,7 +192,20 @@ hsl: Hue, Saturation, Lightness – Matiz, Saturación, Luminosidad
 
 
 
+  paper-toolbar.drawerToolbar{
+    background: var(--light-primary-color);
+    height: 200px;
+  }
 
+
+  iron-icon.big {
+    margin: 160px auto;
+    padding-top: 100px;
+    --iron-icon-height: 10vh;
+    --iron-icon-width: 10vh;
+    --paper-icon-button-ink-color: #FFF;
+    font-size: 2vh;
+  }
 
 
   #mainToolbar .middle-container  {
@@ -211,10 +225,6 @@ hsl: Hue, Saturation, Lightness – Matiz, Saturación, Luminosidad
     transform-origin: left center;
   }
 
-
-  .drawerToolbar{
-    background: var(--primary-background-color);
-  }
 
   #footToolbar{
     background: var(--primary-background-color);
