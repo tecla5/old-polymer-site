@@ -80,7 +80,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <span id="browser-sync-binding"></span>
 
   <template is="dom-bind" id="app">
-      <paper-drawer-panel id="paperDrawerPanel">
+      <paper-drawer-panel id="paperDrawerPanel" force-narrow="true">
 
 
         <!-- Drawer Scroll Header Panel -->
@@ -88,8 +88,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <!-- Drawer Toolbar -->
           <paper-toolbar class="drawerToolbar">
+            <!--
             <span class="paper-font-title">tecla</span>
-            <iron-icon icon="t5-icons:tecla5"></iron-icon>
+            <paper-icon-button icon="t5-icons:tecla5" class="big" ></paper-icon-button>
+            -->
+            <iron-icon icon="t5-icons:tecla5" class="big"></iron-icon>
           </paper-toolbar>
 
 
