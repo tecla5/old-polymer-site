@@ -16,7 +16,7 @@
 paper-toolbar {
   padding: 16px;
   border-radius: 5px;
-  cursor: pointer;
+  cursor: pointer;  
  --paper-toolbar-background: var(--secondary-background-color); /* changes the background to blue*/
  --paper-toolbar-color: var(--text-primary-color); /* changes the foreground color to green */
  --paper-toolbar: {
