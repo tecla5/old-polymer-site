@@ -99,49 +99,47 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <!-- paper-menu  iron-selector  on-iron-select="onMenuSelect" -->
           <paper-menu class="list"
           attr-for-selected="data-route" selected="[[route]]" >
-            <a data-route="home" href="/" on-click="onDataRouteClick" >
-              <iron-icon icon="home" ></iron-icon>
-              <paper-ripple class="circle" fit recenters></paper-ripple>
-              <span>Home</span>
+
+             <a data-route="home" href="/" on-click="onDataRouteClick" >
+               <iron-icon icon="home" ></iron-icon>
+               <paper-ripple class="circle" fit recenters></paper-ripple>
+               <span>Home</span>
              </a>
              <a data-route="about" href="/about" on-click="onDataRouteClick">
-              <iron-icon icon="info" ></iron-icon>
-              <paper-ripple class="circle" fit recenters></paper-ripple>
-              <span>About</span>
+               <iron-icon icon="info" ></iron-icon>
+               <paper-ripple class="circle" fit recenters></paper-ripple>
+               <span>About</span>
              </a>
              <a data-route="team" href="/team" on-click="onDataRouteClick">
-              <iron-icon icon="face" ></iron-icon>
-              <paper-ripple class="circle" fit recenters></paper-ripple>
-              <span>Team</span>
+               <iron-icon icon="face" ></iron-icon>
+               <paper-ripple class="circle" fit recenters></paper-ripple>
+               <span>Team</span>
              </a>
              <a data-route="services" href="/services" on-click="onDataRouteClick">
-              <iron-icon icon="settings-input-hdmi" ></iron-icon>
-              <paper-ripple class="circle" fit recenters></paper-ripple>
-                 <span>Services</span>
+               <iron-icon icon="settings-input-hdmi" ></iron-icon>
+               <paper-ripple class="circle" fit recenters></paper-ripple>
+               <span>Services</span>
              </a>
              <a data-route="portfolio" href="/portfolio" on-click="onDataRouteClick">
-              <iron-icon icon="settings-input-hdmi" ></iron-icon>
-              <paper-ripple class="circle" fit recenters></paper-ripple>
-                 <span>Portfolio</span>
+               <iron-icon icon="settings-input-hdmi" ></iron-icon>
+               <paper-ripple class="circle" fit recenters></paper-ripple>
+               <span>Portfolio</span>
              </a>
              <a data-route="contact" href="/contact" on-click="onDataRouteClick">
                <iron-icon icon="mail" ></iron-icon>
                <paper-ripple class="circle" fit recenters></paper-ripple>
-                 <span>Contact</span>
+               <span>Contact</span>
              </a>
           </paper-menu>
         </paper-scroll-header-panel>
 
 
-
         <!-- Main Area id="mainContainer" -->
-        <paper-scroll-header-panel main condenses keep-condensed-header>
+
+        <paper-scroll-header-panel main condenses keep-condensed-header >
 
           <!-- Main Toolbar -->
           <paper-toolbar id="mainToolbar" class="tall" >
-            <div >
-              <span class="topBack paper-font-title">[[app]]</span>
-            </div>
             <!-- show name for page -->
             <iron-pages attr-for-selected="data-route" selected="{{route}}">
               <div data-route="home" >

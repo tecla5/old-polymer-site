@@ -68,6 +68,15 @@ hsl: Hue, Saturation, Lightness – Matiz, Saturación, Luminosidad
     /* paper-menu */
     --paper-menu-background-color: #fff;
     --menu-link-color: #111111;
+
+
+    --home-bg-image: url(/images/toolbar/spikes1366x768.jpg);
+    --about-bg-image: url(/images/toolbar/night1366x768.jpg);
+    --team-bg-image: url(/images/toolbar/forest1366x768.jpg);
+    --services-bg-image: url(/images/toolbar/grass1366x768.jpg);
+    --portfolio-bg-image: url(/images/toolbar/grass1366x768.jpg);
+    --contact-bg-image: url(/images/toolbar/water1366x768.jpg);
+
   }
 
   /* General styles */
@@ -114,13 +123,18 @@ hsl: Hue, Saturation, Lightness – Matiz, Saturación, Luminosidad
   }
 
 
+/*
+background-image: var(--name-bg-image);
+background-size: cover;
+background-attachment: fixed;
+
+*/
   paper-toolbar.tall {
     height: 400px;
-    --paper-toolbar-background: var(--primary-background-color);
-    background-image: url(/images/toolbar/spikes1366x768.jpg);
+    height: 400px;
+    --paper-toolbar-background: var(--home-bg-image, --primary-background-color);
+    background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
-    --background-repeat: no-repeat;
 
   }
   paper-toolbar.tall .app-name {

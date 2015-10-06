@@ -28,6 +28,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   app.addEventListener('dom-change', function() {
     console.log('Our app is ready to rock!');
     //console.log('dom-change', app.route, this.route);
+    document.querySelector('#paperDrawerPanel').forceNarrow=false;
+
     this.route = this.route || 'splash'; // default route to 'one'.
     //console.log('dom-change', app.route, this.route);
   });
@@ -70,11 +72,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   });
 
   // Close drawer after menu item is selected if drawerPanel is narrow
-  app.onDataRouteClick = function() {
+  app.onDataRouteClick = function(mouseEvent) {
+
     var drawerPanel = document.querySelector('#paperDrawerPanel');
     if (drawerPanel.narrow) {
       drawerPanel.closeDrawer();
     }
+    var route = mouseEvent.srcElement.getAttribute('data-route');
+
+
+    var mainToolbar = document.querySelector('#mainToolbar');
+    mainToolbar.customStyle['--paper-toolbar-background'] = 'var(--'+route+'-bg-image,--primary-background-color)';//'blue';
+    mainToolbar.updateStyles();
+
   };
 
   window.showFooter = function(id) {
