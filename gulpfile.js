@@ -25,6 +25,7 @@ var packageJson = require('./package.json');
 var crypto = require('crypto');
 var polybuild = require('polybuild');
 //var printFile = require('gulp-print');
+var linkImports = require('gulp-link-imports');
 
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 10',
@@ -59,7 +60,6 @@ gulp.task('elements', function () {
   return styleTask('elements', ['**/*.css']);
 });
 
-var linkImports = require('gulp-link-imports');
 gulp.task('import:external', function () {
   gulp.src('./app/elements/imports/external/**/*.yml')
     // .pipe(printFile())
@@ -286,10 +286,9 @@ gulp.task('serve:dist', ['default'], function () {
 });
 
 // Build production files, the default task
-gulp.task('default', ['clean'], function (cb) {
+gulp.task('default', ['clean', 'imports'], function (cb) {
   // Uncomment 'cache-config' after 'rename-index' if you are going to use service workers.
   runSequence(
-    'imports',
     ['copy', 'styles'],
     'elements',
     ['jshint', 'images', 'data', 'fonts', 'html'],

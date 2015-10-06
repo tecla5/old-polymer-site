@@ -74,7 +74,7 @@ hsl: Hue, Saturation, Lightness – Matiz, Saturación, Luminosidad
     --about-bg-image: url(/images/toolbar/night1366x768.jpg);
     --team-bg-image: url(/images/toolbar/forest1366x768.jpg);
     --services-bg-image: url(/images/toolbar/grass1366x768.jpg);
-    --portfolio-bg-image: url(/images/toolbar/grass1366x768.jpg);
+    --portfolio-bg-image: url(/images/toolbar/nature1366x768_sc.jpg);
     --contact-bg-image: url(/images/toolbar/water1366x768.jpg);
 
   }
@@ -130,13 +130,12 @@ background-attachment: fixed;
 
 */
   paper-toolbar.tall {
-    height: 400px;
-    height: 400px;
     --paper-toolbar-background: var(--home-bg-image, --primary-background-color);
+    height: 400px;
     background-repeat: no-repeat;
     background-size: cover;
-
   }
+
   paper-toolbar.tall .app-name {
     font-size: 40px;
     font-weight: 300;
@@ -238,14 +237,14 @@ background-attachment: fixed;
     height: 200px;
   }
 
+  .center-logo {
+    margin: auto;
+    top:50%;
+  }
 
-  iron-icon.big {
-    margin: 160px auto;
-    padding-top: 100px;
-    --iron-icon-height: 10vh;
-    --iron-icon-width: 10vh;
-    --paper-icon-button-ink-color: #FFF;
-    font-size: 2vh;
+  .big {
+    --iron-icon-height: 100px;
+    --iron-icon-width: 100px;
   }
 
 
