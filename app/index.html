@@ -86,12 +86,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <!-- Drawer Scroll Header Panel -->
         <paper-scroll-header-panel drawer ><!-- fixed -->
 
-          <!-- Drawer Toolbar -->
+          <!-- Drawer Toolbar for tecla5 icon-->
           <paper-toolbar class="drawerToolbar">
-            <!--
-            <span class="paper-font-title">tecla</span>
-            -->
-            <iron-icon id="menu-logo" icon="t5-icons:tecla5" class="big center-logo"></iron-icon>
+              <iron-icon id="menu-logo" icon="t5-icons:tecla5" class="big center-logo"></iron-icon>
           </paper-toolbar>
 
 
@@ -140,30 +137,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <!-- Main Toolbar -->
           <paper-toolbar id="mainToolbar" class="tall" >
-            <!-- show name for page -->
-            <iron-pages attr-for-selected="data-route" selected="{{route}}">
-              <div data-route="home" >
-                <span class="topBack paper-font-title">Home</span>
-              </div>
-              <div data-route="about" class="about">
-                <span class="topBack paper-font-title">About Us</span>
-              </div>
-              <div data-route="team">
-                <span class="topBack paper-font-title">Team</span>
-              </div>
-              <div data-route="services">
-                <span class="topBack paper-font-title">Services</span>
-              </div>
-              <div data-route="portfolio">
-                <span class="topBack paper-font-title">Portfolio</span>
-              </div>
-              <div data-route="contact">
-                <span class="topBack paper-font-title">Contact Us</span>
-              </div>
-              <div data-route="blog">
-                <span class="topBack paper-font-title"> Blog</span>
-              </div>
-            </iron-pages>
 
             <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
             <span class="flex"></span>
