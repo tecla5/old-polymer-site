@@ -4,3 +4,5 @@ bower_components
 .tmp
 *.log
 .divshot-cache/
+app/elements/external-imports.html
+app/elements/app-imports.html

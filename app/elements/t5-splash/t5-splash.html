@@ -56,6 +56,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
 
       startup: function() {
+        document.querySelector('#paperDrawerPanel').forceNarrow=true;
         this.$.dialog.open();
         console.log('startup');
         window.setTimeout(this.completeStartup, 3000);
@@ -65,7 +66,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         app.route = 'home';
         this.route = 'home';
         this.dialog.close();
-        //this.$.paperDrawerPanel.forceNarrow=false;
         document.querySelector('#paperDrawerPanel').forceNarrow=false;
       },
 

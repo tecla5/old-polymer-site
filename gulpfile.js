@@ -24,6 +24,8 @@ var historyApiFallback = require('connect-history-api-fallback');
 var packageJson = require('./package.json');
 var crypto = require('crypto');
 var polybuild = require('polybuild');
+//var printFile = require('gulp-print');
+var linkImports = require('gulp-link-imports');
 
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 10',
@@ -57,6 +59,22 @@ gulp.task('styles', function () {
 gulp.task('elements', function () {
   return styleTask('elements', ['**/*.css']);
 });
+
+gulp.task('import:external', function () {
+  gulp.src('./app/elements/imports/external/**/*.yml')
+    // .pipe(printFile())
+    .pipe(linkImports({external: true}))
+    .pipe(fs.createWriteStream('./app/elements/external-imports.html'));
+});
+
+gulp.task('import:app', function () {
+  gulp.src('./app/elements/imports/app/**/*.yml')
+    // .pipe(printFile())
+    .pipe(linkImports({app: true}))
+    .pipe(fs.createWriteStream('./app/elements/app-imports.html'));
+});
+
+gulp.task('imports', ['import:external', 'import:app']);
 
 // Lint JavaScript
 gulp.task('jshint', function () {
@@ -211,7 +229,7 @@ gulp.task('clean', function (cb) {
 });
 
 // Watch files for changes & reload
-gulp.task('serve', ['styles', 'elements', 'images'], function () {
+gulp.task('serve', ['styles', 'imports', 'elements', 'images'], function () {
   browserSync({
     port: 5000,
     notify: false,
@@ -268,7 +286,7 @@ gulp.task('serve:dist', ['default'], function () {
 });
 
 // Build production files, the default task
-gulp.task('default', ['clean'], function (cb) {
+gulp.task('default', ['clean', 'imports'], function (cb) {
   // Uncomment 'cache-config' after 'rename-index' if you are going to use service workers.
   runSequence(
     ['copy', 'styles'],

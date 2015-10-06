@@ -8,8 +8,6 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 
-<link rel="import" href="../../bower_components/polymer/polymer.html">
-
 <dom-module id="t5-home">
   <link rel="import" type="css" href="home.css">
   <template>
@@ -20,22 +18,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       last-response="{{items}}"
       last-error="{{lastError}}">
     </iron-ajax>
-    <!-- class="t5" -->
 
-    <paper-material class="colored layout center-center" elevation="5" animated>
-      <paper-header-panel >
-        <paper-toolbar class="tall" >
-          <h1 class="top title">Tecla5</h1>
-          <paper-icon-button icon="t5-icons:tecla5" class="big" ></paper-icon-button>
-        </paper-toolbar>
-        <div class="content">
-          <p>We type your idea ...</p></br>
-          <p>Build competitive ideas for your business with us! We help you create responsive web and mobile apps that work across all devices in all environments.  </p>
-        </div>
-      </paper-header-panel>
-    </paper-material>
-
-
+    <image-card
+      id="{{item.id}}"
+      class="paperCard"
+      on-click="_openCard"
+      img="{{item.image}}"
+      height="200"
+      legend="{{item.caption}}"
+      icon="chevron-right"
+      width="250">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut earum, quisquam in temporibus dolor facilis provident similique officiis velit blanditiis!
+    </image-card>
   </template>
   <script src="home.js"></script>
 </dom-module>
