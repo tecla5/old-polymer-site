@@ -11,6 +11,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <dom-module id="t5-home">
   <link rel="import" type="css" href="home.css">
+
+  #cards {
+    @apply(--layout-vertical);
+    @apply(--center-justified);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+
   <template>
     <iron-ajax
       auto
@@ -25,26 +36,40 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <div class="card-content">Build competitive ideas for your business with us!
         We help you create responsive web and mobile apps that work across all
         devices in all environments.</div>
-      <img src="http://placehold.it/350x150">
+      <iron-image style="width:500px; height:500px;" sizing="contain" src="/images/homeDisp2.png"></iron-image>
     </paper-card>
 
-    <paper-card heading="Titles AND images!"  image="http://placehold.it/350x150">
-      <div class="card-content">
-        Lorem ipsum dolor sit amet, nec ad conceptam interpretaris, mea ne solet repudiandae. Laudem nostrud ei vim. Sapientem consequuntu usu ad, vel etiam philosophia ex, ad quidam option quo. Sed sale integre pericula ei, rebum adipiscing ius ea.
-      </div>
-    </paper-card>
+    <div id="cards">
+      <paper-card>
+        <paper-card style="width:250px; height:550px;" heading="Our philosophy"  image="/images/awards.png">
+          <div class="card-content">
+            <p>We always focusing on develop the best solution, building competitive ideas for your business,
+            and creating responsive webpages and mobile applications. We really care about you because we
+            treat every project as personal.</p>
+          </div>
+        </paper-card>
 
-    <paper-card heading="Titles AND images!"  image="http://placehold.it/350x150">
-      <div class="card-content">
-        Lorem ipsum dolor sit amet, nec ad conceptam interpretaris, mea ne solet repudiandae. Laudem nostrud ei vim. Sapientem consequuntur usu ad, vel etiam philosophia ex, ad quidam option quo. Sed sale integre pericula ei, rebum adipiscing ius ea.
-      </div>
-    </paper-card>
+        <paper-card style="width:250px; height:550px;" heading="Our vision"  image="/images/glasses.png">
+          <div class="card-content">
+            <p>No matter what your product or service, or how difficult is your business area, Tecla 5 team have the
+            experience and knowledge to produce powerful solutions with higher results. We are enthusiastic and
+            highly motivate. we are always looking to increase the knowledge and learn the new technologies. We love
+            developing cross-platform applications.</p>
+          </div>
+        </paper-card>
 
-    <paper-card heading="Titles AND images!" image="http://placehold.it/350x150">
-      <div class="card-content">
-        Lorem ipsum dolor sit amet, nec ad conceptam interpretaris, mea ne solet repudiandae. Laudem nostrud ei vim. Sapientem consequuntur usu ad, vel etiam philosophia ex, ad quidam option quo. Sed sale integre pericula ei, rebum adipiscing ius ea.
-      </div>
-    </paper-card>
+        <paper-card style="width:250px; height:550px;" heading="Our Process" image="/images/process.png">
+          <div class="card-content">
+            <p>when we understand the project, we don't just complete it, we go far and make it better that requested.</p>
+            Learn
+            Plan
+            Design
+            Build
+            Lift off
+          </div>
+        </paper-card>
+      </paper-card>
+    </div>
 
 
 
