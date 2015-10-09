@@ -8,8 +8,10 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 
+
 <dom-module id="t5-home">
   <link rel="import" type="css" href="home.css">
+
   <template>
     <iron-ajax
       auto
@@ -19,6 +21,63 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       last-error="{{lastError}}">
     </iron-ajax>
 
+    <!-- content for: text and image-->
+    <paper-card heading="Create beatifull websites & Apps using last technology">
+      <div class="card-content horizontal layout">
+        <div class="">
+          <p>
+            Build competitive ideas for your business with us!<br/>
+            We help you create responsive web and mobile apps <br/>
+            that work across all devices in all environments.
+          </p>
+        </div>
+        <iron-image class="home-disp flex" sizing="contain" src="/images/homeDisp2.png"></iron-image>
+      </div>
+
+      <div class="card-content">
+        <paper-material elevation="1" class="horizontal around-justified layout">
+
+          <paper-card  heading="Our philosophy"  image="/images/awards.png" class="flex" >
+            <div class="card-content">
+              <p>We always focusing on develop the best solution, building competitive ideas for your business,
+              and creating responsive webpages and mobile applications.<br> We really care about you because we
+              treat every project as personal.</p>
+            </div>
+          </paper-card>
+
+          <paper-card  heading="Our vision"  image="/images/glasses.png" class="flex" >
+            <div class="card-content">
+              <p>No matter what your product or service, or how difficult is your business area, Tecla 5 team have the
+              experience and knowledge to produce powerful solutions with higher results.<br> We are enthusiastic and
+              highly motivate. <br> we are always looking to increase the knowledge and learn the new technologies.<br> We love
+              developing cross-platform applications.</p>
+            </div>
+          </paper-card>
+
+          <paper-card  heading="Our Process" image="/images/process.png" class="flex" >
+            <div class="card-content">
+              <p>when we understand the project, we don't just complete it, we go far and make it better that requested.</p>
+              Learn
+              Plan
+              Design
+              Build
+              Lift off</p>
+            </div>
+          </paper-card>
+
+        </paper-material>
+
+
+      </div>
+
+    </paper-card>
+
+
+
+
+
+
+<!-- beta_kristian-card need to be finish
     <image-card
       id="{{item.id}}"
       class="paperCard"
@@ -30,6 +89,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       width="250">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut earum, quisquam in temporibus dolor facilis provident similique officiis velit blanditiis!
     </image-card>
+-->
+
+
+
   </template>
   <script src="home.js"></script>
 </dom-module>
