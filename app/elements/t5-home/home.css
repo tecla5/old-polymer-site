@@ -3,6 +3,10 @@
   background: transparent;
 }
 
+.home-disp{
+  width: 400px;
+  height: 400px;
+}
 
 .big {
   margin-top: 192px;
@@ -25,6 +29,8 @@ paper-toolbar {
  }; /* Notice the semicolon here */
 }
 
+
+
 paper-toolbar + paper-toolbar {
   --paper-toolbar-background: var(--primary-background-color);
   margin-top: 20px;
@@ -33,6 +39,17 @@ paper-toolbar + paper-toolbar {
 
 paper-toolbar.red {
  --paper-toolbar-background: red;
+}
+
+
+paper-card {
+  @apply(--layout-vertical);
+  @apply(--center-justified);
+  background: white;
+  box-sizing: border-box;
+  padding: 16px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 /*
