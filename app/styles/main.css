@@ -49,7 +49,10 @@ span.paper-font-title{
   width: 20%;
   height: 20%;
 }
-
+.header.paper-card .title-text.paper-card
+{
+  border-bottom: 1px solid #1EA2AE;
+}
 /* cover images sized*/
 .sized {
   width: 100%;
