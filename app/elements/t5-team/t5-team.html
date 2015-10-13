@@ -51,7 +51,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     <p>
                         <span class="subt-item">Delivers:</span>
                     </p>
-                    <p><span class="subt-item">Contact: </span><iron-icon icon="mail" ></iron-icon><a class="email-link" href="mailto:cabrera.javier@gmail.com">{{item.contact}}</a></p>
+                    <p><span class="subt-item">Contact: </span><iron-icon icon="mail" ></iron-icon><a class="email-link" href="{{generateEmailLink(item.contact)}}">{{item.contact}}</a></p>
                   </div>
               </div>
           </paper-card>
