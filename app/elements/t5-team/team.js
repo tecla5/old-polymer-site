@@ -5,7 +5,6 @@
     properties: {
       items: {
         type: Array,
-        obj: Object,
         notify: true
       },
       lastError: {
@@ -16,9 +15,6 @@
     },
     generateEmailLink: function(email){
       return 'mailto:' + email;
-    },
-    keys: function(obj){
-      return Object.keys(obj);
-    },
+    }
   });
 })();
