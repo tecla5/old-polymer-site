@@ -11,7 +11,6 @@
         type: String,
         notify: true
       }
-
     },
     generateEmailLink: function(email){
       return 'mailto:' + email;
