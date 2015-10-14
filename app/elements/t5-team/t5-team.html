@@ -47,6 +47,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     <p>{{item.content}}</p>
                     <p>
                         <span class="subt-item">Profile:</span>
+                        <template repeat="{{ rol in item.roles }}">
+                            <template repeat="{{k in rol | keys}}">
+                                <li>
+                                    {{ k }} : {{ rol[k] }}
+                                </li>
+                            </template>
+                        </template>
                     </p>
                     <p>
                         <span class="subt-item">Techs:</span>

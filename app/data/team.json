@@ -5,21 +5,23 @@
         "image": "images/team/jcabrera.png",
         "name": "javier-cabrera",
         "contact": "cabrera.javier@gmail.com",
-        "roles": [
-            "Web Architect",
-            "Web/Mobile Developer"
-        ],
-        "technologies": [
+        "roles": [{
+          "Gourmande": 1,
+             "Espiegle": 0
+        }],
+        "technologies": [{
             "Java",
             "Javascript",
             "Node.js",
             "React",
             "Angular"
+          }
         ],
-        "delivers": [
+        "delivers": [{
             "Web apps",
             "Mobile (hybrid) apps",
             "Project management"
+          }
         ],
         "content": "Javier has ~10 years experience in web app development as a full stack developer and architect. He likes to use the latest technologies to power his apps and is experiences at managing projects and ensuring they can scale while minimizing complexity.\n"
     },
@@ -52,10 +54,10 @@
         "image": "images/team/dcabrera.png",
         "name": "dayana-cabrera",
         "contact": "dayanamcc@gmail.com",
-        "roles": [
-            "Project Manager",
-            "Web Designer/Developer"
-        ],
+        "roles": [{
+          "Gourmande": 1,
+             "Espiegle": 0
+        }],
         "technologies": [
             "Javascript",
             "HTML/CSS",
@@ -76,9 +78,10 @@
         "image": "images/team/frodriguez.png",
         "name": "dayana-cabrera",
         "contact": "unknown",
-        "roles": [
-            "Web Developer"
-        ],
+        "roles": [{
+          "Gourmande": 1,
+             "Espiegle": 0
+        }],
         "technologies": [
             "Java",
             "Javascript",
@@ -120,9 +123,10 @@
         "image": "images/team/rreyes.png",
         "name": "reynaldo",
         "contact": "unknown",
-        "roles": [
-            "Web Developer"
-        ],
+        "roles": [{
+          "Gourmande": 1,
+             "Espiegle": 0
+        }],
         "technologies": [
             "HTML/CSS",
             "Wordpress/PHP",
@@ -142,9 +146,10 @@
         "image": "images/team/jzambrano.png",
         "name": "jean",
         "contact": "unknown",
-        "roles": [
-            "System Administrator"
-        ],
+        "roles": [{
+          "Gourmande": 1,
+             "Espiegle": 0
+        }],
         "technologies": [
             "Virtual Machines",
             "Docker",
@@ -164,9 +169,10 @@
         "image": "images/team/adominguez.png",
         "name": "andres",
         "contact": "unknown",
-        "roles": [
-            "Growth Hacker"
-        ],
+        "roles": [{
+          "Gourmande": 1,
+             "Espiegle": 0
+        }],
         "technologies": [
             "Virtual Machines",
             "Docker",
