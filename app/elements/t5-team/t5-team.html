@@ -31,7 +31,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </div>
 
       <!-- TODO: Use JSON via iron-ajax and ui-section element!!!! -->
-      <div class="content" id="cards">
+      <div class="content" id="c  items: {
+        type: Array,
+        notify: true
+      },ards">
         <!-- {{items[0].caption}} -->
         <template is="dom-repeat" items="{{items}}">
           <paper-card heading="{{item.caption}}">
@@ -51,7 +54,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     <p>
                         <span class="subt-item">Delivers:</span>
                     </p>
-                    <p><span class="subt-item">Contact: </span><iron-icon icon="mail" ></iron-icon><a class="email-link" href="{{generateEmailLink(item.contact)}}">{{item.contact}}</a></p>
+                    <p><span class="subt-item">Contact: </span><iron-icon icon="mail" ></iron-icon><a class="email-link" href$="{{generateEmailLink(item.contact)}}">{{item.contact}}</a></p>
                   </div>
               </div>
           </paper-card>
