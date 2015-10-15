@@ -2,10 +2,15 @@
   display:block;
   background: transparent;
 }
-
+.text-home{
+  display: block;
+  width:50%;
+  height: auto;
+}
 .home-disp{
-  width: 400px;
-  height: 400px;
+  display: block;
+  width: 50%;
+  height: 200px;
 }
 
 .big {
@@ -49,9 +54,16 @@ paper-card {
   box-sizing: border-box;
   padding: 16px;
   border-radius: 5px;
-  cursor: pointer;
 }
 
+/* Breakpoints */
+
+/* Small */
+@media screen and (min-width: 320px) and (max-width:640px){
+  paper-card.t5-home{
+    padding: 0px !important;
+  }
+}
 /*
 
 .text {

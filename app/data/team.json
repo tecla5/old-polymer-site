@@ -2,7 +2,7 @@
     {
         "caption": "Javier Cabrera",
         "location": "Barcelona, Spain",
-        "image": "team/jcabrera",
+        "image": "images/team/jcabrera.png",
         "name": "javier-cabrera",
         "contact": "cabrera.javier@gmail.com",
         "roles": [
@@ -26,7 +26,7 @@
     {
         "caption": "Kristian Mandrup",
         "location": "London, United Kingdom",
-        "image": "team/kmandrup",
+        "image": "images/team/kmandrup.png",
         "name": "kristian-mandrup",
         "contact": "kmandrup@gmail.com",
         "roles": [
@@ -49,7 +49,7 @@
     {
         "caption": "Dayana Cabrera",
         "location": "Barcelona, Spain",
-        "image": "team/dcabrera",
+        "image": "images/team/dcabrera.png",
         "name": "dayana-cabrera",
         "contact": "dayanamcc@gmail.com",
         "roles": [
@@ -73,9 +73,9 @@
     {
         "caption": "Freddy Rodríguez",
         "location": "Caracas, Venezuela",
-        "image": "team/frodriguez",
-        "name": "dayana-cabrera",
-        "contact": "dayanamcc@gmail.com",
+        "image": "images/team/frodriguez.png",
+        "name": "freddy-rodriguez",
+        "contact": "unknown",
         "roles": [
             "Web Developer"
         ],
@@ -90,12 +90,12 @@
         "delivers": [
             "Web apps"
         ],
-        "content": "Dayana is an experienced Project Manager and Designer who specializes in project delivery, customer satisfaction, HR and UX. Dayana has more than ~5 years of experience in developing software and QA Testing.\n"
+        "content": "Freddy is an experienced web developer with more than ~10 years of experience in various environments. He is passionate about back-end development and likes to play with new tech that pushes the boundaries. Freddy is currently developing GraphQL APIs.\n"
     },
     {
         "caption": "Isaura Salazar",
         "location": "Caracas, Venezuela",
-        "image": "team/isalazar",
+        "image": "images/team/isalazar.png",
         "name": "isaura",
         "contact": "unknown",
         "roles": [
@@ -117,7 +117,7 @@
     {
         "caption": "Reynaldo Reyes",
         "location": "Caracas, Venezuela",
-        "image": "team/rreyes",
+        "image": "images/team/rreyes.png",
         "name": "reynaldo",
         "contact": "unknown",
         "roles": [
@@ -139,7 +139,7 @@
     {
         "caption": "Jean Zambrano",
         "location": "Madrid, Spain",
-        "image": "team/jzambrano",
+        "image": "images/team/jzambrano.png",
         "name": "jean",
         "contact": "unknown",
         "roles": [
@@ -161,7 +161,7 @@
     {
         "caption": "Andrés Domínguez",
         "location": "Madrid, Spain",
-        "image": "team/adominguez",
+        "image": "images/team/adominguez.png",
         "name": "andres",
         "contact": "unknown",
         "roles": [

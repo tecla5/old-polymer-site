@@ -31,8 +31,6 @@ h1 {
   padding-left: 0.2em;
 }
 
-
-
 span{
   font-size:2.0vh;
 }
@@ -41,8 +39,6 @@ span.paper-font-title{
   font-size: 30px;
   font-weight: 300;
 }
-
-
 
 .logo {
   width: 100%;
@@ -53,16 +49,16 @@ span.paper-font-title{
   width: 20%;
   height: 20%;
 }
-
-
+.header.paper-card .title-text.paper-card
+{
+  border-bottom: 1px solid #1EA2AE;
+}
 /* cover images sized*/
 .sized {
   width: 100%;
   height: 400px;
   max-height: 600px;
 }
-
-
 .content {
   font-size: 2.0vh;
   margin: 5%;

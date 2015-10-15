@@ -7,20 +7,16 @@ The complete set of contributors may be found at http://polymer.github.io/CONTRI
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
-
 <link rel="import" href="../../bower_components/polymer/polymer.html">
-
 <dom-module id="t5-splash">
   <style>
     :host {
       display: block;
     }
-
     iron-image {
       width: 100%;
-      height: 900px;
+      height: 580px;
     }
-
     .splash {
       background-color: var(--primary-background-color);
       background-repeat: no-repeat;
@@ -29,64 +25,59 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
     polymer-slideshow.full {
       width: 100%;
+      height: auto;
     }
-
-
     paper-icon-button.more {
-      color: red;
+      color: #6D6D6D;
+      background: white;
       vertical-align: middle;
       /* This border-radius is neccessary for any button which may later gain the .hover class to prevent visual glitching */
       border-radius: 50%;
     }
     paper-icon-button.more:hover {
-      background: #eee;
+      background: #000;
       border-radius: 50%;
     }
     paper-icon-button.more::shadow #icon {
-      width: 100px;
-      height: 100px;
+      width: 30px;
+      height: 30px;
     }
     .over{
       position: fixed;
     }
-
     .buttons{
       padding: 5px;
       position: absolute;
       bottom: 0;
       right: 0;
     }
-
-
   </style>
+
   <template>
     <paper-dialog id="dialog" fit modal entry-animation="scale-up-animation"
                   exit-animation="fade-out-animation" >
-
-
-
       <polymer-slideshow class="full" width="100%" >
         <polymer-slide>
-          <iron-image src="/images/toolbar/blue1366x768.jpg"  sizing="cover" preload></iron-image>
+          <iron-image src="/images/toolbar/apple-iphone1366x768.jpg"  sizing="cover" preload></iron-image>
           <div class="legend vertical layout center image-card" >
             <h1>We develop... for better person</h1>
           </div>
         </polymer-slide>
         <polymer-slide>
-          <iron-image src="/images/AboutUS.png"  sizing="cover" preload></iron-image>
+          <iron-image src="/images/toolbar/workplace1366x768.jpg"  sizing="cover" preload></iron-image>
           <div class="legend vertical layout center image-card" >
             <h1>We develop... for better world</h1>
           </div>
         </polymer-slide>
         <polymer-slide>
-          <iron-image src="/images/barcelona.png"  sizing="cover" preload></iron-image>
+          <iron-image src="/images/toolbar/field-summer1366x768.jpg"  sizing="cover" preload></iron-image>
           <div class="legend vertical layout center image-card" >
             <h1>We develop... for better life</h1>
           </div>
         </polymer-slide>
       </polymer-slideshow>
       <div class="buttons">
-        <paper-icon-button dialog-confirm autofocus icon="icons:expand-more" class="more blueRipple huge" ></paper-icon-button>
+        <paper-icon-button dialog-confirm autofocus icon="clear" class="more blueRipple huge" ></paper-icon-button>
       </div>
     </paper-dialog>
   </template>
@@ -96,8 +87,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     Polymer({
       is: 't5-splash',
-
-
       attached: function(){
         //console.log('t5-splash', app.route);
         //app.route = app.route || 'splash';
@@ -109,8 +98,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       listeners: {
          'dialog.iron-overlay-closed': 'completeStartup'
       },
-
-
       startup: function() {
         console.log('startup');
         document.querySelector('#paperDrawerPanel').forceNarrow=true;
@@ -124,7 +111,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         this.$.dialog.close();
         document.querySelector('#paperDrawerPanel').forceNarrow=false;
       },
-
       properties: {
         foo: {
           type: String,
