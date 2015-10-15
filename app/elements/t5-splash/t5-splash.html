@@ -88,15 +88,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     Polymer({
       is: 't5-splash',
       attached: function(){
-        //console.log('t5-splash', app.route);
-        //app.route = app.route || 'splash';
+        console.log('attached');
+      },
+      ready: function(){
+        console.log('ready');
+      },
+
+      /*
+      attached: function(){
         if(app.route === 'splash'){
           this.async(this.startup);
         }
-        //console.log('t5-splash', app.route);
       },
+      */
       listeners: {
-         'dialog.iron-overlay-closed': 'completeStartup'
+        'WebComponentsReady': 'startup',
+        'dialog.iron-overlay-closed': 'completeStartup'
       },
       startup: function() {
         console.log('startup');
@@ -106,9 +113,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
       completeStartup: function() {
         console.log('end');
-        app.route = 'home';
-        //this.route = 'home';
         this.$.dialog.close();
+        app.route = 'home';
         document.querySelector('#paperDrawerPanel').forceNarrow=false;
       },
       properties: {

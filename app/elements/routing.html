@@ -23,7 +23,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
     page('/', scrollToTop, function () {
       //console.log('routing', app.route, app.route === undefined,  app.route === 'splash');
-      if(app.route === undefined  || app.route === 'splash'){
+      if( app.route === undefined ){
         app.route = 'splash';
       } else {
         app.route = 'home';
