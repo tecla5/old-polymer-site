@@ -22,11 +22,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       next();
     }
     page('/', scrollToTop, function () {
-      //console.log('routing', app.route, app.route === undefined,  app.route === 'splash');
+      console.log('routing', app.route);
       if( app.route === undefined ){
         app.route = 'splash';
-      } else {
-        app.route = 'home';
       }
       //console.log('routing', app.route);
     });

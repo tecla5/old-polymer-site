@@ -27,14 +27,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   app.addEventListener('dom-change', function() {
     console.log('dom-change', app.route );
-    app.route = app.route || 'splash'; // default route to 'one'.
+    console.log(window.location.pathname);
+    if (app.route === undefined && window.location.pathname ==='/') {
+      app.route = 'splash'; // default route to 'one'.
+    }
+    if (app.route === 'splash'){
+      var t5Splash = document.querySelector('t5-splash');
+      t5Splash.addEventListener('splash-completed', function(e) {
+        console.log('splash finished',e);
+      });
+      t5Splash.startup();
+    }
+
+
   });
 
 
   // See https://github.com/Polymer/polymer/issues/1381
   window.addEventListener('WebComponentsReady', function() {
     console.log('Our app is ready to rock!');
-    //console.log('dom-change', app.route, this.route);
     // imports are loaded and elements have been registered
     console.log('WebComponentsReady', app.route);
 
