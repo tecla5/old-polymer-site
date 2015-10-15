@@ -89,8 +89,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       is: 't5-splash',
       attached: function(){
         //console.log('t5-splash', app.route);
-        if(app.route === 'splash' || app.route === undefined){
-          app.route = 'splash';
+        //app.route = app.route || 'splash';
+        if(app.route === 'splash'){
           this.async(this.startup);
         }
         //console.log('t5-splash', app.route);

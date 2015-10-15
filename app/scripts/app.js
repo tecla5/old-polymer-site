@@ -26,18 +26,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // have resolved and content has been stamped to the page
 
   app.addEventListener('dom-change', function() {
-    console.log('Our app is ready to rock!');
-    //console.log('dom-change', app.route, this.route);
-    document.querySelector('#paperDrawerPanel').forceNarrow=false;
 
-    this.route = this.route || 'splash'; // default route to 'one'.
+    document.querySelector('#paperDrawerPanel').forceNarrow=false;
     //console.log('dom-change', app.route, this.route);
   });
 
 
   // See https://github.com/Polymer/polymer/issues/1381
   window.addEventListener('WebComponentsReady', function() {
+    console.log('Our app is ready to rock!');
+    //console.log('dom-change', app.route, this.route);
     // imports are loaded and elements have been registered
+    this.route = this.route || 'splash'; // default route to 'one'.
 
     //contact-received
     //contact-failure
