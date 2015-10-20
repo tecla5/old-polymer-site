@@ -51,8 +51,14 @@ span.paper-font-title{
 }
 .header.paper-card .title-text.paper-card
 {
-  border-bottom: 1px solid #1EA2AE;
+  border-bottom: 1px solid #9B9B9B;
 }
+
+.paper-card-0 .header.paper-card .title-text.paper-card {
+  color:#2C2C2C;
+}
+
+
 /* cover images sized*/
 .sized {
   width: 100%;

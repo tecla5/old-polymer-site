@@ -21,16 +21,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </iron-ajax>
 
     <template is="dom-if" if="{{items}}" restamp="true">
-      <polymer-slideshow  class="full" width="400" >
-        <template is="dom-repeat" items="{{items}}">
-          <polymer-slide>
-            <iron-image src="{{item.image}}" width="400" height="400"  sizing="cover" preload ></iron-image>
-            <h1>{{item.caption}}</h1>
-            <p>{{item.name}}</p>
-            <p>{{item.content}}</p>
-          </polymer-slide>
-        </template>
-      </polymer-slideshow>
+
+        <polymer-slideshow  class="center" width="800" height="600" >
+          <template is="dom-repeat" items="{{items}}">
+            <polymer-slide>
+              <iron-image src="{{item.image}}" width="800" height="200"  sizing="contain" preload ></iron-image>
+              <h1>{{item.caption}}</h1>
+              <p>{{item.name}}</p>
+              <p>{{item.content}}</p>
+            </polymer-slide>
+          </template>
+        </polymer-slideshow>
+
     </template>
 
   </template>

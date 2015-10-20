@@ -23,9 +23,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </iron-ajax>
 
     <paper-header-panel mode="cover">
-      <div class="paper-header">
-        <iron-image src="/images/AboutUS.png" class="sized" sizing="cover"  ></iron-image>
-      </div>
       <template is="dom-repeat" items="{{items}}">
         <ui-section image="{{item.image}}" caption="{{item.caption}}" markdown="{{item.content}}"/>
       </template>
