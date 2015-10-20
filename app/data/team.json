@@ -4,7 +4,7 @@
         "location": "Barcelona, Spain",
         "image": "images/team/jcabrera.png",
         "name": "javier-cabrera",
-        "contact": "cabrera.javier@gmail.com",
+        "contact": "jcabrera@tecla5.com",
         "roles": [
             "Web Architect",
             "Web/Mobile Developer"
@@ -28,7 +28,7 @@
         "location": "London, United Kingdom",
         "image": "images/team/kmandrup.png",
         "name": "kristian-mandrup",
-        "contact": "kmandrup@gmail.com",
+        "contact": "kmandrup@tecla5.com",
         "roles": [
             "Web Developer/Architect",
             "Project manager"
@@ -51,7 +51,7 @@
         "location": "Barcelona, Spain",
         "image": "images/team/dcabrera.png",
         "name": "dayana-cabrera",
-        "contact": "dayanamcc@gmail.com",
+        "contact": "dayanamcc@tecla5.com",
         "roles": [
             "Project Manager",
             "Web Designer/Developer"
@@ -75,7 +75,7 @@
         "location": "Caracas, Venezuela",
         "image": "images/team/frodriguez.png",
         "name": "freddy-rodriguez",
-        "contact": "unknown",
+        "contact": "frodriguez@tecla5.com",
         "roles": [
             "Web Developer"
         ],
@@ -97,7 +97,7 @@
         "location": "Caracas, Venezuela",
         "image": "images/team/isalazar.png",
         "name": "isaura",
-        "contact": "unknown",
+        "contact": "isalazar@tecla5.com",
         "roles": [
             "Frontend Web Developer"
         ],
@@ -113,28 +113,6 @@
             "Web apps"
         ],
         "content": "Isaura is a web developer with 3 years experience in development of web pages. Passionate front-end development. She loves to be at the forefront of new technologies to the efficiency and quality of the final products and continuous improvement.\n"
-    },
-    {
-        "caption": "Reynaldo Reyes",
-        "location": "Caracas, Venezuela",
-        "image": "images/team/rreyes.png",
-        "name": "reynaldo",
-        "contact": "unknown",
-        "roles": [
-            "Web Developer"
-        ],
-        "technologies": [
-            "HTML/CSS",
-            "Wordpress/PHP",
-            "Javascript",
-            "Bootstrap",
-            "Web Components/Polymer",
-            "Stylus/SCSS"
-        ],
-        "delivers": [
-            "Web apps"
-        ],
-        "content": "Reynaldo is a web developer, he has 2 years of experience with different front-end technologies.\n"
     },
     {
         "caption": "Jean Zambrano",
@@ -156,7 +134,7 @@
             "Networking",
             "OS Administration"
         ],
-        "content": "TODO\n"
+        "content": "Administrador de Infraestructuras\n"
     },
     {
         "caption": "Andrés Domínguez",
@@ -180,5 +158,28 @@
             "Online Marketing"
         ],
         "content": "Andres has +6 years of experience with Web Startups in South America and Europe\n"
+    },
+    {
+        "caption": "Reynaldo Reyes",
+        "location": "Caracas, Venezuela",
+        "image": "images/team/rreyes.png",
+        "name": "reynaldo",
+        "contact": "unknown",
+        "roles": [
+            "Web Developer"
+        ],
+        "technologies": [
+            "HTML/CSS",
+            "Wordpress/PHP",
+            "Javascript",
+            "Bootstrap",
+            "Web Components/Polymer",
+            "Stylus/SCSS"
+        ],
+        "delivers": [
+            "Web apps"
+        ],
+        "content": "Reynaldo is a web developer, he has 2 years of experience with different front-end technologies.\n"
     }
+
 ]
