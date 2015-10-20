@@ -71,10 +71,12 @@ paper-material {
   padding-left: 5%;
 }
 
-.subt-item
-{
+
+div.right span {
   font-style: italic;
 }
+
+
 
 a.email-link
 {

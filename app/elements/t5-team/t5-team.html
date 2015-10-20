@@ -25,19 +25,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <paper-header-panel mode="cover">
       <div class="paper-header">
+        <!--
         <iron-image src="/images/group.png" class="sized" sizing="cover"></iron-image>
+        -->
         <h2 class="pad-left">The Team!</h2>
         <p class="pad-left">We have a dedicated team of: developers, designers, dev ops and project managers from around the globe.</p>
       </div>
 
       <!-- TODO: Use JSON via iron-ajax and ui-section element!!!! -->
-      <div class="content" id="c  items: {
+      <!--
+      id="c  items: {
         type: Array,
         notify: true
-      },ards">
+      },ards"
+      -->
+      
+      <div class="content">
         <!-- {{items[0].caption}} -->
         <template is="dom-repeat" items="{{items}}">
-          <paper-card heading="{{item.caption}}">
+          <paper-card heading="{{item.caption}}" >
               <div class="card-content" image="{{item.image}}" >
                   <div >
                     <iron-image src="{{item.image}}" class="profile-picture" sizing="contain"></iron-image>
@@ -45,16 +51,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   </div>
                   <div class="right">
                     <p>{{item.content}}</p>
-                    <p>
-                        <span class="subt-item">Profile:</span>
+                    <p>Profile: <span>{{item.name}}</span></p>
+                    <p>Techs:
+                      <!-- nested repeat -->
+                      <template is="dom-repeat" items="{{item.technologies}}" as="tech" index-as="tech_no">
+                        <span>{{tech}}</span>
+                      </template>
                     </p>
-                    <p>
-                        <span class="subt-item">Techs:</span>
-                    </p>
-                    <p>
-                        <span class="subt-item">Delivers:</span>
-                    </p>
-                    <p><span class="subt-item">Contact: </span><iron-icon icon="mail" ></iron-icon><a class="email-link" href$="{{generateEmailLink(item.contact)}}">{{item.contact}}</a></p>
+                    <p>Delivers:<span>{{item.delivers}}</span></p>
+                    <p><span>Contact: </span><iron-icon icon="mail" ></iron-icon><a class="email-link" href$="{{generateEmailLink(item.contact)}}">{{item.contact}}</a></p>
                   </div>
               </div>
           </paper-card>
