@@ -21,7 +21,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </iron-ajax>
 
     <template is="dom-if" if="{{items}}" restamp="true">
-      <polymer-slideshow  class="full" width="400" >
+      <polymer-slideshow  style="center" width="600" width="400" >
         <template is="dom-repeat" items="{{items}}">
           <polymer-slide>
             <iron-image src="{{item.image}}" width="400" height="400"  sizing="cover" preload ></iron-image>
