@@ -20,26 +20,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       last-error="{{lastError}}">
     </iron-ajax>
 
-    <polymer-slideshow height="600" width="600">
-      <polymer-slide>
-        <iron-image src="/images/AboutUS.png" width="600" height="400"></iron-image>
-        <h1>Cat</h1>
-        <p>Cat ipsum dolor sit amet, quo. Quasi. Amet si irure illo or ab. Vitae. Sint numquam magni but quam cupidatat and deserunt. Sit magna yet velit. Commodi perspiciatis aliquam or ea yet magnam so laboriosam for fugiat. Voluptas ullam or odit yet aspernatur so aut. Eius in minima aliquam. Nostrud. Deserunt. Proident velitesse yet consequat. Quae officia est qui or corporis nequeporro. Aliquam tempor natus yet dolores so eiusmod. Consequat reprehenderit explicabo or officia aperiam. In. Quasi dolor but esse minim. Consectetur do. Perspiciatis occaecat and quis so magna deserunt error yet beatae. Unde culpa so proident for suscipit fugit, and exercitationem. Eius quo, reprehenderit but eos, ab. Incididunt incidunt.
-        </p>
-      </polymer-slide>
-      <polymer-slide>
-        <iron-image src="/images/AboutUS.png" width="600" height="400"></iron-image>
-        <h1>Not Cat</h1>
-        <p>Quasi. Amet si irure illo or ab. Vitae. Sint numquam magni but quam cupidatat and deserunt. Sit magna yet velit. Commodi perspiciatis aliquam or ea yet magnam so laboriosam for fugiat. Voluptas ullam or odit yet aspernatur so aut. Eius in minima aliquam. Nostrud. Deserunt. Proident velitesse yet consequat. Quae officia est qui or corporis nequeporro. Aliquam tempor natus yet dolores so eiusmod. Consequat reprehenderit explicabo or officia aperiam. In. Quasi dolor but esse minim. Consectetur do. Perspiciatis occaecat and quis so magna deserunt error yet beatae. Unde culpa so proident for suscipit fugit, and exercitationem. Eius quo, reprehenderit but eos, ab. Incididunt incidunt.
-        </p>
-      </polymer-slide>
-      <polymer-slide>
-        <iron-image src="/images/AboutUS.png" width="600" height="400"></iron-image>
-        <h1>Sports Cat</h1>
-        <p>Quasi. Amet si irure illo or ab. Vitae. Sint numquam magni but quam cupidatat and deserunt. Sit magna yet velit. Commodi perspiciatis aliquam or ea yet magnam so laboriosam for fugiat. Voluptas ullam or odit yet aspernatur so aut. Eius in minima aliquam. Nostrud. Deserunt. Proident velitesse yet consequat. Quae officia est qui or corporis nequeporro. Aliquam tempor natus yet dolores so eiusmod. Consequat reprehenderit explicabo or officia aperiam. In. Quasi dolor but esse minim. Consectetur do. Perspiciatis occaecat and quis so magna deserunt error yet beatae. Unde culpa so proident for suscipit fugit, and exercitationem. Eius quo, reprehenderit but eos, ab. Incididunt incidunt.
-        </p>
-      </polymer-slide>
-    </polymer-slideshow>
+    <template is="dom-if" if="{{items}}" restamp="true">
+      <polymer-slideshow  class="full" width="400" >
+        <template is="dom-repeat" items="{{items}}">
+          <polymer-slide>
+            <iron-image src="{{item.image}}" width="400" height="400"  sizing="cover" preload ></iron-image>
+            <h1>{{item.caption}}</h1>
+            <p>{{item.name}}</p>
+            <p>{{item.content}}</p>
+          </polymer-slide>
+        </template>
+      </polymer-slideshow>
+    </template>
+
   </template>
 
   <script src="portfolio.js"></script>
