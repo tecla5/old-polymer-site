@@ -54,28 +54,6 @@ paper-card {
   border-radius: 5px;
 }
 
-/* Breakpoints */
-
-/* Small */
-@media screen and (min-width: 320px) and (max-width:640px){
-  paper-card.t5-home{
-    padding: 0px !important;
-  }
-}
-
-.flexbox-container {
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-
-	-ms-flex-align: center;
-	-webkit-align-items: center;
-	-webkit-box-align: center;
-
-	align-items: center;
-}
-
-
 .flex-container {
   padding: 0;
   margin: 0;
@@ -97,75 +75,23 @@ paper-card {
   height: auto;
 }
 
+/* Breakpoints */
 
-
-
-/*.flex-item {
-  padding: 5px;
-  margin-top: 10px;
-
-  --line-height: 150px;
-  --text-align: center;
-}*/
-
-/*
-.flex-container {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  --border: 1px solid silver;
-  -ms-box-orient: horizontal;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: flex;
-}*/
-
-
-/*
-
-.text {
-  font-family: Ailerons;
-  padding: 0.5em;
+/* Small */
+@media screen and (min-width: 320px) and (max-width:640px){
+  paper-card.t5-home{
+    padding: 0px !important;
+  }
 }
 
-.action {
-  text-align: right;
-  padding: 1em;
+.flexbox-container {
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+
+	align-items: center;
 }
-
-.content {
-  background-color: blue;
-}
-
-paper-fab.large {
-  width: 4em;
-  height: 4em;
-}
-
-paper-fab.blue {
-  color: white;
-  --paper-fab-background: var(--paper-light-blue-500);
-  --paper-fab-keyboard-focus-background: var(--paper-light-blue-900);
-}
-
-h1.logo {
-  font-family: ADAM.CG PRO;
-  font-size: 14vh;
-  margin-top: 8%;
-}
-
-.center {
-  text-align: center;
-}
-
-.subtitle {
-  text-align: justify;
-  padding: 3%;
-  font-size: 4vh;
-}
-
-
-*/
