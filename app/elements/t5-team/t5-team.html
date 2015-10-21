@@ -39,7 +39,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         notify: true
       },ards"
       -->
-      
+
       <div class="content">
         <!-- {{items[0].caption}} -->
         <template is="dom-repeat" items="{{items}}">
@@ -52,6 +52,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   <div class="right">
                     <p>{{item.content}}</p>
                     <p>Profile: <span>{{item.name}}</span></p>
+                    <p>Roles:
+                      <!-- nested repeat -->
+                      <template is="dom-repeat" items="{{item.roles}}" as="rol" index-as="rol_no">
+                        <span>{{rol}}</span>
+                      </template>
+                    </p>
                     <p>Techs:
                       <!-- nested repeat -->
                       <template is="dom-repeat" items="{{item.technologies}}" as="tech" index-as="tech_no">

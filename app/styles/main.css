@@ -66,3 +66,11 @@ span.paper-font-title{
   margin-top: 0%;
   padding-bottom: 15%;
 }
+
+paper-dialog.paper-dialog-0
+{
+  width: 100% !important;
+  height: 100%;
+  max-width: 1200px;
+  max-height: 100%;
+}

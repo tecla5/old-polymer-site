@@ -34,8 +34,6 @@ paper-toolbar {
  }; /* Notice the semicolon here */
 }
 
-
-
 paper-toolbar + paper-toolbar {
   --paper-toolbar-background: var(--primary-background-color);
   margin-top: 20px;
@@ -95,7 +93,8 @@ paper-card {
 
 .flex-item {
   padding: 10px;
-  width: 260px;
+  width: 245px;
+  height: auto;
 }
 
 
