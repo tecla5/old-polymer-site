@@ -35,8 +35,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       var t5Splash = document.querySelector('t5-splash');
       t5Splash.addEventListener('splash-completed', function(e) {
         console.log('splash finished',e);
+        app.onDataRouteClick(e);
       });
       t5Splash.startup();
+    } else {
+      document.querySelector('#paperDrawerPanel').forceNarrow=false;
     }
 
 
@@ -83,12 +86,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   // Close drawer after menu item is selected if drawerPanel is narrow
   app.onDataRouteClick = function(mouseEvent) {
+    document.querySelector('#paperDrawerPanel').forceNarrow=false;
 
     var drawerPanel = document.querySelector('#paperDrawerPanel');
     if (drawerPanel.narrow) {
       drawerPanel.closeDrawer();
     }
-    var route = mouseEvent.srcElement.getAttribute('data-route');
+    var route = mouseEvent.srcElement.getAttribute('data-route') || app.route;
+    console.log(route);
 
 
     var mainToolbar = document.querySelector('#mainToolbar');

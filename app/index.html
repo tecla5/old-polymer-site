@@ -85,7 +85,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <span id="browser-sync-binding"></span>
 
   <template is="dom-bind" id="app">
-      <paper-drawer-panel id="paperDrawerPanel" ><!-- force-narrow="true" -->
+      <paper-drawer-panel id="paperDrawerPanel" force-narrow="true" >
         <!-- Drawer Scroll Header Panel -->
         <paper-scroll-header-panel drawer ><!-- fixed -->
 
@@ -132,8 +132,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </paper-menu>
         </paper-scroll-header-panel>
 
-        <!-- Main Area id="mainContainer" -->
-        <paper-scroll-header-panel main condenses keep-condensed-header >
+        <!-- Main Area  -->
+        <paper-scroll-header-panel id="mainContainer" main condenses keep-condensed-header >
           <!-- Main Toolbar -->
           <paper-toolbar id="mainToolbar" class="tall" >
             <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
