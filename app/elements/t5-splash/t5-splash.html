@@ -36,6 +36,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       background-position: 50%;
       background-image: url(/images/tecla5.svg);
     }
+    paper-dialog{
+      margin: 0px !important;
+    }
+    paper-dialog.paper-dialog-0{
+      width: 100% !important;
+      height: 100% !important;
+      max-width: 100% !important;
+      max-height: 100% !important;
+      background: none;
+      box-shadow: none;
+    }
     polymer-slideshow.full {
       width: 100%;
       height: auto;
@@ -43,10 +54,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     polymer-slideshow /deep/ .controls {
       display: none;
     }
+    
 
-
-
-
+    paper-icon-button.more.t5-splash{
+      margin: 0px 30px 80px 0px;
+    }
     paper-icon-button.more {
       color: #6D6D6D;
       background: white;
@@ -141,7 +153,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         // var mainToolbar = document.querySelector('#mainToolbar');
         // mainToolbar.customStyle['--paper-toolbar-background'] = 'var(--home-bg-image,--primary-background-color)';//'blue';
         // mainToolbar.updateStyles();
-        
+
         this.fire('splash-completed');// {event:x}
       },
       properties: {

@@ -95,6 +95,10 @@ hsl: Hue, Saturation, Lightness – Matiz, Saturación, Luminosidad
     background: var(--third-background-color);
   }
 
+  paper-menu{
+    padding: 0px !important;
+  }
+  
   paper-menu iron-icon {
     margin-right: 33px;
     opacity: 0.54;
@@ -166,14 +170,9 @@ background-attachment: fixed;
       background-image: url('../images/header-shade.jpg');
   }
 
-
-
-
   iron-icon [icon]{
     padding-bottom: 3%;
   }
-
-
 
   iron-selector a {
     margin-bottom: 2px;
@@ -193,10 +192,6 @@ background-attachment: fixed;
     color:black;
     padding-left: 20%;
   }
-
-
-
-
 
   /* Height of the scroll area */
   .content {
@@ -222,19 +217,17 @@ background-attachment: fixed;
     background-color: transparent;
    }
 
-
-
-
   .paper-menu > .iron-selected {
     color: var(--default-primary-color);
   }
 
-
-
-
   paper-toolbar.drawerToolbar{
     background: var(--light-primary-color);
     height: 200px;
+  }
+
+  paper-toolbar.drawerToolbar:not([style-scope]):not(.style-scope){
+    background: #1C1B1B !important;
   }
 
   .center-logo {
@@ -246,7 +239,6 @@ background-attachment: fixed;
     --iron-icon-height: 100px;
     --iron-icon-width: 100px;
   }
-
 
   #mainToolbar .middle-container  {
     height: 100%;
@@ -264,7 +256,6 @@ background-attachment: fixed;
     -webkit-transform-origin: left center;
     transform-origin: left center;
   }
-
 
   #footToolbar{
     background: var(--primary-background-color);
@@ -287,9 +278,6 @@ background-attachment: fixed;
     bottom: 0;
     left: 0;
   }
-
-
-
 
   /* Breakpoints */
 
