@@ -6,20 +6,20 @@
         "name": "javier-cabrera",
         "contact": "jcabrera@tecla5.com",
         "roles": [
-            "Web Architect,",
+            "Web Architect",
             "Web/Mobile Developer"
         ],
         "technologies": [
-            "Java,",
-            "Javascript,",
-            "Node.js,",
-            "React,",
+            "Java",
+            "Javascript",
+            "Node.js",
+            "React",
             "Angular"
         ],
         "delivers": [
-            " Web apps",
-            " Mobile (hybrid) apps",
-            " Project management"
+            "Web apps",
+            "Mobile (hybrid) apps",
+            "Project management"
         ],
         "content": "Javier has ~10 years experience in web app development as a full stack developer and architect. He likes to use the latest technologies to power his apps and is experiences at managing projects and ensuring they can scale while minimizing complexity.\n"
     },
@@ -30,19 +30,19 @@
         "name": "kristian-mandrup",
         "contact": "kmandrup@tecla5.com",
         "roles": [
-            " Web Developer/Architect,",
-            " Project manager"
+            "Web Developer/Architect",
+            "Project manager"
         ],
         "technologies": [
-            "Javascript,",
-            "Node.js,",
-            "React,",
-            "Ruby,",
+            "Javascript",
+            "Node.js",
+            "React",
+            "Ruby",
             "Rails"
         ],
         "delivers": [
-            " Web architecture",
-            " Project management"
+            "Web architecture",
+            "Project management"
         ],
         "content": "Kristian Mandrup has more than 15 years of experience in architecting and developing software and frameworks. He has always enjoyed working with bleeding edge technologies and loves push the limits. Kristian also has a lot of project management experience.\n"
     },
@@ -53,20 +53,20 @@
         "name": "dayana-cabrera",
         "contact": "dcabrera@tecla5.com",
         "roles": [
-            "Project Manager,",
+            "Project Manager",
             "Web Designer/Developer"
         ],
         "technologies": [
-            "Javascript,",
-            "HTML/CSS,",
-            "Bootstrap,",
-            "Web Components/Polymer,",
-            "Semantic UI,",
+            "Javascript",
+            "HTML/CSS",
+            "Bootstrap",
+            "Web Components/Polymer",
+            "Semantic UI",
             "Stylus"
         ],
         "delivers": [
-            " Web apps",
-            " Project management"
+            "Web apps",
+            "Project management"
         ],
         "content": "Dayana is an experienced Project Manager and Designer who specializes in project delivery, customer satisfaction, HR and UX. Dayana has more than ~5 years of experience in developing software and QA Testing.\n"
     },
@@ -80,15 +80,15 @@
             "Web Developer"
         ],
         "technologies": [
-            "Java,",
-            "Javascript,",
-            "Node.js,",
-            "Express server,",
-            "REST and Graph APIs,",
+            "Java",
+            "Javascript",
+            "Node.js",
+            "Express server",
+            "REST and Graph APIs",
             "Databases"
         ],
         "delivers": [
-            " Web apps"
+            "Web apps"
         ],
         "content": "Freddy is an experienced web developer with more than ~10 years of experience in various environments. He is passionate about back-end development and likes to play with new tech that pushes the boundaries. Freddy is currently developing GraphQL APIs.\n"
     },
@@ -102,15 +102,15 @@
             "Frontend Web Developer"
         ],
         "technologies": [
-            "HTML/CSS,",
-            "Wordpress/PHP,",
-            "Javascript,",
-            "Bootstrap,",
-            "Web Components/Polymer,",
+            "HTML/CSS",
+            "Wordpress/PHP",
+            "Javascript",
+            "Bootstrap",
+            "Web Components/Polymer",
             "Stylus/SCSS"
         ],
         "delivers": [
-            " Web apps"
+            "Web apps"
         ],
         "content": "Isaura is a web developer with 3 years experience in development of web pages. Passionate front-end development. She loves to be at the forefront of new technologies to the efficiency and quality of the final products and continuous improvement.\n"
     },
@@ -124,9 +124,9 @@
             "System Administrator"
         ],
         "technologies": [
-            "Virtual Machines,",
-            "Docker,",
-            "Cloud computing,",
+            "Virtual Machines",
+            "Docker",
+            "Cloud computing",
             "Unix"
         ],
         "delivers": [
@@ -146,16 +146,16 @@
             "Growth Hacker"
         ],
         "technologies": [
-            "Virtual Machines,",
-            "Docker,",
-            "Cloud computing,",
+            "Virtual Machines",
+            "Docker",
+            "Cloud computing",
             "Unix"
         ],
         "delivers": [
-            " Growth Hacker",
-            " Web development",
-            " Web Design",
-            " Online Marketing"
+            "Growth Hacker",
+            "Web development",
+            "Web Design",
+            "Online Marketing"
         ],
         "content": "Andres has +6 years of experience with Web Startups in South America and Europe\n"
     },
@@ -169,15 +169,15 @@
             "Web Developer"
         ],
         "technologies": [
-            "HTML/CSS,",
-            "Wordpress/PHP,",
-            "Javascript,",
-            "Bootstrap,",
-            "Web Components/Polymer,",
+            "HTML/CSS",
+            "Wordpress/PHP",
+            "Javascript",
+            "Bootstrap",
+            "Web Components/Polymer",
             "Stylus/SCSS"
         ],
         "delivers": [
-            " Web apps"
+            "Web apps"
         ],
         "content": "Reynaldo is a web developer, he has 2 years of experience with different front-end technologies.\n"
     }
