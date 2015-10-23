@@ -88,6 +88,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   app.onDataRouteClick = function(mouseEvent) {
     document.querySelector('#paperDrawerPanel').forceNarrow=false;
 
+    
     var drawerPanel = document.querySelector('#paperDrawerPanel');
     if (drawerPanel.narrow) {
       drawerPanel.closeDrawer();

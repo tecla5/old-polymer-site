@@ -15,22 +15,40 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <template>
     <iron-ajax id="myajax"
-    auto
-    url="http://blog.tecla5.com/welcome/2015/01/11/welcome.html"
     handle-as="document"
     debounce-duration="300"
-    on-response="handleResponse"
+    on-response="handlePostResponse"
     last-response="{{ajaxResponse}}"
     ></iron-ajax>
-    <!--
-    -->
 
     <paper-material elevation="1">
       <h1>blog - last post</h1>
+      <div id="post" class="content">
+
+      </div>
+    </paper-material>
+
+
+
+    <iron-ajax id="myajax2"
+    auto
+    url="http://blog.tecla5.com/"
+    handle-as="document"
+    debounce-duration="300"
+    on-response="handleBlogResponse"
+    last-response="{{ajaxResponse}}"
+    ></iron-ajax>
+
+    <paper-material elevation="1">
+
+      <h1>blog - more posts</h1>
       <div id="blog" class="content">
 
       </div>
     </paper-material>
+
+
+
 
   </template>
   <script src="script.js"></script>
