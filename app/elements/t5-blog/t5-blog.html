@@ -14,7 +14,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <link rel="import" type="css" href="styles.css">
 
   <template>
-    <div>blog</div>
+    <iron-ajax id="myajax"
+    auto
+    url="http://blog.tecla5.com/welcome/2015/01/11/welcome.html"
+    handle-as="document"
+    debounce-duration="300"
+    on-response="handleResponse"
+    last-response="{{ajaxResponse}}"
+    ></iron-ajax>
+    <!--
+    -->
+
+    <paper-material elevation="1">
+      <h1>blog - last post</h1>
+      <div id="blog" class="content">
+
+      </div>
+    </paper-material>
+
   </template>
   <script src="script.js"></script>
 
