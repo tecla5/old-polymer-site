@@ -35,8 +35,6 @@ paper-toolbar {
  }; /* Notice the semicolon here */
 }
 
-
-
 paper-toolbar + paper-toolbar {
   --paper-toolbar-background: var(--primary-background-color);
   margin-top: 20px;
@@ -55,6 +53,27 @@ paper-card {
   box-sizing: border-box;
   padding: 16px;
   border-radius: 5px;
+}
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.flex-item {
+  padding: 10px;
+  width: 245px;
+  height: auto;
 }
 
 /* Breakpoints */
@@ -77,97 +96,3 @@ paper-card {
 
 	align-items: center;
 }
-
-
-.flex-container {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-
-  -webkit-flex-flow: row wrap;
-  justify-content: space-around;
-}
-
-.flex-item {
-  padding: 10px;
-  width: 260px;
-}
-
-
-
-
-/*.flex-item {
-  padding: 5px;
-  margin-top: 10px;
-
-  --line-height: 150px;
-  --text-align: center;
-}*/
-
-/*
-.flex-container {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  --border: 1px solid silver;
-  -ms-box-orient: horizontal;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: flex;
-}*/
-
-
-/*
-
-.text {
-  font-family: Ailerons;
-  padding: 0.5em;
-}
-
-.action {
-  text-align: right;
-  padding: 1em;
-}
-
-.content {
-  background-color: blue;
-}
-
-paper-fab.large {
-  width: 4em;
-  height: 4em;
-}
-
-paper-fab.blue {
-  color: white;
-  --paper-fab-background: var(--paper-light-blue-500);
-  --paper-fab-keyboard-focus-background: var(--paper-light-blue-900);
-}
-
-h1.logo {
-  font-family: ADAM.CG PRO;
-  font-size: 14vh;
-  margin-top: 8%;
-}
-
-.center {
-  text-align: center;
-}
-
-.subtitle {
-  text-align: justify;
-  padding: 3%;
-  font-size: 4vh;
-}
-
-
-*/

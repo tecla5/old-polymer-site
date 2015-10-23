@@ -52,13 +52,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   <div class="right">
                     <p>{{item.content}}</p>
                     <p>Profile: <span>{{item.name}}</span></p>
+                    
+                    <!-- could better change ith css add , or js add coma -->
+                    <p>Roles:
+                      <!-- nested repeat -->
+                      <template is="dom-repeat" items="{{item.roles}}" as="rol" index-as="rol_no">
+                        <span>{{rol}}</span>,<!-- could move , to css style -->
+                      </template>
+                    </p>
                     <p>Techs:
                       <!-- nested repeat -->
                       <template is="dom-repeat" items="{{item.technologies}}" as="tech" index-as="tech_no">
-                        <span>{{tech}}</span>
+                        <span>{{tech}}</span>,<!-- could move , to css style -->
                       </template>
                     </p>
-                    <p>Delivers:<span>{{item.delivers}}</span></p>
+                    <p>Delivers:
+                      <!-- nested repeat -->
+                      <template is="dom-repeat" items="{{item.delivers}}" as="deliver" index-as="rol_no">
+                        <span>{{deliver}}</span>,<!-- could move , to css style -->
+                      </template>
+
+                      </p>
                     <p><span>Contact: </span><iron-icon icon="mail" ></iron-icon><a class="email-link" href$="{{generateEmailLink(item.contact)}}">{{item.contact}}</a></p>
                   </div>
               </div>

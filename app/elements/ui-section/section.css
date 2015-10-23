@@ -6,7 +6,7 @@
 paper-card {
   width: 100%;
   min-height: 200px;
-  max-height: 450px;
+  max-height: auto;
   margin-bottom: 16px;
   background: none !important;
   box-shadow: 5px 5px 10px #000;
