@@ -2,9 +2,13 @@
   Polymer({
     is: 't5-blog',
 
+    ready: function(){
+      this.$.myblog.generateRequest();
+    },
+
+
 
     handleResponse: function(e,from1, to) {
-
       var article = e.detail.response.querySelector(from1);
 
       //article.querySelector('.byline').remove();
@@ -21,10 +25,6 @@
       //this.injectBoundHTML(html, this.$.blog);
       to.innerHTML = article.innerHTML;
       return article;
-
-
-
-
     },
 
     handlePostResponse: function(e) {
@@ -34,8 +34,8 @@
     handleBlogResponse: function(e) {
       var html = this.handleResponse(e,'.post-list',this.$.blog);
 
-      this.$.myajax.url = html.querySelector('a').href;
-      this.$.myajax.generateRequest();
+      this.$.mypost.url = html.querySelector('a').href;
+      this.$.mypost.generateRequest();
 
     }
 
