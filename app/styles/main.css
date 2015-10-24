@@ -83,15 +83,42 @@ div.header-toolbar{
 }
 
 footer{
+  padding: 2%;
+  width: 96%;
+}
+footer#footer-general{
+  padding: 0%;
+  font-size: 10px;
+  color: #FF9800;
+  font-size: 11px;
   width: 100%;
-  height: 100px;
-  color: white;
+  background: #1C1B1B;
+}
+.title-site{
+  margin-top: 16%;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+.title{
+  font-weight: bold;
+}
+ul.item-footer{
+  margin-left: -20px;
+  list-style: none;
+}
+ul.item-footer li{
+  line-height: 20px;
+  color: #FFA01C;
 }
 div.col-footer{
   display: inline-block;
+  padding: 20px 0;
   float: left;
   width: 33.33%;
-  text-align: center;
+  height: 130px;
+  text-align: left;
+  background: #1C1B1B;
 }
 
 paper-dialog.paper-dialog-0
@@ -103,8 +130,19 @@ paper-dialog.paper-dialog-0
 }
 
 div#social-media{
-  padding: 20%;
-  width: 100%;
-  height: auto;
+  padding: 40px 10%;
+  width: 80%;
+  height: 20px;
   background: #fff;
+}
+
+div#social-media a{
+  margin: 0px 5px;
+}
+@media screen and (min-width: 320px) and (max-width: 600px) {
+  div.col-footer{
+    padding: 5% 5% !important;
+    width: 90% !important;
+    background: #1c1b1b;
+  }
 }
