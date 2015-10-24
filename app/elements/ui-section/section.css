@@ -9,7 +9,7 @@ paper-card {
   max-height: auto;
   margin-bottom: 16px;
   background: none !important;
-  box-shadow: 5px 5px 10px #000;
+  box-shadow: 5px 5px 5px #ccc;
 }
 
 .markdown-html pre code {

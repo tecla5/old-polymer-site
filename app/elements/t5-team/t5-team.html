@@ -43,7 +43,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <div class="content">
         <!-- {{items[0].caption}} -->
         <template is="dom-repeat" items="{{items}}">
-          <paper-card heading="{{item.caption}}" >
+          <paper-card heading="{{item.caption}}" elevation="1">
               <div class="card-content" image="{{item.image}}" >
                   <div >
                     <iron-image src="{{item.image}}" class="profile-picture" sizing="contain"></iron-image>
@@ -52,7 +52,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   <div class="right">
                     <p>{{item.content}}</p>
                     <p>Profile: <span>{{item.name}}</span></p>
-                    
+
                     <!-- could better change ith css add , or js add coma -->
                     <p>Roles:
                       <!-- nested repeat -->
