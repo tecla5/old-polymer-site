@@ -105,7 +105,7 @@
       },
 
       sharedElements: {
-        value: function(){
+        value(){
           return {
             'hero': this.$.productCard
           };
@@ -114,7 +114,7 @@
 
       // DEBUT : CONFIGURATIONS DES ANIMATIONS
       animationConfig: {
-        value: function(){
+        value(){
           return {
             'entry': [{
               name: 'hero-animation',
@@ -139,11 +139,11 @@
     },
     // FIN : PROPRIETES
 
-    _closeCard: function(){
+    _closeCard(){
       this.fire('changePage','finished');
     },
 
-    _productChanged: function(data){
+    _productChanged(data){
       console.log('ghola', this.$.header);
       this.$.header.style.backgroundImage = 'url('+ data.header+')';
     }

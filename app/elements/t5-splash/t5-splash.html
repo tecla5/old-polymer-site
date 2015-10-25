@@ -126,17 +126,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     Polymer({
       is: 't5-splash',
-      attached: function(){
+      attached(){
         console.log('attached');
       },
-      ready: function(){
+      ready(){
         console.log('ready');
       },
 
       listeners: {
         //'dialog.iron-overlay-closed': 'completeStartup'
       },
-      startup: function() {
+      startup() {
         console.log('startup');
         document.querySelector('#paperDrawerPanel').forceNarrow=true;
         var mainToolbar = document.querySelector('#mainToolbar');
@@ -145,7 +145,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         //this.$.dialog.open();
         //window.setTimeout(this.completeStartup, 3000);
       },
-      completeStartup: function() {
+      completeStartup() {
         console.log('end');
         //this.$.dialog.close();
         app.route = 'home';
