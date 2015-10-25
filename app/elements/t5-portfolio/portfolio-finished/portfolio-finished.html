@@ -54,7 +54,7 @@
     properties: {
       // START ANIMATIONS
       animationConfig: {
-        value: function(){
+        value(){
           return {
             'entry': [{
               name: 'fade-in-animation',
@@ -78,7 +78,7 @@
       // END ANIMATIONS
     },
 
-    ready: function(){
+    ready(){
       this.productsList = [{
         'id': 0,
         'name': 'Card 1 - Cat 1',
@@ -92,7 +92,7 @@
       }];
     },
 
-    _repeatRender: function(){
+    _repeatRender(){
       this.paperCard = Polymer.dom(this.root).querySelectorAll('paper-card');
       this.animationConfig.entry.push({
         name: 'cascaded-animation',
@@ -102,7 +102,7 @@
       });
     },
 
-    _openCard: function(event){
+    _openCard(event){
       if(event.target.classList.contains('paper-fab')) {
         this.fire('updateShowcase',this.productsList[event.model.__data__['item.id']]);
 

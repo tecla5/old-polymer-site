@@ -7,7 +7,7 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 */
 
-(function(document) {
+((document)  => {
   'use strict';
 
   // Grab a reference to our auto-binding template
@@ -15,7 +15,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // Learn more about auto-binding templates at http://goo.gl/Dx1u2g
   var app = document.querySelector('#app');
 
-  app.displayInstalledToast = function() {
+  app.displayInstalledToast = () => {
     // Check to make sure caching is actually enabled—it won't be in the dev environment.
     if (!document.querySelector('platinum-sw-cache').disabled) {
       document.querySelector('#caching-complete').show();
@@ -25,7 +25,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // Listen for template bound event to know when bindings
   // have resolved and content has been stamped to the page
 
-  app.addEventListener('dom-change', function() {
+  app.addEventListener('dom-change', () => {
     console.log('dom-change', app.route );
     console.log(window.location.pathname);
     if (app.route === undefined && window.location.pathname ==='/') {
@@ -33,7 +33,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
     if (app.route === 'splash'){
       var t5Splash = document.querySelector('t5-splash');
-      t5Splash.addEventListener('splash-completed', function(e) {
+      t5Splash.addEventListener('splash-completed', (e) => {
         console.log('splash finished',e);
         app.onDataRouteClick(e);
       });
@@ -47,7 +47,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
   // See https://github.com/Polymer/polymer/issues/1381
-  window.addEventListener('WebComponentsReady', function() {
+  window.addEventListener('WebComponentsReady', () => {
     console.log('Our app is ready to rock!');
     // imports are loaded and elements have been registered
     console.log('WebComponentsReady', app.route);
@@ -61,7 +61,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // the appName in the middle-container and the bottom title in the bottom-container.
   // The appName is moved to top and shrunk on condensing. The bottom sub title
   // is shrunk to nothing on condensing.
-  addEventListener('paper-header-transform', function() {
+  addEventListener('paper-header-transform', () => {
     /*
     console.log(e);
     var appName = document.querySelector('.app-name');
@@ -85,10 +85,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   });
 
   // Close drawer after menu item is selected if drawerPanel is narrow
-  app.onDataRouteClick = function(mouseEvent) {
+  app.onDataRouteClick = (mouseEvent) => {
     document.querySelector('#paperDrawerPanel').forceNarrow=false;
 
-    
+
     var drawerPanel = document.querySelector('#paperDrawerPanel');
     if (drawerPanel.narrow) {
       drawerPanel.closeDrawer();
@@ -104,20 +104,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   };
 
   /*
-  window.showFooter = function(id) {
+  window.showFooter = (id) => {
     document.getElementById(id).style.visibility = 'visible';
   };
 
-  window.hideFooter = function(id) {
+  window.hideFooter = (id) => {
     document.getElementById(id).style.visibility = 'hidden';
   };
 
-  window.resetScroll= function(){
+  window.resetScroll= () =>{
     //document.querySelector('#mainContainer').scroller.scrollTop = 0;
   };
   */
 
-  window.showDiv = function() {
+  window.showDiv = () => {
     var div = document.getElementById('socialContainer');
     if( div && div.style.display !== 'none') {
         document.getElementById('socialContainer').style.display = 'none';
@@ -127,7 +127,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   };
 
   // Scroll page to top and expand header
-  app.scrollPageToTop = function() {
+  app.scrollPageToTop = () => {
     //document.getElementById('mainContainer').scrollTop = 0;
   };
 

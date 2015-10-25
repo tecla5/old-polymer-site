@@ -1,16 +1,16 @@
-(function() {
-  Polymer({
-    is: 't5-about',
+'use strict';
 
-    properties: {
-      items: {
-        type: Array,
-        notify: true
-      },
-      lastError: {
-        type: String,
-        notify: true
-      }
+Polymer({
+  is: 't5-about',
+
+  properties: {
+    items: {
+      type: Array,
+      notify: true
+    },
+    lastError: {
+      type: String,
+      notify: true
     }
-  });
-})();
+  }
+});

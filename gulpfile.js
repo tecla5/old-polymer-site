@@ -91,6 +91,20 @@ gulp.task('jshint', function () {
     .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
 });
 
+
+
+// Transpile all JS to ES5.
+gulp.task('js', function () {
+  return gulp.src(['app/**/*.{js,html}'])
+    .pipe($.sourcemaps.init())
+    .pipe($.if('*.html', $.crisper())) // Extract JS from .html files
+    .pipe($.if('*.js', $.babel()))
+    .pipe($.sourcemaps.write('.'))
+    .pipe(gulp.dest('.tmp/'))
+    .pipe(gulp.dest('dist/'));
+});
+
+
 // Optimize images
 gulp.task('images', function () {
   return gulp.src('app/images/**/*')
@@ -148,7 +162,7 @@ gulp.task('data', function () {
 
 // Scan your HTML for assets & optimize them
 gulp.task('html', function () {
-  var assets = $.useref.assets({searchPath: ['.tmp', 'app', 'dist']});
+  var assets = $.useref.assets({searchPath: ['.tmp', 'dist']});
 
   return gulp.src(['app/**/*.html', '!app/{elements,test}/**/*.html'])
     // Replace path for vulcanized assets
@@ -229,7 +243,7 @@ gulp.task('clean', function (cb) {
 });
 
 // Watch files for changes & reload
-gulp.task('serve', ['styles', 'imports', 'elements', 'images'], function () {
+gulp.task('serve', ['styles', 'imports', 'elements', 'images', 'js'], function () {
   browserSync({
     port: 5000,
     notify: false,
@@ -255,11 +269,12 @@ gulp.task('serve', ['styles', 'imports', 'elements', 'images'], function () {
     }
   });
 
-  gulp.watch(['app/**/*.html'], reload);
+  gulp.watch(['app/**/*.html'], ['js', reload]);
   gulp.watch(['app/styles/**/*.css'], ['styles', reload]);
   gulp.watch(['app/elements/**/*.css'], ['elements', reload]);
-  gulp.watch(['app/{scripts,elements}/**/{*.js,*.html}'], ['jshint']);
+  gulp.watch(['app/{scripts,elements}/**/*.js'], ['jshint', 'js']);//, reload
   gulp.watch(['app/images/**/*'], reload);
+
 });
 
 // Build and serve the output from the dist build
@@ -290,7 +305,7 @@ gulp.task('default', ['clean', 'imports'], function (cb) {
   // Uncomment 'cache-config' after 'rename-index' if you are going to use service workers.
   runSequence(
     ['copy', 'styles'],
-    'elements',
+    ['elements', 'js'],
     ['jshint', 'images', 'data', 'fonts', 'html'],
     'vulcanize','rename-index', // 'cache-config',
     cb);

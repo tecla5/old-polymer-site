@@ -1,19 +1,19 @@
-(function() {
-  Polymer({
-    is: 't5-team',
+'use strict';
 
-    properties: {
-      items: {
-        type: Array,
-        notify: true
-      },
-      lastError: {
-        type: String,
-        notify: true
-      }
+Polymer({
+  is: 't5-team',
+
+  properties: {
+    items: {
+      type: Array,
+      notify: true
     },
-    generateEmailLink: function(email){
-      return 'mailto:' + email;
+    lastError: {
+      type: String,
+      notify: true
     }
-  });
-})();
+  },
+  generateEmailLink(email){
+    return 'mailto:' + email;
+  }
+});

@@ -1,3 +1,5 @@
+'use strict';
+
 Polymer({
   is: 't5-home',
   behaviors: [
@@ -36,11 +38,10 @@ Polymer({
     },
     lastError: String
   },
-  computeItem: function(items) {
-    console.log('items', items);
+  computeItem: items =>  {
     return items && items[0] || {};
   },
-  _repeatRender: function(){
+  _repeatRender: () => {
     this.paperCard = Polymer.dom(this.root).querySelectorAll('paper-card');
     this.animationConfig.entry.push({
       name: 'cascaded-animation',
@@ -49,7 +50,7 @@ Polymer({
       nodes: this.paperCard
     });
   },
-  _openCard: function(event){
+  _openCard: event => {
     if(event.target.classList.contains('paper-fab')) {
       this.fire('updateShowcase',this.productsList[event.model.__data__['item.id']]);
       this.sharedElements = {
