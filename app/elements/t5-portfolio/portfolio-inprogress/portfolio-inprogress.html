@@ -9,10 +9,11 @@
         margin-left: 8px;
     }
 
+    /*
     paper-card /deep/ img {
       height: 143px;
     }
-
+    */
     @media (max-width: 601px) {
       paper-card {
         width: 100% !important;
@@ -27,16 +28,34 @@
   </style>
 
   <template>
-    <template is="dom-repeat" items="{{productsList}}" on-dom-change="_repeatRender">
+
+    <h1>Projects</h1>
+    <h2>In progress</h2>
+    <iron-ajax
+      id="myproducts"
+      auto
+      url="/data/products.json"
+      handle-as="json"
+      on-response="handleResponse"
+      last-response="{{products}}"
+      last-error="{{lastError}}">
+    </iron-ajax>
+    <template is="dom-repeat" items="{{products}}" as="product"  >
       <paper-card
-        id="{{item.id}}"
-        class="paperCard"
-        on-click="_openCard"
-        img="{{item.header}}"
-        legend="{{item.name}}"
-        icon="chevron-right"
-        width="250">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut earum, quisquam in temporibus dolor facilis provident similique officiis velit blanditiis!
+        id="{{index}}"
+        heading="{{product.name}}"
+        image="{{product.image}}"
+        elevation="1"
+        animatedShadow="true"
+        >
+        <div class="card-content">
+          <p>{{product.description}}</p>
+        </div>
+         <div class="card-actions">
+           <a href="{{product.code}}" target="_blank">
+             <paper-fab icon="cloud-download" ></paper-fab>
+           </a>
+         </div>
       </paper-card>
     </template>
   </template>
@@ -77,36 +96,16 @@
       }
       // END ANIMATIONS
     },
-
     ready(){
-      this.productsList = [{
-        'id': 0,
-        'name': 'Card 1 - Cat 1',
-        'header': 'http://lorempixel.com/350/200',
-        'launcher': '../../images/ic_launcher.png'
-      }];
+      console.log('ready');
+      this.$.myproducts.generateRequest();
     },
 
-    _repeatRender(){
-      this.paperCard = Polymer.dom(this.root).querySelectorAll('paper-card');
-      this.animationConfig.entry.push({
-        name: 'cascaded-animation',
-        animation: 'transform-animation',
-        transformFrom: 'translateY(100vh)',
-        nodes: this.paperCard
-      });
-    },
+    handleResponse(e) {
+      console.log(`handleResponse ${e.detail.response}`);
+      console.log(this.$.myproducts.lastResponse);
 
-    _openCard(event){
-      if(event.target.classList.contains('paper-fab')) {
-        this.fire('updateShowcase',this.productsList[event.model.__data__['item.id']]);
-
-        this.sharedElements = {
-          'hero': event.target
-        };
-
-        this.fire('changePage','showcase');
-      }
     }
+
   });
 </script>

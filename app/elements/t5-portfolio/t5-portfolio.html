@@ -12,6 +12,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <link rel="import" type="css" href="portfolio.css">
 
   <template>
+    <!-- products -->
+    <paper-material elevation="1">
+      <portfolio-inprogress></portfolio-inprogress>
+    </paper-material>
+
+
+    <paper-material elevation="1">
+      <portfolio-finished></portfolio-finished>
+    </paper-material>
+
+    <!--
+
+
+    <paper-material elevation="1">
+      <portfolio-showcase></portfolio-showcase>
+    </paper-material>
+    -->
+
+
+    <!-- clients + external projects -->
+    <!--
     <iron-ajax
       auto
       url="/data/portfolio.json"
@@ -34,7 +55,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </polymer-slideshow>
 
     </template>
-
+    -->
   </template>
 
   <script src="portfolio.js"></script>

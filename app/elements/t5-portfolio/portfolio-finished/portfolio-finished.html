@@ -27,16 +27,28 @@
   </style>
 
   <template>
-    <template is="dom-repeat" items="{{productsList}}" on-dom-change="_repeatRender">
+
+    <h1>Clients</h1>
+    <h2>Finished</h2>
+    <iron-ajax
+      id="myproducts"
+      auto
+      url="/data/portfolio.json"
+      handle-as="json"
+      on-response="handleResponse"
+      last-response="{{clients}}"
+      last-error="{{lastError}}">
+    </iron-ajax>
+
+
+    <template is="dom-repeat" items="{{clients}}" as="client" on-dom-change="_repeatRender">
       <paper-card
-        id="{{item.id}}"
-        class="paperCard"
+        id="{{client.index}}"
+        heading="{{client.name}}"
+        image="{{client.image}}"
         on-click="_openCard"
-        img="{{item.header}}"
-        legend="{{item.name}}"
-        icon="chevron-right"
-        width="250">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut earum, quisquam in temporibus dolor facilis provident similique officiis velit blanditiis!
+        width="100%" >
+        <p>{{client.content}}</p>
       </paper-card>
     </template>
   </template>
