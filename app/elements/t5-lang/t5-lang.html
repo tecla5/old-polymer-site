@@ -1,0 +1,70 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<dom-module id="t5-lang">
+  <style>
+  :host {
+    display: inline-block;
+    margin: 1em;
+  }
+  </style>
+
+  <template>
+
+
+    <paper-icon-button icon="flag" on-click="showLanguage"></paper-icon-button>
+    <iron-dropdown id="languages" horizontal-align="right" vertical-align="top"><!-- <a href="/en/" data-external-link="">EN</a> -->
+      <paper-material elevation="1" class="dropdown-content">
+        <paper-item data-lang="en" tabindex="0" on-click="changeLanguage">EN</paper-item>
+        <paper-item data-lang="es" tabindex="1" on-click="changeLanguage">ES</paper-item>
+      </paper-material>
+    </iron-dropdown>
+
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 't5-lang',
+
+        attached(){
+          var I18nMsg = window.I18nMsg;
+          console.log(I18nMsg.lang, I18nMsg.url);
+          var i18n = document.querySelector('i18n-msg');
+
+          console.log('hacking default behavior of i18n-msg');
+          i18n.getMsg = function(optMsgId) {
+            var msgId = optMsgId || this.msgid;
+            var lang = this.locales[this.language];
+            if (lang && lang[msgId]) {
+              return lang[msgId];
+            }
+            return null;
+          };
+          i18n._updateElementMessage = function(optInstance) {
+            var instance = optInstance || this;
+
+            var msg = instance.locales[instance.language][instance.msgid];
+            if (msg) {
+              instance.innerHTML = msg;
+            }
+          };
+
+        },
+        showLanguage(){
+          //this.$.showMenu.toggle();
+          document.getElementById('languages').toggle();
+
+        },
+        changeLanguage(e){
+          var I18nMsg = window.I18nMsg;
+          I18nMsg.lang = e.srcElement.getAttribute('data-lang');
+          document.getElementById('languages').toggle();
+        },
+
+
+      });
+    })();
+  </script>
+
+</dom-module>
