@@ -1,3 +1,25 @@
 :host {
   display: block;
 }
+paper-material{
+  margin-bottom: 5%;
+  padding: 2% 3%;
+  background-color: #F9F9F9;
+  box-shadow: 5px 5px 5px #ccc !important;
+}
+h1{
+  font-family: 'Playfair Display';
+  font-style: italic;
+  color: #1C1B1B;
+  border-bottom: 1px solid #FFC16B;
+}
+.content{
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 12px !important;
+  color: #333;
+}
+
+img{
+  width: 100%;
+  height: auto;
+}
