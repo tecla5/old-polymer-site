@@ -56,10 +56,13 @@ span.paper-font-title{
 }
 
 .paper-card-0 .header.paper-card .title-text.paper-card {
-  font-family: "Playfair Display";
-  font-style: italic;
-  color:#1C1B1B;
+  font-family: 'RobotoDraft';
+  font-style: normal;
+	font-weight: 300;
+  color: #444;
+  font-size: 30px;
   background-color: #F9F9F9;
+  font-size: 36px;
 }
 
 /* cover images sized*/
@@ -69,10 +72,11 @@ span.paper-font-title{
   max-height: 600px;
 }
 .content {
-  font-size: 2.0vh;
+  font-size: 16px;
   margin: 5%;
   text-align: justify;
   margin-top: 0%;
+  color: #444;
 }
 
 .content p.post-meta{
@@ -87,6 +91,11 @@ paper-toolbar h1{
 }
 
 #our div.header div.title-text{
+  font-family: 'RobotoDraft';
+  font-style: normal;
+	font-weight: 400;
+  color: #444;
+  font-size: 18px;
   background: none !important;
 }
 
