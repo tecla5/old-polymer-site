@@ -10,6 +10,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 ((document)  => {
   'use strict';
 
+  document.addEventListener('HTMLImportsLoaded', function() {
+    console.log('HTMLImportsLoaded');
+    var I18nMsg = window.I18nMsg;
+    I18nMsg.lang = document.documentElement.lang || 'en';
+    console.log(I18nMsg.lang, I18nMsg.url);
+    //GET http://localhost:5000/locales/es.json 404 (Not Found)
+
+    // I18nMsg.url = 'locales'; // optionally use custom folder for locales.
+
+  });
+
   // Grab a reference to our auto-binding template
   // and give it some initial binding values
   // Learn more about auto-binding templates at http://goo.gl/Dx1u2g
@@ -55,7 +66,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     //contact-received
     //contact-failure
 
+    // No argument returns the instance's message:
+    //document.querySelector('i18n-msg').getMsg();
+    // Get a message by an id:
   });
+
+
+  window.addEventListener('i18n-language-ready', () => {
+    console.log('i18n-language-ready');
+    console.log(document.querySelector('i18n-msg').getMsg('days'));
+  });
+
 
   // Main area's paper-scroll-header-panel custom condensing transformation of
   // the appName in the middle-container and the bottom title in the bottom-container.

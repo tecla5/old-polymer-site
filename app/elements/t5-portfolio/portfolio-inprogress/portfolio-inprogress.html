@@ -97,13 +97,12 @@
       // END ANIMATIONS
     },
     ready(){
-      console.log('ready');
       this.$.myproducts.generateRequest();
     },
 
-    handleResponse(e) {
-      console.log(`handleResponse ${e.detail.response}`);
-      console.log(this.$.myproducts.lastResponse);
+    handleResponse() {
+      //console.log(`handleResponse ${e.detail.response}`);
+      //console.log(this.$.myproducts.lastResponse);
 
     }
 
