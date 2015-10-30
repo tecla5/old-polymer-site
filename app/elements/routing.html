@@ -11,24 +11,37 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <script src="../bower_components/page/page.js"></script>
 <script>
   window.addEventListener('WebComponentsReady', () => {
-
+    console.log('WebComponentsReady-routing');
     // We use Page.js for routing. This is a Micro
     // client-side router inspired by the Express router
     // More info: https://visionmedia.github.io/page.js/
 
+
+
+
     // Middleware
     function scrollToTop(ctx, next) {
-      app.scrollPageToTop();
+      //app.scrollPageToTop();
       next();
     }
 
+    page('/:lang(es|en)',  (data) => {
+      console.log('/lang', window.location.pathname);
+      window.I18nMsg.lang = data.params.lang;
+      page.redirect('/');
+    });
+
+
     page('/', scrollToTop,  () => {
-      console.log('routing', app.route);
+      console.log('/home', window.location.pathname, window.I18nMsg.lang);
+      window.I18nMsg.lang = window.I18nMsg.lang || document.documentElement.lang || 'en';
+      console.log(window.I18nMsg.lang);
+
       if( app.route === undefined ) {
         app.route = 'splash';
       }
-      //console.log('routing', app.route);
     });
+
     page('/splash', scrollToTop,  () => {
       app.route = 'splash';
     });
@@ -71,10 +84,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       app.route = 'showcase';
     });
 
-    page('/showcase/:productId',  (data) => {
-      app.route = 'showcase/:productId';
-      app.params = data.params;
-    });
 
     /*
     page('/users/:name', scrollToTop, (data) => {

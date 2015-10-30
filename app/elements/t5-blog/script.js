@@ -38,6 +38,10 @@ Polymer({
     this.$.mypost.url = html.querySelector('a').href;
     this.$.mypost.generateRequest();
 
+  },
+  openBlog(){
+    var link = 'http://blog.tecla5.com/';
+    window.open(link);
   }
 
 

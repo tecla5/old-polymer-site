@@ -10,6 +10,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 ((document)  => {
   'use strict';
 
+  document.addEventListener('HTMLImportsLoaded', function() {
+    console.log('HTMLImportsLoaded');
+    window.I18nMsg.url = '/locales'; // 'locales' optionally use custom folder for locales.
+    //GET http://localhost:5000/locales/es.json 404 (Not Found)
+  });
+
   // Grab a reference to our auto-binding template
   // and give it some initial binding values
   // Learn more about auto-binding templates at http://goo.gl/Dx1u2g
@@ -26,15 +32,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // have resolved and content has been stamped to the page
 
   app.addEventListener('dom-change', () => {
-    console.log('dom-change', app.route );
-    console.log(window.location.pathname);
-    if (app.route === undefined && window.location.pathname ==='/') {
+    console.log('dom-change');
+
+    if (app.route === undefined && (window.location.pathname ==='/' || window.location.pathname.search(/\/(es|en)\/{0,1}/) !== -1  ) ) {
       app.route = 'splash'; // default route to 'one'.
     }
     if (app.route === 'splash'){
       var t5Splash = document.querySelector('t5-splash');
       t5Splash.addEventListener('splash-completed', (e) => {
-        console.log('splash finished',e);
         app.onDataRouteClick(e);
       });
       t5Splash.startup();
@@ -48,14 +53,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   // See https://github.com/Polymer/polymer/issues/1381
   window.addEventListener('WebComponentsReady', () => {
-    console.log('Our app is ready to rock!');
+    console.log('WebComponentsReady-app');
     // imports are loaded and elements have been registered
-    console.log('WebComponentsReady', app.route);
 
     //contact-received
     //contact-failure
 
+
+    // No argument returns the instance's message:
+    //document.querySelector('i18n-msg').getMsg();
+    // Get a message by an id:
   });
+
+  window.addEventListener('i18n-language-ready', () => {
+    console.log('i18n-language-ready', window.I18nMsg);
+    console.log('i18n-msg '+document.querySelector('i18n-msg').language);
+    console.log(document.querySelector('i18n-msg').getMsg('welcome'));
+  });
+
 
   // Main area's paper-scroll-header-panel custom condensing transformation of
   // the appName in the middle-container and the bottom title in the bottom-container.
@@ -94,8 +109,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       drawerPanel.closeDrawer();
     }
     var route = mouseEvent.srcElement.getAttribute('data-route') || app.route;
-    console.log(route);
-
 
     var mainToolbar = document.querySelector('#mainToolbar');
     mainToolbar.customStyle['--paper-toolbar-background'] = 'var(--'+route+'-bg-image,--primary-background-color)';//'blue';

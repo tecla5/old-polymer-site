@@ -156,8 +156,13 @@ gulp.task('fonts', function () {
 
 // Copy web fonts to dist
 gulp.task('data', function () {
-  return gulp.src(['app/data/**'])
+  var data = gulp.src(['app/data/**'])
     .pipe(gulp.dest('dist/data'));
+
+  var locales = gulp.src(['app/locales/**'])
+    .pipe(gulp.dest('dist/locales'));
+
+  return merge(data, locales) ;
 });
 
 // Scan your HTML for assets & optimize them
@@ -240,6 +245,9 @@ gulp.task('cache-config', function (callback) {
 // Clean output directory
 gulp.task('clean', function (cb) {
   del(['.tmp', 'dist'], cb);
+
+  $.cache.clearAll();
+
 });
 
 // Watch files for changes & reload
