@@ -8,48 +8,39 @@ The complete set of contributors may be found at http://polymer.github.io/CONTRI
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
-
-<html lang="">
-
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="description" content="tecla5 group consultant development javascript migration performance web static application site mobile">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="Polymer Starter Kit" />
-
-  <!-- SEO  -->
+  <!-- SEO verification  -->
   <!--
-  andres fXpgLewdXufX-F42PJACilIWdOhI4KBWB2BbY2YpIY0
-  otra lXq8E-06_97CDxAtESs9QYHaRWbHpzvwP1u0H1oLBkY
   <meta name="google-site-verification" content="" />
   -->
-
+  <!-- seo hreflang -->
+  <link rel="alternate" hreflang="en" href="http://www.tecla.com/en/">
+  <link rel="alternate" hreflang="es" href="http://www.tecla.com/es/">
+  <link rel="alternate" hreflang="x-default" href="http://www.tecla.com/en/"  />
+  <!-- seo hreflang advanced -->
+  <!--
+  <link rel="alternate" href="http://www.tecla.com/catalogo/alemania/espanol" hreflang="es-de" />
+  <link rel="alternate" href="http://www.tecla.com/katalog/deustchland/deutsch" hreflang="de-de" />
+  -->
   <title>Tecla5 Group Site </title>
   <!-- Place favicon.ico in the `app/` directory -->
-
-  <!-- Chrome for Android theme color -->
-  <meta name="theme-color" content="#303F9F">
-
   <!-- Web Application Manifest -->
   <link rel="manifest" href="manifest.json">
-
+  <!-- Chrome for Android theme color -->
+  <meta name="theme-color" content="#303F9F">
   <!-- icons information -->
-
   <!-- Tile color for Win8 -->
   <meta name="msapplication-TileColor" content="#3372DF">
-
-
-
-  <!-- Tile color for Win8 -->
-  <meta name="msapplication-TileColor" content="#3372DF">
-
   <!-- Add to homescreen for Chrome on Android -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="application-name" content="PSK">
-
   <!--i comment this line beacuse the icon is not appering, delete is not is going to be used-->
   <!--<link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">-->
-
   <!-- Add to homescreen for Safari on iOS -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -57,48 +48,34 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
   <!-- Tile icon for Win8 (144x144) -->
   <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild-->
-
-  <!--
-  <style is="custom style"></style>
-  -->
-
-  <!-- For shared styles, shared-styles.html import in elements.html -->
-  <!--
-  <style is="custom-style" include="shared-styles"></style>
-  -->
-
   <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
-  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <!-- endbuild -->
   <!-- will be replaced with elements/elements.vulcanized.html -->
   <link rel="import" href="elements/elements.html">
   <!-- endreplace-->
-
-
+  <!-- For shared styles, shared-styles.html import in elements.html -->
+  <style is="custom-style" include="shared-styles"></style>
 </head>
-
 <body unresolved class="fullbleed layout vertical">
   <span id="browser-sync-binding"></span>
-
   <template is="dom-bind" id="app">
       <paper-drawer-panel id="paperDrawerPanel" force-narrow="true" >
         <!-- Drawer Scroll Header Panel -->
         <paper-scroll-header-panel drawer ><!-- fixed -->
-
           <!-- Drawer Toolbar for tecla5 icon-->
           <paper-toolbar class="drawerToolbar">
               <div class="header-toolbar"><h1>Tecla</h1></div>
               <iron-icon id="menu-logo" icon="t5-icons:tecla5" class="big center-logo"></iron-icon>
           </paper-toolbar>
-
           <!-- Drawer Content  onclick="resetScroll()" -->
           <!-- paper-menu  iron-selector  on-iron-select="onMenuSelect" -->
           <paper-menu class="list"
           attr-for-selected="data-route" selected="[[route]]" >
-
              <a class="item-menu" data-route="home" href="/home" on-click="onDataRouteClick" >
                <iron-icon icon="home" ></iron-icon>
                <paper-ripple class="circle" fit recenters></paper-ripple>
@@ -137,21 +114,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </paper-menu>
           <footer>
             <div id="social-media">
-              <a href="#" title="Twitter"><iron-image src="images/icons/twitter.png"></iron-image></a>
-              <a href="#" title="Google Plus"><iron-image src="images/icons/googleplus.png"></iron-image></a>
-              <a href="#" title="Linkedin"><iron-image src="images/icons/linkedin.png"></iron-image></a>
-              <a href="#" title="Facebook"><iron-image src="images/icons/facebook.png"></iron-image></a>
+              <a href="https://twitter.com/tecla5page" title="Twitter"><iron-image src="/images/icons/twitter.png"></iron-image></a>
+              <a href="https://plus.google.com/108207270428309558464/about" title="Google Plus"><iron-image src="/images/icons/googleplus.png"></iron-image></a>
+              <a href="https://www.linkedin.com/company/tecla5" title="Linkedin"><iron-image src="/images/icons/linkedin.png"></iron-image></a>
+              <a href="https://www.facebook.com/tecla5.site" title="Facebook"><iron-image src="/images/icons/facebook.png"></iron-image></a>
             </div>
           </footer>
         </paper-scroll-header-panel>
-
         <!-- Main Area  -->
         <paper-scroll-header-panel id="mainContainer" main condenses keep-condensed-header >
           <!-- Main Toolbar -->
           <paper-toolbar id="mainToolbar" class="tall" >
             <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
             <span class="flex"></span>
-
             <!-- Toolbar icons -->
             <paper-icon-button id="shareShow" icon="social:share"
             onclick="showDiv()">  </paper-icon-button>
@@ -163,7 +138,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <paper-icon-button src="/images/icons/twitter-icon.png">
                 </paper-icon-button>
               </a>
-
               <a target="popup" class="social-style" onclick="window.open
               ('https://www.linkedin.com/shareArticle?u=http://www.tecla5.com',
               'Tecla 5 Site','width=600,height=400')"
@@ -171,7 +145,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <paper-icon-button src="/images/icons/linkedin-icon.png">
                 </paper-icon-button>
               </a>
-
               <a target="popup" class="social-style" onclick="window.open
               ('http://www.facebook.com/share.php?u=http://www.tecla5.com',
               'Tecla 5 Site','width=600,height=400')"
@@ -179,7 +152,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <paper-icon-button src="/images/icons/facebook-icon.png">
                 </paper-icon-button>
               </a>
-
               <a target="popup" class="social-style" onclick="window.open
               ('https://plus.google.com/share?url=http://www.tecla5.com',
               'Tecla 5 Site','width=600,height=400')"
@@ -189,9 +161,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </a>
             </div>
             <paper-icon-button icon="search"></paper-icon-button>
+            <t5-lang></t5-lang>
+            <!--
+            <paper-dropdown-menu>
+              <paper-menu class="dropdown-content">
+                <paper-item noink="" data-version="EN" tabindex="0" class="core-selected" active=""><a href="/en/" data-external-link="">EN</a></paper-item>
+                <paper-item noink="" data-version="ES" tabindex="0"><a href="/es/" data-external-link="">ES</a></paper-item>
+              </paper-menu>
+            </paper-dropdown-menu>
+            -->
             <!-- Application name -->
           </paper-toolbar>
-
           <!-- Main Content -->
           <div class="content">
             <iron-pages attr-for-selected="data-route" selected="{{route}}" >
@@ -245,25 +225,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </div>
           </footer>
         </paper-scroll-header-panel>
-
       </paper-drawer-panel>
   </template>
-
   <!-- build:js scripts/app.js -->
-  <script src="scripts/app.js"></script>
+  <script src="/scripts/app.js"></script>
   <!-- endbuild-->
-
   <!-- google analitics for tecla5 site -->
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
   ga('create', 'UA-69202028-1', 'auto');
   ga('send', 'pageview');
-
   </script>
-
 </body>
 </html>
