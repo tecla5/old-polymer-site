@@ -246,7 +246,8 @@ gulp.task('cache-config', function (callback) {
 gulp.task('clean', function (cb) {
   del(['.tmp', 'dist'], cb);
 
-  $.cache.clearAll();
+  //uncomment when weird images appear or disappear.
+  //$.cache.clearAll();
 
 });
 
