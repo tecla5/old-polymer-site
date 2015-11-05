@@ -42,8 +42,7 @@
 
     <template is="dom-repeat" items="{{clients}}" as="client" on-dom-change="_repeatRender">
       <paper-card
-        id="{{client.index}}"
-        heading="{{client.name}}"
+        id="{{client.index}}"  
         image="{{client.image}}"
         on-click="_openCard"
         width="100%" >

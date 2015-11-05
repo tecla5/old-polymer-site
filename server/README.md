@@ -41,7 +41,7 @@ Now link the json in your element, such as the `about` page:
 ```html
 <iron-ajax
   auto
-  url="/data/about.json"
+  url="/data/EN/about.json"
   handle-as="json"
   last-response="{{items}}"
   last-error="{{lastError}}"
