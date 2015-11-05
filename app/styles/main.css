@@ -106,6 +106,15 @@ div.header-toolbar{
   text-align: center;
 }
 
+#contentWrapper.iron-dropdown > *{
+  margin-top: 40px;
+
+}
+#contentWrapper paper-item.paper-item-0{
+  background-color: black;
+  opacity: 0.7;
+}
+
 footer{
   padding: 2%;
   width: 96%;
