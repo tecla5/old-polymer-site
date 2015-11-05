@@ -1,4 +1,18 @@
 {
-  "welcome": "welcome to tecla5!",
-  "home.title":  "home title"
+  "welcome": "Welcome to tecla5!",
+  "splash.1":  "No matter how far away it's",
+  "splash.2":  "We can create inscreibles things",
+  "splash.3":  "We develop for you.",
+  "text.competitive":  "Build competitive ideas for your business with us! We help you create responsive web and mobile apps that work across all devices in all environments.",
+  "philosophy.1":  "We always focusing on develop the best solution, building competitive ideas for your business, and creating responsive webpages and mobile applications.",
+  "philosophy.2":  "We really care about you because we treat every project as personal.",
+  "vision.1":  "No matter what your product or service, or how difficult is your business area, Tecla 5 team have the experience and knowledge to produce powerful solutions with higher results..",
+  "vision.2":  "We are enthusiastic and highly motivate.",
+  "vision.3":  "We are always looking to increase the knowledge and learn the new technologies. We love developing cross-platform applications.",
+  "process": "When we understand the project, we don't just complete it, we go far and make it better that requested.",
+  "process.learn": "Learn.",
+  "process.plan": "Plan.",
+  "process.design": "Design.",
+  "process.build": "Build.",
+  "process.lift": "Lift off."
 }
