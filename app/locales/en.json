@@ -14,5 +14,13 @@
   "process.plan": "Plan.",
   "process.design": "Design.",
   "process.build": "Build.",
-  "process.lift": "Lift off."
+  "process.lift": "Lift off.",
+  "title-process": "Our Process",
+  "home": "Home",
+  "about": "About",
+  "team": "Team",
+  "services": "Services",
+  "portfolio": "Portfolio",
+  "blog": "Blog",
+  "contact": "Contact"
 }
