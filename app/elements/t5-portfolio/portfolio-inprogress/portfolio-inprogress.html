@@ -34,7 +34,7 @@
     <iron-ajax
       id="myproducts"
       auto
-      url="/data/products.json"
+      url="/data/EN/products.json"
       handle-as="json"
       on-response="handleResponse"
       last-response="{{products}}"
@@ -43,7 +43,6 @@
     <template is="dom-repeat" items="{{products}}" as="product"  >
       <paper-card
         id="{{index}}"
-        heading="{{product.name}}"
         image="{{product.image}}"
         elevation="1"
         animatedShadow="true"

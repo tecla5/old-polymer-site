@@ -1,11 +1,11 @@
 [{
     "name": "free water",
-    "description": "show map of taps near to you",
+    "description": "Encuentra las fuentes de agua cercanas.",
     "image": "/images/portafolio/projectFW.jpg",
     "code": "https://github.com/tecla5/free-water"
   }, {
     "name": "homeless",
-    "description": "help to voluntary to sync effort",
+    "description": "Sincroniza caridad y soporte para el esfuerzo de cualquier voluntariado.",
     "image": "/images/portafolio/projectHL.jpg",
     "code": "https://github.com/tecla5/homeless"
 }]
