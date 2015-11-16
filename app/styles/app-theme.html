@@ -135,10 +135,11 @@ background-attachment: fixed;
 
 */
   paper-toolbar.tall {
-    --paper-toolbar-background: var(--home-bg-image, --primary-background-color);
+    /*--paper-toolbar-background: var(--home-bg-image, --primary-background-color);*/
     height: 200px;
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: #EEEEEE;
   }
 
   paper-toolbar.tall .app-name {
@@ -231,7 +232,8 @@ background-attachment: fixed;
   }
 
   paper-toolbar.drawerToolbar:not([style-scope]):not(.style-scope){
-    background: #1C1B1B !important;
+    background: #EEEEEE !important;
+    border-bottom: 1px solid #FFFFFF;
   }
 
   .center-logo {
