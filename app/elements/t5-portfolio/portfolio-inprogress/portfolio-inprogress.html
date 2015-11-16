@@ -1,19 +1,26 @@
 <dom-module id="portfolio-inprogress">
   <style type="text/css">
     h1 {
-        color: #78909c;
-        font-size: 24px;
+        font-size: "RobotoDraft";
+        color: #444;
+        font-size: 36px;
         font-weight: 300;
         margin-top: 8px;
         margin-bottom: 8px;
         margin-left: 8px;
     }
-
-    /*
-    paper-card /deep/ img {
-      height: 143px;
+    paper-card{
+      width: 100%;
+      margin-bottom: 10px;
     }
-    */
+    span.date, span.work{
+      font-size: "RobotoDraft";
+      font-size: 14px;
+      color: #F9A110;
+    }
+    span.work{
+       color: #3984A6;
+    }
     @media (max-width: 601px) {
       paper-card {
         width: 100% !important;
@@ -28,8 +35,6 @@
   </style>
 
   <template>
-
-    <h1>Projects</h1>
     <h2>In progress</h2>
     <iron-ajax
       id="myproducts"
@@ -48,6 +53,7 @@
         animatedShadow="true"
         >
         <div class="card-content">
+          <p><span class="date">9 Noviembre, 2015 </span><span class="work">Branding, Diseño Web</span></p>
           <p>{{product.description}}</p>
         </div>
          <div class="card-actions">

@@ -2,8 +2,13 @@ Polymer({
   is: 't5-services',
 
   properties: {
-    items: Array,
-    lastError: String
+    items: {
+      type: Array,
+      notify: true
+    },
+    lastError: {
+      type: String,
+      notify: true
+    }
   }
 });
-

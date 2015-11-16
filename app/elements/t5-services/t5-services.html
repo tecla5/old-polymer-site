@@ -28,7 +28,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <paper-header-panel mode="cover">
       <div class="content" id="cards">
         <template is="dom-repeat" items="{{items}}">
-          <ui-section image="{{item.image}}" caption="{{item.caption}}" markdown="{{item.content}}"/>
+          <paper-card heading="{{item.caption}}" elevation="1">
+              <div class="card-content" image="{{item.image}}" >
+                <p>{{item.content}}</p>
+                <iron-image src="{{item.image}}" class="sized" sizing="cover"></iron-image>
+                <!--<ui-section image="{{item.image}}" caption="{{item.caption}}" markdown="{{item.content}}"/>-->
+              </div>
+          </paper-card>
         </template>
       </div>
 

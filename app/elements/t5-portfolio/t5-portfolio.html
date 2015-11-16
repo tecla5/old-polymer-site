@@ -12,25 +12,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <link rel="import" type="css" href="portfolio.css">
 
   <template>
-    <!-- products -->
-    <paper-material elevation="1">
-      <portfolio-inprogress></portfolio-inprogress>
-    </paper-material>
+    <paper-card heading="Projects">
+      <!-- products -->
+      <paper-material elevation="1">
+        <portfolio-inprogress></portfolio-inprogress>
+      </paper-material>
 
-
-    <paper-material elevation="1">
-      <portfolio-finished></portfolio-finished>
-    </paper-material>
-
-    <!--
-
-
-    <paper-material elevation="1">
-      <portfolio-showcase></portfolio-showcase>
-    </paper-material>
-    -->
-
-
+      <!--<paper-material elevation="1">
+        <portfolio-showcase></portfolio-showcase>
+      </paper-material>-->
+    </paper-card>
+    <paper-card heading="Clients">
+      <paper-material elevation="1">
+        <portfolio-finished></portfolio-finished>
+      </paper-material>
+    </paper-card>
     <!-- clients + external projects -->
     <!--
     <iron-ajax
