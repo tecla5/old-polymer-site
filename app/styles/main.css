@@ -184,8 +184,8 @@ div#social-media a{
 paper-toolbar.multi_bg_example {
 
   background-image   : url(../images/starburst.png),
-                        url(../images/footerbg.png),
-                       linear-gradient(to right, rgba(30, 75, 115, 1),  rgba(255, 255, 255, 0));
+                        url(../images/footerbg2.png),
+                       linear-gradient(to right, rgba(255, 255, 255, 0), rgba(247, 148, 49, 1));
 
   background-repeat  : no-repeat,
                        no-repeat,
