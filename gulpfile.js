@@ -23,11 +23,11 @@ var glob = require('glob-all');
 var historyApiFallback = require('connect-history-api-fallback');
 var packageJson = require('./package.json');
 var crypto = require('crypto');
-var polybuild = require('polybuild');
-//var printFile = require('gulp-print');
 var linkImports = require('gulp-link-imports');
-var ghPages = require('gulp-gh-pages');
 
+// var ghPages = require('gulp-gh-pages');
+// var polybuild = require('polybuild');
+// var printFile = require('gulp-print');
 
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 10',
@@ -51,12 +51,16 @@ var styleTask = function(stylesPath, srcs) {
   return gulp.src(srcs.map(function(src) {
       return path.join('app', stylesPath, src);
     }))
-    .pipe($.changed(stylesPath, {extension: '.css'}))
+    .pipe($.changed(stylesPath, {
+      extension: '.css'
+    }))
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe(gulp.dest('.tmp/' + stylesPath))
     .pipe($.cssmin())
     .pipe(gulp.dest(dist(stylesPath)))
-    .pipe($.size({title: stylesPath}));
+    .pipe($.size({
+      title: stylesPath
+    }));
 };
 
 var imageOptimizeTask = function(src, dest) {
@@ -66,7 +70,9 @@ var imageOptimizeTask = function(src, dest) {
       interlaced: true
     }))
     .pipe(gulp.dest(dest))
-    .pipe($.size({title: 'images'}));
+    .pipe($.size({
+      title: 'images'
+    }));
 };
 
 var optimizeHtmlTask = function(src, dest) {
@@ -109,17 +115,21 @@ gulp.task('elements', function() {
   return styleTask('elements', ['**/*.css']);
 });
 
-gulp.task('import:external', function () {
+gulp.task('import:external', function() {
   gulp.src('./app/elements/imports/external/**/*.yml')
     // .pipe(printFile())
-    .pipe(linkImports({external: true}))
+    .pipe(linkImports({
+      external: true
+    }))
     .pipe(fs.createWriteStream('./app/elements/external-imports.html'));
 });
 
-gulp.task('import:app', function () {
+gulp.task('import:app', function() {
   gulp.src('./app/elements/imports/app/**/*.yml')
     // .pipe(printFile())
-    .pipe(linkImports({app: true}))
+    .pipe(linkImports({
+      app: true
+    }))
     .pipe(fs.createWriteStream('./app/elements/app-imports.html'));
 });
 
@@ -140,17 +150,15 @@ gulp.task('lint', function() {
 
   // JSCS has not yet a extract option
   .pipe($.if('*.html', $.htmlExtract()))
-  .pipe($.jshint())
-  .pipe($.jscs())
-  .pipe($.jscsStylish.combineWithHintResults())
-  .pipe($.jshint.reporter('jshint-stylish'))
-  .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
+    .pipe($.jshint())
+    .pipe($.jscs())
+    .pipe($.jscsStylish.combineWithHintResults())
+    .pipe($.jshint.reporter('jshint-stylish'))
+    .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
 });
 
-
-
 // Transpile all JS to ES5.
-gulp.task('js', function () {
+gulp.task('js', function() {
   return gulp.src(['app/**/*.{js,html}'])
     .pipe($.sourcemaps.init())
     .pipe($.if('*.html', $.crisper())) // Extract JS from .html files
@@ -159,7 +167,6 @@ gulp.task('js', function () {
     .pipe(gulp.dest('.tmp/'))
     .pipe(gulp.dest('dist/'));
 });
-
 
 // Optimize images
 gulp.task('images', function() {
@@ -212,14 +219,14 @@ gulp.task('fonts', function() {
 });
 
 // Copy web fonts to dist
-gulp.task('data', function () {
+gulp.task('data', function() {
   var data = gulp.src(['app/data/**'])
     .pipe(gulp.dest('dist/data'));
 
   var locales = gulp.src(['app/locales/**'])
     .pipe(gulp.dest('dist/locales'));
 
-  return merge(data, locales) ;
+  return merge(data, locales);
 });
 
 // Scan your HTML for assets & optimize them
@@ -240,7 +247,9 @@ gulp.task('vulcanize', function() {
     }))
     .pipe($.minifyInline())
     .pipe(gulp.dest(DEST_DIR))
-    .pipe($.size({title: 'vulcanize'}));
+    .pipe($.size({
+      title: 'vulcanize'
+    }));
 });
 
 // Generate config data for the <sw-precache-cache> element.
@@ -261,8 +270,10 @@ gulp.task('cache-config', function(callback) {
     'index.html',
     './',
     'bower_components/webcomponentsjs/webcomponents-lite.min.js',
-    '{elements,scripts,styles}/**/*.*'],
-    {cwd: dir}, function(error, files) {
+    '{elements,scripts,styles}/**/*.*'
+  ], {
+    cwd: dir
+  }, function(error, files) {
     if (error) {
       callback(error);
     } else {
@@ -348,8 +359,7 @@ gulp.task('serve:dist', ['default'], function() {
 gulp.task('default', ['clean'], function(cb) {
   // Uncomment 'cache-config' if you are going to use service workers.
   runSequence(
-    ['copy', 'styles'],
-    ['elements'], // 'js',
+    ['copy', 'styles'], ['elements'], // 'js',
     ['lint', 'images', 'data', 'fonts', 'html'],
     'vulcanize', // 'rename-index' // 'cache-config',
     cb);

@@ -8,12 +8,12 @@ Polymer({
   properties: {
     // START ANIMATIONS
     animationConfig: {
-      value: function(){
+      value: function() {
         return {
           'entry': [{
             name: 'fade-in-animation',
             node: this
-          },{
+          }, {
             name: 'transform-animation',
             transformFrom: 'translateX(-100vh)',
             node: this
@@ -22,7 +22,7 @@ Polymer({
             name: 'hero-animation',
             id: 'hero',
             fromPage: this
-          },{
+          }, {
             name: 'fade-out-animation',
             node: this
           }]
@@ -38,7 +38,7 @@ Polymer({
     },
     lastError: String
   },
-  computeItem: items =>  {
+  computeItem: items => {
     return items && items[0] || {};
   },
   _repeatRender: () => {
@@ -51,12 +51,12 @@ Polymer({
     });
   },
   _openCard: event => {
-    if(event.target.classList.contains('paper-fab')) {
-      this.fire('updateShowcase',this.productsList[event.model.__data__['item.id']]);
+    if (event.target.classList.contains('paper-fab')) {
+      this.fire('updateShowcase', this.productsList[event.model.__data__['item.id']]);
       this.sharedElements = {
         'hero': event.target
       };
-      this.fire('changePage','showcase');
+      this.fire('changePage', 'showcase');
     }
   }
 });

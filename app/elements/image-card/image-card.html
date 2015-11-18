@@ -91,20 +91,20 @@
 </dom-module>
 
 <script>
-	Polymer({
-		is: 'image-card',
+Polymer({
+  is: 'image-card',
 
-		properties: {
-			width: {
-				type: Number,
-				observer: '_changeWidth',
-			},
-		},
+  properties: {
+    width: {
+      type: Number,
+      observer: '_changeWidth',
+    },
+  },
 
-		_changeWidth(data) {
-			this.style.width = data + 'px';
-			this.querySelector('.content').width = data + 'px';
-		},
+  _changeWidth(data) {
+    this.style.width = data + 'px';
+    this.querySelector('.content').width = data + 'px';
+  },
 
-	});
+});
 </script>
