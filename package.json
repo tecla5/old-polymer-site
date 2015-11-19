@@ -54,7 +54,7 @@
   "scripts": {
     "postinstall": "bower install",
     "test": "gulp test:local",
-    "start": "gulp serve",
+    "start": "gulp serve:dist",
     "elements": "node link-import.js",
     "lint": "gulp lint"
   },
