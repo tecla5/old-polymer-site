@@ -14,7 +14,7 @@ Polymer({
   completeStartup() {
     //this.$.dialog.close();
     app.route = 'home';
-    // document.querySelector('#paperDrawerPanel').forceNarrow=false;
+    document.querySelector('#paperDrawerPanel').forceNarrow = false;
     // var mainToolbar = document.querySelector('#mainToolbar');
     // mainToolbar.customStyle['--paper-toolbar-background'] =
     // 'var(--home-bg-image,--primary-background-color)';//'blue';

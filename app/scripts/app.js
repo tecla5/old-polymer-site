@@ -40,15 +40,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // have resolved and content has been stamped to the page
 
   app.addEventListener('dom-change', () => {
-    console.log('dom-change');
+    console.log('dom-change', app.route, window.location.pathname);
 
     if (app.route === undefined && (window.location.pathname === '/' ||
         window.location.pathname.search(/\/(es|en)\/{0,1}/) !== -1)) {
       app.route = 'splash'; // default route to 'one'.
     }
+    console.log('dom-change2', app.route, window.location.pathname);
+
     if (app.route === 'splash') {
       var t5Splash = document.querySelector('t5-splash');
       t5Splash.addEventListener('splash-completed', (e) => {
+        console.log('event heared');
         app.onDataRouteClick(e);
       });
       t5Splash.startup();
