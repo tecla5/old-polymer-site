@@ -19,13 +19,15 @@ var reload = browserSync.reload;
 var merge = require('merge-stream');
 var path = require('path');
 var fs = require('fs');
-var glob = require('glob');
+var glob = require('glob-all');
 var historyApiFallback = require('connect-history-api-fallback');
 var packageJson = require('./package.json');
 var crypto = require('crypto');
-var polybuild = require('polybuild');
-//var printFile = require('gulp-print');
 var linkImports = require('gulp-link-imports');
+
+// var ghPages = require('gulp-gh-pages');
+// var polybuild = require('polybuild');
+// var printFile = require('gulp-print');
 
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 10',
@@ -39,142 +41,52 @@ var AUTOPREFIXER_BROWSERS = [
   'bb >= 10'
 ];
 
-var styleTask = function (stylesPath, srcs) {
+var DIST = 'dist';
+
+var dist = function(subpath) {
+  return !subpath ? DIST : path.join(DIST, subpath);
+};
+
+var styleTask = function(stylesPath, srcs) {
   return gulp.src(srcs.map(function(src) {
       return path.join('app', stylesPath, src);
     }))
-    .pipe($.changed(stylesPath, {extension: '.css'}))
+    .pipe($.changed(stylesPath, {
+      extension: '.css'
+    }))
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe(gulp.dest('.tmp/' + stylesPath))
     .pipe($.cssmin())
-    .pipe(gulp.dest('dist/' + stylesPath))
-    .pipe($.size({title: stylesPath}));
+    .pipe(gulp.dest(dist(stylesPath)))
+    .pipe($.size({
+      title: stylesPath
+    }));
 };
 
-// Compile and automatically prefix stylesheets
-gulp.task('styles', function () {
-  return styleTask('styles', ['**/*.css']);
-});
-
-gulp.task('elements', function () {
-  return styleTask('elements', ['**/*.css']);
-});
-
-gulp.task('import:external', function () {
-  gulp.src('./app/elements/imports/external/**/*.yml')
-    // .pipe(printFile())
-    .pipe(linkImports({external: true}))
-    .pipe(fs.createWriteStream('./app/elements/external-imports.html'));
-});
-
-gulp.task('import:app', function () {
-  gulp.src('./app/elements/imports/app/**/*.yml')
-    // .pipe(printFile())
-    .pipe(linkImports({app: true}))
-    .pipe(fs.createWriteStream('./app/elements/app-imports.html'));
-});
-
-gulp.task('imports', ['import:external', 'import:app']);
-
-// Lint JavaScript
-gulp.task('jshint', function () {
-  return gulp.src([
-      'app/scripts/**/*.js',
-      'app/elements/**/*.js',
-      'app/elements/**/*.html',
-      'gulpfile.js'
-    ])
-    .pipe(reload({stream: true, once: true}))
-    .pipe($.jshint.extract()) // Extract JS from .html files
-    .pipe($.jshint())
-    .pipe($.jshint.reporter('jshint-stylish'))
-    .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
-});
-
-
-
-// Transpile all JS to ES5.
-gulp.task('js', function () {
-  return gulp.src(['app/**/*.{js,html}'])
-    .pipe($.sourcemaps.init())
-    .pipe($.if('*.html', $.crisper())) // Extract JS from .html files
-    .pipe($.if('*.js', $.babel()))
-    .pipe($.sourcemaps.write('.'))
-    .pipe(gulp.dest('.tmp/'))
-    .pipe(gulp.dest('dist/'));
-});
-
-
-// Optimize images
-gulp.task('images', function () {
-  return gulp.src('app/images/**/*')
-    .pipe($.cache($.imagemin({
+var imageOptimizeTask = function(src, dest) {
+  return gulp.src(src)
+    .pipe($.imagemin({
       progressive: true,
       interlaced: true
-    })))
-    .pipe(gulp.dest('dist/images'))
-    .pipe($.size({title: 'images'}));
-});
+    }))
+    .pipe(gulp.dest(dest))
+    .pipe($.size({
+      title: 'images'
+    }));
+};
 
-// Copy all files at the root level (app)
-gulp.task('copy', function () {
-  var app = gulp.src([
-    'app/*',
-    '!app/test',
-    '!app/cache-config.json'
-  ], {
-    dot: true
-  }).pipe(gulp.dest('dist'));
+var optimizeHtmlTask = function(src, dest) {
+  //var assets = $.useref.assets({ searchPath: ['.tmp', 'app', dist()] });
+  var assets = $.useref.assets();
 
-  var bower = gulp.src([
-    'bower_components/**/*'
-  ]).pipe(gulp.dest('dist/bower_components'));
-
-  var elements = gulp.src(['app/elements/**/*.html','app/elements/**/*.js','app/elements/**/*.css'])
-    .pipe(gulp.dest('dist/elements'));
-
-  var swBootstrap = gulp.src(['bower_components/platinum-sw/bootstrap/*.js'])
-    .pipe(gulp.dest('dist/elements/bootstrap'));
-
-  var swToolbox = gulp.src(['bower_components/sw-toolbox/*.js'])
-    .pipe(gulp.dest('dist/sw-toolbox'));
-
-  var vulcanized = gulp.src(['app/elements/elements.html'])
-    .pipe($.rename('elements.vulcanized.html'))
-    .pipe(gulp.dest('dist/elements'));
-
-  return merge(app, bower, elements, vulcanized, swBootstrap, swToolbox)
-    .pipe($.size({title: 'copy'}));
-});
-
-// Copy web fonts to dist
-gulp.task('fonts', function () {
-  return gulp.src(['app/fonts/**'])
-    .pipe(gulp.dest('dist/fonts'))
-    .pipe($.size({title: 'fonts'}));
-});
-
-// Copy web fonts to dist
-gulp.task('data', function () {
-  var data = gulp.src(['app/data/**'])
-    .pipe(gulp.dest('dist/data'));
-
-  var locales = gulp.src(['app/locales/**'])
-    .pipe(gulp.dest('dist/locales'));
-
-  return merge(data, locales) ;
-});
-
-// Scan your HTML for assets & optimize them
-gulp.task('html', function () {
-  var assets = $.useref.assets({searchPath: ['.tmp', 'dist']});
-
-  return gulp.src(['app/**/*.html', '!app/{elements,test}/**/*.html'])
+  return gulp.src(src)
     // Replace path for vulcanized assets
     .pipe($.if('*.html', $.replace('elements/elements.html', 'elements/elements.vulcanized.html')))
     .pipe(assets)
     // Concatenate and minify JavaScript
-    .pipe($.if('*.js', $.uglify({preserveComments: 'some'})))
+    .pipe($.if('*.js', $.uglify({
+      preserveComments: 'some'
+    })))
     // Concatenate and minify styles
     // In case you are still using useref build blocks
     .pipe($.if('*.css', $.cssmin()))
@@ -187,28 +99,159 @@ gulp.task('html', function () {
       spare: true
     })))
     // Output files
-    .pipe(gulp.dest('dist'))
-    .pipe($.size({title: 'html'}));
+    .pipe(gulp.dest(dest))
+    .pipe($.size({
+      title: 'html'
+    }));
+};
+
+// Compile and automatically prefix stylesheets
+gulp.task('styles', function() {
+  return styleTask('styles', ['**/*.css']);
 });
 
-// Polybuild will take care of inlining HTML imports,
-// scripts and CSS for you.
-gulp.task('vulcanize', function () {
-  return gulp.src('dist/index.html')
-    .pipe(polybuild({maximumCrush: true}))
-    .pipe(gulp.dest('dist/'));
+gulp.task('elements', function() {
+  return styleTask('elements', ['**/*.css']);
 });
 
-// If you require more granular configuration of Vulcanize
-// than polybuild provides, follow instructions from readme at:
-// https://github.com/PolymerElements/polymer-starter-kit/#if-you-require-more-granular-configuration-of-vulcanize-than-polybuild-provides-you-an-option-by
+gulp.task('import:external', function() {
+  gulp.src('./app/elements/imports/external/**/*.yml')
+    // .pipe(printFile())
+    .pipe(linkImports({
+      external: true
+    }))
+    .pipe(fs.createWriteStream('./app/elements/external-imports.html'));
+});
 
-// Rename Polybuild's index.build.html to index.html
-gulp.task('rename-index', function () {
-  gulp.src('dist/index.build.html')
-    .pipe($.rename('index.html'))
-    .pipe(gulp.dest('dist/'));
-  return del(['dist/index.build.html']);
+gulp.task('import:app', function() {
+  gulp.src('./app/elements/imports/app/**/*.yml')
+    // .pipe(printFile())
+    .pipe(linkImports({
+      app: true
+    }))
+    .pipe(fs.createWriteStream('./app/elements/app-imports.html'));
+});
+
+gulp.task('imports', ['import:external', 'import:app']);
+
+// Lint JavaScript
+gulp.task('lint', function() {
+  return gulp.src([
+      'app/scripts/**/*.js',
+      'app/elements/**/*.js',
+      'app/elements/**/*.html',
+      'gulpfile.js'
+    ])
+    .pipe(reload({
+      stream: true,
+      once: true
+    }))
+
+  // JSCS has not yet a extract option
+  .pipe($.if('*.html', $.htmlExtract()))
+    .pipe($.jshint())
+    .pipe($.jscs())
+    .pipe($.jscsStylish.combineWithHintResults())
+    .pipe($.jshint.reporter('jshint-stylish'))
+    .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
+});
+
+// Transpile all JS to ES5.
+gulp.task('js', function() {
+  return gulp.src(['app/**/*.{js,html}'])
+    .pipe($.sourcemaps.init())
+    .pipe($.if('*.html', $.crisper())) // Extract JS from .html files
+    .pipe($.if('*.js', $.babel({
+      presets: ['es2015']
+    })))
+    .pipe($.sourcemaps.write('.'))
+    .pipe(gulp.dest('.tmp/'))
+    .pipe(gulp.dest(dist()));
+});
+
+// Optimize images
+gulp.task('images', function() {
+  return imageOptimizeTask('app/images/**/*', dist('images'));
+});
+
+// Copy all files at the root level (app)
+gulp.task('copy', function() {
+  var app = gulp.src([
+    'app/*',
+    '!app/test',
+    '!app/cache-config.json'
+  ], {
+    dot: true
+  }).pipe(gulp.dest(dist()));
+
+  var bower = gulp.src([
+    'bower_components/**/*'
+  ]).pipe(gulp.dest(dist('bower_components')));
+
+  var elements = gulp.src(['app/elements/**/*.html',
+      'app/elements/**/*.css',
+      'app/elements/**/*.js'
+    ])
+    .pipe(gulp.dest(dist('elements')));
+
+  var swBootstrap = gulp.src(['bower_components/platinum-sw/bootstrap/*.js'])
+    .pipe(gulp.dest(dist('elements/bootstrap')));
+
+  var swToolbox = gulp.src(['bower_components/sw-toolbox/*.js'])
+    .pipe(gulp.dest(dist('sw-toolbox')));
+
+  var vulcanized = gulp.src(['app/elements/elements.html'])
+    .pipe($.rename('elements.vulcanized.html'))
+    .pipe(gulp.dest(dist('elements')));
+
+  return merge(app, bower, elements, vulcanized, swBootstrap, swToolbox)
+    .pipe($.size({
+      title: 'copy'
+    }));
+});
+
+// Copy web fonts to dist
+gulp.task('fonts', function() {
+  return gulp.src(['app/fonts/**'])
+    .pipe(gulp.dest(dist('fonts')))
+    .pipe($.size({
+      title: 'fonts'
+    }));
+});
+
+// Copy web fonts to dist
+gulp.task('data', function() {
+  var data = gulp.src(['app/data/**'])
+    .pipe(gulp.dest('dist/data'));
+
+  var locales = gulp.src(['app/locales/**'])
+    .pipe(gulp.dest('dist/locales'));
+
+  return merge(data, locales);
+});
+
+// Scan your HTML for assets & optimize them
+gulp.task('html', function() {
+  return optimizeHtmlTask(
+    //['app/**/*.html', '!app/{elements,test}/**/*.html'],
+    [dist('/**/*.html'), '!' + dist('/{elements,test}/**/*.html')],
+    dist());
+});
+
+// Vulcanize granular configuration
+gulp.task('vulcanize', function() {
+  var DEST_DIR = dist('elements');
+  return gulp.src(dist('elements/elements.vulcanized.html'))
+    .pipe($.vulcanize({
+      stripComments: true,
+      inlineCss: true,
+      inlineScripts: true
+    }))
+    .pipe($.minifyInline())
+    .pipe(gulp.dest(DEST_DIR))
+    .pipe($.size({
+      title: 'vulcanize'
+    }));
 });
 
 // Generate config data for the <sw-precache-cache> element.
@@ -218,18 +261,24 @@ gulp.task('rename-index', function () {
 // in your project, please enable it within the 'default' task.
 // See https://github.com/PolymerElements/polymer-starter-kit#enable-service-worker-support
 // for more context.
-gulp.task('cache-config', function (callback) {
-  var dir = 'dist';
+gulp.task('cache-config', function(callback) {
+  var dir = dist();
   var config = {
     cacheId: packageJson.name || path.basename(__dirname),
     disabled: false
   };
 
-  glob('{elements,scripts,styles}/**/*.*', {cwd: dir}, function(error, files) {
+  glob([
+    'index.html',
+    './',
+    'bower_components/webcomponentsjs/webcomponents-lite.min.js',
+    '{elements,scripts,styles}/**/*.*'
+  ], {
+    cwd: dir
+  }, function(error, files) {
     if (error) {
       callback(error);
     } else {
-      files.push('index.html', './', 'bower_components/webcomponentsjs/webcomponents-lite.min.js');
       config.precache = files;
 
       var md5 = crypto.createHash('md5');
@@ -243,16 +292,15 @@ gulp.task('cache-config', function (callback) {
 });
 
 // Clean output directory
-gulp.task('clean', function (cb) {
-  del(['.tmp', 'dist'], cb);
+gulp.task('clean', function() {
+  return del(['.tmp', 'dist']);
 
   //uncomment when weird images appear or disappear.
   //$.cache.clearAll();
-
 });
 
 // Watch files for changes & reload
-gulp.task('serve', ['styles', 'imports', 'elements', 'images', 'js'], function () {
+gulp.task('serve', ['lint', 'styles', 'elements', 'images', 'js'], function() {
   browserSync({
     port: 5000,
     notify: false,
@@ -260,7 +308,7 @@ gulp.task('serve', ['styles', 'imports', 'elements', 'images', 'js'], function (
     snippetOptions: {
       rule: {
         match: '<span id="browser-sync-binding"></span>',
-        fn: function (snippet) {
+        fn: function(snippet) {
           return snippet;
         }
       }
@@ -271,7 +319,7 @@ gulp.task('serve', ['styles', 'imports', 'elements', 'images', 'js'], function (
     // https: true,
     server: {
       baseDir: ['.tmp', 'app'],
-      middleware: [ historyApiFallback() ],
+      middleware: [historyApiFallback()],
       routes: {
         '/bower_components': 'bower_components'
       }
@@ -281,13 +329,13 @@ gulp.task('serve', ['styles', 'imports', 'elements', 'images', 'js'], function (
   gulp.watch(['app/**/*.html'], ['js', reload]);
   gulp.watch(['app/styles/**/*.css'], ['styles', reload]);
   gulp.watch(['app/elements/**/*.css'], ['elements', reload]);
-  gulp.watch(['app/{scripts,elements}/**/*.js'], ['jshint', 'js']);//, reload
+  gulp.watch(['app/{scripts,elements}/**/{*.js,*.html}'], ['lint', 'js']);
   gulp.watch(['app/images/**/*'], reload);
 
 });
 
 // Build and serve the output from the dist build
-gulp.task('serve:dist', ['default'], function () {
+gulp.task('serve:dist', ['default'], function() {
   browserSync({
     port: 5001,
     notify: false,
@@ -295,7 +343,7 @@ gulp.task('serve:dist', ['default'], function () {
     snippetOptions: {
       rule: {
         match: '<span id="browser-sync-binding"></span>',
-        fn: function (snippet) {
+        fn: function(snippet) {
           return snippet;
         }
       }
@@ -304,20 +352,33 @@ gulp.task('serve:dist', ['default'], function () {
     // Note: this uses an unsigned certificate which on first access
     //       will present a certificate warning in the browser.
     // https: true,
-    server: 'dist',
-    middleware: [ historyApiFallback() ]
+    server: dist(),
+    middleware: [historyApiFallback()]
   });
 });
 
 // Build production files, the default task
-gulp.task('default', ['clean', 'imports'], function (cb) {
-  // Uncomment 'cache-config' after 'rename-index' if you are going to use service workers.
+gulp.task('default', ['clean'], function(cb) {
+  // Uncomment 'cache-config' if you are going to use service workers.
   runSequence(
-    ['copy', 'styles'],
-    ['elements', 'js'],
-    ['jshint', 'images', 'data', 'fonts', 'html'],
-    'vulcanize','rename-index', // 'cache-config',
+    ['copy', 'styles'], ['elements', 'js'],
+    ['lint', 'images', 'data', 'fonts', 'html'],
+    'vulcanize', // 'rename-index' // 'cache-config',
     cb);
+});
+
+// Build then deploy to GitHub pages gh-pages branch
+gulp.task('build-deploy-gh-pages', function(cb) {
+  runSequence(
+    'default',
+    'deploy-gh-pages',
+    cb);
+});
+
+// Deploy to GitHub pages gh-pages branch
+gulp.task('deploy-gh-pages', function() {
+  return gulp.src('./dist/**/*')
+    .pipe($.ghPages());
 });
 
 // Load tasks for web-component-tester
@@ -325,4 +386,6 @@ gulp.task('default', ['clean', 'imports'], function (cb) {
 require('web-component-tester').gulp.init(gulp);
 
 // Load custom tasks from the `tasks` directory
-try { require('require-dir')('tasks'); } catch (err) {}
+try {
+  require('require-dir')('tasks');
+} catch (err) {}

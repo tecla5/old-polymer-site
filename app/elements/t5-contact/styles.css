@@ -1,6 +1,5 @@
 :host {
   display: block;
-  background: #FFF;
 }
 
 [hidden] {
@@ -10,7 +9,6 @@
 
 
 paper-material {
-  background: white;
   box-sizing: border-box;
   padding: 16px;
   border-radius: 5px;
@@ -18,20 +16,7 @@ paper-material {
 
 }
 
-paper-material.colored {
-  border-color: var(--primary-background-color);
-  /*background-color: var(--paper-light-blue-50);*/
-  color: var(--primary-background-color);
-  border: 1px outset;
-}
 
-
-paper-dialog.colored {
-  border-color: var(--primary-background-color);
-  background-color: var(--paper-light-blue-50);
-  color: var(--primary-background-color);
-  border: 2px solid;
-}
 
 
 paper-dialog.size-position {
@@ -52,9 +37,6 @@ paper-button {
   border-color: var(--primary-background-color);
 }
 
-.email {
-  background: var(--primary-background-color);
-}
 
 
 .successMsgDiv{

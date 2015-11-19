@@ -1,32 +1,42 @@
 <!-- shared styles for all elements and index.html -->
 <dom-module id="shared-styles">
-  <template>
-    <style>
+  <style>
+
+
+    .page-title {
+      @apply(--paper-font-display);
+    }
+
+    :host {
+      display:block;
+      background: var(--secondary-background-color);
+    }
+
+
+/*
+    .paper-font-title{
+      font-size: 30px;
+      font-weight: 300;
+    }
+    paper-toolbar{
+      font-size: 20vh;
+      font-weight: 300;
+    }
+
+
+    paper-menu a > *, paper-menu paper-item > *, paper-menu paper-icon-item > * {
+      pointer-events: none;
+    }
+
+
+    @media (max-width: 600px) {
       .page-title {
-        @apply(--paper-font-display);
+        font-size: 24px!important;
       }
+    }
+    */
+  </style>
 
-      :host {
-        display:block;
-        background: var(--secondary-background-color);
-      }
-
-
-      .paper-font-title{
-        font-size: 30px;
-        font-weight: 300;
-      }
-      paper-toolbar{
-        font-size: 20vh;
-        font-weight: 300;
-      }
-
-
-      @media (max-width: 600px) {
-        .page-title {
-          font-size: 24px!important;
-        }
-      }
-    </style>
+  <template>
   </template>
 </dom-module>

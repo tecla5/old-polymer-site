@@ -1,14 +1,15 @@
-'use strict';
-
 Polymer({
-  is: 't5-home',
+  is: 'portfolio-finished',
+
   behaviors: [
-    Polymer.NeonAnimationRunnerBehavior
+    Polymer.NeonAnimationRunnerBehavior,
+    Polymer.NeonSharedElementAnimatableBehavior
   ],
+
   properties: {
     // START ANIMATIONS
     animationConfig: {
-      value: function() {
+      value() {
         return {
           'entry': [{
             name: 'fade-in-animation',
@@ -28,20 +29,25 @@ Polymer({
           }]
         };
       }
-    },
-    items: Array,
-    item: {
-      type: Object,
-      // when `items` changes `computeItem` is called once
-      // and the value it returns is stored as `item`
-      computed: 'computeItem(items)'
-    },
-    lastError: String
+    }
+    // END ANIMATIONS
   },
-  computeItem: items => {
-    return items && items[0] || {};
+
+  ready() {
+    this.productsList = [{
+      'id': 0,
+      'name': 'Card 1 - Cat 1',
+      'header': 'http://lorempixel.com/350/200',
+      'launcher': '../../images/ic_launcher.png'
+    }, {
+      'id': 1,
+      'name': 'Card 2 - Cat 1',
+      'header': 'http://lorempixel.com/350/200',
+      'launcher': '../../images/ic_launcher.png'
+    }];
   },
-  _repeatRender: () => {
+
+  _repeatRender() {
     this.paperCard = Polymer.dom(this.root).querySelectorAll('paper-card');
     this.animationConfig.entry.push({
       name: 'cascaded-animation',
@@ -50,13 +56,17 @@ Polymer({
       nodes: this.paperCard
     });
   },
-  _openCard: event => {
+
+  _openCard(event) {
     if (event.target.classList.contains('paper-fab')) {
       this.fire('updateShowcase', this.productsList[event.model.__data__['item.id']]);
+
       this.sharedElements = {
         'hero': event.target
       };
+
       this.fire('changePage', 'showcase');
     }
   }
+
 });

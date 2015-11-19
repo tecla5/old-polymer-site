@@ -2,6 +2,8 @@ node_modules
 dist
 bower_components
 .tmp
+.publish/
+
 *.log
 .divshot-cache/
 app/elements/external-imports.html

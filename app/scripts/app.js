@@ -7,7 +7,7 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 */
 
-((document)  => {
+((document) => {
   'use strict';
 
   document.addEventListener('HTMLImportsLoaded', function() {
@@ -21,10 +21,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // Learn more about auto-binding templates at http://goo.gl/Dx1u2g
   var app = document.querySelector('#app');
 
-  app.displayInstalledToast = () => {
+  // Sets app default base URL
+  app.baseUrl = '/';
+  if (window.location.port === '') { // if production
+    // Uncomment app.baseURL below and
+    // set app.baseURL to '/your-pathname/' if running from folder in production
+    app.baseUrl = '/site/';
+  }
+
+  app.displayInstalledToast = function() {
     // Check to make sure caching is actually enabled—it won't be in the dev environment.
-    if (!document.querySelector('platinum-sw-cache').disabled) {
-      document.querySelector('#caching-complete').show();
+    if (!Polymer.dom(document).querySelector('platinum-sw-cache').disabled) {
+      Polymer.dom(document).querySelector('#caching-complete').show();
     }
   };
 
@@ -32,24 +40,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // have resolved and content has been stamped to the page
 
   app.addEventListener('dom-change', () => {
-    console.log('dom-change');
+    console.log('dom-change', app.route, window.location.pathname);
 
-    if (app.route === undefined && (window.location.pathname ==='/' || window.location.pathname.search(/\/(es|en)\/{0,1}/) !== -1  ) ) {
+    if (app.route === undefined && (window.location.pathname === '/' ||
+        window.location.pathname.search(/\/(es|en)\/{0,1}/) !== -1)) {
       app.route = 'splash'; // default route to 'one'.
     }
-    if (app.route === 'splash'){
+    console.log('dom-change2', app.route, window.location.pathname);
+
+    if (app.route === 'splash') {
       var t5Splash = document.querySelector('t5-splash');
       t5Splash.addEventListener('splash-completed', (e) => {
+        console.log('event heared');
         app.onDataRouteClick(e);
       });
       t5Splash.startup();
     } else {
-      document.querySelector('#paperDrawerPanel').forceNarrow=false;
+      document.querySelector('#paperDrawerPanel').forceNarrow = false;
     }
 
-
   });
-
 
   // See https://github.com/Polymer/polymer/issues/1381
   window.addEventListener('WebComponentsReady', () => {
@@ -59,7 +69,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     //contact-received
     //contact-failure
 
-
     // No argument returns the instance's message:
     //document.querySelector('i18n-msg').getMsg();
     // Get a message by an id:
@@ -67,26 +76,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   window.addEventListener('i18n-language-ready', () => {
     console.log('i18n-language-ready', window.I18nMsg);
-    console.log('i18n-msg '+document.querySelector('i18n-msg').language);
+    console.log('i18n-msg ' + document.querySelector('i18n-msg').language);
     console.log(document.querySelector('i18n-msg').getMsg('welcome'));
   });
-
 
   // Main area's paper-scroll-header-panel custom condensing transformation of
   // the appName in the middle-container and the bottom title in the bottom-container.
   // The appName is moved to top and shrunk on condensing. The bottom sub title
   // is shrunk to nothing on condensing.
-  addEventListener('paper-header-transform', () => {
+  window.addEventListener('paper-header-transform', function() {
     /*
-    console.log(e);
-    var appName = document.querySelector('.app-name');
-    var middleContainer = document.querySelector('.middle-container');
-    var bottomContainer = document.querySelector('.bottom-container');
+    var appName = Polymer.dom(document).querySelector('#mainToolbar .app-name');
+    var middleContainer = Polymer.dom(document).querySelector('#mainToolbar .middle-container');
+    var bottomContainer = Polymer.dom(document).querySelector('#mainToolbar .bottom-container');
     var detail = e.detail;
     var heightDiff = detail.height - detail.condensedHeight;
     var yRatio = Math.min(1, detail.y / heightDiff);
-    var maxMiddleScale = 0.50;  // appName max size when condensed. The smaller the number the smaller the condensed size.
-    var scaleMiddle = Math.max(maxMiddleScale, (heightDiff - detail.y) / (heightDiff / (1-maxMiddleScale))  + maxMiddleScale);
+    // appName max size when condensed. The smaller the number the smaller the condensed size.
+    var maxMiddleScale = 0.50;
+    var auxHeight = heightDiff - detail.y;
+    var auxScale = heightDiff / (1 - maxMiddleScale);
+    var scaleMiddle = Math.max(maxMiddleScale, auxHeight / auxScale + maxMiddleScale);
     var scaleBottom = 1 - yRatio;
     */
     // Move/translate middleContainer
@@ -100,18 +110,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   });
 
   // Close drawer after menu item is selected if drawerPanel is narrow
-  app.onDataRouteClick = (mouseEvent) => {
-    document.querySelector('#paperDrawerPanel').forceNarrow=false;
-
-
-    var drawerPanel = document.querySelector('#paperDrawerPanel');
+  app.onDataRouteClick = function(mouseEvent) {
+    var drawerPanel = Polymer.dom(document).querySelector('#paperDrawerPanel');
     if (drawerPanel.narrow) {
       drawerPanel.closeDrawer();
     }
     var route = mouseEvent.srcElement.getAttribute('data-route') || app.route;
 
     var mainToolbar = document.querySelector('#mainToolbar');
-    mainToolbar.customStyle['--paper-toolbar-background'] = 'var(--'+route+'-bg-image,--primary-background-color)';//'blue';
+    mainToolbar.customStyle['--paper-toolbar-background'] =
+    'var(--' + route + '-bg-image,--primary-background-color)'; //'blue';
     mainToolbar.updateStyles();
 
   };
@@ -132,17 +140,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   window.showDiv = () => {
     var div = document.getElementById('socialContainer');
-    if( div && div.style.display !== 'none') {
-        document.getElementById('socialContainer').style.display = 'none';
+    if (div && div.style.display !== 'none') {
+      document.getElementById('socialContainer').style.display = 'none';
     } else {
-        document.getElementById('socialContainer').style.display = 'block';
+      document.getElementById('socialContainer').style.display = 'block';
     }
   };
 
   // Scroll page to top and expand header
-  app.scrollPageToTop = () => {
-    //document.getElementById('mainContainer').scrollTop = 0;
+  app.scrollPageToTop = function() {
+    app.$.headerPanelMain.scrollToTop(true);
   };
-
 
 })(document);

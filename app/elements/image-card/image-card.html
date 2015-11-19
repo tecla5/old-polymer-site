@@ -88,23 +88,6 @@
 		</paper-material>
 
 	</template>
+
+	<script src="image-card.js" charset="utf-8"></script>
 </dom-module>
-
-<script>
-	Polymer({
-		is: 'image-card',
-
-		properties: {
-			width: {
-				type: Number,
-				observer: '_changeWidth',
-			},
-		},
-
-		_changeWidth(data) {
-			this.style.width = data + 'px';
-			this.querySelector('.content').width = data + 'px';
-		},
-
-	});
-</script>
