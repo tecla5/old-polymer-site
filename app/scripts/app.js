@@ -40,25 +40,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // have resolved and content has been stamped to the page
 
   app.addEventListener('dom-change', () => {
-    console.log('dom-change', app.route, window.location.pathname);
-
-    if (app.route === undefined && (window.location.pathname === '/' ||
-        window.location.pathname.search(/\/(es|en)\/{0,1}/) !== -1)) {
-      app.route = 'splash'; // default route to 'one'.
-    }
-    console.log('dom-change2', app.route, window.location.pathname);
-
-    if (app.route === 'splash') {
-      var t5Splash = document.querySelector('t5-splash');
-      t5Splash.addEventListener('splash-completed', (e) => {
-        console.log('event heared');
-        app.onDataRouteClick(e);
-      });
-      t5Splash.startup();
-    } else {
-      document.querySelector('#paperDrawerPanel').forceNarrow = false;
-    }
-
+    //var t5App = document.querySelector('t5-app');
+    //t5App.showSplash();
   });
 
   // See https://github.com/Polymer/polymer/issues/1381
@@ -108,21 +91,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     // Scale middleContainer appName
     //Polymer.Base.transform('scale(' + scaleMiddle + ') translateZ(0)', appName);
   });
-
-  // Close drawer after menu item is selected if drawerPanel is narrow
-  app.onDataRouteClick = function(mouseEvent) {
-    var drawerPanel = Polymer.dom(document).querySelector('#paperDrawerPanel');
-    if (drawerPanel.narrow) {
-      drawerPanel.closeDrawer();
-    }
-    var route = mouseEvent.srcElement.getAttribute('data-route') || app.route;
-
-    var mainToolbar = document.querySelector('#mainToolbar');
-    mainToolbar.customStyle['--paper-toolbar-background'] =
-    'var(--' + route + '-bg-image,--primary-background-color)'; //'blue';
-    mainToolbar.updateStyles();
-
-  };
 
   /*
   window.showFooter = (id) => {
