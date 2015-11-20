@@ -26,7 +26,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   if (window.location.port === '') { // if production
     // Uncomment app.baseURL below and
     // set app.baseURL to '/your-pathname/' if running from folder in production
-    app.baseUrl = '/site/';
+    // app.baseUrl = '/site/';
   }
 
   app.displayInstalledToast = function() {
