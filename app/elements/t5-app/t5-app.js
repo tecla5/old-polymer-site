@@ -39,13 +39,11 @@ Polymer({
       app.route = 'splash'; // default route to 'one'.
     }
 
-    var t5App = this;//document.querySelector('#t5-app');
-    console.log(t5App);
     if (app.route === 'splash') {
       var t5Splash = document.querySelector('t5-splash');
       t5Splash.startup();
     } else {
-      t5App.paperDrawerPanel.forceNarrow = false;
+      document.querySelector('#paperDrawerPanel').forceNarrow = false;
     }
   }
 
