@@ -4,6 +4,8 @@ Polymer({
   is: 't5-contact',
 
   ready() {
+
+    this.$.modal.open();
   },
 
   handleClick() {
@@ -19,14 +21,14 @@ Polymer({
   _openDialog() {
     this.$.modal.toggle();
     this.$.form.name.value = '';
-    this.$.form.email.value = '';
+    this.$.form.email.value = '';// _replyto
     this.$.form.message.value = '';
   },
 
   properties: {
     action: {
       type: String,
-      value: '/__/forms/contact'
+      value: '//formspree.io/contact@tecla5.com'
     },
   }
 
