@@ -4,8 +4,6 @@ Polymer({
   is: 't5-contact',
 
   ready() {
-
-    this.$.modal.open();
   },
 
   handleClick() {
