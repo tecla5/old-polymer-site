@@ -54,8 +54,8 @@ hsl: Hue, Saturation, Lightness – Matiz, Saturación, Luminosidad
 
     --disabled-text-color: #bdbdbd;
 
-    --primary-background-color: #FFAB40;
-    --secondary-background-color: hsl(30, 100%, 60%);
+    --primary-background-color: hsl(30, 100%, 60%); /*#FFAB40;*/
+    --secondary-background-color: hsl(0, 0%, 93%); /*hsl(40, 12%, 95%); *//* hsl(30, 100%, 60%); */
     --third-background-color: hsl(30, 100%, 48%);
 
     /* Components */
@@ -79,7 +79,6 @@ hsl: Hue, Saturation, Lightness – Matiz, Saturación, Luminosidad
     --contact-bg-image: url(/images/toolbar/abstract1800x600.png);
 
   }
-
   /* General styles */
 
 
@@ -128,167 +127,6 @@ hsl: Hue, Saturation, Lightness – Matiz, Saturación, Luminosidad
   }
 
 
-/*
-background-image: var(--name-bg-image);
-background-size: cover;
-background-attachment: fixed;
-
-*/
-  paper-toolbar.tall {
-    /*--paper-toolbar-background: var(--home-bg-image, --primary-background-color);*/
-    height: 200px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: #EEEEEE;
-  }
-
-  paper-toolbar.tall .app-name {
-    font-size: 40px;
-    font-weight: 300;
-    /* Required for main area's paper-scroll-header-panel custom condensing transformation */
-    -webkit-transform-origin: left center;
-    transform-origin: left center;
-  }
-
-  /*images background for all pages*/
-  paper-toolbar.home{
-    background-image: url(/images/toolbar/spikes1366x768.jpg);
-  }
-  paper-toolbar.about{
-    background-image: url(/images/toolbar/forest1366x768.jpg);
-  }
-  paper-toolbar.team{
-    background-image: url(/images/toolbar/grass1366x768.jpg);
-  }
-  paper-toolbar.service{
-    background-image: url(/images/toolbar/nature1366x768.jpg);
-  }
-  paper-toolbar.contactUs{
-    background-image: url(/images/toolbar/water1366x768.jpg);
-  }
-
-
-  .header-shadow{
-      background-image: url('../images/header-shade.jpg');
-  }
-
-  iron-icon [icon]{
-    padding-bottom: 3%;
-  }
-
-  iron-selector a.item-menu{
-    margin-bottom: 2px;
-    padding: 10px 0px;
-    -moz-user-select: none;
-    box-sizing: border-box;
-    cursor: pointer;
-    display: block;
-    font-size: 16px;
-    min-width: 7em;
-    outline: medium none;
-    position: relative;
-    z-index: 0;
-    cursor: pointer;
-    text-transform: uppercase;
-    background-color: #eee;
-    color:black;
-    padding-left: 20%;
-  }
-
-  /* Height of the scroll area */
-  .content {
-    height: auto;
-    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 16px !important;
-    color: #444;
-  }
-
-  a.iron-selected {
-    background: var(--primary-background-color);
-  }
-
-  .topBack {
-    background: var(--primary-background-color);
-  }
-
-  .foot-style{
-    padding: 0;
-    display:inline;
-    background-color: var(--primary-background-color);
-  }
-  .social-style{
-    padding-left: 0;
-    display:inline;
-    background-color: transparent;
-   }
-
-  .paper-menu > .iron-selected {
-    color: var(--default-primary-color);
-  }
-
-  paper-toolbar.drawerToolbar{
-    background: var(--light-primary-color);
-    height: 200px;
-  }
-
-  paper-toolbar.drawerToolbar:not([style-scope]):not(.style-scope){
-    background: #EEEEEE !important;
-    border-bottom: 1px solid #FFFFFF;
-  }
-
-  .center-logo {
-    margin: auto;
-    top:50%;
-  }
-
-  .big {
-    --iron-icon-height: 100px;
-    --iron-icon-width: 100px;
-  }
-
-  #mainToolbar .middle-container  {
-    height: 100%;
-    margin-left: 48px;
-  }
-
-  #mainToolbar:not(.tall) .middle {
-    font-size: 18px;
-    padding-bottom: 0;
-  }
-
-  #mainToolbar .bottom {
-    margin-left: 48px;
-    /* Required for main area's paper-scroll-header-panel custom condensing transformation */
-    -webkit-transform-origin: left center;
-    transform-origin: left center;
-  }
-
-  #footToolbar{
-    background: var(--primary-background-color);
-  }
-  #mainContainer.paper-scroll-header-panel{ /* BOTTOM MENU BACKGROUND */
-    background: var(--primary-background-color);
-  }
-  #footer {
-    position: fixed;
-    height: 13%;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    visibility: hidden;
-  }
-  #footerDiv{
-    position: fixed;
-    height: 13%;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-  }
-
-  #toast .toast-hide-button {
-    color: #eeff41;
-    margin: 10px;
-  }
 
   /* Breakpoints */
 
@@ -312,6 +150,8 @@ background-attachment: fixed;
     }
 
   }
+
+
 
   /* Tablet+ */
   @media (min-width: 601px) {
@@ -374,4 +214,6 @@ background-attachment: fixed;
   @media all and (min-width: 1281px) and (max-width: 1600px) { }
   /* desktop-xlarge */
   @media all and (min-width: 1601px) and (max-width: 1920px) { }
+
+
 </style>
