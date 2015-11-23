@@ -44,7 +44,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <!-- {{items[0].caption}} -->
         <template is="dom-repeat" items="{{items}}">
           <paper-card heading="{{item.caption}}" elevation="1">
-              <div class="card-content" image="{{item.image}}" >
+              <div class="card-content" image="{{item.image}}">
                   <div >
                     <iron-image src="{{item.image}}" class="profile-picture" sizing="contain"></iron-image>
                     <h2 class="subtitle">{{item.location}}</h2>
@@ -54,24 +54,31 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     <p>Profile: <span>{{item.name}}</span></p>
 
                     <!-- could better change ith css add , or js add coma -->
-                    <p>Roles:
+                    <p>
+                      Roles:
                       <!-- nested repeat -->
-                      <template is="dom-repeat" items="{{item.roles}}" as="rol" index-as="rol_no">
-                        <span>{{rol}}</span>,<!-- could move , to css style -->
-                      </template>
+                      <ul>
+                        <template is="dom-repeat" items="{{item.roles}}" as="rol" index-as="rol_no">
+                          <li>{{rol}}</li><!-- could move , to css style -->
+                        </template>
+                      </ul>
                     </p>
-                    <p>Techs:
+                    <p>
+                      Techs:
                       <!-- nested repeat -->
-                      <template is="dom-repeat" items="{{item.technologies}}" as="tech" index-as="tech_no">
-                        <span>{{tech}}</span>,<!-- could move , to css style -->
-                      </template>
+                      <ul>
+                        <template is="dom-repeat" items="{{item.technologies}}" as="tech" index-as="tech_no">
+                          <li>{{tech}}</li><!-- could move , to css style -->
+                        </template>
+                      </ul>
                     </p>
                     <p>Delivers:
                       <!-- nested repeat -->
-                      <template is="dom-repeat" items="{{item.delivers}}" as="deliver" index-as="rol_no">
-                        <span>{{deliver}}</span>,<!-- could move , to css style -->
-                      </template>
-
+                      <ul>
+                        <template is="dom-repeat" items="{{item.delivers}}" as="deliver" index-as="rol_no">
+                          <li>{{deliver}}</li><!-- could move , to css style -->
+                        </template>
+                      </ul>
                       </p>
                     <p><span>Contact: </span><iron-icon icon="mail" ></iron-icon><a class="email-link" href$="{{generateEmailLink(item.contact)}}">{{item.contact}}</a></p>
                   </div>
