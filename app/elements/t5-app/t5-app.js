@@ -8,7 +8,7 @@ Polymer({
       notify: true
     }
   },
-  attached() {
+  attached: function() {
     this.showSplash();
   },
   listeners: {
@@ -16,7 +16,7 @@ Polymer({
   },
 
   // Close drawer after menu item is selected if drawerPanel is narrow
-  onDataRouteClick: mouseEvent  => {
+  onDataRouteClick: function(mouseEvent) {
     var drawerPanel = document.querySelector('#paperDrawerPanel');
     drawerPanel.forceNarrow = false;
 
@@ -32,7 +32,7 @@ Polymer({
 
   },
 
-  showSplash: () => {
+  showSplash: function() {
     console.log('show splash');
     if (app.route === undefined && (window.location.pathname === '/' ||
         window.location.pathname.search(/\/(es|en)\/{0,1}/) !== -1)) {

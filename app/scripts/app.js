@@ -7,7 +7,7 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 */
 
-((document) => {
+(function(document) {
   'use strict';
 
   document.addEventListener('HTMLImportsLoaded', function() {
@@ -39,13 +39,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // Listen for template bound event to know when bindings
   // have resolved and content has been stamped to the page
 
-  app.addEventListener('dom-change', () => {
+  app.addEventListener('dom-change', function() {
     //var t5App = document.querySelector('t5-app');
     //t5App.showSplash();
   });
 
   // See https://github.com/Polymer/polymer/issues/1381
-  window.addEventListener('WebComponentsReady', () => {
+  window.addEventListener('WebComponentsReady', function() {
     console.log('WebComponentsReady-app');
     // imports are loaded and elements have been registered
 
@@ -57,7 +57,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     // Get a message by an id:
   });
 
-  window.addEventListener('i18n-language-ready', () => {
+  window.addEventListener('i18n-language-ready', function() {
     console.log('i18n-language-ready', window.I18nMsg);
     console.log('i18n-msg ' + document.querySelector('i18n-msg').language);
     console.log(document.querySelector('i18n-msg').getMsg('welcome'));
@@ -106,7 +106,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   };
   */
 
-  window.showDiv = () => {
+  window.showDiv = function() {
     var div = document.getElementById('socialContainer');
     if (div && div.style.display !== 'none') {
       document.getElementById('socialContainer').style.display = 'none';

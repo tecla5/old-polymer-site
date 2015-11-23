@@ -3,7 +3,7 @@ Polymer({
   listeners: {
     //'dialog.iron-overlay-closed': 'completeStartup'
   },
-  startup() {
+  startup: function() {
     document.querySelector('#paperDrawerPanel').forceNarrow = true;
     var mainToolbar = document.querySelector('#mainToolbar');
     mainToolbar.customStyle['--paper-toolbar-background'] = 'none';//'blue';
@@ -11,7 +11,7 @@ Polymer({
     //this.$.dialog.open();
     //window.setTimeout(this.completeStartup, 3000);
   },
-  completeStartup() {
+  completeStartup: function() {
     //this.$.dialog.close();
     app.route = 'home';
     document.querySelector('#paperDrawerPanel').forceNarrow = false;

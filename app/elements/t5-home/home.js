@@ -38,10 +38,10 @@ Polymer({
     },
     lastError: String
   },
-  computeItem: items => {
+  computeItem: function(items) {
     return items && items[0] || {};
   },
-  _repeatRender: () => {
+  _repeatRender: function() {
     this.paperCard = Polymer.dom(this.root).querySelectorAll('paper-card');
     this.animationConfig.entry.push({
       name: 'cascaded-animation',
@@ -50,7 +50,7 @@ Polymer({
       nodes: this.paperCard
     });
   },
-  _openCard: event => {
+  _openCard: function(event) {
     if (event.target.classList.contains('paper-fab')) {
       this.fire('updateShowcase', this.productsList[event.model.__data__['item.id']]);
       this.sharedElements = {

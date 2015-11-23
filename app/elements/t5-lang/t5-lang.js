@@ -1,7 +1,7 @@
 Polymer({
   is: 't5-lang',
 
-  attached() {
+  attached: function() {
     var i18n = document.querySelector('i18n-msg');
 
     console.log('hacking default behavior of i18n-msg');
@@ -23,12 +23,12 @@ Polymer({
     };
 
   },
-  showLanguage() {
+  showLanguage: function() {
     //this.$.showMenu.toggle();
     document.getElementById('languages').toggle();
 
   },
-  changeLanguage(e) {
+  changeLanguage: function(e) {
     var I18nMsg = window.I18nMsg;
     I18nMsg.lang = e.srcElement.getAttribute('data-lang');
     document.getElementById('languages').toggle();

@@ -3,20 +3,20 @@
 Polymer({
   is: 't5-blog',
 
-  ready() {
+  ready: function() {
     this.$.myblog.generateRequest();
   },
 
-  handleResponse(e, from1, to) {
+  handleResponse: function(e, from1, to) {
     var article = e.detail.response.querySelector(from1);
 
     //article.querySelector('.byline').remove();
     // Fix up image paths to not be local.
-    [].forEach.call(article.querySelectorAll('img'), (img) => {
+    [].forEach.call(article.querySelectorAll('img'), function(img) {
       img.setAttribute('src', img.src);
     });
     // fix links
-    [].forEach.call(article.querySelectorAll('a'), (a) => {
+    [].forEach.call(article.querySelectorAll('a'), function(a) {
       a.setAttribute('href', a.href);
     });
 
@@ -26,18 +26,18 @@ Polymer({
     return article;
   },
 
-  handlePostResponse(e) {
+  handlePostResponse: function(e) {
     this.handleResponse(e, '.post', this.$.post);
   },
 
-  handleBlogResponse(e) {
+  handleBlogResponse: function(e) {
     var html = this.handleResponse(e, '.post-list', this.$.blog);
 
     this.$.mypost.url = html.querySelector('a').href;
     this.$.mypost.generateRequest();
 
   },
-  openBlog() {
+  openBlog: function() {
     var link = 'http://blog.tecla5.com/';
     window.open(link);
   }

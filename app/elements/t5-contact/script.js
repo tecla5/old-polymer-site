@@ -3,10 +3,10 @@
 Polymer({
   is: 't5-contact',
 
-  ready() {
+  ready: function() {
   },
 
-  handleClick() {
+  handleClick: function() {
     //console.log(event, detail);
     //document.getElementById('form');
     this.$.form.submit();
@@ -16,7 +16,7 @@ Polymer({
     'iron-form-submit': '_openDialog'
   },
 
-  _openDialog() {
+  _openDialog: function() {
     this.$.modal.toggle();
     this.$.form.name.value = '';
     this.$.form.email.value = '';// _replyto
