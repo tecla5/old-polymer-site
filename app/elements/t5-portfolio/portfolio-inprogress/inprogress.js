@@ -9,7 +9,7 @@ Polymer({
   properties: {
     // START ANIMATIONS
     animationConfig: {
-      value() {
+      value: function() {
         return {
           'entry': [{
             name: 'fade-in-animation',
@@ -32,11 +32,11 @@ Polymer({
     }
     // END ANIMATIONS
   },
-  attached() {
+  attached: function() {
     this.$.myproducts.generateRequest();
   },
 
-  handleResponse() {
+  handleResponse: function() {
     //console.log(`handleResponse ${e.detail.response}`);
     //console.log(this.$.myproducts.lastResponse);
 

@@ -13,7 +13,7 @@ Polymer({
       notify: true
     }
   },
-  generateEmailLink(email) {
+  generateEmailLink: function(email) {
     return 'mailto:' + email;
   }
 });

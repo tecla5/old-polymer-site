@@ -21,7 +21,7 @@ Polymer({
       type: String
     }
   },
-  computeSrc(image) {
+  computeSrc: function(image) {
     return '/images/' + image ;
   }
 });

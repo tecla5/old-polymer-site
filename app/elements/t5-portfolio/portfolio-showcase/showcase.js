@@ -12,7 +12,7 @@ Polymer({
     },
 
     sharedElements: {
-      value() {
+      value: function() {
         return {
           'hero': this.$.productCard
         };
@@ -21,7 +21,7 @@ Polymer({
 
     // DEBUT : CONFIGURATIONS DES ANIMATIONS
     animationConfig: {
-      value() {
+      value: function() {
         return {
           'entry': [{
             name: 'hero-animation',
@@ -46,11 +46,11 @@ Polymer({
   },
   // FIN : PROPRIETES
 
-  _closeCard() {
+  _closeCard: function() {
     this.fire('changePage', 'finished');
   },
 
-  _productChanged(data) {
+  _productChanged: function(data) {
     console.log('ghola', this.$.header);
     this.$.header.style.backgroundImage = 'url(' + data.header + ')';
   }

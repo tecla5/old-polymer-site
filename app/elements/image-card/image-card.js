@@ -8,7 +8,7 @@ Polymer({
     },
   },
 
-  _changeWidth(data) {
+  _changeWidth: function(data) {
     this.style.width = data + 'px';
     this.querySelector('.content').width = data + 'px';
   },
