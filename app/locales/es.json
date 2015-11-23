@@ -1,5 +1,5 @@
 {
-  "welcome":  "Bienvenidos a tecla5!",
+  "home.welcome":  "Bienvenidos a tecla5!",
   "splash.1":  "No importa lo lejos que es",
   "splash.2":  "Podemos crear inscreibles cosas",
   "splash.3":  "Desarrollamos para usted.",
@@ -16,7 +16,7 @@
   "process.build": "Construir.",
   "process.lift": "Despegar",
   "title-process": "Nuestro proceso",
-  "home": "Inicio",
+  "menu.home": "Inicio",
   "about": "Acerca de",
   "team": "Equipo",
   "services": "Servicios",

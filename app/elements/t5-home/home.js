@@ -58,5 +58,14 @@ Polymer({
       };
       this.fire('changePage', 'showcase');
     }
+  },
+
+  getMsg: function(msgid) {
+    console.log('home-get', msgid);
+    var i18n = Polymer.dom(document).querySelector('t5-i18n');
+    if (i18n) {
+      return i18n.getMsg(msgid);
+    }
+    return null;
   }
 });

@@ -53,14 +53,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     //contact-failure
 
     // No argument returns the instance's message:
-    //document.querySelector('i18n-msg').getMsg();
+    //document.querySelector('t5-i18n').getMsg();
     // Get a message by an id:
   });
 
   window.addEventListener('i18n-language-ready', function() {
     console.log('i18n-language-ready', window.I18nMsg);
-    console.log('i18n-msg ' + document.querySelector('i18n-msg').language);
-    console.log(document.querySelector('i18n-msg').getMsg('welcome'));
+    console.log('t5-i18n ' + document.querySelector('t5-i18n').language);
+    console.log(document.querySelector('t5-i18n').getMsg('home.welcome'));
   });
 
   // Main area's paper-scroll-header-panel custom condensing transformation of
