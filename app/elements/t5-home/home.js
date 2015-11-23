@@ -61,11 +61,19 @@ Polymer({
   },
 
   getMsg: function(msgid) {
+    var value = null;
     console.log('home-get', msgid);
-    var i18n = Polymer.dom(document).querySelector('t5-i18n');
+
+    var i18n = new Element.tag('t5-i18n');//t5-i18n
+    console.log(i18n);
+
+    //var i18n = new T5I18n();
+    //var i18n = Polymer.dom(document).querySelector('t5-i18n');
     if (i18n) {
-      return i18n.getMsg(msgid);
+      value = i18n.getMsg(msgid);
     }
-    return null;
+    console.log(value);
+    return value;
+
   }
 });
