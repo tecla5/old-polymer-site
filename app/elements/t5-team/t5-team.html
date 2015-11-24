@@ -14,15 +14,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <link rel="import" type="css" href="team.css">
 
   <template>
-    <iron-ajax
-      auto
-      url="/data/team.json"
-      handle-as="json"
-      last-response="{{items}}"
-      last-error="{{lastError}}">
-    </iron-ajax>
-
-
     <paper-header-panel mode="cover">
       <div class="paper-header">
         <!--
@@ -42,7 +33,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       <div class="content">
         <!-- {{items[0].caption}} -->
-        <template is="dom-repeat" items="{{items}}">
+        <template is="dom-repeat" items="{{team.developers}}">
           <paper-card heading="{{item.caption}}" elevation="1">
               <div class="card-content" image="{{item.image}}">
                   <div >

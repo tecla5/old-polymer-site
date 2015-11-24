@@ -1,0 +1,146 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="t5-model">
+  <style>
+    :host {
+      display: block;
+    }
+  </style>
+
+  <template>
+    <iron-ajax
+      auto
+      url="/data/{{lang}}/app.json"
+      handle-as="json"
+      last-response="{{model.main}}"
+      last-error="{{lastError}}">
+    </iron-ajax>
+    <iron-ajax
+      auto
+      url="/data/{{lang}}/home.json"
+      handle-as="json"
+      last-response="{{model.home}}"
+      last-error="{{lastError}}">
+    </iron-ajax>
+    <iron-ajax
+      auto
+      url="/data/{{lang}}/about.json"
+      handle-as="json"
+      last-response="{{model.about}}"
+      last-error="{{lastError}}">
+    </iron-ajax>
+    <iron-ajax
+      auto
+      url="/data/{{lang}}/team.json"
+      handle-as="json"
+      last-response="{{model.team}}"
+      last-error="{{lastError}}">
+    </iron-ajax>
+    <iron-ajax
+      auto
+      url="/data/{{lang}}/products.json"
+      handle-as="json"
+      last-response="{{model.products}}"
+      last-error="{{lastError}}">
+    </iron-ajax>
+    <iron-ajax
+      auto
+      url="/data/{{lang}}/services.json"
+      handle-as="json"
+      last-response="{{model.services}}"
+      last-error="{{lastError}}">
+    </iron-ajax>
+    <iron-ajax
+      auto
+      url="/data/{{lang}}/portfolio.json"
+      handle-as="json"
+      last-response="{{model.clients}}"
+      last-error="{{lastError}}">
+    </iron-ajax>
+
+    <div><span>{{model}}</span></div>
+  </template>
+  <script>
+  (function() {
+    'use strict';
+
+    Polymer({
+      is: 't5-model',
+
+      properties: {
+        en: {
+          type: Object,
+          notify: true
+        },
+        es: {
+          type: Object,
+          notify: true
+        },
+        model: {
+          type: Object,
+          notify: true
+        },
+        lang: {
+          type: String,
+          notify: true
+        }
+
+      },
+      ready: function() {
+        console.log(this.en, this.es);
+        this.es = this.es || {
+          'name': 'Tecla5',
+          'portfolio': {
+            'name': 'Portafolio'
+          },
+          'blog': {
+            'name': 'Blog'
+          },
+          'contact': {
+            'name': 'contacto'
+          }
+        };
+        this.en = this.en || {
+          'name': 'Tecla5',
+          'portfolio': {
+            'name': 'Portfolio'
+          },
+          'blog': {
+            'name': 'Blog'
+          },
+          'contact': {
+            'name': 'contacto'
+          }
+        };
+
+        this.model = this.en;
+        this.lang = window.I18nMsg.lang;
+
+        console.log(this.model);
+      },
+
+      updateModel: function(lang) {
+        console.log('updateModel',lang);
+        this.lang = lang;
+        if (lang === 'es') {
+          this.model = this.es;
+        } else {
+          this.model = this.en;
+        }
+        console.log(this.model);
+
+      }
+    });
+  })();
+  </script>
+</dom-module>

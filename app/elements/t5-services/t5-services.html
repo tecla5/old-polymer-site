@@ -17,17 +17,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </style>
 
   <template>
-    <iron-ajax
-      auto
-      url="/data/EN/services.json"
-      handle-as="json"
-      last-response="{{items}}"
-      last-error="{{lastError}}">
-    </iron-ajax>
 
     <paper-header-panel mode="cover">
       <div class="content" id="cards">
-        <template is="dom-repeat" items="{{items}}">
+        <template is="dom-repeat" items="{{services.services}}">
           <paper-card heading="{{item.caption}}" elevation="1">
               <div class="card-content" image="{{item.image}}" >
                 <p>{{item.content}}</p>

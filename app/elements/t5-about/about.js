@@ -7,10 +7,6 @@ Polymer({
     items: {
       type: Array,
       notify: true
-    },
-    lastError: {
-      type: String,
-      notify: true
     }
   }
 });

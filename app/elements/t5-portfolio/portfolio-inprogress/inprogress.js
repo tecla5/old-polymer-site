@@ -31,15 +31,6 @@ Polymer({
       }
     }
     // END ANIMATIONS
-  },
-  attached: function() {
-    this.$.myproducts.generateRequest();
-  },
-
-  handleResponse: function() {
-    //console.log(`handleResponse ${e.detail.response}`);
-    //console.log(this.$.myproducts.lastResponse);
-
   }
 
 });
