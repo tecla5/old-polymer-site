@@ -15,7 +15,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <paper-card heading="Projects">
       <!-- products -->
       <paper-material elevation="1">
-        <portfolio-inprogress></portfolio-inprogress>
+        <portfolio-inprogress products={{products}} ></portfolio-inprogress>
       </paper-material>
 
       <!--<paper-material elevation="1">
@@ -24,18 +24,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </paper-card>
     <paper-card heading="Clients">
       <paper-material elevation="1">
-        <portfolio-finished></portfolio-finished>
+        <portfolio-finished clients="{{clients}}" ></portfolio-finished>
       </paper-material>
     </paper-card>
     <!-- clients + external projects -->
     <!--
-    <iron-ajax
-      auto
-      url="/data/portfolio.json"
-      handle-as="json"
-      last-response="{{items}}"
-      last-error="{{lastError}}">
-    </iron-ajax>
 
     <template is="dom-if" if="{{items}}" restamp="true">
 

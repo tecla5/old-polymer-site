@@ -14,16 +14,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <link rel="import" type="css" href="styles.css">
 
   <template>
-    <iron-ajax
-      auto
-      url="/data/EN/about.json"
-      handle-as="json"
-      last-response="{{items}}"
-      last-error="{{lastError}}">
-    </iron-ajax>
 
     <paper-header-panel mode="cover">
-      <template is="dom-repeat" items="{{items}}">
+      <template is="dom-repeat" items="{{about.questions}}">
         <ui-section image="{{item.image}}" caption="{{item.caption}}" markdown="{{item.content}}"/>
       </template>
     </paper-header-panel>

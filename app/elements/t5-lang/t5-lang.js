@@ -7,9 +7,10 @@ Polymer({
 
   },
   changeLanguage: function(e) {
-    var I18nMsg = window.I18nMsg;
-    I18nMsg.lang = e.srcElement.getAttribute('data-lang');
+    window.I18nMsg.lang = e.srcElement.getAttribute('data-lang');
     document.getElementById('languages').toggle();
+
+    document.getElementById('t5model').updateModel(window.I18nMsg.lang);
   },
 
 });

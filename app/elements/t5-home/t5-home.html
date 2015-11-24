@@ -12,18 +12,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <dom-module id="t5-home">
   <link rel="import" type="css" href="home.css">
   <template>
-    <iron-ajax
-      auto
-      url="/data/home.json"
-      handle-as="json"
-      last-response="{{items}}"
-      last-error="{{lastError}}">
-    </iron-ajax>
 
     <!-- content for: text and image-->
-    <h1><t5-i18n msgid="home.welcome">welcome</t5-i18n></h1>
-    <!-- Create beatifull websites & Apps using last technology -->
-    <paper-card heading="{{getMsg('home.welcome.2')}}">
+    <h1>{{home.welcome}}</h1>
+    <!-- Create beatifull websites & Apps using last technology
+      heading$="{{getMsg('home.welcome', data)}}"
+    -->
+    <paper-card heading$="{{home.name}}">
       <div class="card-content horizontal layout">
         <div class="text-home flexbox-container">
           <p><t5-i18n msgid="text.competitive">

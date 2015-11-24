@@ -10,10 +10,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 (function(document) {
   'use strict';
 
+  function getLanguage() {
+    if (window.location.pathname === '/es') {
+      return 'es';
+    } else {
+      return 'en';
+    }
+  }
+
   document.addEventListener('HTMLImportsLoaded', function() {
-    console.log('HTMLImportsLoaded');
-    window.I18nMsg.url = '/locales'; // 'locales' optionally use custom folder for locales.
+    console.log('HTMLImportsLoaded', window.I18nMsg);
+    window.I18nMsg.url = '/data'; // 'locales' optionally use custom folder for locales.
     //GET http://localhost:5000/locales/es.json 404 (Not Found)
+
+    window.I18nMsg.lang = getLanguage();
   });
 
   // Grab a reference to our auto-binding template
@@ -55,12 +65,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     // No argument returns the instance's message:
     //document.querySelector('t5-i18n').getMsg();
     // Get a message by an id:
-  });
-
-  window.addEventListener('i18n-language-ready', function() {
-    console.log('i18n-language-ready', window.I18nMsg);
-    console.log('t5-i18n ' + document.querySelector('t5-i18n').language);
-    console.log(document.querySelector('t5-i18n').getMsg('home.welcome'));
   });
 
   // Main area's paper-scroll-header-panel custom condensing transformation of

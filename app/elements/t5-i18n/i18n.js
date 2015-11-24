@@ -58,7 +58,7 @@ Polymer({
   },
 
   ready: function() {
-    console.log(window.I18nMsg);
+    //console.log('ready',window.I18nMsg);
     this.messagesUrl = window.I18nMsg.url;
     this._setLanguage(window.I18nMsg.lang);
 
@@ -109,12 +109,10 @@ Polymer({
     var msgId = optMsgId || this.msgid;
     var lang = this.locales[this.language];
 
-    var value = 'patata';
+    var value = null;
     if (lang && lang[msgId]) {
       value = lang[msgId];
     }
-    
-    console.log('getMsg',lang, msgId, value);
     return value;
   },
 
@@ -147,7 +145,8 @@ Polymer({
 
     _fetching = true;
 
-    var url = /*this.baseURI + */ this.messagesUrl + '/' + this.language + '.json';
+    var url = /*this.baseURI + */ this.messagesUrl + '/' +
+        this.language + '/app.json';
 
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url);

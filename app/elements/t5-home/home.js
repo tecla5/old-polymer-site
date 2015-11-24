@@ -2,33 +2,7 @@
 
 Polymer({
   is: 't5-home',
-  behaviors: [
-    Polymer.NeonAnimationRunnerBehavior
-  ],
   properties: {
-    // START ANIMATIONS
-    animationConfig: {
-      value: function() {
-        return {
-          'entry': [{
-            name: 'fade-in-animation',
-            node: this
-          }, {
-            name: 'transform-animation',
-            transformFrom: 'translateX(-100vh)',
-            node: this
-          }],
-          'exit': [{
-            name: 'hero-animation',
-            id: 'hero',
-            fromPage: this
-          }, {
-            name: 'fade-out-animation',
-            node: this
-          }]
-        };
-      }
-    },
     items: Array,
     item: {
       type: Object,
@@ -38,6 +12,38 @@ Polymer({
     },
     lastError: String
   },
+  listeners: {
+    't5-i18n.i18n-language-ready': 'cooooo'
+  },
+
+  ready: function() {
+    //document.querySelector('t5-i18n'). 'i18n-language-ready'
+  },
+
+  cooooo: function(data) {
+    console.log('observer data', data);
+  },
+
+  getMsg: function(msgid, data) {
+    var value = null;
+
+    console.log('home-get', msgid, data);
+
+    var i18n = document.createElement('t5-i18n');
+    //var i18n = new Element.tag('t5-i18n');//t5-i18n
+    //var i18n = new T5I18n();
+    //var i18n = Polymer.dom(document).querySelector('t5-i18n');
+    console.log(i18n);
+    i18n.msgid = msgid;
+    if (i18n) {
+      value = i18n.getMsg(msgid);
+    }
+    console.log(value);
+
+    return value;
+
+  },
+
   computeItem: function(items) {
     return items && items[0] || {};
   },
@@ -60,20 +66,4 @@ Polymer({
     }
   },
 
-  getMsg: function(msgid) {
-    var value = null;
-    console.log('home-get', msgid);
-
-    var i18n = new Element.tag('t5-i18n');//t5-i18n
-    console.log(i18n);
-
-    //var i18n = new T5I18n();
-    //var i18n = Polymer.dom(document).querySelector('t5-i18n');
-    if (i18n) {
-      value = i18n.getMsg(msgid);
-    }
-    console.log(value);
-    return value;
-
-  }
 });

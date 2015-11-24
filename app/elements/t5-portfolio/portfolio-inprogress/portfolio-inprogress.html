@@ -36,15 +36,6 @@
 
   <template>
     <h2>In progress</h2>
-    <iron-ajax
-      id="myproducts"
-      auto
-      url="/data/EN/products.json"
-      handle-as="json"
-      on-response="handleResponse"
-      last-response="{{products}}"
-      last-error="{{lastError}}">
-    </iron-ajax>
     <template is="dom-repeat" items="{{products}}" as="product"  >
       <paper-card
         id="{{index}}"

@@ -2,17 +2,28 @@ Polymer({
   is: 't5-app',
 
   properties: {
-    foo: {
-      type: String,
-      value: 't5-app',
+    model: {
+      type: Object,
       notify: true
-    }
+    },
+
+  },
+
+  ready: function() {
+    // Initialize the instance's "list" property to empty array.
+    this.model = this.model || {};
   },
   attached: function() {
     this.showSplash();
   },
   listeners: {
-    'splash-completed': 'onDataRouteClick'
+    'splash-completed': 'onDataRouteClick',
+    'i18n-language-ready': 'laguageChanged'
+  },
+
+  laguageChanged: function() {
+    console.log('i18n-language-ready', window.I18nMsg);
+    document.getElementById('t5model').updateModel(window.I18nMsg.lang);
   },
 
   // Close drawer after menu item is selected if drawerPanel is narrow
