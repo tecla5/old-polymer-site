@@ -12,16 +12,9 @@ Polymer({
     },
     lastError: String
   },
-  listeners: {
-    't5-i18n.i18n-language-ready': 'cooooo'
-  },
-
+  
   ready: function() {
     //document.querySelector('t5-i18n'). 'i18n-language-ready'
-  },
-
-  cooooo: function(data) {
-    console.log('observer data', data);
   },
 
   getMsg: function(msgid, data) {

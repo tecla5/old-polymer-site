@@ -1,0 +1,10 @@
+-
+  name: 'free water'
+  description: 'Encuentra las fuentes de agua cercanas.'
+  image: /images/portafolio/projectFW.jpg
+  code: 'https://github.com/tecla5/free-water'
+-
+  name: homeless
+  description: 'Sincroniza caridad y soporte para el esfuerzo de cualquier voluntariado.'
+  image: /images/portafolio/projectHL.jpg
+  code: 'https://github.com/tecla5/homeless'
