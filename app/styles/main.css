@@ -194,15 +194,4 @@ paper-toolbar.multi_bg_example {
   background-position: bottom right,
                        top right,
                        right;
-  /*background-image   : url(../images/Pako_Website.png),
-                       url(../images/Blue-Pattern03.jpg),
-                       linear-gradient(to right, rgba(30, 75, 115, 1),  rgba(255, 255, 255, 0));
-  background-repeat  : no-repeat,
-                       no-repeat,
-                       no-repeat;
-
-  background-position: bottom right,
-                       left,
-                       right;
-  background-size: ;*/
 }
