@@ -1,0 +1,5 @@
+-
+  caption: 'Sports Media Interactive (SMI)'
+  name: smi
+  image: /images/toolbar/green.png
+  content: "SMI is a betting platform provider with their main offices in London. Tecla5 have been spear-heading their shift to a multi layered application architecture, using the following technologies:\n\n-\tMicro Services\n-\tRapid render: using Marko async server rendering\n-\t...\n"

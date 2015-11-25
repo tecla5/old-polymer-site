@@ -24,6 +24,7 @@ var historyApiFallback = require('connect-history-api-fallback');
 var packageJson = require('./package.json');
 var crypto = require('crypto');
 var linkImports = require('gulp-link-imports');
+var yaml = require('gulp-yaml');
 
 // var ghPages = require('gulp-gh-pages');
 // var polybuild = require('polybuild');
@@ -205,9 +206,17 @@ gulp.task('fonts', function() {
     }));
 });
 
+// yaml to json
+gulp.task('yaml', function() {
+  return gulp.src('app/data/en/*.yml')
+    .pipe(yaml({ schema: 'DEFAULT_SAFE_SCHEMA' }))
+    .pipe(gulp.dest('app/data/'));
+});
+
+
 // Copy web fonts to dist
-gulp.task('data', function() {
-  var data = gulp.src(['app/data/**'])
+gulp.task('data', ['yaml'], function() {
+  var data = gulp.src(['app/data/**/*.json'])
     .pipe(gulp.dest('dist/data'));
 
   return data;
