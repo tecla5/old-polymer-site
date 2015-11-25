@@ -1,23 +1,19 @@
 {
-  "name": "Partners",  
-  "partners": [
-      {
-          "caption": "Sourcerers.ie",
-          "name": "sourcerers",
-          "logo": "partners/logo/sourcerers",
-          "content": "[Sourcerers.ie](sourcerers.ie) is our trusted Indian partner who manage and provide high quality Indian development resources.\n"
-      },
-      {
-          "caption": "Ukraine Mobile devs",
-          "name": "ukraine-1",
-          "logo": "partners/logo/ukraine-1",
-          "content": "Ukraine #1 is a team of highly proficient Ukrainian mobile developers who are our trusted partners for native mobile development.\n"
-      },
-      {
-          "caption": "Ukraine devs",
-          "name": "ukraine-2",
-          "logo": "partners/logo/ukraine-2",
-          "content": "Ukraine 2 is our partner for general purpose app development and front end design...\n"
-      }
-  ]
+  "name": "Partners",
+  "partners": [{
+    "caption": "Sourcerers.ie",
+    "name": "sourcerers",
+    "logo": "partners/logo/sourcerers",
+    "content": "[Sourcerers.ie](sourcerers.ie) is our trusted Indian partner who manage and provide high quality Indian development resources.\n"
+  }, {
+    "caption": "Ukraine Mobile devs",
+    "name": "ukraine-1",
+    "logo": "partners/logo/ukraine-1",
+    "content": "Ukraine #1 is a team of highly proficient Ukrainian mobile developers who are our trusted partners for native mobile development.\n"
+  }, {
+    "caption": "Ukraine devs",
+    "name": "ukraine-2",
+    "logo": "partners/logo/ukraine-2",
+    "content": "Ukraine 2 is our partner for general purpose app development and front end design...\n"
+  }]
 }

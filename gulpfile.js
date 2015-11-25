@@ -208,11 +208,12 @@ gulp.task('fonts', function() {
 
 // yaml to json
 gulp.task('yaml', function() {
-  return gulp.src('app/data/en/*.yml')
-    .pipe(yaml({ schema: 'DEFAULT_SAFE_SCHEMA' }))
+  return gulp.src('app/data/**/*.yaml')
+    .pipe(yaml({
+      schema: 'DEFAULT_SAFE_SCHEMA'
+    }))
     .pipe(gulp.dest('app/data/'));
 });
-
 
 // Copy web fonts to dist
 gulp.task('data', ['yaml'], function() {
