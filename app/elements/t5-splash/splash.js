@@ -23,6 +23,14 @@ Polymer({
     this.fire('splash-completed');// {event:x}
   },
   properties: {
+    items: {
+      type: Array,
+      notify: true
+    },
+    lastError: {
+      type: String,
+      notify: true
+    },
     foo: {
       type: String,
       value: 't5-splash',
