@@ -87,39 +87,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </style>
 
   <template>
-    <!--
-    <paper-dialog id="dialog" fit modal entry-animation="scale-up-animation"
-                  exit-animation="fade-out-animation" >
-      <div class="buttons">
-        <paper-icon-button dialog-confirm autofocus icon="clear" class="more blueRipple huge" ></paper-icon-button>
-      </div>
-    </paper-dialog>
-    -->
       <polymer-slideshow class="fit full" width="100%">
-        <polymer-slide>
-          <iron-image src="/images/toolbar/way1366x768.jpg"  sizing="cover" preload></iron-image>
+        <polymer-slide is="dom-repeat" items="{{services.services}}">
+          <iron-image src="{{item.image}}" class="sized" sizing="cover" preload></iron-image>
           <div class="legend vertical layout center image-card" >
-            <h1><t5-i18n msgid="splash.1">No matter how big your idea</t5-i18n></h1>
-          </div>
-        </polymer-slide>
-        <polymer-slide>
-          <iron-image src="/images/toolbar/SAsalt1366x768.jpg"  sizing="cover" preload></iron-image>
-          <div class="legend vertical layout center image-card" >
-            <h1><t5-i18n msgid="splash.2">We can craft it into a beautiful solution</t5-i18n></h1>
-          </div>
-        </polymer-slide>
-        <polymer-slide>
-          <iron-image src="/images/toolbar/workplaceCut1366x768.jpg"  sizing="cover" preload></iron-image>
-          <div class="legend vertical layout center image-card" >
-            <h1><t5-i18n msgid="splash.3">Let us take your project to the finish line</t5-i18n></h1>
+            <h1><t5-i18n msgid="{{item.itmeSplash}}">{{item.text}}</t5-i18n></h1>
           </div>
         </polymer-slide>
       </polymer-slideshow>
       <div class="buttons">
         <paper-fab icon="clear" on-click="completeStartup" ></paper-icon-button>
       </div>
-
-
   </template>
 
   <script src="splash.js" charset="utf-8"></script>

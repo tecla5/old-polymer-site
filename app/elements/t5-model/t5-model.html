@@ -67,6 +67,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       last-response="{{model.clients}}"
       last-error="{{lastError}}">
     </iron-ajax>
+    <iron-ajax
+      auto
+      url="/data/{{lang}}/splash.json"
+      handle-as="json"
+      last-response="{{model.clients}}"
+      last-error="{{lastError}}">
+    </iron-ajax>
 
     <div><span>{{model}}</span></div>
   </template>
@@ -108,6 +115,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           },
           'contact': {
             'name': 'contacto'
+          },
+          'splash': {
+            'name': 'splash'
           }
         };
         this.en = this.en || {
@@ -120,6 +130,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           },
           'contact': {
             'name': 'contacto'
+          },
+          'splash': {
+            'name': 'splash'
           }
         };
 
