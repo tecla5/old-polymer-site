@@ -104,39 +104,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       },
       ready: function() {
-        console.log(this.en, this.es);
-        this.es = this.es || {
-          'name': 'Tecla5',
-          'portfolio': {
-            'name': 'Portafolio'
-          },
-          'blog': {
-            'name': 'Blog'
-          },
-          'contact': {
-            'name': 'contacto'
-          },
-          'splash': {
-            'name': 'splash'
-          }
-        };
-        this.en = this.en || {
-          'name': 'Tecla5',
-          'portfolio': {
-            'name': 'Portfolio'
-          },
-          'blog': {
-            'name': 'Blog'
-          },
-          'contact': {
-            'name': 'contacto'
-          },
-          'splash': {
-            'name': 'splash'
-          }
-        };
-
-        this.model = this.en;
+        this.model = {};
         this.lang = window.I18nMsg.lang;
 
         console.log(this.model);
@@ -146,9 +114,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         console.log('updateModel',lang);
         this.lang = lang;
         if (lang === 'es') {
-          this.model = this.es;
+          //this.model = this.es;
         } else {
-          this.model = this.en;
+          //this.model = this.en;
         }
         console.log(this.model);
 
