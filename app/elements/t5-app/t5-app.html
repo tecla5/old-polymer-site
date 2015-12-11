@@ -40,7 +40,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <paper-scroll-header-panel drawer ><!-- fixed -->
           <!-- Drawer Toolbar for tecla5 icon-->
           <paper-toolbar class="drawerToolbar">
-              <div class="header-toolbar"><h1>{{model.name}}</h1></div>
+              <div class="header-toolbar"><h1>Tecla5</h1></div>
               <iron-icon id="menu-logo" icon="t5-icons:tecla5" class="big center-logo"></iron-icon>
           </paper-toolbar>
           <!-- Drawer Content  onclick="resetScroll()" -->
@@ -168,20 +168,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <div class="title-site">Tecla5</div>
               </div>
               <div class="col-footer columns">
-                <div class="title">Frequently Asked Question</div>
+                <div class="title">Information</div>
                 <ul class="item-footer">
-                  <li>Web design and development</li>
-                  <li>Services and products</li>
-                  <li>Payment methods</li>
-                  <li>Support</li>
-                  <li>Benefits</li>
+                  <li>{{model.main.footer.email}}</li>
+                  <li>{{model.main.footer.address}}</li>
+                  <li>{{model.main.footer.phone}}</li>
+                  <li>ABOUT US</li>
+                  <li>CONTACT US</li>
                 </ul>
               </div>
               <div class="col-footer columns">
-                <div class="title">Legal</div>
+                <!-- resources, comunnity, support -->
+                <div class="title">More</div>
                 <ul class="item-footer">
-                  <li>Privacy</li>
-                  <li>Service Terms</li>
+                  <li>PRIVACY POLICY</li>
+                  <li>TERMS OF SERVICE</li>
+                  <li>SITE MAP</li>
                 </ul>
               </div>
           </footer>
