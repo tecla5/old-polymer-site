@@ -370,8 +370,12 @@ gulp.task('build-deploy-gh-pages', function(cb) {
 
 // Deploy to GitHub pages gh-pages branch
 gulp.task('deploy-gh-pages', function() {
+  var options = {
+    branch: 'master'
+  };
+
   return gulp.src('./dist/**/*')
-    .pipe($.ghPages());
+    .pipe($.ghPages(options));
 });
 
 // Load tasks for web-component-tester
