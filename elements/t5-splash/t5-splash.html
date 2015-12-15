@@ -50,12 +50,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       background: none;
       box-shadow: none;
     }
+    polymer-slideshow /deep/ .controls {
+      display: none;
+    }
+        
     polymer-slideshow.full {
       width: 100%;
       height: auto;
-    }
-    polymer-slideshow /deep/ .controls {
-      display: none;
     }
     paper-icon-button.more.t5-splash{
       margin: 0px 30px 80px 0px;
@@ -87,14 +88,32 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </style>
 
   <template>
+
       <polymer-slideshow class="fit full" width="100%">
-        <polymer-slide is="dom-repeat" items="{{services.services}}">
-          <iron-image src="{{item.image}}" class="sized" sizing="cover" preload></iron-image>
+        <!-- polymer-slide is not working with dom repeat
+        <template is="dom-repeat" items$="{{splash.itemSplash}}" as="sp"  >
+        </template>
+        -->
+        <polymer-slide>
+          <iron-image src="{{splash.itemSplash.0.image}}"  sizing="cover" preload></iron-image>
           <div class="legend vertical layout center image-card" >
-            <h1><t5-i18n msgid="{{item.itmeSplash}}">{{item.text}}</t5-i18n></h1>
+            <h1>{{splash.itemSplash.0.text}}</h1>
+          </div>
+        </polymer-slide>
+        <polymer-slide>
+          <iron-image src="{{splash.itemSplash.1.image}}"  sizing="cover" preload></iron-image>
+          <div class="legend vertical layout center image-card" >
+            <h1>{{splash.itemSplash.1.text}}</h1>
+          </div>
+        </polymer-slide>
+        <polymer-slide>
+          <iron-image src="{{splash.itemSplash.2.image}}"  sizing="cover" preload></iron-image>
+          <div class="legend vertical layout center image-card" >
+            <h1>{{splash.itemSplash.2.text}}</h1>
           </div>
         </polymer-slide>
       </polymer-slideshow>
+
       <div class="buttons">
         <paper-fab icon="clear" on-click="completeStartup" ></paper-icon-button>
       </div>
