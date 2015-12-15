@@ -1,1 +1,0 @@
-Javier has ~10 years experience in web app development as a full stack developer and architect. He likes to use the latest technologies to power his apps and is experiences at managing projects and ensuring they can scale while minimizing complexity.

@@ -1,1 +1,0 @@
-Freddy is an experienced web developer with more than ~10 years of experience in various environments. He is passionate about back-end development and likes to play with new tech that pushes the boundaries. Freddy is currently working with REST and Graph based APIs, mocking server responses etc.

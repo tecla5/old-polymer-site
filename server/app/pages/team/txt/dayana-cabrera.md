@@ -1,1 +1,0 @@
-Dayana is an experienced Project Manager and Designer who specializes in project delivery, customer satisfaction, HR and UX. Dayana has more than ~5 years of experience in developing software and QA Testing.

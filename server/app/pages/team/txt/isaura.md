@@ -1,1 +1,0 @@
-Isaura is a web developer with 3 years experience in development of web pages. Passionate front-end development. She loves to be at the forefront of new technologies to the efficiency and quality of the final products and continuous improvement.

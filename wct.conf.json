@@ -1,8 +1,0 @@
-{
-  "suites": ["app/test"],
-  "webserver": {
-    "pathMappings": [
-      {"/components/tecla5-site/app/bower_components": "bower_components"}
-    ]
-  }
-}
