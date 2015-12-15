@@ -20,6 +20,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   document.addEventListener('HTMLImportsLoaded', function() {
     console.log('HTMLImportsLoaded', window.I18nMsg);
+    window.I18nMsg = window.I18nMsg || {};
     window.I18nMsg.url = '/data'; // 'locales' optionally use custom folder for locales.
     //GET http://localhost:5000/locales/es.json 404 (Not Found)
 
@@ -63,7 +64,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     //contact-failure
 
     // No argument returns the instance's message:
-    //document.querySelector('t5-i18n').getMsg();
     // Get a message by an id:
   });
 

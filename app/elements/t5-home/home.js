@@ -12,30 +12,6 @@ Polymer({
     },
     lastError: String
   },
-  
-  ready: function() {
-    //document.querySelector('t5-i18n'). 'i18n-language-ready'
-  },
-
-  getMsg: function(msgid, data) {
-    var value = null;
-
-    console.log('home-get', msgid, data);
-
-    var i18n = document.createElement('t5-i18n');
-    //var i18n = new Element.tag('t5-i18n');//t5-i18n
-    //var i18n = new T5I18n();
-    //var i18n = Polymer.dom(document).querySelector('t5-i18n');
-    console.log(i18n);
-    i18n.msgid = msgid;
-    if (i18n) {
-      value = i18n.getMsg(msgid);
-    }
-    console.log(value);
-
-    return value;
-
-  },
 
   computeItem: function(items) {
     return items && items[0] || {};
